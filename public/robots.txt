@@ -1,0 +1,9 @@
+# *
+User-agent: *
+Allow: /
+
+# Host
+Host: https://www.m-elevadores.cl/
+
+# Sitemaps
+Sitemap: https://www.miniswimmer.us/sitemap.xml
