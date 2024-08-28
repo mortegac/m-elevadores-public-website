@@ -14,7 +14,7 @@ export const Title = styled.div`
 export const Content = styled.div`
   width: 100%;
   display: flex;
-  flex-direction: row;
+  flex-direction: row-reverse;
   align-items: center;
   justify-content: center;
   @media (max-width: ${(props) => props.theme.breakpoints.md}) {
@@ -62,7 +62,7 @@ export const Description = styled.div`
   justify-content: center;
   width: 50%;
   margin-right: 50px;
-  margin-left: 50px;
+  margin-left: 20px;
   @media (max-width: ${(props) => props.theme.breakpoints.md}) {
     width: 100%;
     margin-right: 0;
@@ -155,12 +155,12 @@ export const ListContainer = styled.div`
   justify-content: flex-start;
   align-items: flex-start;
   width: 100%;
+    margin-bottom: 20px;
   
   
   // border: 1px solid blue;
   
   // .img{
-  //   margin-top: 8px;
   //   // width: 100%;
   //   // height: 100%;
   // }
@@ -186,6 +186,7 @@ export const ListContainer = styled.div`
 export const ContentContainer = styled.div`
   display: flex;
   flex-direction: column;
+  justify-content: flex-start;
   
 `;
 
@@ -220,7 +221,7 @@ export const ItemsContainer = styled.ul`
     font-weight:  ${(props) => props.theme.typography.h3.desktop.fontWeight};
     line-height:  ${(props) => props.theme.typography.h3.desktop.lineHeight};
     font-size: ${(props) => props.theme.typography.h3.desktop.fontSize};
-    text-align: center;
+    text-align: left;
     color: ${(props) => props.theme.colors.textDarkblue};
     margin-bottom: 8px;
     @media (max-width: ${(props) => props.theme.breakpoints.md}) {

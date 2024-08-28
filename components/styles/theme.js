@@ -118,7 +118,7 @@ export const Theme = {
   colors: {
     primary: "#67614B",
     // #1C2146
-    secondary: "#ffffff",
+    secondary: "#243C70",
     bgHover: "#363636",
     bgColorPrimary: "#078FF1",
     bgColorSecondary: "#FBE3D5",

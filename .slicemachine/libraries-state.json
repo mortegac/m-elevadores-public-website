@@ -126,7 +126,7 @@
         },
         "screenshotPaths": {
           "default": {
-            "path": "/Users/manu/_PROYECTOS/m-elevadores.cl/m-elevadores-public-website/slices/CardList/default/preview.png",
+            "path": "/Users/manu/_PROYECTOS/m-elevadores/m-elevadores-public-website/slices/CardList/default/preview.png",
             "width": 2714,
             "height": 1606
           }
@@ -369,7 +369,7 @@
         },
         "screenshotPaths": {
           "default": {
-            "path": "/Users/manu/_PROYECTOS/m-elevadores.cl/m-elevadores-public-website/slices/Comparative/default/preview.png",
+            "path": "/Users/manu/_PROYECTOS/m-elevadores/m-elevadores-public-website/slices/Comparative/default/preview.png",
             "width": 1059,
             "height": 795
           }
@@ -526,7 +526,7 @@
         },
         "screenshotPaths": {
           "default": {
-            "path": "/Users/manu/_PROYECTOS/m-elevadores.cl/m-elevadores-public-website/slices/Contact/default/preview.png",
+            "path": "/Users/manu/_PROYECTOS/m-elevadores/m-elevadores-public-website/slices/Contact/default/preview.png",
             "width": 1200,
             "height": 1772
           }
@@ -848,17 +848,17 @@
         },
         "screenshotPaths": {
           "default": {
-            "path": "/Users/manu/_PROYECTOS/m-elevadores.cl/m-elevadores-public-website/slices/Hero/default/preview.png",
+            "path": "/Users/manu/_PROYECTOS/m-elevadores/m-elevadores-public-website/slices/Hero/default/preview.png",
             "width": 1562,
             "height": 669
           },
           "noButtonNoDescription": {
-            "path": "/Users/manu/_PROYECTOS/m-elevadores.cl/m-elevadores-public-website/slices/Hero/noButtonNoDescription/preview.png",
+            "path": "/Users/manu/_PROYECTOS/m-elevadores/m-elevadores-public-website/slices/Hero/noButtonNoDescription/preview.png",
             "width": 1562,
             "height": 669
           },
           "noButton": {
-            "path": "/Users/manu/_PROYECTOS/m-elevadores.cl/m-elevadores-public-website/slices/Hero/noButton/preview.png",
+            "path": "/Users/manu/_PROYECTOS/m-elevadores/m-elevadores-public-website/slices/Hero/noButton/preview.png",
             "width": 1562,
             "height": 669
           }
@@ -1096,17 +1096,17 @@
         },
         "screenshotPaths": {
           "default": {
-            "path": "/Users/manu/_PROYECTOS/m-elevadores.cl/m-elevadores-public-website/slices/Ideas/default/preview.png",
+            "path": "/Users/manu/_PROYECTOS/m-elevadores/m-elevadores-public-website/slices/Ideas/default/preview.png",
             "width": 1398,
             "height": 432
           },
           "noButtonNobg": {
-            "path": "/Users/manu/_PROYECTOS/m-elevadores.cl/m-elevadores-public-website/slices/Ideas/noButtonNobg/preview.png",
+            "path": "/Users/manu/_PROYECTOS/m-elevadores/m-elevadores-public-website/slices/Ideas/noButtonNobg/preview.png",
             "width": 1398,
             "height": 432
           },
           "noButton": {
-            "path": "/Users/manu/_PROYECTOS/m-elevadores.cl/m-elevadores-public-website/slices/Ideas/noButton/preview.png",
+            "path": "/Users/manu/_PROYECTOS/m-elevadores/m-elevadores-public-website/slices/Ideas/noButton/preview.png",
             "width": 1398,
             "height": 432
           }
@@ -1344,17 +1344,17 @@
         },
         "screenshotPaths": {
           "default": {
-            "path": "/Users/manu/_PROYECTOS/m-elevadores.cl/m-elevadores-public-website/slices/LogoList/default/preview.png",
+            "path": "/Users/manu/_PROYECTOS/m-elevadores/m-elevadores-public-website/slices/LogoList/default/preview.png",
             "width": 1133,
             "height": 177
           },
           "onlyLogosBg": {
-            "path": "/Users/manu/_PROYECTOS/m-elevadores.cl/m-elevadores-public-website/slices/LogoList/onlyLogosBg/preview.png",
+            "path": "/Users/manu/_PROYECTOS/m-elevadores/m-elevadores-public-website/slices/LogoList/onlyLogosBg/preview.png",
             "width": 1133,
             "height": 177
           },
           "buttonTitleDescription": {
-            "path": "/Users/manu/_PROYECTOS/m-elevadores.cl/m-elevadores-public-website/slices/LogoList/buttonTitleDescription/preview.png",
+            "path": "/Users/manu/_PROYECTOS/m-elevadores/m-elevadores-public-website/slices/LogoList/buttonTitleDescription/preview.png",
             "width": 1820,
             "height": 727
           }
@@ -1491,12 +1491,12 @@
         },
         "screenshotPaths": {
           "default": {
-            "path": "/Users/manu/_PROYECTOS/m-elevadores.cl/m-elevadores-public-website/slices/Metrics/default/preview.png",
+            "path": "/Users/manu/_PROYECTOS/m-elevadores/m-elevadores-public-website/slices/Metrics/default/preview.png",
             "width": 1375,
             "height": 486
           },
           "noBackground": {
-            "path": "/Users/manu/_PROYECTOS/m-elevadores.cl/m-elevadores-public-website/slices/Metrics/noBackground/preview.png",
+            "path": "/Users/manu/_PROYECTOS/m-elevadores/m-elevadores-public-website/slices/Metrics/noBackground/preview.png",
             "width": 1166,
             "height": 372
           }
@@ -1601,7 +1601,7 @@
         },
         "screenshotPaths": {
           "default": {
-            "path": "/Users/manu/_PROYECTOS/m-elevadores.cl/m-elevadores-public-website/slices/Projects/default/preview.png",
+            "path": "/Users/manu/_PROYECTOS/m-elevadores/m-elevadores-public-website/slices/Projects/default/preview.png",
             "width": 1127,
             "height": 626
           }
@@ -1943,22 +1943,22 @@
         },
         "screenshotPaths": {
           "default": {
-            "path": "/Users/manu/_PROYECTOS/m-elevadores.cl/m-elevadores-public-website/slices/Services/default/preview.png",
+            "path": "/Users/manu/_PROYECTOS/m-elevadores/m-elevadores-public-website/slices/Services/default/preview.png",
             "width": 1194,
             "height": 656
           },
           "noIconsNoButtons": {
-            "path": "/Users/manu/_PROYECTOS/m-elevadores.cl/m-elevadores-public-website/slices/Services/noIconsNoButtons/preview.png",
+            "path": "/Users/manu/_PROYECTOS/m-elevadores/m-elevadores-public-website/slices/Services/noIconsNoButtons/preview.png",
             "width": 1194,
             "height": 656
           },
           "noIcons": {
-            "path": "/Users/manu/_PROYECTOS/m-elevadores.cl/m-elevadores-public-website/slices/Services/noIcons/preview.png",
+            "path": "/Users/manu/_PROYECTOS/m-elevadores/m-elevadores-public-website/slices/Services/noIcons/preview.png",
             "width": 1194,
             "height": 656
           },
           "imageText": {
-            "path": "/Users/manu/_PROYECTOS/m-elevadores.cl/m-elevadores-public-website/slices/Services/imageText/preview.png",
+            "path": "/Users/manu/_PROYECTOS/m-elevadores/m-elevadores-public-website/slices/Services/imageText/preview.png",
             "width": 1194,
             "height": 656
           }
@@ -2086,7 +2086,7 @@
         },
         "screenshotPaths": {
           "default": {
-            "path": "/Users/manu/_PROYECTOS/m-elevadores.cl/m-elevadores-public-website/slices/Staff/default/preview.png",
+            "path": "/Users/manu/_PROYECTOS/m-elevadores/m-elevadores-public-website/slices/Staff/default/preview.png",
             "width": 1134,
             "height": 1177
           }

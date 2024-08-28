@@ -37,20 +37,19 @@ export const Description = styled.div`
     margin-bottom: 8px;
     line-height:  ${(props) => props.theme.typography.h1.desktop.lineHeight};
     font-size: ${(props) => props.theme.typography.h1.desktop.fontSize};
-    color: #030302;
+    color: ${(props) => props.theme.colors.white};
     z-index: 10px;
     em {
-      color: ${(props) => props.theme.colors.textLightPrimary};
+      color:${(props) => props.theme.colors.white};
       font-style: normal;
       z-index: 10px;
     }
     @media (max-width: ${(props) => props.theme.breakpoints.xl}) {
-      // width: 70%;
       line-height:  ${(props) => props.theme.typography.h1.mobile.lineHeight};
       font-size: ${(props) => props.theme.typography.h1.mobile.fontSize};
       margin-bottom: 16px;
       em {
-        color: green;
+        color: ${(props) => props.theme.colors.white};
         font-style: normal;
         z-index: 10px;
       }
@@ -60,20 +59,54 @@ export const Description = styled.div`
       line-height:  ${(props) => props.theme.typography.h1.mobile.lineHeight};
       font-size: ${(props) => props.theme.typography.h1.mobile.fontSize};
       em {
-        color: ${(props) => props.theme.colors.textLightPrimary};
+        color: ${(props) => props.theme.colors.white};
         font-size: 34px;
         z-index: 10px;
       }
-      
+    }
+  }
+  h2 {
+    margin: 0;
+    margin-bottom: 8px;
+    line-height:  ${(props) => props.theme.typography.h1.desktop.lineHeight};
+    font-size: ${(props) => props.theme.typography.h2.desktop.fontSize};
+    color: #e5e4e4;
+    z-index: 10px;
+    em {
+      color:${(props) => props.theme.colors.white};
+      font-style: normal;
+      z-index: 10px;
+    }
+    @media (max-width: ${(props) => props.theme.breakpoints.xl}) {
+      line-height:  ${(props) => props.theme.typography.h1.mobile.lineHeight};
+      font-size: ${(props) => props.theme.typography.h1.mobile.fontSize};
+      margin-bottom: 16px;
+      em {
+        color: ${(props) => props.theme.colors.white};
+        font-style: normal;
+        z-index: 10px;
+      }
+    }
+    @media (max-width: ${(props) => props.theme.breakpoints.sm}) {
+      width: 100%;
+      line-height:  ${(props) => props.theme.typography.h1.mobile.lineHeight};
+      font-size: ${(props) => props.theme.typography.h1.mobile.fontSize};
+      em {
+        color: ${(props) => props.theme.colors.white};
+        font-size: 34px;
+        z-index: 10px;
+      }
     }
   }
   p {
     margin: 0;
     letter-spacing: 0.25px;
-    line-height:  ${(props) => props.theme.typography.p.desktop.lineHeight};
+    // line-height:  ${(props) => props.theme.typography.p.desktop.lineHeight};
+    line-height:  1.5;
     font-size: 24px;
     z-index: 10px;
     font-weight: ${(props) => props.theme.typography.p.desktop.fontWeight};
+    color: ${(props) => props.theme.colors.white};
     @media (max-width: ${(props) => props.theme.breakpoints.md}) {
       margin-bottom: 32px;
     }
@@ -115,5 +148,5 @@ export const Button = styled.button`
     height:48px;
     cursor: pointer; 
     color: ${(props) => props.theme.colors.secondary};
-    background: ${(props) => props.theme.colors.bgColorTertiary};
+    background: ${(props) => props.theme.colors.white};
 `;

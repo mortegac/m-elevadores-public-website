@@ -35,10 +35,10 @@ const Footer = ({
 }) => {
   const { data: { data }, data: { textrights } } = items
   return (
-    <FooterWrapper backgroundColor={"#0B3954"}>
+    <FooterWrapper backgroundColor={"#222222"}>
       <FooterItemsContainer>
-        <FooterCopyright copyrightText="m-elevadores © 2023 , Inc. Todos los derechos reservados." />
-        <FooterList title={"m-elevadores"} items={items} />
+        <FooterCopyright copyrightText="M-Elevadores © 2023 , Inc. Todos los derechos reservados." />
+        <FooterList title={""} items={items} />
         <SocialLinks socialTitle={" "} />
       </FooterItemsContainer>
     </FooterWrapper>

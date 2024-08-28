@@ -119,9 +119,9 @@ const Base = slice => {
 
           <FormContainer noValidate onSubmit={handleSubmit(onSubmit)}>
 
-            <h2>{title[0].text || "Contactanos"}</h2>
+            <h2>{title[0]?.text && title[0]?.text || "Contactanos"}</h2>
             <p>
-              {subtitle[0].text ||
+              {subtitle[0]?.text && subtitle[0]?.text ||
                 "Cuéntenos sobre usted y lo conectaremos con nuestros expertos para responder cualquier pregunta que tenga."}
             </p>
 

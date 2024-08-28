@@ -14,18 +14,20 @@ const Base = (props) => {
         {description[0]?.text && (
           RichText.render(description)
         )}
-        <Button>
-          {buttontext ? buttontext : `Let's Talk`}
-        </Button>
+        {buttontext &&
+          <Button>
+            {buttontext ? buttontext : `Let's Talk`}
+          </Button>
+        }
       </Description>
 
-      {/* <ImgHolder>
+      <ImgHolder>
         <picture>
           <source srcSet={image.url} media="(max-width: 500px)" />
           <source srcSet={mobileimage.url} media="(max-width: 960px)" />
           <img src={image.url} alt="HeroImg" />
         </picture>
-      </ImgHolder> */}
+      </ImgHolder>
     </Content>
   );
 };
@@ -34,11 +36,13 @@ const Base = (props) => {
 export const Default = SliceFactory(Base, {
   sectionContainerProps: {
     style: {
-      backgroundColor: '#ffffff',
-      background: '#ffffff',
+      backgroundColor: '#243C70',
+      background: '#243C70',
     },
     bgImage: true,
     bgImageSrc: "https://images.prismic.io/m-elevadores/ZsP1BUaF0TcGJE_C_fondo-contruccion.png?auto=format,compress",
     base: Base
   }
 });
+
+// ${(props) => props.theme.colors.secondary};

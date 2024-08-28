@@ -75,7 +75,7 @@ export const NavContainer = styled.div`
   }
 
   
-  background: ${(props) => props.theme.colors.secondary};
+  background:${(props) => props.theme.colors.secondary};
   color: ${(props) => props.theme.colors.secondary};
   border-bottom: 1px solid rgba(0, 17, 51, 0.05);
   z-index: 9999;
@@ -201,7 +201,7 @@ export const LeftWrap = styled.div`
         font-size: 14px;
         line-height: 20px;
         font-weight: bold;
-        color: #00113399;
+        color: #FFFFFF;
         transition: color 0.4s ease;
         display: flex;
         flex-direction: column;
@@ -209,7 +209,7 @@ export const LeftWrap = styled.div`
         align-items: center;
         letter-spacing: 0px;
         &:hover {
-          color: ${(props) => props.theme.colors.textPrimary};
+          color: #bbb9b9;
         }
         .underline {
           position: absolute;
@@ -257,7 +257,7 @@ export const MobileNavContainer = styled.div`
   bottom: 0;
   left: 0;
   right: 0;
-  background: transparent;
+  background:  ${(props) => props.theme.colors.secondary};
   // background: rgb(250, 250, 251);
   // background: ${(props) => props.theme.colors.secondary};
   transform: translateX(100%);

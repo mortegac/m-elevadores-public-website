@@ -13,12 +13,13 @@ import { getMetaTags } from "../../utils/seo";
 
 export const Body = styled.body`
   background-color:${(props) => props.theme.colors.secondary};
+  background:${(props) => props.theme.colors.secondary};
 `;
 
 export const Layout = (props) => {
   const { children, header, footer, page, activeDocMeta } = props;
 
-  const title = page?.data?.seoTitle || "m-elevadores.cl";
+  const title = page?.data?.seoTitle || "M-Elevadores";
   const description = page?.data?.seodescription || "-";
 
   return (
