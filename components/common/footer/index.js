@@ -13,9 +13,15 @@ const FooterWrapper = styled.footer`
   flex-direction: column;
   align-items: center;
   justify-content: flex-start;
-  padding: 48px 24px;
+  padding: 0px 24px;
+  // padding: 48px 24px;
   background-color: ${props =>
     props.backgroundColor ? props.backgroundColor : "white"};
+  
+  @media (max-width: 760px) {
+    padding:0px;
+    padding-top:48px;
+  }
 `;
 
 const FooterItemsContainer = styled.div`
@@ -27,6 +33,8 @@ const FooterItemsContainer = styled.div`
   justify-content: flex-start;
   @media (max-width: 760px) {
     flex-direction: column;
+    margin:0px;
+    padding:0px;
   }
 `;
 

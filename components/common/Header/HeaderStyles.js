@@ -316,7 +316,7 @@ export const MobileNavContainer = styled.div`
       line-height: 24px;
       margin-bottom: 42px;
       letter-spacing: 0px;
-      color: #00113399;
+      color: #ffffff;
       display: flex;
       &.lang {
         text-transform: uppercase;

@@ -31,6 +31,7 @@ const LinkPage = (data, pagename) => {
 };
 
 export const LinkLogo = () => (
+    <div style={{paddingTop: 48}}>
     <Link
         href={`/`}
         passHref
@@ -43,6 +44,7 @@ export const LinkLogo = () => (
             </picture>
         </a>
     </Link>
+    </div>
 );
 
 
