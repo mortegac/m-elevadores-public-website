@@ -25,7 +25,7 @@ export const getMetaTags = ({ description, author, title }) => [
     },
     {
         name: `twitter:creator`,
-        content: "@m-elevadores",
+        content: "@melevadores",
     },
     {
         name: `twitter:title`,
@@ -45,7 +45,7 @@ export const getMetaTags = ({ description, author, title }) => [
     },
     {
         property: `og:url`,
-        content: "https://m-elevadores.cl",
+        content: "https://melevadores.cl",
     },
     {
         property: `og:type`,
@@ -53,11 +53,11 @@ export const getMetaTags = ({ description, author, title }) => [
     },
     {
         name: `og:image`,
-        content: "https://images.prismic.io/m-elevadores/ac375b05-4a63-492c-87ad-b65f2bb080f4_SOCIAL-MEDIA.png",
+        content: "https://images.prismic.io/m-elevadores/Ztovabzzk9ZrXEZc_SEO-melevadores.png",
     },
     {
         name: `og:image:alt`,
-        content: "m-elevadores.cl",
+        content: "melevadores.cl",
     },
     {
         name: `og:image:width`,
@@ -69,7 +69,7 @@ export const getMetaTags = ({ description, author, title }) => [
     },
     {
         name: `og:site_name`,
-        content: "m-elevadores-city",
+        content: "melevadores",
     },
     {
         name: `viewport`,
@@ -77,7 +77,7 @@ export const getMetaTags = ({ description, author, title }) => [
     },
     {
         name: `keywords`,
-        content: "Transforma tu flota hacia un futuro sostenible con nuestras asesorías en proyectos de electromovilidad. Descubre cómo recambiar tus vehículos de gasolina o bencina por opciones eléctricas eficientes y amigables con el medio ambiente. Nuestro equipo de expertos te guiará en cada paso del proceso, desde la evaluación inicial hasta la implementación exitosa. ¡Conviértete en líder de la revolución eléctrica y optimiza tus recursos hoy mismo!",
+        content: "Comercializamos plataformas salvaescaleras que son soluciones de accesibilidad ideales para personas con movilidad reducida. Estos dispositivos motorizados permiten subir y bajar escaleras de forma segura y cómoda.",
     },
 ].map((items, i) => (
     <meta key={`meta-${i}`} {...items}></meta>
