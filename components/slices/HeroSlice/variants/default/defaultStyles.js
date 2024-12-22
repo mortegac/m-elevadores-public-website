@@ -170,10 +170,15 @@ export const ImgHolder = styled.div`
   z-index: 2;
   backgroundImage: ${(props) => props.bgImage || ""}
   width: 50%;
-  img {
-    width: 100%;
-    // border-radius: 50%;
-  }
+  display: flex;
+  justify-content: flex-start;
+  picture{
+    text-align: right;
+    }
+    img {
+      width: 80%;
+      // border-radius: 50%;
+    }
   @media (max-width: ${(props) => props.theme.breakpoints.md}) {
     width: 80%;
     // border-radius: 24px;
