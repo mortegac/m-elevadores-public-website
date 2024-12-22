@@ -2,8 +2,9 @@ import styled from "styled-components";
 
 export const Anchor = styled.a`
   display: flex;
-  justify-content: center;
+  justify-content: flex-start;
   margin: 0;
+  margin-top:24px;
   &.fullwidth {
     @media (max-width: 768px) {
       width: 100%;
@@ -52,7 +53,7 @@ export const Content = styled.div`
   display: flex;
   flex-direction: row;
   align-items: center;
-  justify-content: flex-start;
+  justify-content: space-between;
   padding-top:30px;
   margin-bottom:102px;
   
@@ -68,9 +69,8 @@ export const Description = styled.div`
   z-index: 2;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: flex-start;
   width: 50%;
-  // margin-left: 200px;
   padding-bottom: 50px;
   @media (max-width: ${(props) => props.theme.breakpoints.md}) {
     width: 100%;
@@ -172,11 +172,11 @@ export const ImgHolder = styled.div`
   width: 50%;
   img {
     width: 100%;
-    border-radius: 50%;
+    // border-radius: 50%;
   }
   @media (max-width: ${(props) => props.theme.breakpoints.md}) {
     width: 80%;
-    border-radius: 24px;
+    // border-radius: 24px;
     img {
       width: 100%;
     }
