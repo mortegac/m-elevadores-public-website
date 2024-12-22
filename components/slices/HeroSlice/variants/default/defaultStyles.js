@@ -165,7 +165,7 @@ export const Description = styled.div`
     }
   }
 `;
-
+// jaja
 export const ImgHolder = styled.div`
   z-index: 2;
   backgroundImage: ${(props) => props.bgImage || ""}
