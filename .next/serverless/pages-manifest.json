@@ -1,0 +1,9 @@
+{
+  "/404": "pages/404.html",
+  "/_error": "pages/_error.js",
+  "/api/exit-preview": "pages/api/exit-preview.js",
+  "/slice-simulator": "pages/slice-simulator.html",
+  "/api/preview": "pages/api/preview.js",
+  "/": "pages/index.js",
+  "/[uid]": "pages/[uid].js"
+}
