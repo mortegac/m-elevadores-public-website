@@ -13,7 +13,7 @@ const FooterWrapper = styled.footer`
   flex-direction: column;
   align-items: center;
   justify-content: flex-start;
-  padding: 0px 24px;
+  padding: 24px 24px;
   // padding: 48px 24px;
   background-color: ${props =>
     props.backgroundColor ? props.backgroundColor : "white"};

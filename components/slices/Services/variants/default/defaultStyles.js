@@ -1,15 +1,89 @@
 import styled from "styled-components";
 
+// export const ButtonContainer = styled.button`
+//   display: flex;
+//   flex-direction: row;
+//   justify-content: center;
+//   align-items: center;
+//   font-weight: bold;
+//   font-family: ${(props) => props.theme.typography.fontFamily};
+//   white-space: nowrap;
+//   border-radius: ${(props) => props.theme.button.borderRadius};
+//   font-size: 16px;
+//   line-height: 24px;
+//   border: none;
+//   cursor: pointer;
+//   transition: background 0.3s ease;
+//   height: ${(props) => props.theme.button.height};
+  
+//   background:${(props) => props.theme.colors.bgColorTertiary};
+  
+//   color:${(props) => props.theme.colors.white};
+  
+//   :hover {
+//     background: #e4e1e1;
+//     color:${(props) => props.theme.colors.grey};
+//   }
+//   padding:${(props) => props.theme.button.padding};
+  
+//   @media (max-width: ${(props) => props.theme.breakpoints.md}) {
+//     width: 100%;
+//   }
+// `;
 
 export const Title = styled.div`
   width: 100%;
   // background-color: red;
   h2 {
-    text-align: center;
+    text-align: left;
     margin: 40px 0;
   }
   
  
+`;
+export const Anchor = styled.a`
+  margin: 0;
+  &.fullwidth {
+    @media (max-width: 768px) {
+      width: 100%;
+    }
+  }
+  @media (max-width: 500px) {
+    width: 100%;
+  }
+  text-decoration: none;
+`;
+export const Button = styled.button`
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  // font-weight: bold;
+  // font-weight: 100;
+  font-family: ${(props) => props.theme.typography.fontFamily};
+  white-space: nowrap;
+  border-radius: ${(props) => props.theme.button.borderRadius};
+  border: none;
+  font-size: 16px;
+  line-height: 24px;
+  border: 1px solid #e4e1e1;
+  cursor: pointer;
+  transition: background 0.3s ease;
+  height: ${(props) => props.theme.button.height};
+  margin-top: 16px;
+  background: #FFFFFF;
+  
+  color: #424243;
+  
+  :hover {
+    background: #e4e1e1;
+    color:${(props) => props.theme.colors.grey};
+  }
+  padding:${(props) => props.theme.button.padding};
+  
+  @media (max-width: ${(props) => props.theme.breakpoints.md}) {
+    width: 100%;
+  }
 `;
 export const Content = styled.div`
   width: 100%;
@@ -42,7 +116,7 @@ export const ButtonContainer = styled.button`
   transition: background 0.3s ease;
   width: fit-content;
   height: ${(props) => props.theme.button.height};
-  background:${(props) => props.theme.colors.textLightPrimary};
+  background:${(props) => props.theme.colors.bgHover};
   border: 1px solid ${(props) => props.theme.colors.textLightPrimary};
   color:${(props) => props.theme.colors.white};
   :hover {
@@ -122,23 +196,23 @@ export const ImgHolder = styled.div`
   }
 `;
 
-export const Button = styled.button`
-  border-radius: 22px;
-  padding: 10px 30px;
-  border: 1px solid;
-  margin-top: 18px;
-  font-weight:  ${(props) => props.theme.typography.btnText.desktop.fontWeight};
-  line-height:  ${(props) => props.theme.typography.btnText.desktop.lineHeight};
-  font-size: ${(props) => props.theme.typography.btnText.desktop.fontSize};
-  text-align: center;
-  width: 254px;
-  height: 48px;
-  cursor: pointer;
-  color: ${(props) => props.theme.colors.bgColorQuaternary};
-  // background: ${(props) => props.theme.colors.secondary};
-  background:${(props) => props.theme.colors.textLightPrimary};
-  border-color: ${(props) => props.theme.colors.textLightPrimary};
-`;
+// export const Button = styled.button`
+//   border-radius: 22px;
+//   padding: 10px 30px;
+//   border: 1px solid;
+//   margin-top: 18px;
+//   font-weight:  ${(props) => props.theme.typography.btnText.desktop.fontWeight};
+//   line-height:  ${(props) => props.theme.typography.btnText.desktop.lineHeight};
+//   font-size: ${(props) => props.theme.typography.btnText.desktop.fontSize};
+//   text-align: center;
+//   width: 254px;
+//   height: 48px;
+//   cursor: pointer;
+//   color: ${(props) => props.theme.colors.bgColorQuaternary};
+//   // background: ${(props) => props.theme.colors.secondary};
+//   background:${(props) => props.theme.colors.textLightPrimary};
+//   border-color: ${(props) => props.theme.colors.textLightPrimary};
+// `;
 
 // width: 100%;
 // height: 100%;

@@ -1,4 +1,4 @@
-import { Default, NoIconsNoButtons, NoIcons, ImageText } from "./variants";
+import { Default, DefaultNoVerMas, NoIconsNoButtons, NoIcons, ImageText } from "./variants";
 
 
 export const Services = ({ slice }) => {
@@ -6,6 +6,7 @@ export const Services = ({ slice }) => {
 
   const typeOfComponents = {
     ["default"]: Default,
+    ["defaultNoVerMas"]: DefaultNoVerMas,
     ["noIconsNoButtons"] : NoIconsNoButtons,
     ["noIcons"] : NoIcons,
     ["imageText"] : ImageText,

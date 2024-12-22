@@ -69,9 +69,6 @@ const LinkPage = (data, pagename)=>{
     });
 };
 const LinkLogo = ()=>/*#__PURE__*/ jsx_runtime.jsx("div", {
-        style: {
-            paddingTop: 48
-        },
         children: /*#__PURE__*/ jsx_runtime.jsx((link_default()), {
             href: `/`,
             passHref: true,
@@ -970,7 +967,7 @@ Logo.defaultProps = {
 ;// CONCATENATED MODULE: ./components/common/footer/subComponents/FooterCopyright/FooterCopyrightStyles.jsx
 
 const FooterCopyrightContainer = styled_components_cjs/* default.div.withConfig */.ZP.div.withConfig({
-    componentId: "sc-d7f78b6c-0"
+    componentId: "sc-6188dce6-0"
 })`
 	// width: 100%;
 	display: flex;
@@ -982,7 +979,7 @@ const FooterCopyrightContainer = styled_components_cjs/* default.div.withConfig 
         font-weight: normal;
         font-size: 14px;
         line-height: 20px;
-        margin: 48px 0 0;
+        margin: 24px 0 0;
         color: white;
     }
 `;
@@ -997,6 +994,12 @@ const FooterCopyright = ({ copyrightText  })=>{
         children: /*#__PURE__*/ (0,jsx_runtime.jsxs)(FooterCopyrightContainer, {
             children: [
                 /*#__PURE__*/ jsx_runtime.jsx(LinkLogo, {}),
+                /*#__PURE__*/ jsx_runtime.jsx("p", {
+                    style: {
+                        maxWidth: 400
+                    },
+                    children: "Expertos en soluciones integrales de ascensores, certificados bajo Ley 20.296 MINVU. Comprometidos con la excelencia operacional, innovaci\xf3n tecnol\xf3gica y los m\xe1s altos est\xe1ndares de calidad y \xe9tica profesional."
+                }),
                 /*#__PURE__*/ jsx_runtime.jsx("p", {
                     children: copyrightText
                 })
@@ -1022,14 +1025,14 @@ FooterCopyright.defaultProps = {
 
 
 const FooterWrapper = styled_components_cjs/* default.footer.withConfig */.ZP.footer.withConfig({
-    componentId: "sc-27187bb7-0"
+    componentId: "sc-2e209071-0"
 })`
   width: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: flex-start;
-  padding: 0px 24px;
+  padding: 24px 24px;
   // padding: 48px 24px;
   background-color: ${(props)=>props.backgroundColor ? props.backgroundColor : "white"};
   
@@ -1039,7 +1042,7 @@ const FooterWrapper = styled_components_cjs/* default.footer.withConfig */.ZP.fo
   }
 `;
 const FooterItemsContainer = styled_components_cjs/* default.div.withConfig */.ZP.div.withConfig({
-    componentId: "sc-27187bb7-1"
+    componentId: "sc-2e209071-1"
 })`
   width: 45%;
   max-width: 1140px;
@@ -1101,7 +1104,7 @@ const getMetaTags = ({ description , author , title  })=>[
         },
         {
             name: `twitter:creator`,
-            content: "@m-elevadores"
+            content: "@melevadores"
         },
         {
             name: `twitter:title`,
@@ -1121,7 +1124,7 @@ const getMetaTags = ({ description , author , title  })=>[
         },
         {
             property: `og:url`,
-            content: "https://m-elevadores.cl"
+            content: "https://melevadores.cl"
         },
         {
             property: `og:type`,
@@ -1129,11 +1132,11 @@ const getMetaTags = ({ description , author , title  })=>[
         },
         {
             name: `og:image`,
-            content: "https://images.prismic.io/m-elevadores/ac375b05-4a63-492c-87ad-b65f2bb080f4_SOCIAL-MEDIA.png"
+            content: "https://images.prismic.io/m-elevadores/Ztovabzzk9ZrXEZc_SEO-melevadores.png"
         },
         {
             name: `og:image:alt`,
-            content: "m-elevadores.cl"
+            content: "melevadores.cl"
         },
         {
             name: `og:image:width`,
@@ -1145,7 +1148,7 @@ const getMetaTags = ({ description , author , title  })=>[
         },
         {
             name: `og:site_name`,
-            content: "m-elevadores-city"
+            content: "melevadores"
         },
         {
             name: `viewport`,
@@ -1153,7 +1156,7 @@ const getMetaTags = ({ description , author , title  })=>[
         },
         {
             name: `keywords`,
-            content: "Transforma tu flota hacia un futuro sostenible con nuestras asesor\xedas en proyectos de electromovilidad. Descubre c\xf3mo recambiar tus veh\xedculos de gasolina o bencina por opciones el\xe9ctricas eficientes y amigables con el medio ambiente. Nuestro equipo de expertos te guiar\xe1 en cada paso del proceso, desde la evaluaci\xf3n inicial hasta la implementaci\xf3n exitosa. \xa1Convi\xe9rtete en l\xedder de la revoluci\xf3n el\xe9ctrica y optimiza tus recursos hoy mismo!"
+            content: "Comercializamos plataformas salvaescaleras que son soluciones de accesibilidad ideales para personas con movilidad reducida. Estos dispositivos motorizados permiten subir y bajar escaleras de forma segura y c\xf3moda."
         }, 
     ].map((items, i)=>/*#__PURE__*/ jsx_runtime.jsx("meta", {
             ...items

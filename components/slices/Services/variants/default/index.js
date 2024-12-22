@@ -6,11 +6,12 @@ import {
   Description,
   Content,
   ImgHolder,
-  ButtonContainer,
+  Button,
   ListContainer,
   ItemsContainer,
   ContentContainer,
-  Title
+  Title,
+  Anchor, 
 } from "../default/defaultStyles";
 import { motion } from 'framer-motion'
 
@@ -52,6 +53,20 @@ const Base = (props) => {
                         <ContentContainer>
                           <h3>{box.titlelist}</h3>
                           <p>{box.descriptionlist}</p>
+                          {console.log("--box--", box)}
+                           { box.link &&
+                           <Anchor id={box.link?.uid} href={box.link?.uid} >
+                              <Button fullwidth={false}>
+                              {box?.linktext || "Más info"}
+                              </Button>
+                            </Anchor>
+                                     
+                                    // <Anchor id={box.link?.uid} href={box.link?.uid} >
+                                    //     <ButtonContainer fullwidth={true}>
+                                    //       {box.linkText || "Más info"}
+                                    //     </ButtonContainer>
+                                    // </Anchor>
+                            }
                         </ContentContainer>
                       </ListContainer>
                     </li>

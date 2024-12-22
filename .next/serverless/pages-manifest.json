@@ -3,7 +3,7 @@
   "/404": "pages/404.html",
   "/api/exit-preview": "pages/api/exit-preview.js",
   "/api/preview": "pages/api/preview.js",
+  "/[uid]": "pages/[uid].js",
   "/slice-simulator": "pages/slice-simulator.html",
-  "/": "pages/index.js",
-  "/[uid]": "pages/[uid].js"
+  "/": "pages/index.js"
 }

@@ -21,6 +21,7 @@ const FooterCopyright = ({ copyrightText }) => {
 </svg> */}
 
 
+        <p style={{maxWidth:400}}>Expertos en soluciones integrales de ascensores, certificados bajo Ley 20.296 MINVU. Comprometidos con la excelencia operacional, innovación tecnológica y los más altos estándares de calidad y ética profesional.</p>
         <p>{copyrightText}</p>
       </FooterCopyrightContainer>
     </>

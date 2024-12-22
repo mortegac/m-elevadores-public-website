@@ -67,6 +67,21 @@
             "label": "descriptionList",
             "placeholder": ""
           }
+        },
+        "linktext": {
+          "type": "Text",
+          "config": {
+            "label": "linkText",
+            "placeholder": ""
+          }
+        },
+        "link": {
+          "type": "Link",
+          "config": {
+            "label": "link",
+            "placeholder": "",
+            "select": null
+          }
         }
       },
       "imageUrl": "https://images.prismic.io/slice-machine/621a5ec4-0387-4bc5-9860-2dd46cbc07cd_default_ss.png?auto=compress,format"
@@ -178,6 +193,81 @@
         }
       },
       "items": {},
+      "imageUrl": "https://images.prismic.io/slice-machine/621a5ec4-0387-4bc5-9860-2dd46cbc07cd_default_ss.png?auto=compress,format"
+    },
+    {
+      "id": "defaultNoVerMas",
+      "name": "default-no-ver-mas",
+      "docURL": "...",
+      "version": "sktwi1xtmkfgx8626",
+      "description": "Services",
+      "primary": {
+        "title": {
+          "type": "StructuredText",
+          "config": {
+            "label": "title",
+            "placeholder": "",
+            "allowTargetBlank": true,
+            "single": "heading2"
+          }
+        },
+        "description": {
+          "type": "StructuredText",
+          "config": {
+            "label": "description",
+            "placeholder": "",
+            "allowTargetBlank": true,
+            "single": "paragraph"
+          }
+        },
+        "image": {
+          "type": "Image",
+          "config": {
+            "label": "image",
+            "constraint": {},
+            "thumbnails": []
+          }
+        },
+        "buttontext": {
+          "type": "Text",
+          "config": {
+            "label": "buttontext",
+            "placeholder": ""
+          }
+        },
+        "buttonlink": {
+          "type": "Link",
+          "config": {
+            "label": "buttonLink",
+            "placeholder": "",
+            "select": null
+          }
+        }
+      },
+      "items": {
+        "imagelist": {
+          "type": "Image",
+          "config": {
+            "label": "imageList",
+            "constraint": {},
+            "thumbnails": []
+          }
+        },
+        "titlelist": {
+          "type": "Text",
+          "config": {
+            "label": "titleList",
+            "placeholder": ""
+          }
+        },
+        "descriptionlist": {
+          "type": "Text",
+          "config": {
+            "label": "descriptionList",
+            "placeholder": ""
+          }
+        }
+      },
       "imageUrl": "https://images.prismic.io/slice-machine/621a5ec4-0387-4bc5-9860-2dd46cbc07cd_default_ss.png?auto=compress,format"
     }
   ]

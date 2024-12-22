@@ -11,7 +11,7 @@ export const FooterCopyrightContainer = styled.div`
         font-weight: normal;
         font-size: 14px;
         line-height: 20px;
-        margin: 48px 0 0;
+        margin: 24px 0 0;
         color: white;
     }
 `

@@ -1681,6 +1681,21 @@
                     "label": "descriptionList",
                     "placeholder": ""
                   }
+                },
+                "linktext": {
+                  "type": "Text",
+                  "config": {
+                    "label": "linkText",
+                    "placeholder": ""
+                  }
+                },
+                "link": {
+                  "type": "Link",
+                  "config": {
+                    "label": "link",
+                    "placeholder": "",
+                    "select": null
+                  }
                 }
               },
               "imageUrl": "https://images.prismic.io/slice-machine/621a5ec4-0387-4bc5-9860-2dd46cbc07cd_default_ss.png?auto=compress,format"
@@ -1793,6 +1808,81 @@
               },
               "items": {},
               "imageUrl": "https://images.prismic.io/slice-machine/621a5ec4-0387-4bc5-9860-2dd46cbc07cd_default_ss.png?auto=compress,format"
+            },
+            {
+              "id": "defaultNoVerMas",
+              "name": "default-no-ver-mas",
+              "docURL": "...",
+              "version": "sktwi1xtmkfgx8626",
+              "description": "Services",
+              "primary": {
+                "title": {
+                  "type": "StructuredText",
+                  "config": {
+                    "label": "title",
+                    "placeholder": "",
+                    "allowTargetBlank": true,
+                    "single": "heading2"
+                  }
+                },
+                "description": {
+                  "type": "StructuredText",
+                  "config": {
+                    "label": "description",
+                    "placeholder": "",
+                    "allowTargetBlank": true,
+                    "single": "paragraph"
+                  }
+                },
+                "image": {
+                  "type": "Image",
+                  "config": {
+                    "label": "image",
+                    "constraint": {},
+                    "thumbnails": []
+                  }
+                },
+                "buttontext": {
+                  "type": "Text",
+                  "config": {
+                    "label": "buttontext",
+                    "placeholder": ""
+                  }
+                },
+                "buttonlink": {
+                  "type": "Link",
+                  "config": {
+                    "label": "buttonLink",
+                    "placeholder": "",
+                    "select": null
+                  }
+                }
+              },
+              "items": {
+                "imagelist": {
+                  "type": "Image",
+                  "config": {
+                    "label": "imageList",
+                    "constraint": {},
+                    "thumbnails": []
+                  }
+                },
+                "titlelist": {
+                  "type": "Text",
+                  "config": {
+                    "label": "titleList",
+                    "placeholder": ""
+                  }
+                },
+                "descriptionlist": {
+                  "type": "Text",
+                  "config": {
+                    "label": "descriptionList",
+                    "placeholder": ""
+                  }
+                }
+              },
+              "imageUrl": "https://images.prismic.io/slice-machine/621a5ec4-0387-4bc5-9860-2dd46cbc07cd_default_ss.png?auto=compress,format"
             }
           ]
         },
@@ -1809,24 +1899,29 @@
                   },
                   "alt": null,
                   "copyright": null,
-                  "url": "https://images.unsplash.com/photo-1493119508027-2b584f234d6c"
+                  "url": "https://images.unsplash.com/photo-1593642633279-1796119d5482"
                 },
-                "titlelist": "form",
-                "descriptionlist": "tightly"
+                "titlelist": "news",
+                "descriptionlist": "rocky",
+                "linktext": "zipper",
+                "link": {
+                  "link_type": "Web",
+                  "url": "http://twitter.com"
+                }
               }
             ],
             "primary": {
               "title": [
                 {
                   "type": "heading2",
-                  "text": "Noted",
+                  "text": "Private",
                   "spans": []
                 }
               ],
               "description": [
                 {
                   "type": "paragraph",
-                  "text": "Sint eiusmod id aute sunt labore eiusmod. Mollit eiusmod mollit tempor nisi aliquip laboris veniam tempor laborum voluptate eu ullamco reprehenderit dolore proident. Nulla do ullamco reprehenderit.",
+                  "text": "Eu consequat eiusmod velit eu dolore duis mollit anim quis Lorem aliqua aliqua nisi irure. Consectetur esse enim adipisicing nulla culpa enim excepteur eu exercitation in.",
                   "spans": []
                 }
               ],
@@ -1837,9 +1932,9 @@
                 },
                 "alt": null,
                 "copyright": null,
-                "url": "https://images.unsplash.com/photo-1606248897732-2c5ffe759c04"
+                "url": "https://images.unsplash.com/photo-1587613865763-4b8b0d19e8ab"
               },
-              "buttontext": "driven"
+              "buttontext": "run"
             },
             "slice_type": "services"
           },
@@ -1853,14 +1948,74 @@
               "title": [
                 {
                   "type": "heading2",
-                  "text": "Spider",
+                  "text": "Force",
                   "spans": []
                 }
               ],
               "description": [
                 {
                   "type": "paragraph",
-                  "text": "Tempor excepteur incididunt cupidatat esse cupidatat deserunt veniam tempor qui consectetur magna anim cupidatat occaecat. Labore do incididunt dolor nulla labore ut. Nulla esse officia anim et do quis nostrud et laboris velit sit reprehenderit.",
+                  "text": "Consequat eiusmod sunt incididunt non duis ex voluptate consequat eu.",
+                  "spans": []
+                }
+              ],
+              "image": {
+                "dimensions": {
+                  "width": 900,
+                  "height": 500
+                },
+                "alt": null,
+                "copyright": null,
+                "url": "https://images.unsplash.com/photo-1491975474562-1f4e30bc9468"
+              }
+            },
+            "slice_type": "services"
+          },
+          "noIcons": {
+            "variation": "noIcons",
+            "version": "sktwi1xtmkfgx8626",
+            "items": [
+              {}
+            ],
+            "primary": {
+              "title": [
+                {
+                  "type": "heading2",
+                  "text": "Lunch",
+                  "spans": []
+                }
+              ],
+              "description": [
+                {
+                  "type": "paragraph",
+                  "text": "Enim laboris id veniam ipsum cupidatat qui consectetur laborum irure cupidatat proident nostrud fugiat cupidatat mollit. Et eiusmod officia cillum eu ex ut.",
+                  "spans": []
+                }
+              ],
+              "image": {
+                "dimensions": {
+                  "width": 900,
+                  "height": 500
+                },
+                "alt": null,
+                "copyright": null,
+                "url": "https://images.unsplash.com/photo-1496181133206-80ce9b88a853"
+              },
+              "buttontext": "roar"
+            },
+            "slice_type": "services"
+          },
+          "imageText": {
+            "variation": "imageText",
+            "version": "sktwi1xtmkfgx8626",
+            "items": [
+              {}
+            ],
+            "primary": {
+              "title": [
+                {
+                  "type": "heading2",
+                  "text": "Discover",
                   "spans": []
                 }
               ],
@@ -1876,24 +2031,36 @@
             },
             "slice_type": "services"
           },
-          "noIcons": {
-            "variation": "noIcons",
+          "defaultNoVerMas": {
+            "variation": "defaultNoVerMas",
             "version": "sktwi1xtmkfgx8626",
             "items": [
-              {}
+              {
+                "imagelist": {
+                  "dimensions": {
+                    "width": 900,
+                    "height": 500
+                  },
+                  "alt": null,
+                  "copyright": null,
+                  "url": "https://images.unsplash.com/photo-1587613865763-4b8b0d19e8ab"
+                },
+                "titlelist": "tall",
+                "descriptionlist": "lonely"
+              }
             ],
             "primary": {
               "title": [
                 {
                   "type": "heading2",
-                  "text": "Depth",
+                  "text": "Furniture",
                   "spans": []
                 }
               ],
               "description": [
                 {
                   "type": "paragraph",
-                  "text": "Lorem eiusmod consequat labore aliquip qui est sunt. Laborum magna magna ipsum proident Lorem incididunt ea consequat ea nostrud labore. Aliqua sint excepteur pariatur pariatur laborum sint nulla ut fugiat.",
+                  "text": "Enim ullamco enim labore quis qui amet culpa sint adipisicing labore enim. Pariatur aliqua quis do elit et commodo tempor eiusmod in nostrud ipsum eu occaecat Lorem id. Cillum adipisicing reprehenderit excepteur cupidatat qui sunt elit dolore pariatur nisi cupidatat minim deserunt ex excepteur.",
                   "spans": []
                 }
               ],
@@ -1904,34 +2071,12 @@
                 },
                 "alt": null,
                 "copyright": null,
-                "url": "https://images.unsplash.com/photo-1537498425277-c283d32ef9db"
+                "url": "https://images.unsplash.com/photo-1499951360447-b19be8fe80f5"
               },
-              "buttontext": "unless"
-            },
-            "slice_type": "services"
-          },
-          "imageText": {
-            "variation": "imageText",
-            "version": "sktwi1xtmkfgx8626",
-            "items": [
-              {}
-            ],
-            "primary": {
-              "title": [
-                {
-                  "type": "heading2",
-                  "text": "Voyage",
-                  "spans": []
-                }
-              ],
-              "image": {
-                "dimensions": {
-                  "width": 900,
-                  "height": 500
-                },
-                "alt": null,
-                "copyright": null,
-                "url": "https://images.unsplash.com/photo-1591012911207-0dbac31f37da"
+              "buttontext": "sweet",
+              "buttonlink": {
+                "link_type": "Web",
+                "url": "https://prismic.io"
               }
             },
             "slice_type": "services"
