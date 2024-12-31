@@ -18,6 +18,9 @@ const FooterList = ({ title = "", items = [], socialLinks }) => {
 <span style={{color:"#FFFFFF"}}>Marchant Pereira 150 of 1002</span>
 </a>
 </p>
+<p style={{fontSize:"18px", textColor:"#FFFFFF", marginTop:22}}>
+	<span style={{color:"#FFFFFF"}}>contacto@melevadores.cl</span>
+</p>
 			<h3>{title}</h3>
 			
 			<ul>

@@ -9,7 +9,7 @@ const Base = slice => {
     <Content>
       <Description>
         {subtittle[0]?.text ? RichText.render(subtittle) : <h3>Ready to get started?</h3>}
-        <a target="_blank" href="https://api.whatsapp.com/send?phone=56964904389&text=Hola,%20Quiero%20cotizar%20mi%20proyecto%20con%20ustedes">
+        <a target="_blank" href={`https://api.whatsapp.com/send?phone=${tittle[0]?.text}&text=Hola,%20Quiero%20cotizar%20mi%20proyecto%20con%20ustedes`}>
           <div style={{display:"flex", itemsCenter:"center", justifyContent:"center"}}>
             <svg style={{marginRight:20, marginTop:4}} width="50" height="50" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
               <g clip-path="url(#clip0_1220_5943)">
@@ -28,7 +28,7 @@ const Base = slice => {
               </clipPath>
               </defs>
             </svg>
-            {tittle[0]?.text ? RichText.render(tittle) : <h2>We turn your ideas into reality.</h2>}
+            {tittle[0]?.text ? RichText.render(tittle) : <h2>-</h2>}
           </div>
           
         </a>

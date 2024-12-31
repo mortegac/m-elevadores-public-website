@@ -7,9 +7,9 @@ import { SliceFactory } from "../../../../common/Containers";
 import { PageContainer, ButtonContainer, SectionContainer, FormContainer } from "../default/defaultStyles";
 import { RichText } from "prismic-reactjs";
 
-const SERVICE = "service_yy76iay";
-const TEMPLATE = "template_9tm6gya";
-init("kDFbozqH1THWp3UdO");  // Public Key
+const SERVICE = "service_q11ht56";
+const TEMPLATE = "template_wn0oacf";
+init("qn8t4Q--1S8ntkmL4");  // Public Key
 
 const Base = slice => {
   const { title, subtitle, email, message, name } = slice.primary;
