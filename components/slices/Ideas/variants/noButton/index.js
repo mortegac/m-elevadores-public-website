@@ -28,7 +28,7 @@ const Base = slice => {
               </clipPath>
               </defs>
             </svg>
-            {tittle[0]?.text ? RichText.render(tittle) : <h2>-</h2>}
+            + {tittle[0]?.text ? RichText.render(tittle) : <h2>-</h2>}
           </div>
           
         </a>
