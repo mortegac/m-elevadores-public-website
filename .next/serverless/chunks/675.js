@@ -1238,7 +1238,7 @@ var cjs = __webpack_require__(427);
 ;// CONCATENATED MODULE: ./components/slices/Contact/variants/default/defaultStyles.js
 
 const defaultStyles_PageContainer = styled_components_cjs/* default.div.withConfig */.ZP.div.withConfig({
-    componentId: "sc-ffc30a0b-0"
+    componentId: "sc-b413a73b-0"
 })`
   flex-direction: column;
   justify-content: center;
@@ -1262,7 +1262,7 @@ const defaultStyles_PageContainer = styled_components_cjs/* default.div.withConf
   }
 `;
 const defaultStyles_SectionContainer = styled_components_cjs/* default.div.withConfig */.ZP.div.withConfig({
-    componentId: "sc-ffc30a0b-1"
+    componentId: "sc-b413a73b-1"
 })`
   width: 100%;
   display: flex;
@@ -1284,7 +1284,7 @@ const defaultStyles_SectionContainer = styled_components_cjs/* default.div.withC
   }
 `;
 const FormContainer = styled_components_cjs/* default.form.withConfig */.ZP.form.withConfig({
-    componentId: "sc-ffc30a0b-2"
+    componentId: "sc-b413a73b-2"
 })`
   max-width: 540px;
   width: 100%;
@@ -1315,6 +1315,26 @@ const FormContainer = styled_components_cjs/* default.form.withConfig */.ZP.form
       line-height: 16px;
       padding: 5px 0;
       min-height: 22px;
+    }
+  }
+  .dropdown {
+  height: 48px;
+    width: 100%;
+    border: 1px solid rgba(0, 17, 51, 0.15);
+    border-radius: 6px;
+    padding: 13px;
+    color: rgba(0, 17, 51, 0.8);
+    font-family: ${(props)=>props.theme.typography.fontFamily};
+    font-weight: 400;
+    font-size: 14px;
+    transition: all 0.4s ease;
+    outline: none;
+    box-shadow: 0 0 0 0 transparent;
+    &:focus {
+      box-shadow: 0 0 0 2px ${(props)=>props.theme.colors.primary};
+    }
+    &.error {
+      border: 1px solid #ff3355;
     }
   }
   .dial-dropdown {
@@ -1496,7 +1516,7 @@ const FormContainer = styled_components_cjs/* default.form.withConfig */.ZP.form
   }
 `;
 const defaultStyles_ButtonContainer = styled_components_cjs/* default.button.withConfig */.ZP.button.withConfig({
-    componentId: "sc-ffc30a0b-3"
+    componentId: "sc-b413a73b-3"
 })`
   margin-top: 36px;
   display: flex;
@@ -1528,7 +1548,7 @@ const defaultStyles_ButtonContainer = styled_components_cjs/* default.button.wit
   }
 `;
 const defaultStyles_Description = styled_components_cjs/* default.div.withConfig */.ZP.div.withConfig({
-    componentId: "sc-ffc30a0b-4"
+    componentId: "sc-b413a73b-4"
 })`
   display: flex;
   flex-direction: column;
@@ -1580,7 +1600,9 @@ const default_default_Base = (slice)=>{
         text: "Parece que no podemos encontrar la p\xe1gina que est\xe1s buscando"
     });
     const { 0: emailValue , 1: setEmailValue  } = (0,react.useState)("");
-    const { register , handleSubmit , clearErrors , setValue , formState: { errors  } ,  } = (0,index_esm/* useForm */.cI)();
+    const { register , handleSubmit , clearErrors , setValue , watch , formState: { errors  } ,  } = (0,index_esm/* useForm */.cI)();
+    // Observar el valor del select de servicio
+    const selectedService = watch("service");
     const onSubmit = (data)=>{
         setIsSentEmail({
             sentEmail: true,
@@ -1591,9 +1613,12 @@ const default_default_Base = (slice)=>{
         const templateParams = {
             from_name: data.firstname,
             to_email: data.email,
+            to_phone: data.phone,
             to_name: data.firstname,
             message: data.message,
-            reply_to: data.email
+            reply_to: data.email,
+            service: data.service,
+            budget: data.budget
         };
         cjs/* default.send */.ZP.send(SERVICE, TEMPLATE, {
             ...templateParams
@@ -1706,6 +1731,98 @@ const default_default_Base = (slice)=>{
                     /*#__PURE__*/ jsx_runtime.jsx("span", {
                         className: "error",
                         children: errors.email && "Por favor ingrese su email"
+                    }),
+                    /*#__PURE__*/ jsx_runtime.jsx("label", {
+                        htmlFor: "phone",
+                        children: name[0].text || "Tel\xe9fono"
+                    }),
+                    /*#__PURE__*/ jsx_runtime.jsx("input", {
+                        ...register("phone", {
+                            required: true,
+                            minLength: 12
+                        }),
+                        type: "text",
+                        name: "phone",
+                        id: "phone",
+                        className: errors.phone && "error"
+                    }),
+                    /*#__PURE__*/ jsx_runtime.jsx("span", {
+                        className: "error",
+                        children: errors.phone && "Por favor ingrese su tel\xe9fono"
+                    }),
+                    /*#__PURE__*/ jsx_runtime.jsx("label", {
+                        htmlFor: "service",
+                        children: name[0].text || "Servicio a cotizar"
+                    }),
+                    /*#__PURE__*/ (0,jsx_runtime.jsxs)("select", {
+                        ...register("service", {
+                            required: true,
+                            minLength: 1
+                        }),
+                        id: "service",
+                        name: "service",
+                        className: `dropdown ${errors.service && "error"}`,
+                        children: [
+                            /*#__PURE__*/ jsx_runtime.jsx("option", {
+                                value: "Mantenci\xf3n",
+                                children: "Mantenci\xf3n"
+                            }),
+                            /*#__PURE__*/ jsx_runtime.jsx("option", {
+                                value: "Instalaci\xf3n",
+                                children: "Instalaci\xf3n"
+                            }),
+                            /*#__PURE__*/ jsx_runtime.jsx("option", {
+                                value: "Reparaci\xf3n",
+                                children: "Reparaci\xf3n"
+                            })
+                        ]
+                    }),
+                    /*#__PURE__*/ jsx_runtime.jsx("span", {
+                        className: "error",
+                        children: errors.service && "Por favor ingrese el servicio a cotizar"
+                    }),
+                    selectedService === "Instalaci\xf3n" && /*#__PURE__*/ (0,jsx_runtime.jsxs)(jsx_runtime.Fragment, {
+                        children: [
+                            /*#__PURE__*/ jsx_runtime.jsx("label", {
+                                htmlFor: "budget",
+                                children: name[0].text || "Presupuesto"
+                            }),
+                            /*#__PURE__*/ (0,jsx_runtime.jsxs)("select", {
+                                ...register("budget", {
+                                    required: selectedService === "Instalaci\xf3n",
+                                    minLength: 1
+                                }),
+                                id: "budget",
+                                name: "budget",
+                                className: `dropdown ${errors.budget && "error"}`,
+                                children: [
+                                    /*#__PURE__*/ jsx_runtime.jsx("option", {
+                                        value: "",
+                                        children: "Seleccione un presupuesto"
+                                    }),
+                                    /*#__PURE__*/ jsx_runtime.jsx("option", {
+                                        value: "Menos de $5.000.000",
+                                        children: "Menos de $5.000.000"
+                                    }),
+                                    /*#__PURE__*/ jsx_runtime.jsx("option", {
+                                        value: "$5.000.000 - $10.000.000",
+                                        children: "$5.000.000 - $10.000.000"
+                                    }),
+                                    /*#__PURE__*/ jsx_runtime.jsx("option", {
+                                        value: "$10.000.000 - $20.000.000",
+                                        children: "$10.000.000 - $20.000.000"
+                                    }),
+                                    /*#__PURE__*/ jsx_runtime.jsx("option", {
+                                        value: "M\xe1s de $20.000.000",
+                                        children: "M\xe1s de $20.000.000"
+                                    })
+                                ]
+                            }),
+                            /*#__PURE__*/ jsx_runtime.jsx("span", {
+                                className: "error",
+                                children: errors.budget && "Por favor seleccione un presupuesto"
+                            })
+                        ]
                     }),
                     /*#__PURE__*/ jsx_runtime.jsx("label", {
                         htmlFor: "message",
@@ -2432,6 +2549,7 @@ const variants_noButton_Base = (slice)=>{
                                     })
                                 ]
                             }),
+                            "+ ",
                             tittle[0]?.text ? prismic_reactjs.RichText.render(tittle) : /*#__PURE__*/ jsx_runtime.jsx("h2", {
                                 children: "-"
                             })

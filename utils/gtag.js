@@ -1,7 +1,8 @@
 // export const GA_TRACKING_ID = process.env.NEXT_PUBLIC_GA_ID
 
 // ANALITYCS
-export const GA_TRACKING_ID = "G-4PHENMKRD9"
+export const GA_TRACKING_ID = "AW-16938080060"  // CAMPAña ADS
+// export const GA_TRACKING_ID = "G-4PHENMKRD9"
 
 // TODO: Chequear si es correcto el  GA_TRACKING_ID
 

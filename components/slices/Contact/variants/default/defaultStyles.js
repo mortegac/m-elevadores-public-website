@@ -75,6 +75,26 @@ export const FormContainer = styled.form`
       min-height: 22px;
     }
   }
+  .dropdown {
+  height: 48px;
+    width: 100%;
+    border: 1px solid rgba(0, 17, 51, 0.15);
+    border-radius: 6px;
+    padding: 13px;
+    color: rgba(0, 17, 51, 0.8);
+    font-family: ${(props) => props.theme.typography.fontFamily};
+    font-weight: 400;
+    font-size: 14px;
+    transition: all 0.4s ease;
+    outline: none;
+    box-shadow: 0 0 0 0 transparent;
+    &:focus {
+      box-shadow: 0 0 0 2px ${(props) => props.theme.colors.primary};
+    }
+    &.error {
+      border: 1px solid #ff3355;
+    }
+  }
   .dial-dropdown {
     width: 100%;
     display: flex;

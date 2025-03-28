@@ -26,8 +26,12 @@ const Base = slice => {
     handleSubmit,
     clearErrors,
     setValue,
+    watch,
     formState: { errors },
   } = useForm();
+
+  // Observar el valor del select de servicio
+  const selectedService = watch("service");
 
   const onSubmit = (data) => {
     setIsSentEmail({
@@ -40,9 +44,12 @@ const Base = slice => {
     const templateParams = {
       from_name: data.firstname,
       to_email: data.email,
+      to_phone: data.phone,
       to_name: data.firstname,
       message: data.message,
       reply_to: data.email,
+      service: data.service,
+      budget: data.budget,
     };
 
     emailjs.send(SERVICE, TEMPLATE, { ...templateParams }).then(
@@ -74,10 +81,8 @@ const Base = slice => {
       response: response || '',
     })
     );
-
-
-
   }
+  
   const emailValidation = (e, errors) => {
     const emailPattern =
       /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)*$/.test(
@@ -166,6 +171,67 @@ const Base = slice => {
               {errors.email && "Por favor ingrese su email"}
             </span>
 
+          {/* --------  PHONE --------- */}
+          <label htmlFor="phone">
+              {name[0].text || "Teléfono"}
+            </label>
+            <input
+              {...register("phone", {
+                required: true,
+                minLength: 12,
+              })}
+              type="text"
+              name="phone"
+              id="phone"
+              className={errors.phone && "error"}
+            />
+            <span className="error">
+              {errors.phone && "Por favor ingrese su teléfono"}
+            </span>
+            
+          {/* --------  SERVICE --------- */}
+          <label htmlFor="service">
+              {name[0].text || "Servicio a cotizar"}
+            </label>
+            <select 
+             {...register("service", {
+              required: true,
+              minLength: 1,
+            })}
+            id="service" name="service" className={`dropdown ${errors.service && "error"}`}>
+              <option value="Mantención">Mantención</option>
+              <option value="Instalación">Instalación</option>
+              <option value="Reparación">Reparación</option>
+            </select>
+            <span className="error">
+              {errors.service && "Por favor ingrese el servicio a cotizar"}
+            </span>
+            
+            
+          {/* --------  amount --------- */}
+          {selectedService === "Instalación" && (
+            <>
+              <label htmlFor="budget">
+                {name[0].text || "Presupuesto"}
+              </label>
+              <select 
+               {...register("budget", {
+                required: selectedService === "Instalación",
+                minLength: 1,
+              })}
+              id="budget" name="budget" className={`dropdown ${errors.budget && "error"}`}>
+                <option value="">Seleccione un presupuesto</option>
+                <option value="Menos de $5.000.000">Menos de $5.000.000</option>
+                <option value="$5.000.000 - $10.000.000">$5.000.000 - $10.000.000</option>
+                <option value="$10.000.000 - $20.000.000">$10.000.000 - $20.000.000</option>
+                <option value="Más de $20.000.000">Más de $20.000.000</option>
+              </select>
+              <span className="error">
+                {errors.budget && "Por favor seleccione un presupuesto"}
+              </span>
+            </>
+          )}
+            
 
             {/* --------  MESSAGE --------- */}
             <label htmlFor="message">
