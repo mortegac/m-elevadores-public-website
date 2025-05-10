@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 
-
-import { renderedMenuLinks, LinkLogo } from './utils';
+import { renderedMenuLinks, LinkLogo } from "./utils";
 
 import {
   LeftWrap,
@@ -9,17 +8,10 @@ import {
   SectionContainer,
   Anchor,
   ButtonContainer,
-  MobileNavContainer
+  MobileNavContainer,
 } from "./HeaderStyles";
 
-
-
-export const Header = ({
-  header,
-  pagename,
-  activeDocMeta,
-}) => {
-
+export const Header = ({ header, pagename, activeDocMeta }) => {
   const [open, setOpen] = useState(false);
 
   const HamburgerBehavior = () => {
@@ -69,7 +61,11 @@ export const Header = ({
                 <LinkLogo />
               </div>
               <ul>{renderedMenuLinks(menuLinks, pagename)}</ul>
-              <Anchor id={calltoactionUri} href={calltoactionUri} target="_blank">
+              <Anchor
+                id={calltoactionUri}
+                href={calltoactionUri}
+                target="_blank"
+              >
                 <ButtonContainer fullwidth={true}>
                   {calltoactiontext[0]?.text || "Contact"}
                 </ButtonContainer>
@@ -77,8 +73,7 @@ export const Header = ({
             </>
           )}
         </MobileNavContainer>
-
       </SectionContainer>
-    </NavContainer >
+    </NavContainer>
   );
 };

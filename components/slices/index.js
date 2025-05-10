@@ -6,7 +6,6 @@ import { Services } from "./Services";
 import { ProjectSlice } from "./Projects";
 import { Clients } from "./Clients";
 
-
 export {
   HeroSlice,
   IdeasSlice,
@@ -14,6 +13,5 @@ export {
   Metrics,
   Services,
   ProjectSlice,
-  Clients
- 
+  Clients,
 };

@@ -27,21 +27,21 @@ export const Description = styled.div`
   h2 {
     margin: 0;
     margin-bottom: 24px;
-    font-weight:  ${(props) => props.theme.typography.h2.desktop.fontWeight};
-    line-height:  ${(props) => props.theme.typography.h2.desktop.lineHeight};
+    font-weight: ${(props) => props.theme.typography.h2.desktop.fontWeight};
+    line-height: ${(props) => props.theme.typography.h2.desktop.lineHeight};
     font-size: ${(props) => props.theme.typography.h2.desktop.fontSize};
     color: ${(props) => props.theme.colors.textDarkblue};
     @media (max-width: ${(props) => props.theme.breakpoints.md}) {
       width: 70%;
-      font-weight:  ${(props) => props.theme.typography.h2.desktop.fontWeight};
-      line-height:  ${(props) => props.theme.typography.h2.desktop.lineHeight};
+      font-weight: ${(props) => props.theme.typography.h2.desktop.fontWeight};
+      line-height: ${(props) => props.theme.typography.h2.desktop.lineHeight};
       font-size: ${(props) => props.theme.typography.h2.desktop.fontSize};
       margin-bottom: 16px;
     }
   }
   p {
     margin: 0;
-    line-height:  ${(props) => props.theme.typography.p.desktop.lineHeight};
+    line-height: ${(props) => props.theme.typography.p.desktop.lineHeight};
     font-size: ${(props) => props.theme.typography.p.desktop.fontSize};
     font-weight: ${(props) => props.theme.typography.p.desktop.fontWeight};
     @media (max-width: ${(props) => props.theme.breakpoints.md}) {
@@ -69,8 +69,8 @@ export const Button = styled.button`
   padding: 10px 30px;
   border: 1px solid;
   margin-top: 18px;
-  font-weight:  ${(props) => props.theme.typography.btnText.desktop.fontWeight};
-  line-height:  ${(props) => props.theme.typography.btnText.desktop.lineHeight};
+  font-weight: ${(props) => props.theme.typography.btnText.desktop.fontWeight};
+  line-height: ${(props) => props.theme.typography.btnText.desktop.lineHeight};
   font-size: ${(props) => props.theme.typography.btnText.desktop.fontSize};
   text-align: center;
   width: 254px;

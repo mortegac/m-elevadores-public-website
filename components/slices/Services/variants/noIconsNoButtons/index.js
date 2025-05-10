@@ -1,9 +1,5 @@
 import { SliceFactory } from "../../../../common/Containers";
-import {
-  Description,
-  Content,
-  ImgHolder,
-} from "../default/defaultStyles";
+import { Description, Content, ImgHolder } from "../default/defaultStyles";
 import { RichText } from "prismic-reactjs";
 
 const Base = (props) => {

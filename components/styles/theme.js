@@ -122,7 +122,7 @@ export const Theme = {
     bgHover: "#363636",
     bgColorPrimary: "#078FF1",
     bgColorSecondary: "#FBE3D5",
-    bgColorTertiary: "#0066CC",  //AZUL
+    bgColorTertiary: "#0066CC", //AZUL
     bgColorLight: "FAF2ED",
     bgColorQuaternary: "#992430",
     bgColorCoral: "#F5E9EA",
@@ -156,6 +156,3 @@ export const Theme = {
     xl: "1024px",
   },
 };
-
-
-

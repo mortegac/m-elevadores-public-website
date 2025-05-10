@@ -15,7 +15,7 @@ export const repositoryName = prismic.getRepositoryName(sm.apiEndpoint);
  *
  * @type {prismicH.LinkResolverFunction}
  */
-export const linkResolver = doc => {
+export const linkResolver = (doc) => {
   const properties = doc?._meta || doc;
 
   // if (properties.type === "homepage") {
@@ -56,11 +56,11 @@ export function createClient(config = {}) {
  */
 
 // Additional helper function for Next/Link component
-export const hrefResolver = doc => {
+export const hrefResolver = (doc) => {
   if (doc.type === "homepage") {
     return `/`;
   }
-  if (doc.type === 'page') {
+  if (doc.type === "page") {
     return `/${doc.uid}`;
   }
   return "/";

@@ -9,7 +9,7 @@ export const SliceFactory = (
   }
 ) => {
   const { sliceProps, sliceContainerProps, sectionContainerProps } = options;
-  const SliceWrapper = props => {
+  const SliceWrapper = (props) => {
     return (
       <SectionContainer {...sectionContainerProps}>
         {/* <SectionContainer {...sectionContainerProps} bgImageUrl={props?.primary?.image?.url || ""}> */}

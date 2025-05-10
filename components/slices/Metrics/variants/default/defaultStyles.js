@@ -26,8 +26,8 @@ export const Description = styled.div`
   h2 {
     margin: 0;
     margin-bottom: 24px;
-    font-weight:  ${(props) => props.theme.typography.h2.desktop.fontWeight};
-    line-height:  ${(props) => props.theme.typography.h2.desktop.lineHeight};
+    font-weight: ${(props) => props.theme.typography.h2.desktop.fontWeight};
+    line-height: ${(props) => props.theme.typography.h2.desktop.lineHeight};
     font-size: ${(props) => props.theme.typography.h2.desktop.fontSize};
     text-align: center;
     color: ${(props) => props.theme.colors.textSecondary};
@@ -78,8 +78,8 @@ export const ItemsContainer = styled.ul`
   h3 {
     margin: 0;
     margin-bottom: 24px;
-    font-weight:  ${(props) => props.theme.typography.h3.desktop.fontWeight};
-    line-height:  ${(props) => props.theme.typography.h3.desktop.lineHeight};
+    font-weight: ${(props) => props.theme.typography.h3.desktop.fontWeight};
+    line-height: ${(props) => props.theme.typography.h3.desktop.lineHeight};
     font-size: ${(props) => props.theme.typography.h3.desktop.fontSize};
     text-align: center;
     color: ${(props) => props.theme.colors.textSecondary};
@@ -91,11 +91,13 @@ export const ItemsContainer = styled.ul`
     }
   }
 
-  span{
+  span {
     margin: 0;
     margin-bottom: 24px;
-    font-weight:  ${(props) => props.theme.typography.customSpan.desktop.fontWeight};
-    line-height:  ${(props) => props.theme.typography.customSpan.desktop.lineHeight};
+    font-weight: ${(props) =>
+      props.theme.typography.customSpan.desktop.fontWeight};
+    line-height: ${(props) =>
+      props.theme.typography.customSpan.desktop.lineHeight};
     font-size: ${(props) => props.theme.typography.customSpan.desktop.fontSize};
     text-align: center;
     color: ${(props) => props.theme.colors.bgColorQuaternary};
@@ -124,5 +126,3 @@ export const ItemsContainer = styled.ul`
     }
   }
 `;
-
-

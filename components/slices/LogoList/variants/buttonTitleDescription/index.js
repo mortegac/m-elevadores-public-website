@@ -1,9 +1,8 @@
 import { SliceFactory } from "../../../../common/Containers";
 import { Description, Content } from "./defaultStyles";
-import LogoListv2 from '../../../../common/LogoListv2';
+import LogoListv2 from "../../../../common/LogoListv2";
 
 const Base = (props) => {
-
   const { description, title } = props.primary;
 
   return (
@@ -20,7 +19,6 @@ export const ButtonTitleDescription = SliceFactory(Base, {
       backgroundColor: "white",
       // borderRadius: '100%',
       // backgroundImage: "linear-gradient(188deg, #078FF1 , #33C7DA 65% )",
-
-    }
-  }
+    },
+  },
 });

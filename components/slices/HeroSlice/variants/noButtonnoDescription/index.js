@@ -2,7 +2,7 @@ import { SliceFactory } from "../../../../common/Containers";
 import { Description, Content, ImgHolder } from "../default/defaultStyles";
 import { RichText } from "prismic-reactjs";
 
-const Base = slice => {
+const Base = (slice) => {
   const { image, title, mobileimage } = slice.primary;
 
   // window.console.log('--slice--', slice)
@@ -10,7 +10,11 @@ const Base = slice => {
   return (
     <Content>
       <Description>
-        {title[0]?.text ? RichText.render(title) : <h1>Asesoramos en Proyectos de Electromovilidad</h1>}
+        {title[0]?.text ? (
+          RichText.render(title)
+        ) : (
+          <h1>Asesoramos en Proyectos de Electromovilidad</h1>
+        )}
       </Description>
       <ImgHolder>
         <picture>
@@ -27,12 +31,11 @@ const Base = slice => {
 export const NoButtonnoDescription = SliceFactory(Base, {
   sectionContainerProps: {
     style: {
-      backgroundColor: 'rgb(176, 232, 222)',
-      backgroundImage: 'linear-gradient(188deg, #98EED5 0%, #05956B 100%)',
+      backgroundColor: "rgb(176, 232, 222)",
+      backgroundImage: "linear-gradient(188deg, #98EED5 0%, #05956B 100%)",
     },
     bgImage: true,
     // bgImageSrc: "https://electromove.cdn.prismic.io/electromove/1ac22623-0626-4d1d-a34c-1acf3fc168e3_header_02.svg",
-    base: Base
-  }
+    base: Base,
+  },
 });
-

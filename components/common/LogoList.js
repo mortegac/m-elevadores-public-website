@@ -1,11 +1,11 @@
 import { ItemsContainer, Button } from "./LogoListStyle";
-import { Swiper, SwiperSlide } from 'swiper/react';
+import { Swiper, SwiperSlide } from "swiper/react";
 import SwiperCore, { Autoplay, Navigation, Pagination, A11y } from "swiper";
 // import SwiperCore, { Navigation, Pagination } from 'swiper';
 
-import 'swiper/css';
+import "swiper/css";
 
-const LogoList = props => {
+const LogoList = (props) => {
   const { list } = props;
   return (
     <ItemsContainer>
@@ -14,7 +14,6 @@ const LogoList = props => {
         slidesPerView={4}
         navigation
         pagination={{ clickable: true }}
-
         modules={[Navigation, Pagination, A11y, Autoplay]}
         // navigation={false}
         centeredSlides={true}
@@ -38,28 +37,26 @@ const LogoList = props => {
           },
         }}
       >
-
         {Array.isArray(list)
           ? list.map((box, index) => {
-            return (
-              // <SwiperSlide >
-              <SwiperSlide key={index}>
-
-                <li
-                  className="item"
-                  key={`box-item-${index}`}
-                // style={{ backgroundColor: "black" }}
-                >
-                  <img src={box?.logoImage?.url || "-"} alt="" />
-                  {/* <h4>Industria</h4>
+              return (
+                // <SwiperSlide >
+                <SwiperSlide key={index}>
+                  <li
+                    className="item"
+                    key={`box-item-${index}`}
+                    // style={{ backgroundColor: "black" }}
+                  >
+                    <img src={box?.logoImage?.url || "-"} alt="" />
+                    {/* <h4>Industria</h4>
               <span>Conoce cómo funciona m-elevadores en la Minería</span>
               <Button>
               Seguir Leyendo
             </Button> */}
-                </li>
-              </SwiperSlide>
-            )
-          })
+                  </li>
+                </SwiperSlide>
+              );
+            })
           : null}
       </Swiper>
     </ItemsContainer>

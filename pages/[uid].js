@@ -17,8 +17,7 @@ import { asText } from "@prismicio/helpers";
 import { components } from "../slices/index";
 import { Layout } from "../components/common/Layout";
 
-
-const Page = props => {
+const Page = (props) => {
   if (props?.error || !props || !props?.page?.lang) {
     return <>{console.error(props, "[uid]")}</>;
   }
@@ -33,7 +32,6 @@ const Page = props => {
     sitename: process.env.NEXT_PUBLIC_SITENAME || "http://localhost",
   };
 
-
   return (
     <Layout
       header={menu || {}}
@@ -41,17 +39,12 @@ const Page = props => {
       page={page}
       activeDocMeta={activeDoc}
     >
-
-
       <SliceZone slices={page?.data?.slices} components={components} />
     </Layout>
   );
 };
 
-
-export async function getStaticProps({
-  previewData,
-  params: { uid }, }) {
+export async function getStaticProps({ previewData, params: { uid } }) {
   try {
     const client = createClient({ previewData });
     let page = {};
@@ -65,13 +58,13 @@ export async function getStaticProps({
       page = await client.getByUID("page", uid);
       // page = await client.getByUID("page", uid);
     }
-    let menu = {};;
+    let menu = {};
     try {
       menu = await client.getSingle("menutop");
     } catch (error) {
       menu = await client.getSingle("menutop");
     }
-    let footer = {};;
+    let footer = {};
     try {
       footer = await client.getSingle("footermenu");
     } catch (error) {
@@ -96,8 +89,6 @@ export async function getStaticProps({
   }
 }
 
-
-
 export async function getStaticPaths(context) {
   const client = createClient({ context });
   const pages = await client.getAllByType("page");
@@ -106,8 +97,7 @@ export async function getStaticPaths(context) {
   // console.log('---allPages----', allPages)
 
   return {
-    paths: allPages
-      .map(page => prismicH.asLink(page, linkResolver)),
+    paths: allPages.map((page) => prismicH.asLink(page, linkResolver)),
     fallback: true,
   };
 }

@@ -4,7 +4,7 @@ export const Anchor = styled.a`
   display: flex;
   justify-content: flex-start;
   margin: 0;
-  margin-top:24px;
+  margin-top: 24px;
   &.fullwidth {
     @media (max-width: 768px) {
       width: 100%;
@@ -16,7 +16,6 @@ export const Anchor = styled.a`
   text-decoration: none;
 `;
 export const ButtonContainer = styled.button`
-
   width: 80%;
   display: flex;
   flex-direction: row;
@@ -32,17 +31,17 @@ export const ButtonContainer = styled.button`
   cursor: pointer;
   transition: background 0.3s ease;
   height: ${(props) => props.theme.button.height};
-  
-  background:${(props) => props.theme.colors.white};
-  
-  color:${(props) => props.theme.colors.bgColorTertiary};
-  
+
+  background: ${(props) => props.theme.colors.white};
+
+  color: ${(props) => props.theme.colors.bgColorTertiary};
+
   :hover {
     background: #e4e1e1;
-    color:${(props) => props.theme.colors.grey};
+    color: ${(props) => props.theme.colors.grey};
   }
-  padding:${(props) => props.theme.button.padding};
-  
+  padding: ${(props) => props.theme.button.padding};
+
   @media (max-width: ${(props) => props.theme.breakpoints.md}) {
     width: 100%;
   }
@@ -54,9 +53,9 @@ export const Content = styled.div`
   flex-direction: row;
   align-items: center;
   justify-content: space-between;
-  padding-top:30px;
-  margin-bottom:102px;
-  
+  padding-top: 30px;
+  margin-bottom: 102px;
+
   @media (max-width: ${(props) => props.theme.breakpoints.md}) {
     flex-direction: column;
     text-align: center;
@@ -82,17 +81,17 @@ export const Description = styled.div`
   h1 {
     margin: 0;
     margin-bottom: 8px;
-    line-height:  ${(props) => props.theme.typography.h1.desktop.lineHeight};
+    line-height: ${(props) => props.theme.typography.h1.desktop.lineHeight};
     font-size: ${(props) => props.theme.typography.h1.desktop.fontSize};
     color: ${(props) => props.theme.colors.white};
     z-index: 10px;
     em {
-      color:${(props) => props.theme.colors.white};
+      color: ${(props) => props.theme.colors.white};
       font-style: normal;
       z-index: 10px;
     }
     @media (max-width: ${(props) => props.theme.breakpoints.xl}) {
-      line-height:  ${(props) => props.theme.typography.h1.mobile.lineHeight};
+      line-height: ${(props) => props.theme.typography.h1.mobile.lineHeight};
       font-size: ${(props) => props.theme.typography.h1.mobile.fontSize};
       margin-bottom: 16px;
       em {
@@ -103,7 +102,7 @@ export const Description = styled.div`
     }
     @media (max-width: ${(props) => props.theme.breakpoints.sm}) {
       width: 100%;
-      line-height:  ${(props) => props.theme.typography.h1.mobile.lineHeight};
+      line-height: ${(props) => props.theme.typography.h1.mobile.lineHeight};
       font-size: ${(props) => props.theme.typography.h1.mobile.fontSize};
       em {
         color: ${(props) => props.theme.colors.white};
@@ -115,17 +114,17 @@ export const Description = styled.div`
   h2 {
     margin: 0;
     margin-bottom: 8px;
-    line-height:  ${(props) => props.theme.typography.h1.desktop.lineHeight};
+    line-height: ${(props) => props.theme.typography.h1.desktop.lineHeight};
     font-size: ${(props) => props.theme.typography.h2.desktop.fontSize};
     color: #e5e4e4;
     z-index: 10px;
     em {
-      color:${(props) => props.theme.colors.white};
+      color: ${(props) => props.theme.colors.white};
       font-style: normal;
       z-index: 10px;
     }
     @media (max-width: ${(props) => props.theme.breakpoints.xl}) {
-      line-height:  ${(props) => props.theme.typography.h1.mobile.lineHeight};
+      line-height: ${(props) => props.theme.typography.h1.mobile.lineHeight};
       font-size: ${(props) => props.theme.typography.h1.mobile.fontSize};
       margin-bottom: 16px;
       em {
@@ -136,7 +135,7 @@ export const Description = styled.div`
     }
     @media (max-width: ${(props) => props.theme.breakpoints.sm}) {
       width: 100%;
-      line-height:  ${(props) => props.theme.typography.h1.mobile.lineHeight};
+      line-height: ${(props) => props.theme.typography.h1.mobile.lineHeight};
       font-size: ${(props) => props.theme.typography.h1.mobile.fontSize};
       em {
         color: ${(props) => props.theme.colors.white};
@@ -149,7 +148,7 @@ export const Description = styled.div`
     margin: 0;
     letter-spacing: 0.25px;
     // line-height:  ${(props) => props.theme.typography.p.desktop.lineHeight};
-    line-height:  1.5;
+    line-height: 1.5;
     font-size: 24px;
     z-index: 10px;
     font-weight: ${(props) => props.theme.typography.p.desktop.fontWeight};
@@ -159,7 +158,7 @@ export const Description = styled.div`
     }
     @media (max-width: ${(props) => props.theme.breakpoints.sm}) {
       width: 100%;
-      line-height:  ${(props) => props.theme.typography.p.mobile.lineHeight};
+      line-height: ${(props) => props.theme.typography.p.mobile.lineHeight};
       font-size: ${(props) => props.theme.typography.p.mobile.fontSize};
       text-align: center;
     }
@@ -189,16 +188,16 @@ export const ImgHolder = styled.div`
 `;
 
 export const Button = styled.button`
-    border-radius: 22px;
-    height: 48px;
-    padding: 10px 30px;
-    border: transparent;
-    font-size: 16px;
-    margin-top: 18px;
-    line-height: 24px;
-    width:280px;
-    height:48px;
-    cursor: pointer; 
-    color: ${(props) => props.theme.colors.secondary};
-    background: ${(props) => props.theme.colors.white};
+  border-radius: 22px;
+  height: 48px;
+  padding: 10px 30px;
+  border: transparent;
+  font-size: 16px;
+  margin-top: 18px;
+  line-height: 24px;
+  width: 280px;
+  height: 48px;
+  cursor: pointer;
+  color: ${(props) => props.theme.colors.secondary};
+  background: ${(props) => props.theme.colors.white};
 `;

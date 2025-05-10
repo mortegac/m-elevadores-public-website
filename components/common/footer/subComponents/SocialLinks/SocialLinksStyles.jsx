@@ -1,4 +1,4 @@
-import styled from 'styled-components'
+import styled from "styled-components";
 
 export const SocialLinksContainer = styled.div`
 // width: 25%;
@@ -57,4 +57,4 @@ h3 {
             }
         }
 }
-`
+`;

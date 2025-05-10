@@ -3,12 +3,12 @@ import {
   Description,
   Content,
   ImgHolder,
-  Button
+  Button,
 } from "../default/defaultStyles";
 import { RichText } from "prismic-reactjs";
 
 const Base = (props) => {
-  const { description, image, title,buttontext } = props.primary;
+  const { description, image, title, buttontext } = props.primary;
 
   return (
     <Content>
@@ -34,7 +34,7 @@ const Base = (props) => {
             odio, et dignissimos..
           </p>
         )}
-          <Button>{buttontext ? buttontext : `Explore our services`}</Button>
+        <Button>{buttontext ? buttontext : `Explore our services`}</Button>
       </Description>
     </Content>
   );

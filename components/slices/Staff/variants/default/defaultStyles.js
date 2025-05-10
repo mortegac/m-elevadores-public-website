@@ -42,7 +42,7 @@ export const Description = styled.div`
 `;
 
 export const ListContainer = styled.div`
-  width: 260px;  
+  width: 260px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;

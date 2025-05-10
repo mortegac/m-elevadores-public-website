@@ -1,13 +1,12 @@
 import React from "react";
 import Head from "next/head";
 import { SliceZone } from "@prismicio/react";
-import { motion } from 'framer-motion'
+import { motion } from "framer-motion";
 
 import { createClient } from "../prismicio";
 import { asText } from "@prismicio/helpers";
 import { components } from "../slices/index";
 import { Layout } from "../components/common/Layout";
-
 
 const Home = (props) => {
   if (props.error) {
@@ -25,7 +24,11 @@ const Home = (props) => {
   };
 
   return (
-    <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }}>
+    <motion.div
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      exit={{ opacity: 0 }}
+    >
       <Layout
         header={menu || {}}
         footer={footer || {}}
@@ -65,7 +68,7 @@ export async function getStaticProps({ previewData }) {
       props: {
         page,
         menu,
-        footer
+        footer,
       },
       revalidate: 60,
     };

@@ -2,7 +2,6 @@ import Head from "next/head";
 import { PrismicLink } from "@prismicio/react";
 
 const NotFoundPage = (props) => {
-
   return (
     <>
       <Head>

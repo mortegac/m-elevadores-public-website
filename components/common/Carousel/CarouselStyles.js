@@ -73,12 +73,12 @@ export const CarouselContainer = styled.div`
 `;
 
 export const TextCard = styled.span`
-width: 100%;
-display: flex;
-flex-direction: column;
-justify-content: center;
-margin-bottom: 8px;
-margin-top:24px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-bottom: 8px;
+  margin-top: 24px;
   // padding: 24px;
   // color: #313F5A;
   // font-size: 16px;
@@ -102,12 +102,12 @@ margin-top:24px;
   }
 `;
 export const TextDescription = styled.span`
-width: 100%;
-display: flex;
-flex-direction: column;
-justify-content: center;
-// margin-bottom: 8px;
-// margin-top:24px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  // margin-bottom: 8px;
+  // margin-top:24px;
   h3 {
     margin-top: 32px;
     font-size: ${(props) => props.theme.typography.h3.desktop.fontSize};
@@ -129,7 +129,7 @@ export const Card = styled.div`
   width: 80%;
   min-height: 290px;
   padding: 52px;
-  
+
   height: 350px;
   display: flex;
   flex-direction: column;
@@ -169,7 +169,7 @@ export const Header = styled.div`
   h3 {
     font-size: 16px;
   }
-  .image{
+  .image {
     width: 100%;
   }
 `;

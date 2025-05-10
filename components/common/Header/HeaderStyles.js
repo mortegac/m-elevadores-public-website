@@ -42,17 +42,17 @@ export const ButtonContainer = styled.button`
   cursor: pointer;
   transition: background 0.3s ease;
   height: ${(props) => props.theme.button.height};
-  
-  background:${(props) => props.theme.colors.bgColorTertiary};
-  
-  color:${(props) => props.theme.colors.white};
-  
+
+  background: ${(props) => props.theme.colors.bgColorTertiary};
+
+  color: ${(props) => props.theme.colors.white};
+
   :hover {
     background: #e4e1e1;
-    color:${(props) => props.theme.colors.grey};
+    color: ${(props) => props.theme.colors.grey};
   }
-  padding:${(props) => props.theme.button.padding};
-  
+  padding: ${(props) => props.theme.button.padding};
+
   @media (max-width: ${(props) => props.theme.breakpoints.md}) {
     width: 100%;
   }
@@ -74,8 +74,7 @@ export const NavContainer = styled.div`
     height: 40px;
   }
 
-  
-  background:${(props) => props.theme.colors.secondary};
+  background: ${(props) => props.theme.colors.secondary};
   color: ${(props) => props.theme.colors.secondary};
   border-bottom: 1px solid rgba(0, 17, 51, 0.05);
   z-index: 9999;
@@ -99,7 +98,7 @@ export const SectionContainer = styled.div`
   height: 100%;
   // flex-direction: row;
   align-items: center;
-  
+
   .ham {
     cursor: pointer;
     -webkit-tap-highlight-color: transparent;
@@ -201,7 +200,7 @@ export const LeftWrap = styled.div`
         font-size: 14px;
         line-height: 20px;
         font-weight: bold;
-        color: #FFFFFF;
+        color: #ffffff;
         transition: color 0.4s ease;
         display: flex;
         flex-direction: column;
@@ -257,7 +256,7 @@ export const MobileNavContainer = styled.div`
   bottom: 0;
   left: 0;
   right: 0;
-  background:  ${(props) => props.theme.colors.secondary};
+  background: ${(props) => props.theme.colors.secondary};
   // background: rgb(250, 250, 251);
   // background: ${(props) => props.theme.colors.secondary};
   transform: translateX(100%);

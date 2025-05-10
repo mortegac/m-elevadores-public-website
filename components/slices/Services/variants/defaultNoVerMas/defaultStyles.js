@@ -15,17 +15,17 @@ import styled from "styled-components";
 //   cursor: pointer;
 //   transition: background 0.3s ease;
 //   height: ${(props) => props.theme.button.height};
-  
+
 //   background:${(props) => props.theme.colors.bgColorTertiary};
-  
+
 //   color:${(props) => props.theme.colors.white};
-  
+
 //   :hover {
 //     background: #e4e1e1;
 //     color:${(props) => props.theme.colors.grey};
 //   }
 //   padding:${(props) => props.theme.button.padding};
-  
+
 //   @media (max-width: ${(props) => props.theme.breakpoints.md}) {
 //     width: 100%;
 //   }
@@ -38,8 +38,6 @@ export const Title = styled.div`
     text-align: center;
     margin: 40px 0;
   }
-  
- 
 `;
 export const Anchor = styled.a`
   margin: 0;
@@ -71,16 +69,16 @@ export const Button = styled.button`
   transition: background 0.3s ease;
   height: ${(props) => props.theme.button.height};
   margin-top: 16px;
-  background: #FFFFFF;
-  
+  background: #ffffff;
+
   color: #424243;
-  
+
   :hover {
     background: #e4e1e1;
-    color:${(props) => props.theme.colors.grey};
+    color: ${(props) => props.theme.colors.grey};
   }
-  padding:${(props) => props.theme.button.padding};
-  
+  padding: ${(props) => props.theme.button.padding};
+
   @media (max-width: ${(props) => props.theme.breakpoints.md}) {
     width: 100%;
   }
@@ -95,7 +93,6 @@ export const Content = styled.div`
     flex-direction: column;
   }
   @media (max-width: ${(props) => props.theme.breakpoints.sm}) {
-    
   }
 `;
 
@@ -116,15 +113,14 @@ export const ButtonContainer = styled.button`
   transition: background 0.3s ease;
   width: fit-content;
   height: ${(props) => props.theme.button.height};
-  background:${(props) => props.theme.colors.textLightPrimary};
+  background: ${(props) => props.theme.colors.textLightPrimary};
   border: 1px solid ${(props) => props.theme.colors.textLightPrimary};
-  color:${(props) => props.theme.colors.white};
+  color: ${(props) => props.theme.colors.white};
   :hover {
     background-color: ${(props) => props.theme.colors.bgHover};
     color: ${(props) => props.theme.colors.white};
   }
-  padding:${(props) => props.theme.button.padding};
-  
+  padding: ${(props) => props.theme.button.padding};
 
   @media (max-width: ${(props) => props.theme.breakpoints.md}) {
     width: 100%;
@@ -217,11 +213,11 @@ export const ImgHolder = styled.div`
 // width: 100%;
 // height: 100%;
 export const ImgIco = styled.div`
-margin-top: 8px;
-@media (max-width: ${(props) => props.theme.breakpoints.sm}) {
-  width: 500px;
-  border: solid 1px pink;
-}
+  margin-top: 8px;
+  @media (max-width: ${(props) => props.theme.breakpoints.sm}) {
+    width: 500px;
+    border: solid 1px pink;
+  }
 `;
 export const ListContainer = styled.div`
   display: flex;
@@ -229,23 +225,20 @@ export const ListContainer = styled.div`
   justify-content: flex-start;
   align-items: flex-start;
   width: 100%;
-    margin-bottom: 20px;
-  
-  
+  margin-bottom: 20px;
+
   // border: 1px solid blue;
-  
+
   // .img{
   //   // width: 100%;
   //   // height: 100%;
   // }
-  
 
   @media (max-width: ${(props) => props.theme.breakpoints.xl}) {
     width: 100%;
   }
   @media (max-width: ${(props) => props.theme.breakpoints.md}) {
     width: 100%;
-
   }
   @media (max-width: ${(props) => props.theme.breakpoints.sm}) {
     width: 100%;
@@ -253,15 +246,12 @@ export const ListContainer = styled.div`
     justify-content: center;
     align-items: center;
   }
-  
-  
 `;
 
 export const ContentContainer = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
-  
 `;
 
 export const ItemsContainer = styled.ul`
@@ -273,12 +263,11 @@ export const ItemsContainer = styled.ul`
   overflow: hidden;
   align-items: flex-start;
   flex-direction: row;
-  
+
   @media (max-width: ${(props) => props.theme.breakpoints.md}) {
     justify-content: center;
     margin-bottom: 0px;
   }
-
 
   .img {
     margin-right: 18px;
@@ -291,9 +280,8 @@ export const ItemsContainer = styled.ul`
   }
 
   h3 {
-
-    font-weight:  ${(props) => props.theme.typography.h3.desktop.fontWeight};
-    line-height:  ${(props) => props.theme.typography.h3.desktop.lineHeight};
+    font-weight: ${(props) => props.theme.typography.h3.desktop.fontWeight};
+    line-height: ${(props) => props.theme.typography.h3.desktop.lineHeight};
     font-size: ${(props) => props.theme.typography.h3.desktop.fontSize};
     text-align: left;
     color: ${(props) => props.theme.colors.textDarkblue};
@@ -301,32 +289,30 @@ export const ItemsContainer = styled.ul`
     @media (max-width: ${(props) => props.theme.breakpoints.md}) {
       width: 70%;
       margin-bottom: 16px;
-      font-weight:  ${(props) => props.theme.typography.h3.desktop.fontWeight};
-      line-height:  ${(props) => props.theme.typography.h3.desktop.lineHeight};
+      font-weight: ${(props) => props.theme.typography.h3.desktop.fontWeight};
+      line-height: ${(props) => props.theme.typography.h3.desktop.lineHeight};
       font-size: ${(props) => props.theme.typography.h3.desktop.fontSize};
     }
     @media (max-width: ${(props) => props.theme.breakpoints.sm}) {
       width: 100%;
       text-align: center;
-      line-height:  ${(props) => props.theme.typography.h3.mobile.lineHeight};
+      line-height: ${(props) => props.theme.typography.h3.mobile.lineHeight};
     }
   }
 
   p {
     margin: 0;
-    font-weight:  ${(props) => props.theme.typography.p.desktop.fontWeight};
-    line-height:  ${(props) => props.theme.typography.p.desktop.lineHeight};
+    font-weight: ${(props) => props.theme.typography.p.desktop.fontWeight};
+    line-height: ${(props) => props.theme.typography.p.desktop.lineHeight};
     font-size: ${(props) => props.theme.typography.p.desktop.fontSize};
     text-align: justify;
     color: ${(props) => props.theme.colors.textPrimary};
     @media (max-width: ${(props) => props.theme.breakpoints.md}) {
       width: 70%;
-      font-weight:  ${(props) => props.theme.typography.p.desktop.fontWeight};
-      line-height:  ${(props) => props.theme.typography.p.desktop.lineHeight};
+      font-weight: ${(props) => props.theme.typography.p.desktop.fontWeight};
+      line-height: ${(props) => props.theme.typography.p.desktop.lineHeight};
       font-size: ${(props) => props.theme.typography.p.desktop.fontSize};
       margin-bottom: 16px;
-      
-      
     }
     @media (max-width: ${(props) => props.theme.breakpoints.sm}) {
       width: 100%;

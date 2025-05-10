@@ -2,7 +2,7 @@ import { SliceFactory } from "../../../../common/Containers";
 import { Description, Content, ImgHolder } from "../default/defaultStyles";
 import { RichText } from "prismic-reactjs";
 
-const Base = slice => {
+const Base = (slice) => {
   const { description, image, title, mobileimage } = slice.primary;
 
   // window.console.log('--slice--', slice)
@@ -28,7 +28,6 @@ const Base = slice => {
 export const NoButton = SliceFactory(Base, {
   sectionContainerProps: {
     style: {
-
       // height: 'height: 600px',
       // backgroundColor: 'rgb(176, 232, 222)',
       // backgroundImage: 'linear-gradient(188deg, #33C7D9 0%, #128DA8 100%)',
@@ -37,6 +36,6 @@ export const NoButton = SliceFactory(Base, {
     },
     bgImage: true,
     bgImageSrc: "",
-    base: Base
-  }
+    base: Base,
+  },
 });

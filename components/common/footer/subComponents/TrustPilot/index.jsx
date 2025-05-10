@@ -1,11 +1,7 @@
-import { SocialLinksContainer } from './TrustPilot';
+import { SocialLinksContainer } from "./TrustPilot";
 
 const TrustPilot = () => {
-	return (
-		<SocialLinksContainer>
+  return <SocialLinksContainer></SocialLinksContainer>;
+};
 
-		</SocialLinksContainer>
-	)
-}
-
-export default TrustPilot
+export default TrustPilot;

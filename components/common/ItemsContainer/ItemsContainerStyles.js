@@ -14,12 +14,12 @@ export const ItemsWrapper = styled.div`
 `;
 
 export const Box = styled.div`
-padding: 20px 30px;
+  padding: 20px 30px;
   display: flex;
   justify-content: flex-start;
   align-items: flex-start;
   flex-direction: column;
-  flex-wrap:
+  flex-wrap: ;
 `;
 export const Item = styled.div`
   background-color: white;
@@ -27,17 +27,17 @@ export const Item = styled.div`
   // max-width: "";
   padding: 24px;
   padding-top: 0;
-  margin-right:16px;
+  margin-right: 16px;
   min-height: 320px;
   border-radius: 8px;
-  // box-shadow: 0px 3px 15px ${(props) => props.theme.colors.textLightTertiary};
+  // box-shadow: 0px 3px 15px ${(props) =>
+    props.theme.colors.textLightTertiary};
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: space-between;
   // border: "";
   text-align: center;
-  
 
   @media (max-width: ${(props) => props.theme.breakpoints.md}) {
     width: 45%;
@@ -51,8 +51,6 @@ export const Item = styled.div`
     height: unset;
   }
 `;
-
-
 
 export const Header = styled.div`
   width: 100%;

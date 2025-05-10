@@ -6,7 +6,14 @@ import {
 } from "./SectionContainerStyles";
 
 // const SectionContainer = ({ children, bgImage, ...rest }) => {
-const SectionContainer = ({ children, bgImage, bgImageSrc, bgImageUrl, base, ...rest }) => {
+const SectionContainer = ({
+  children,
+  bgImage,
+  bgImageSrc,
+  bgImageUrl,
+  base,
+  ...rest
+}) => {
   return (
     <SectionContainerBase {...rest}>
       {bgImage && (

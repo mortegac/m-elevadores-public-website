@@ -1,4 +1,4 @@
-import styled from 'styled-components'
+import styled from "styled-components";
 
 export const LogoContainer = styled.div`
   width: 25%;
@@ -9,4 +9,4 @@ export const LogoContainer = styled.div`
   svg {
     width: 50px;
   }
-`
+`;

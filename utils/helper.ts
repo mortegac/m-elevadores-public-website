@@ -6,9 +6,7 @@
 
 // export const TIME_OFFLINE = 10;
 
-
 export const calculateCurrentDate = () => {
-
   // const date = new Date();
   const date: String = new Date(Date.now()).toString();
   const year = new Date(Date.now()).getFullYear();
@@ -19,14 +17,16 @@ export const calculateCurrentDate = () => {
 
   return {
     now: date,
-    day: Number(day) < 10 ? '0' + day?.toString() : day?.toString(),
-    month: month < 10 ? '0' + month?.toString() : month?.toString(),
+    day: Number(day) < 10 ? "0" + day?.toString() : day?.toString(),
+    month: month < 10 ? "0" + month?.toString() : month?.toString(),
     year: year?.toString(),
-    hourFull: `${hour < 10 ? '0' + hour : hour}:${minutes < 10 ? '0' + minutes : minutes}`,
-    hour: hour < 10 ? '0' + hour : hour,
-    minutes: minutes < 10 ? '0' + minutes : minutes,
-  }
-}
+    hourFull: `${hour < 10 ? "0" + hour : hour}:${
+      minutes < 10 ? "0" + minutes : minutes
+    }`,
+    hour: hour < 10 ? "0" + hour : hour,
+    minutes: minutes < 10 ? "0" + minutes : minutes,
+  };
+};
 
 // export {
 //   calculateCurrentDate,

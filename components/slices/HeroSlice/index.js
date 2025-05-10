@@ -1,4 +1,4 @@
-import { Default, NoButton, NoButtonnoDescription  } from "./variants";
+import { Default, NoButton, NoButtonnoDescription } from "./variants";
 
 export const HeroSlice = ({ slice }) => {
   const { variation } = slice;

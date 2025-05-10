@@ -1,4 +1,4 @@
-import Image from 'next/image'
+import Image from "next/image";
 import SwiperCore, { Autoplay, Navigation, Pagination, A11y } from "swiper";
 // import "swiper/css";
 import { Swiper, SwiperSlide } from "swiper/react";
@@ -8,9 +8,16 @@ import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
 
-import { CarouselContainer, Card, Header, Footer, TextCard, TextDescription } from "./CarouselStyles";
+import {
+  CarouselContainer,
+  Card,
+  Header,
+  Footer,
+  TextCard,
+  TextDescription,
+} from "./CarouselStyles";
 
-const Span = ({ text }) => <span>{text && text}</span>
+const Span = ({ text }) => <span>{text && text}</span>;
 
 export const Carousel = ({ items }) => {
   SwiperCore.use();
@@ -20,7 +27,6 @@ export const Carousel = ({ items }) => {
 
   return (
     <CarouselContainer items={items}>
-
       <Swiper
         modules={[Navigation, Pagination, A11y, Autoplay]}
         navigation
@@ -54,10 +60,14 @@ export const Carousel = ({ items }) => {
                       />
                     </div>
                     <TextCard>
-                      {slide?.cardTitle && <PrismicRichText field={slide?.cardTitle || ""} />}
+                      {slide?.cardTitle && (
+                        <PrismicRichText field={slide?.cardTitle || ""} />
+                      )}
                     </TextCard>
                     <TextDescription>
-                      {slide?.cardDescription && <PrismicRichText field={slide?.cardDescription || ""} />}
+                      {slide?.cardDescription && (
+                        <PrismicRichText field={slide?.cardDescription || ""} />
+                      )}
                     </TextDescription>
                   </>
                 )}

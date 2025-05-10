@@ -15,7 +15,7 @@ export const listBudgetProjects = /* GraphQL */ `
         year
         status
         typeOfVehicle {
-          items{
+          items {
             id
             type
             amount
@@ -23,7 +23,6 @@ export const listBudgetProjects = /* GraphQL */ `
             averageDistance
             dayDetention
             nightDetention
-            
           }
         }
         createdAt
@@ -35,7 +34,6 @@ export const listBudgetProjects = /* GraphQL */ `
     }
   }
 `;
-
 
 export const getBudgetProject = /* GraphQL */ `
   query GetBudgetProject($id: ID!) {

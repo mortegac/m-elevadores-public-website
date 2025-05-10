@@ -1,7 +1,7 @@
-import { useEffect } from 'react'
-import { useRouter } from 'next/router'
-import Script from 'next/script'
-import Head from 'next/head'
+import { useEffect } from "react";
+import { useRouter } from "next/router";
+import Script from "next/script";
+import Head from "next/head";
 import Link from "next/link";
 import { PrismicProvider } from "@prismicio/react";
 import { PrismicPreview } from "@prismicio/next";
@@ -9,7 +9,7 @@ import { ThemeProvider } from "styled-components";
 
 import { repositoryName, linkResolver } from "../prismicio";
 import { GlobalStyle, Theme } from "../components/styles";
-import * as gtag from '../utils/gtag'
+import * as gtag from "../utils/gtag";
 
 const internalLinkComponent = ({ href, children, ...props }) => (
   <Link href={href}>
@@ -18,16 +18,16 @@ const internalLinkComponent = ({ href, children, ...props }) => (
 );
 
 export default function App({ Component, pageProps }) {
-  const router = useRouter()
+  const router = useRouter();
   useEffect(() => {
     const handleRouteChange = (url) => {
-      gtag.pageview(url)
-    }
-    router.events.on('routeChangeComplete', handleRouteChange)
+      gtag.pageview(url);
+    };
+    router.events.on("routeChangeComplete", handleRouteChange);
     return () => {
-      router.events.off('routeChangeComplete', handleRouteChange)
-    }
-  }, [router.events])
+      router.events.off("routeChangeComplete", handleRouteChange);
+    };
+  }, [router.events]);
 
   return (
     <>
@@ -38,7 +38,10 @@ export default function App({ Component, pageProps }) {
           href="https://fonts.gstatic.com"
           crossOrigin="true"
         />
-        <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@300;700&display=swap" rel="stylesheet"></link>
+        <link
+          href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@300;700&display=swap"
+          rel="stylesheet"
+        ></link>
 
         <script
           dangerouslySetInnerHTML={{
@@ -68,7 +71,6 @@ export default function App({ Component, pageProps }) {
             <Component {...pageProps} />
           </ThemeProvider>
         </PrismicPreview>
-
       </PrismicProvider>
     </>
   );
