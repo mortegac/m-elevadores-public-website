@@ -5,6 +5,7 @@ import Comparative from './Comparative';
 import Contact from './Contact';
 import Hero from './Hero';
 import Ideas from './Ideas';
+import LandingCountUp from './LandingCountUp';
 import LandingStandout from './LandingStandout';
 import LogoList from './LogoList';
 import Metrics from './Metrics';
@@ -18,6 +19,7 @@ export {
 	Contact,
 	Hero,
 	Ideas,
+	LandingCountUp,
 	LandingStandout,
 	LogoList,
 	Metrics,
@@ -32,6 +34,7 @@ export const components = {
 	contact: Contact,
 	hero: Hero,
 	ideas: Ideas,
+	landing_count_up: LandingCountUp,
 	landing_standout: LandingStandout,
 	logo_list: LogoList,
 	metrics: Metrics,

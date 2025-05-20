@@ -33,6 +33,9 @@
           "choices": {
             "landing_standout": {
               "type": "SharedSlice"
+            },
+            "landing_count_up": {
+              "type": "SharedSlice"
             }
           }
         }

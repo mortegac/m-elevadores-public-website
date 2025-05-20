@@ -1,0 +1,42 @@
+{
+  "id": "landing_count_up",
+  "type": "SharedSlice",
+  "name": "LandingCountUp",
+  "description": "LandingCountUp",
+  "variations": [
+    {
+      "id": "default",
+      "name": "Default",
+      "docURL": "...",
+      "version": "sktwi1xtmkfgx8626",
+      "description": "LandingCountUp",
+      "primary": {
+        "max": {
+          "type": "Number",
+          "config": {
+            "label": "max",
+            "placeholder": ""
+          }
+        },
+        "duration": {
+          "type": "Number",
+          "config": {
+            "label": "duration",
+            "placeholder": ""
+          }
+        },
+        "text": {
+          "type": "StructuredText",
+          "config": {
+            "label": "text",
+            "placeholder": "Clientes Satisfechos",
+            "allowTargetBlank": true,
+            "single": "paragraph,preformatted,heading1,heading2,heading3,heading4,heading5,heading6,strong,em,hyperlink,image,embed,list-item,o-list-item,rtl"
+          }
+        }
+      },
+      "items": {},
+      "imageUrl": "https://images.prismic.io/slice-machine/621a5ec4-0387-4bc5-9860-2dd46cbc07cd_default_ss.png?auto=compress,format"
+    }
+  ]
+}
