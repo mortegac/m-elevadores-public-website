@@ -18,16 +18,16 @@ export const repositoryName = prismic.getRepositoryName(sm.apiEndpoint);
 export const linkResolver = (doc) => {
   const properties = doc?._meta || doc;
 
-  // if (properties.type === "homepage") {
-  //   return properties.lang === defaultLanguage
-  //     ? "/en-us/"
-  //     : `/${properties.lang}`;
-  // }
   if (properties.type === "homepage") {
     return `/`;
   }
+
   if (properties.type === "page") {
     return `/${properties.uid}`;
+  }
+
+  if (properties.type === "landingpage") {
+    return `/landing/${properties.uid}`;
   }
 
   return "/";
