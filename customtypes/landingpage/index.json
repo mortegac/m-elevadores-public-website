@@ -36,6 +36,9 @@
             },
             "landing_count_up": {
               "type": "SharedSlice"
+            },
+            "landing_faq": {
+              "type": "SharedSlice"
             }
           }
         }

@@ -6,6 +6,7 @@ import Contact from './Contact';
 import Hero from './Hero';
 import Ideas from './Ideas';
 import LandingCountUp from './LandingCountUp';
+import LandingFaq from './LandingFaq';
 import LandingStandout from './LandingStandout';
 import LogoList from './LogoList';
 import Metrics from './Metrics';
@@ -20,6 +21,7 @@ export {
 	Hero,
 	Ideas,
 	LandingCountUp,
+	LandingFaq,
 	LandingStandout,
 	LogoList,
 	Metrics,
@@ -35,6 +37,7 @@ export const components = {
 	hero: Hero,
 	ideas: Ideas,
 	landing_count_up: LandingCountUp,
+	landing_faq: LandingFaq,
 	landing_standout: LandingStandout,
 	logo_list: LogoList,
 	metrics: Metrics,

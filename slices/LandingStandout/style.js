@@ -16,7 +16,7 @@ export const Title = styled.div`
     color: #3962e9;
     text-align: center;
     margin-top: 1rem;
-    margin-bottom: 1rem;
+    margin-bottom: 2rem;
   }
 `;
 
@@ -25,7 +25,6 @@ export const ItemGrid = styled.div`
   flex-wrap: wrap;
   justify-content: center;
   gap: 2rem;
-  padding: 2rem 4rem;
 
   @media (max-width: 768px) {
     gap: 1rem;
