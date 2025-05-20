@@ -25,6 +25,17 @@
           "label": "uid",
           "placeholder": ""
         }
+      },
+      "slices": {
+        "type": "Slices",
+        "fieldset": "Slice Zone",
+        "config": {
+          "choices": {
+            "landing_standout": {
+              "type": "SharedSlice"
+            }
+          }
+        }
       }
     }
   }

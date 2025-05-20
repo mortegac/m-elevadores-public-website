@@ -136,7 +136,6 @@ export const ContactButtons = styled.div`
     img {
       width: 20px;
       height: 20px;
-      filter: brightness(0) invert(1);
     }
 
     &:hover {

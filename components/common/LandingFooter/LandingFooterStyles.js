@@ -50,7 +50,6 @@ export const Footer = styled.footer`
       .contact-icon {
         width: 30px;
         height: 30px;
-        filter: brightness(0) invert(1);
         margin-right: 1rem;
       }
 
