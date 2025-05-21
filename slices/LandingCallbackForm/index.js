@@ -12,17 +12,17 @@ import {
   Title,
 } from "./style";
 
-// EmailJS configuration
-const SERVICE_ID = "service_q11ht56";
-const TEMPLATE_ID = "template_wn0oacf";
-const PUBLIC_KEY = "qn8t4Q--1S8ntkmL4";
-init(PUBLIC_KEY);
-
 /**
  * @typedef {import("@prismicio/client").Content.LandingCallbackSlice} LandingCallbackSlice
  * @typedef {import("@prismicio/react").SliceComponentProps<LandingCallbackSlice>} LandingCallbackProps
  * @param { LandingCallbackProps }
  */
+
+// EmailJS configuration
+const SERVICE_ID = "service_q11ht56";
+const TEMPLATE_ID = "template_wn0oacf";
+const PUBLIC_KEY = "qn8t4Q--1S8ntkmL4";
+init(PUBLIC_KEY);
 
 const LandingCallbackForm = ({ slice }) => {
   const { title, description } = slice.primary;
@@ -105,7 +105,12 @@ const LandingCallbackForm = ({ slice }) => {
       </Form>
 
       {status.sent && (
-        <p className={status.success ? "success" : "error"}>{status.message}</p>
+        <p
+          style={{ color: "white" }}
+          className={status.success ? "success" : "error"}
+        >
+          {status.message}
+        </p>
       )}
     </Section>
   );

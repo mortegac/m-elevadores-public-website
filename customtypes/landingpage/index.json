@@ -42,6 +42,9 @@
             },
             "landing_callback": {
               "type": "SharedSlice"
+            },
+            "landing_banner": {
+              "type": "SharedSlice"
             }
           }
         }
