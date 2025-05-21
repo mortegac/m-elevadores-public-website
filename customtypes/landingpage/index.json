@@ -45,6 +45,9 @@
             },
             "landing_banner": {
               "type": "SharedSlice"
+            },
+            "landing_services": {
+              "type": "SharedSlice"
             }
           }
         }

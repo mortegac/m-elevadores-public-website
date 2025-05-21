@@ -9,6 +9,7 @@ import LandingBanner from './LandingBanner';
 import LandingCallbackForm from './LandingCallbackForm';
 import LandingCountUp from './LandingCountUp';
 import LandingFaq from './LandingFaq';
+import LandingServices from './LandingServices';
 import LandingStandout from './LandingStandout';
 import LogoList from './LogoList';
 import Metrics from './Metrics';
@@ -26,6 +27,7 @@ export {
 	LandingCallbackForm,
 	LandingCountUp,
 	LandingFaq,
+	LandingServices,
 	LandingStandout,
 	LogoList,
 	Metrics,
@@ -44,6 +46,7 @@ export const components = {
 	landing_callback: LandingCallbackForm,
 	landing_count_up: LandingCountUp,
 	landing_faq: LandingFaq,
+	landing_services: LandingServices,
 	landing_standout: LandingStandout,
 	logo_list: LogoList,
 	metrics: Metrics,
