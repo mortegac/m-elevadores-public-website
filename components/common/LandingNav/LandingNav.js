@@ -11,6 +11,7 @@ import {
   CloseIcon,
 } from "./LandingNavStyles";
 import { FiMenu, FiX } from "react-icons/fi";
+import { PrismicRichText } from "@prismicio/react";
 
 const LandingNav = ({ landingNav }) => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -50,6 +51,7 @@ const LandingNav = ({ landingNav }) => {
           <Link href={btn.link?.url || "#"} key={index}>
             <a className="contact-btn">
               {btn.icon?.url && <img src={btn.icon.url} alt="Icon" />}
+              <PrismicRichText field={btn.label} />
             </a>
           </Link>
         ))}

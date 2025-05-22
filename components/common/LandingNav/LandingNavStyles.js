@@ -126,12 +126,16 @@ export const ContactButtons = styled.div`
   .contact-btn {
     display: flex;
     align-items: center;
+    gap: 0.5rem;
     padding: 10px;
     background: #3962e9;
     color: #fff;
     border-radius: 5px;
     text-decoration: none;
-    font-weight: 500;
+
+    p {
+      font-weight: bold;
+    }
 
     img {
       width: 20px;

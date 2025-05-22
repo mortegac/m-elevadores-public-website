@@ -66,6 +66,15 @@
                 "placeholder": "",
                 "select": null
               }
+            },
+            "label": {
+              "type": "StructuredText",
+              "config": {
+                "label": "label",
+                "placeholder": "",
+                "allowTargetBlank": true,
+                "single": "paragraph"
+              }
             }
           }
         }

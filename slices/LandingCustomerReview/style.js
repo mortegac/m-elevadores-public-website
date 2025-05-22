@@ -94,6 +94,12 @@ export const Username = styled.div`
   font-weight: 600;
 `;
 
+export const Stars = styled.div`
+  display: flex;
+  gap: 4px;
+  margin-top: 0.25rem;
+`;
+
 export const ReviewText = styled.div`
   font-size: 0.95rem;
   color: #555;

@@ -11,7 +11,9 @@ import {
   LetterFallback,
   Username,
   ReviewText,
+  Stars,
 } from "./style";
+import { TiStarFullOutline } from "react-icons/ti";
 
 /**
  * @typedef {import("@prismicio/client").Content.LandingCustomerReviewSlice} LandingCustomerReviewSlice
@@ -68,6 +70,7 @@ const LandingCustomerReview = ({ slice }) => {
       <StyledSlider {...settings}>
         {reviews.map((review, index) => {
           const hasIcon = review.usericon?.url;
+          const stars = review.stars || 0;
           const firstLetter = getFirstLetter(review.username);
 
           return (
@@ -81,10 +84,22 @@ const LandingCustomerReview = ({ slice }) => {
                 ) : (
                   <LetterFallback>{firstLetter}</LetterFallback>
                 )}
-                <Username>
-                  <PrismicRichText field={review.username} />
-                </Username>
+                <div>
+                  <Username>
+                    <PrismicRichText field={review.username} />
+                  </Username>
+                  <Stars>
+                    {Array.from({ length: 5 }).map((_, i) => (
+                      <TiStarFullOutline
+                        key={i}
+                        color={i < stars ? "#FFD700" : "#ccc"}
+                        size={20}
+                      />
+                    ))}
+                  </Stars>
+                </div>
               </ReviewHead>
+
               <ReviewText>
                 <PrismicRichText field={review.userreview} />
               </ReviewText>
