@@ -48,6 +48,9 @@
             },
             "landing_services": {
               "type": "SharedSlice"
+            },
+            "landing_customer_review": {
+              "type": "SharedSlice"
             }
           }
         }

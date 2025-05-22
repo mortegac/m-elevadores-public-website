@@ -1,0 +1,55 @@
+{
+  "id": "landing_customer_review",
+  "type": "SharedSlice",
+  "name": "LandingCustomerReview",
+  "description": "LandingCustomerReview",
+  "variations": [
+    {
+      "id": "default",
+      "name": "Default",
+      "docURL": "...",
+      "version": "sktwi1xtmkfgx8626",
+      "description": "LandingCustomerReview",
+      "primary": {
+        "title": {
+          "type": "StructuredText",
+          "config": {
+            "label": "Title",
+            "placeholder": "This is where it all begins...",
+            "allowTargetBlank": true,
+            "single": "heading1"
+          }
+        }
+      },
+      "items": {
+        "usericon": {
+          "type": "Image",
+          "config": {
+            "label": "usericon",
+            "constraint": {},
+            "thumbnails": []
+          }
+        },
+        "username": {
+          "type": "StructuredText",
+          "config": {
+            "label": "username",
+            "placeholder": "",
+            "allowTargetBlank": true,
+            "single": "paragraph"
+          }
+        },
+        "userreview": {
+          "type": "StructuredText",
+          "config": {
+            "label": "userreview",
+            "placeholder": "",
+            "allowTargetBlank": true,
+            "single": "paragraph"
+          }
+        }
+      },
+      "imageUrl": "https://images.prismic.io/slice-machine/621a5ec4-0387-4bc5-9860-2dd46cbc07cd_default_ss.png?auto=compress,format"
+    }
+  ]
+}
