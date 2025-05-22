@@ -43,12 +43,12 @@ export const Service = styled.div`
     position: absolute;
     inset: 0;
     background: rgba(0, 0, 0, 0.5);
-    opacity: 0;
+    opacity: ${({ nohover }) => (nohover ? 1 : 0)};
     transition: opacity 0.3s ease-in-out;
     z-index: 1;
 
     @media (max-width: 768px) {
-      opacity: 1; /* Show overlay on mobile */
+      opacity: 1;
     }
   }
 
@@ -61,8 +61,9 @@ export const Service = styled.div`
   p {
     color: white;
     z-index: 2;
-    opacity: 0;
-    transform: translateY(10px);
+    opacity: ${({ nohover }) => (nohover ? 1 : 0)};
+    transform: ${({ nohover }) =>
+      nohover ? "translateY(0)" : "translateY(10px)"};
     transition: opacity 0.3s ease, transform 0.3s ease;
     position: relative;
     margin: 0;

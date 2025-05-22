@@ -16,8 +16,12 @@ const LandingServices = ({ slice }) => {
       <PrismicRichText field={title} />
 
       <ServicesWrapper>
-        {items.map((i) => (
-          <Service bgimage={i.bgimage.url}>
+        {items.map((i, index) => (
+          <Service
+            key={index}
+            bgimage={i.bgimage.url}
+            nohover={slice.variation === "nohover"}
+          >
             <PrismicRichText field={i.servicetitle} />
             <PrismicRichText field={i.description} />
           </Service>
