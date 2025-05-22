@@ -70,7 +70,7 @@ export const Service = styled.div`
   }
 
   h2 {
-    font-size: 1.2rem;
+    font-size: 1rem;
 
     @media (max-width: 768px) {
       font-size: 1rem;
@@ -84,7 +84,7 @@ export const Service = styled.div`
   }
 
   p {
-    font-size: 1rem;
+    font-size: 0.8rem;
     max-height: 120px;
     overflow: auto;
 

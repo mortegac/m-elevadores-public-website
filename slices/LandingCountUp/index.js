@@ -19,8 +19,14 @@ const LandingCountUp = ({ slice }) => {
   return (
     <Section ref={ref}>
       <Counter>
-        {inView && <CountUp end={max} duration={duration} prefix="+" />}
+        <span style={{ visibility: "hidden", whiteSpace: "nowrap" }}>
+          +{max}
+        </span>
+        <span style={{ position: "absolute", left: 0, top: 0 }}>
+          {inView && <CountUp end={max} duration={duration} prefix="+" />}
+        </span>
       </Counter>
+
       <Text>
         <PrismicRichText field={text} />
       </Text>

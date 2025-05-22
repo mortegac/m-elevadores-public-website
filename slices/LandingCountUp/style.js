@@ -33,9 +33,12 @@ export const Section = styled.section`
 `;
 
 export const Counter = styled.span`
+  position: relative;
+  display: inline-block;
   font: inherit;
   color: inherit;
-  min-width: 4ch;
+  width: 4ch;
+  text-align: right;
 `;
 
 export const Text = styled.div`

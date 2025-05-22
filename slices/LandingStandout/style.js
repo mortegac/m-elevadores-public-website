@@ -9,7 +9,6 @@ export const Section = styled.section`
 `;
 
 export const Title = styled.div`
-  p,
   h1 {
     font-weight: 900;
     font-size: 2rem;
