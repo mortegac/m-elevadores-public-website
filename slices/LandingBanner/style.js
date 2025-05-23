@@ -45,12 +45,16 @@ export const Keyword = styled.div`
   }
 `;
 
-export const Title = styled.h1`
-  font-size: 2rem;
-  margin-bottom: 1rem;
-
+export const Title = styled.div`
+  margin-bottom: 10px;
   h1 {
-    margin-top: 0;
+    margin: 0;
+    text-align: left;
+  }
+
+  p {
+    font-size: 1rem;
+    margin: 0;
   }
 `;
 
@@ -59,8 +63,13 @@ export const Form = styled.form`
   flex-direction: column;
   gap: 0.2rem;
 
+  h2 {
+    margin: 0;
+    line-height: 1.2;
+  }
+
   p {
-    margin-bottom: 10px;
+    margin: 0;
   }
 `;
 
@@ -80,7 +89,7 @@ export const InputWrapper = styled.div`
   }
 
   .error-message {
-    color: red;
+    color: #ffd700;
     font-size: 0.875rem;
     visibility: hidden;
 

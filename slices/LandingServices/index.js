@@ -1,4 +1,4 @@
-import { PrismicRichText } from "@prismicio/react";
+import { PrismicLink, PrismicRichText } from "@prismicio/react";
 import { Section, ServicesWrapper, Service } from "./style";
 
 /**
@@ -22,8 +22,12 @@ const LandingServices = ({ slice }) => {
             bgimage={i.bgimage.url}
             nohover={slice.variation === "nohover"}
           >
-            <PrismicRichText field={i.servicetitle} />
-            <PrismicRichText field={i.description} />
+            <PrismicLink field={i.link} className="service-link">
+              <div className="service-content">
+                <PrismicRichText field={i.servicetitle} />
+                <PrismicRichText field={i.description} />
+              </div>
+            </PrismicLink>
           </Service>
         ))}
       </ServicesWrapper>

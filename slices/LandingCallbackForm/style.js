@@ -2,27 +2,24 @@ import styled from "styled-components";
 
 export const Section = styled.section`
   background-color: #243c70;
-  padding: 1rem 10rem;
+  padding: 2rem 10rem;
   @media (max-width: 768px) {
     padding: 1rem;
   }
 `;
 
 export const Title = styled.div`
-  p,
   h1 {
     font-weight: 900;
     font-size: 2rem;
     color: white;
     text-align: center;
-    margin-top: 1rem;
-    margin-bottom: 0;
+    margin: 0;
   }
 `;
 
 export const Subtitle = styled.div`
-  p,
-  h2 {
+  p {
     font-weight: 600;
     font-size: 1rem;
     color: white;
@@ -65,7 +62,7 @@ export const InputWrapper = styled.div`
   .error-message {
     min-height: 1em;
     font-size: 0.8rem;
-    color: red;
+    color: #ffd700;
     opacity: 0;
     visibility: hidden;
     transition: opacity 0.3s ease, visibility 0.3s ease;

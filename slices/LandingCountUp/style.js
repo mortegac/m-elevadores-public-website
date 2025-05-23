@@ -7,7 +7,7 @@ export const Section = styled.section`
   gap: 0.5rem;
 
   background-color: #fff;
-  padding: 4rem 10rem 1rem;
+  padding: 3rem 10rem;
 
   font-size: 4rem;
   font-weight: 800;

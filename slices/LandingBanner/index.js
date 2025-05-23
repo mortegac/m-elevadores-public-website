@@ -25,7 +25,7 @@ const PUBLIC_KEY = "qn8t4Q--1S8ntkmL4";
 init(PUBLIC_KEY);
 
 const LandingBanner = ({ slice }) => {
-  const { title, formtitle, formsubtitle, bgimage } = slice.primary;
+  const { title, subtitle, formtitle, formsubtitle, bgimage } = slice.primary;
   const items = slice.items || [];
 
   const {
@@ -79,6 +79,7 @@ const LandingBanner = ({ slice }) => {
       <div>
         <Title>
           <PrismicRichText field={title} />
+          <PrismicRichText field={subtitle} />
         </Title>
         <KeywordWrapper>
           {items.map((i, idx) => (
@@ -92,8 +93,10 @@ const LandingBanner = ({ slice }) => {
 
       <div>
         <Form onSubmit={handleSubmit(onSubmit)}>
-          <PrismicRichText field={formtitle} />
-          <PrismicRichText field={formsubtitle} />
+          <div style={{ marginBottom: "10px" }}>
+            <PrismicRichText field={formtitle} />
+            <PrismicRichText field={formsubtitle} />
+          </div>
 
           <InputWrapper>
             <label>Nombre</label>

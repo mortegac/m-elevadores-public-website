@@ -19,7 +19,7 @@ export const ServicesWrapper = styled.div`
   display: flex;
   flex-wrap: wrap;
   gap: 1rem;
-  justify-content: center;
+  justify-content: flex-start;
 `;
 
 export const Service = styled.div`
@@ -31,7 +31,6 @@ export const Service = styled.div`
     bgimage ? `url(${bgimage}) center/cover no-repeat` : "#3962E9"};
   overflow: hidden;
   cursor: pointer;
-  padding: 20px;
   transition: transform 0.3s ease;
 
   &:hover {
@@ -52,39 +51,53 @@ export const Service = styled.div`
     }
   }
 
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
-
-  h2,
-  p {
-    color: white;
+  a.service-link {
+    position: absolute;
+    inset: 0;
     z-index: 2;
+    text-decoration: none;
+    color: inherit;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+  }
+
+  .service-content {
+    pointer-events: none;
+    text-align: left;
+  }
+
+  .service-content h2,
+  .service-content p {
+    color: white;
     opacity: ${({ nohover }) => (nohover ? 1 : 0)};
     transform: ${({ nohover }) =>
       nohover ? "translateY(0)" : "translateY(10px)"};
     transition: opacity 0.3s ease, transform 0.3s ease;
-    position: relative;
     margin: 0;
     padding: 0 10px;
   }
 
-  h2 {
+  .service-content h2 {
     font-size: 1rem;
+    line-height: 1.2;
 
     @media (max-width: 768px) {
       font-size: 1rem;
+      line-height: 1.2;
       opacity: 1;
       transform: translateY(0);
     }
 
     @media (max-width: 480px) {
       font-size: 0.9rem;
+      line-height: 1.1;
     }
   }
 
-  p {
+  .service-content p {
     font-size: 0.8rem;
     max-height: 120px;
     overflow: auto;
@@ -113,8 +126,8 @@ export const Service = styled.div`
     opacity: 1;
   }
 
-  &:hover h2,
-  &:hover p {
+  &:hover .service-content h2,
+  &:hover .service-content p {
     opacity: 1;
     transform: translateY(0);
   }
