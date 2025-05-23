@@ -19,7 +19,7 @@ export const ServicesWrapper = styled.div`
   display: flex;
   flex-wrap: wrap;
   gap: 1rem;
-  justify-content: flex-start;
+  justify-content: center;
 `;
 
 export const Service = styled.div`

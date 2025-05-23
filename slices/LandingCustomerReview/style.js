@@ -27,7 +27,9 @@ export const StyledSlider = styled(Slider)`
   }
 
   .slick-slide > div {
-    padding: 0 10px;
+    padding: 0 5px;
+    display: flex;
+    justify-content: center;
   }
 
   .slick-dots {
@@ -49,12 +51,13 @@ export const Review = styled.div`
   border: 1px solid #ddd;
   border-radius: 10px;
   padding: 1rem;
+  max-width: 350px;
   min-height: 300px;
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
   transition: transform 0.2s ease, box-shadow 0.2s ease;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  justify-content: center;
 
   &:hover {
     transform: translateY(-4px);

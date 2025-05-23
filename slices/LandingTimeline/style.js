@@ -17,80 +17,94 @@ export const Section = styled.div`
 
   .step-wrapper {
     display: flex;
-    flex-direction: column;
-    gap: 20px;
-    align-items: center;
+    justify-content: center;
+    gap: 40px;
+    margin-top: 3rem;
+    position: relative;
+    padding-bottom: 2rem;
+
+    &::before {
+      content: "";
+      position: absolute;
+      top: 20px;
+      left: var(--line-left, 40px);
+      right: var(--line-right, 40px);
+      height: 2px;
+      background-color: #3962e9;
+      z-index: 0;
+      transition: left 0.3s ease, right 0.3s ease;
+    }
   }
 
   .step {
-    position: relative;
     display: flex;
+    flex-direction: column;
     align-items: center;
-    gap: 1rem;
-    justify-content: flex-start;
-    max-width: 600px;
-    width: 100%;
-    overflow: visible;
+    position: relative;
 
-    &::before {
-      content: "";
-      position: absolute;
-      top: -24px;
-      bottom: -24px;
-      left: 20px;
-      width: 2px;
-      background-color: #3962e9;
-      z-index: -1;
+    .step-number {
+      position: relative;
+      z-index: 1;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 40px;
+      height: 40px;
+      color: white;
+      font-weight: 700;
+      font-size: 1.2rem;
+      background: #3962e9;
+      border-radius: 10px;
+      margin-bottom: 1rem;
+    }
+
+    .step-text {
+      text-align: center;
+      max-width: 120px;
     }
   }
 
-  .step:first-child::before {
-    top: 50%;
-  }
-
-  .step:last-child::before {
-    bottom: 50%;
-  }
-
-  .step-number {
-    position: relative;
-    z-index: 1;
+  .mobile-step-wrapper {
     display: flex;
+    flex-direction: column;
     justify-content: center;
-    align-items: center;
-    width: 40px;
-    height: 40px;
-    min-width: 40px;
-    min-height: 40px;
-    color: white;
-    font-weight: 700;
-    font-size: 1.2rem;
-    background: #3962e9;
-    border-radius: 10px;
-    box-shadow: 0 2px 6px rgba(57, 98, 233, 0.5);
-    user-select: none;
-    transition: background 0.3s ease;
+    gap: 1rem;
 
-    flex-shrink: 0; /* Prevent shrinking on mobile */
+    .mobile-step {
+      align-items: center;
+      display: flex;
+      gap: 1rem;
+    }
 
-    &::before {
-      content: "";
-      position: absolute;
-      top: -24px;
-      bottom: -24px;
-      left: 50%;
-      transform: translateX(-50%);
-      width: 2px;
+    .mobile-step-number {
+      flex-shrink: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 40px;
+      height: 40px;
+      padding: 10px;
+      font-weight: bold;
+      font-size: 1.5rem;
+      color: white;
       background-color: #3962e9;
-      z-index: -1;
+      border-radius: 5px;
+    }
+
+    .mobile-step-text {
     }
   }
 
-  .step:first-child .step-number::before {
+  /* Connect to <p>
+  .step-number::after {
+    content: "";
+    position: absolute;
     top: 100%;
-  }
-
-  .step:last-child .step-number::before {
-    bottom: 100%;
-  }
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 2px;
+    height: 20px;
+    background-color: #3962e9;
+  }*/
 `;
