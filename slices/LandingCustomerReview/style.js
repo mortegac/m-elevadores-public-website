@@ -22,10 +22,12 @@ export const Title = styled.div`
 `;
 
 export const StyledSlider = styled(Slider)`
-  padding: 0 1rem;
+  .slick-list {
+    padding: 10px 0 !important;
+  }
 
   .slick-slide > div {
-    padding: 0 15px;
+    padding: 0 10px;
   }
 
   .slick-dots {
@@ -34,19 +36,20 @@ export const StyledSlider = styled(Slider)`
 
   .slick-dots li button:before {
     font-size: 10px;
-    color: #888;
+    color: rgb(90, 115, 198);
   }
 
   .slick-dots li.slick-active button:before {
-    color: #000;
+    color: #3962e9;
   }
 `;
 
 export const Review = styled.div`
   background: #ffffff;
-  border-radius: 16px;
-  padding: 2rem;
-  min-height: 350px;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  padding: 1rem;
+  min-height: 300px;
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
   transition: transform 0.2s ease, box-shadow 0.2s ease;
   display: flex;
