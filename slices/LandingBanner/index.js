@@ -75,7 +75,7 @@ const LandingBanner = ({ slice }) => {
   };
 
   return (
-    <Section bgimage={bgimage}>
+    <Section bgimage={bgimage.url}>
       <div>
         <Title>
           <PrismicRichText field={title} />

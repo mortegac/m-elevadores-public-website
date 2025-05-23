@@ -12,6 +12,7 @@ import LandingCustomerReview from './LandingCustomerReview';
 import LandingFaq from './LandingFaq';
 import LandingServices from './LandingServices';
 import LandingStandout from './LandingStandout';
+import LandingTimeline from './LandingTimeline';
 import LogoList from './LogoList';
 import Metrics from './Metrics';
 import Projects from './Projects';
@@ -31,6 +32,7 @@ export {
 	LandingFaq,
 	LandingServices,
 	LandingStandout,
+	LandingTimeline,
 	LogoList,
 	Metrics,
 	Projects,
@@ -51,6 +53,7 @@ export const components = {
 	landing_faq: LandingFaq,
 	landing_services: LandingServices,
 	landing_standout: LandingStandout,
+	landing_timeline: LandingTimeline,
 	logo_list: LogoList,
 	metrics: Metrics,
 	projects: Projects,

@@ -11,13 +11,13 @@ export const Section = styled.div`
   color: white;
   z-index: 1;
 
-  // Add overlay only if bgimage exists
   &::before {
-    content: ${({ bgimage }) => (bgimage ? "" : "none")};
+    content: "";
     position: absolute;
     inset: 0;
     background: rgba(0, 0, 0, 0.5);
     z-index: -1;
+    display: ${({ bgimage }) => (bgimage ? "block" : "none")};
   }
 
   @media (max-width: 768px) {

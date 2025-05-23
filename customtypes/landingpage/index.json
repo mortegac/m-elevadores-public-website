@@ -51,6 +51,9 @@
             },
             "landing_customer_review": {
               "type": "SharedSlice"
+            },
+            "landing_timeline": {
+              "type": "SharedSlice"
             }
           }
         }
