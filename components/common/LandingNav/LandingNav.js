@@ -37,9 +37,13 @@ const LandingNav = ({ landingNav }) => {
           const href = item.link?.url || "#";
           return (
             <li key={index}>
-              <Link href={href}>
-                <a>{name}</a>
-              </Link>
+              {href.startsWith("#") ? (
+                <a href={href}>{name}</a>
+              ) : (
+                <Link href={href}>
+                  <a>{name}</a>
+                </Link>
+              )}
             </li>
           );
         })}

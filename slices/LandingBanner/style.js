@@ -21,7 +21,7 @@ export const Section = styled.div`
   }
 
   @media (max-width: 768px) {
-    padding: 1rem;
+    padding: 2rem 1rem;
     grid-template-columns: 1fr;
   }
 `;

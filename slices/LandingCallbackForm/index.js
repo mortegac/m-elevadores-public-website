@@ -44,8 +44,13 @@ const LandingCallbackForm = ({ slice }) => {
 
     const templateParams = {
       from_name: data.name,
+      to_name: data.name,
       to_phone: data.phone,
-      message: `Nuevo contacto desde el formulario de landing. Nombre: ${data.name}, Teléfono: ${data.phone}`,
+      to_email: "",
+      reply_to: "",
+      service: "",
+      budget: "",
+      message: `Nuevo contacto desde el formulario "Nosotros te contactamos".\n\nNombre: ${data.name}\nTeléfono: ${data.phone}`,
     };
 
     emailjs

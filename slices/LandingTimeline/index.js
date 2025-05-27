@@ -58,7 +58,7 @@ const LandingTimeline = ({ slice }) => {
 
   if (isMobile) {
     return (
-      <Section>
+      <Section id="steps">
         <div className="title">
           <PrismicRichText field={title} />
         </div>
@@ -77,7 +77,7 @@ const LandingTimeline = ({ slice }) => {
   }
 
   return (
-    <Section>
+    <Section id="steps">
       <div className="title">
         <PrismicRichText field={title} />
       </div>

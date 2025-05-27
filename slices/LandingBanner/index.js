@@ -51,6 +51,10 @@ const LandingBanner = ({ slice }) => {
       to_phone: phone,
       to_email: email,
       message: `Nuevo contacto desde el formulario de landing. Nombre: ${name}, Teléfono: ${phone}, Email: ${email}`,
+      service: "",
+      budget: "",
+      reply_to: email,
+      to_name: name,
     };
 
     emailjs
@@ -75,7 +79,7 @@ const LandingBanner = ({ slice }) => {
   };
 
   return (
-    <Section bgimage={bgimage.url}>
+    <Section id="banner" bgimage={bgimage.url}>
       <div>
         <Title>
           <PrismicRichText field={title} />

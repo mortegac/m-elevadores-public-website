@@ -62,7 +62,7 @@ const LandingCustomerReview = ({ slice }) => {
   };
 
   return (
-    <Section>
+    <Section id="reviews">
       <Title>
         <PrismicRichText field={title} />
       </Title>

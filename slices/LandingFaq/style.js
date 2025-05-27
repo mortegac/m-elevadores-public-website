@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 export const Wrapper = styled.div`
   background-color: #fff;
-  padding: 1rem 10rem;
+  padding: 2.5rem 10rem;
   @media (max-width: 768px) {
     padding: 1rem;
   }
@@ -11,8 +11,10 @@ export const Wrapper = styled.div`
 export const Icon = styled.span`
   position: relative;
   display: inline-block;
-  width: 10px;
-  height: 10px;
+  width: 1rem;
+  height: 1rem;
+  min-width: 1rem;
+  min-height: 1rem;
   cursor: pointer;
 
   &::before,
@@ -29,7 +31,7 @@ export const Icon = styled.span`
     top: 50%;
     left: 0;
     right: 0;
-    height: 3px;
+    height: 0.2rem;
     transform: translateY(-50%);
   }
 
@@ -38,7 +40,7 @@ export const Icon = styled.span`
     left: 50%;
     top: 0;
     bottom: 0;
-    width: 3px;
+    width: 0.2rem;
     transform-origin: center;
     transform: translateX(-50%) rotate(0deg);
     opacity: 1;
@@ -52,6 +54,21 @@ export const Icon = styled.span`
 
   &.open::before {
     background-color: white;
+  }
+
+  @media (max-width: 768px) {
+    width: 1.25rem;
+    height: 1.25rem;
+    min-width: 1.25rem;
+    min-height: 1.25rem;
+
+    &::before {
+      height: 0.25rem;
+    }
+
+    &::after {
+      width: 0.25rem;
+    }
   }
 `;
 

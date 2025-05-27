@@ -27,7 +27,7 @@ const LandingFaq = ({ slice }) => {
   }, [items]);
 
   return (
-    <Wrapper>
+    <Wrapper id="faq">
       <FaqSection>
         <div className="title">
           <PrismicRichText field={title} />

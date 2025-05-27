@@ -30,7 +30,7 @@ export const Service = styled.div`
   background: ${({ bgimage }) =>
     bgimage ? `url(${bgimage}) center/cover no-repeat` : "#3962E9"};
   overflow: hidden;
-  cursor: pointer;
+  cursor: ${({ nohover }) => (nohover ? "auto" : "pointer")};
   transition: transform 0.3s ease;
 
   &:hover {
@@ -51,7 +51,7 @@ export const Service = styled.div`
     }
   }
 
-  a.service-link {
+  .service-link {
     position: absolute;
     inset: 0;
     z-index: 2;

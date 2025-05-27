@@ -20,7 +20,7 @@ const LandingStandout = ({ slice }) => {
   const items = slice.items;
 
   return (
-    <Section>
+    <Section id="why-us">
       <Title>
         <PrismicRichText field={title} />
       </Title>
