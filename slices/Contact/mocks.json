@@ -1,0 +1,84 @@
+[
+  {
+    "__TYPE__": "SharedSliceContent",
+    "variation": "default",
+    "primary": {
+      "title": {
+        "__TYPE__": "StructuredTextContent",
+        "value": [
+          {
+            "type": "heading2",
+            "content": {
+              "text": "Allow"
+            }
+          }
+        ]
+      },
+      "subtitle": {
+        "__TYPE__": "StructuredTextContent",
+        "value": [
+          {
+            "type": "heading2",
+            "content": {
+              "text": "Whistle"
+            }
+          }
+        ]
+      },
+      "name": {
+        "__TYPE__": "FieldContent",
+        "value": "look",
+        "type": "Text"
+      },
+      "email": {
+        "__TYPE__": "FieldContent",
+        "value": "contain",
+        "type": "Text"
+      },
+      "message": {
+        "__TYPE__": "FieldContent",
+        "value": "sand",
+        "type": "Text"
+      }
+    },
+    "items": [
+      {
+        "__TYPE__": "GroupItemContent",
+        "value": []
+      }
+    ]
+  },
+  {
+    "__TYPE__": "SharedSliceContent",
+    "variation": "cotizarForm",
+    "primary": {
+      "subtitle": {
+        "__TYPE__": "StructuredTextContent",
+        "value": [
+          {
+            "type": "heading2",
+            "content": {
+              "text": "Habit"
+            }
+          }
+        ]
+      },
+      "name": {
+        "__TYPE__": "FieldContent",
+        "value": "motor",
+        "type": "Text"
+      },
+      "email": {
+        "__TYPE__": "FieldContent",
+        "value": "help",
+        "type": "Text"
+      }
+    },
+    "items": [
+      {
+        "__TYPE__": "GroupItemContent",
+        "value": []
+      }
+    ]
+  }
+]

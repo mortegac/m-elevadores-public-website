@@ -1,0 +1,108 @@
+[
+  {
+    "logo": {
+      "__TYPE__": "ImageContent",
+      "origin": {
+        "id": "main",
+        "url": "https://images.unsplash.com/photo-1589321599763-d66926c29613",
+        "width": 3168,
+        "height": 4752
+      },
+      "url": "https://images.unsplash.com/photo-1589321599763-d66926c29613",
+      "width": 3168,
+      "height": 4752,
+      "edit": {
+        "zoom": 1,
+        "crop": {
+          "x": 0,
+          "y": 0
+        },
+        "background": "transparent"
+      },
+      "alt": "breathe",
+      "thumbnails": {}
+    },
+    "description": {
+      "__TYPE__": "StructuredTextContent",
+      "value": [
+        {
+          "type": "paragraph",
+          "content": {
+            "text": "Irure sunt irure ullamco occaecat fugiat reprehenderit veniam reprehenderit non fugiat magna."
+          }
+        }
+      ]
+    },
+    "copyright": {
+      "__TYPE__": "StructuredTextContent",
+      "value": [
+        {
+          "type": "paragraph",
+          "content": {
+            "text": "Dolor tempor sit id sunt incididunt minim eu eu ut nostrud ullamco. Amet do tempor deserunt irure in cillum ipsum non elit deserunt duis ut mollit culpa Lorem."
+          }
+        }
+      ]
+    },
+    "contactgroup": {
+      "__TYPE__": "GroupContentType",
+      "value": [
+        {
+          "__TYPE__": "GroupItemContent",
+          "value": [
+            [
+              "icon",
+              {
+                "__TYPE__": "ImageContent",
+                "origin": {
+                  "id": "main",
+                  "url": "https://images.unsplash.com/photo-1587614295999-6c1c13675117",
+                  "width": 3810,
+                  "height": 5715
+                },
+                "url": "https://images.unsplash.com/photo-1587614295999-6c1c13675117",
+                "width": 3810,
+                "height": 5715,
+                "edit": {
+                  "zoom": 1,
+                  "crop": {
+                    "x": 0,
+                    "y": 0
+                  },
+                  "background": "transparent"
+                },
+                "alt": "hidden",
+                "thumbnails": {}
+              }
+            ],
+            [
+              "label",
+              {
+                "__TYPE__": "StructuredTextContent",
+                "value": [
+                  {
+                    "type": "paragraph",
+                    "content": {
+                      "text": "Excepteur commodo id dolore. Do incididunt dolor esse."
+                    }
+                  }
+                ]
+              }
+            ],
+            [
+              "url",
+              {
+                "__TYPE__": "LinkContent",
+                "key": "9ad5792d-54b8-4e5c-a4e4-79b1a95a3241",
+                "value": {
+                  "__TYPE__": "ExternalLink",
+                  "url": "http://google.com"
+                }
+              }
+            ]
+          ]
+        }
+      ]
+    }
+  }
+]

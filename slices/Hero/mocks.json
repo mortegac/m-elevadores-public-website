@@ -1,0 +1,250 @@
+[
+  {
+    "__TYPE__": "SharedSliceContent",
+    "variation": "default",
+    "primary": {
+      "invertedlayout": {
+        "__TYPE__": "BooleanContent",
+        "value": true
+      },
+      "image": {
+        "__TYPE__": "ImageContent",
+        "origin": {
+          "id": "main",
+          "url": "https://images.unsplash.com/photo-1601933973783-43cf8a7d4c5f",
+          "width": 6597,
+          "height": 4398
+        },
+        "url": "https://images.unsplash.com/photo-1601933973783-43cf8a7d4c5f",
+        "width": 6597,
+        "height": 4398,
+        "edit": {
+          "zoom": 1,
+          "crop": {
+            "x": 0,
+            "y": 0
+          },
+          "background": "transparent"
+        },
+        "alt": "mud",
+        "thumbnails": {}
+      },
+      "description": {
+        "__TYPE__": "StructuredTextContent",
+        "value": [
+          {
+            "type": "paragraph",
+            "content": {
+              "text": "Mollit adipisicing nisi officia veniam mollit adipisicing. Sunt cupidatat deserunt aute aliquip et est nulla."
+            }
+          }
+        ]
+      },
+      "buttontext": {
+        "__TYPE__": "FieldContent",
+        "value": "desk",
+        "type": "Text"
+      },
+      "buttonlink": {
+        "__TYPE__": "LinkContent",
+        "key": "8a4877f7-6994-47ed-ac10-fd0557e2395c",
+        "value": {
+          "__TYPE__": "ExternalLink",
+          "url": "http://google.com"
+        }
+      },
+      "mobileimage": {
+        "__TYPE__": "ImageContent",
+        "origin": {
+          "id": "main",
+          "url": "https://images.unsplash.com/photo-1593642532973-d31b6557fa68",
+          "width": 8640,
+          "height": 8640
+        },
+        "url": "https://images.unsplash.com/photo-1593642532973-d31b6557fa68",
+        "width": 8640,
+        "height": 8640,
+        "edit": {
+          "zoom": 1,
+          "crop": {
+            "x": 0,
+            "y": 0
+          },
+          "background": "transparent"
+        },
+        "alt": "crew",
+        "thumbnails": {}
+      },
+      "title": {
+        "__TYPE__": "StructuredTextContent",
+        "value": [
+          {
+            "type": "paragraph",
+            "content": {
+              "text": "Consequat proident ut dolore magna ex nostrud do est ad dolor fugiat anim."
+            }
+          }
+        ]
+      }
+    },
+    "items": [
+      {
+        "__TYPE__": "GroupItemContent",
+        "value": []
+      }
+    ]
+  },
+  {
+    "__TYPE__": "SharedSliceContent",
+    "variation": "noButtonNoDescription",
+    "primary": {
+      "invertedlayout": {
+        "__TYPE__": "BooleanContent",
+        "value": true
+      },
+      "image": {
+        "__TYPE__": "ImageContent",
+        "origin": {
+          "id": "main",
+          "url": "https://images.unsplash.com/photo-1593642532973-d31b6557fa68",
+          "width": 8640,
+          "height": 8640
+        },
+        "url": "https://images.unsplash.com/photo-1593642532973-d31b6557fa68",
+        "width": 8640,
+        "height": 8640,
+        "edit": {
+          "zoom": 1,
+          "crop": {
+            "x": 0,
+            "y": 0
+          },
+          "background": "transparent"
+        },
+        "alt": "pretty",
+        "thumbnails": {}
+      },
+      "title": {
+        "__TYPE__": "StructuredTextContent",
+        "value": [
+          {
+            "type": "paragraph",
+            "content": {
+              "text": "Esse deserunt id sint elit voluptate. Laboris enim nostrud consectetur."
+            }
+          }
+        ]
+      },
+      "mobileimage": {
+        "__TYPE__": "ImageContent",
+        "origin": {
+          "id": "main",
+          "url": "https://images.unsplash.com/photo-1560457079-9a6532ccb118",
+          "width": 4160,
+          "height": 3120
+        },
+        "url": "https://images.unsplash.com/photo-1560457079-9a6532ccb118",
+        "width": 4160,
+        "height": 3120,
+        "edit": {
+          "zoom": 1,
+          "crop": {
+            "x": 0,
+            "y": 0
+          },
+          "background": "transparent"
+        },
+        "alt": "zebra",
+        "thumbnails": {}
+      }
+    },
+    "items": [
+      {
+        "__TYPE__": "GroupItemContent",
+        "value": []
+      }
+    ]
+  },
+  {
+    "__TYPE__": "SharedSliceContent",
+    "variation": "noButton",
+    "primary": {
+      "invertedlayout": {
+        "__TYPE__": "BooleanContent",
+        "value": false
+      },
+      "image": {
+        "__TYPE__": "ImageContent",
+        "origin": {
+          "id": "main",
+          "url": "https://images.unsplash.com/photo-1499951360447-b19be8fe80f5",
+          "width": 5848,
+          "height": 3899
+        },
+        "url": "https://images.unsplash.com/photo-1499951360447-b19be8fe80f5",
+        "width": 5848,
+        "height": 3899,
+        "edit": {
+          "zoom": 1,
+          "crop": {
+            "x": 0,
+            "y": 0
+          },
+          "background": "transparent"
+        },
+        "alt": "snow",
+        "thumbnails": {}
+      },
+      "title": {
+        "__TYPE__": "StructuredTextContent",
+        "value": [
+          {
+            "type": "paragraph",
+            "content": {
+              "text": "Sunt velit ea aliquip aliquip duis exercitation nulla labore occaecat duis. Ex qui nisi velit proident commodo culpa qui sint ipsum nisi. Sunt cupidatat non incididunt ad commodo sint et mollit laborum consequat eiusmod eiusmod id."
+            }
+          }
+        ]
+      },
+      "description": {
+        "__TYPE__": "StructuredTextContent",
+        "value": [
+          {
+            "type": "paragraph",
+            "content": {
+              "text": "Enim do irure fugiat et sint irure. Tempor irure minim incididunt consequat cupidatat qui in."
+            }
+          }
+        ]
+      },
+      "mobileimage": {
+        "__TYPE__": "ImageContent",
+        "origin": {
+          "id": "main",
+          "url": "https://images.unsplash.com/photo-1544731612-de7f96afe55f",
+          "width": 6000,
+          "height": 4000
+        },
+        "url": "https://images.unsplash.com/photo-1544731612-de7f96afe55f",
+        "width": 6000,
+        "height": 4000,
+        "edit": {
+          "zoom": 1,
+          "crop": {
+            "x": 0,
+            "y": 0
+          },
+          "background": "transparent"
+        },
+        "alt": "flies",
+        "thumbnails": {}
+      }
+    },
+    "items": [
+      {
+        "__TYPE__": "GroupItemContent",
+        "value": []
+      }
+    ]
+  }
+]

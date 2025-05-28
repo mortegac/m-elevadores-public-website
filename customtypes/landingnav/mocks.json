@@ -1,0 +1,129 @@
+[
+  {
+    "logo": {
+      "__TYPE__": "ImageContent",
+      "origin": {
+        "id": "main",
+        "url": "https://images.unsplash.com/photo-1589321599763-d66926c29613",
+        "width": 3168,
+        "height": 4752
+      },
+      "url": "https://images.unsplash.com/photo-1589321599763-d66926c29613",
+      "width": 3168,
+      "height": 4752,
+      "edit": {
+        "zoom": 1,
+        "crop": {
+          "x": 0,
+          "y": 0
+        },
+        "background": "transparent"
+      },
+      "alt": "into",
+      "thumbnails": {}
+    },
+    "logourl": {
+      "__TYPE__": "LinkContent",
+      "key": "4061a240-050e-4286-9222-5896586bf93b",
+      "value": {
+        "__TYPE__": "ExternalLink",
+        "url": "https://prismic.io"
+      }
+    },
+    "navlink": {
+      "__TYPE__": "GroupContentType",
+      "value": [
+        {
+          "__TYPE__": "GroupItemContent",
+          "value": [
+            [
+              "name",
+              {
+                "__TYPE__": "StructuredTextContent",
+                "value": [
+                  {
+                    "type": "paragraph",
+                    "content": {
+                      "text": "Deserunt esse nostrud fugiat ipsum magna veniam dolore sunt tempor velit excepteur. Voluptate in fugiat irure quis ut sunt consequat laborum ad Lorem ullamco nulla aliquip. Consectetur irure mollit et nostrud."
+                    }
+                  }
+                ]
+              }
+            ],
+            [
+              "link",
+              {
+                "__TYPE__": "LinkContent",
+                "key": "a3d06b32-2ba0-4d21-90af-a11039f2a6e1",
+                "value": {
+                  "__TYPE__": "ExternalLink",
+                  "url": "https://prismic.io"
+                }
+              }
+            ]
+          ]
+        }
+      ]
+    },
+    "contanctbtn": {
+      "__TYPE__": "GroupContentType",
+      "value": [
+        {
+          "__TYPE__": "GroupItemContent",
+          "value": [
+            [
+              "icon",
+              {
+                "__TYPE__": "ImageContent",
+                "origin": {
+                  "id": "main",
+                  "url": "https://images.unsplash.com/photo-1551739440-5dd934d3a94a",
+                  "width": 3456,
+                  "height": 4320
+                },
+                "url": "https://images.unsplash.com/photo-1551739440-5dd934d3a94a",
+                "width": 3456,
+                "height": 4320,
+                "edit": {
+                  "zoom": 1,
+                  "crop": {
+                    "x": 0,
+                    "y": 0
+                  },
+                  "background": "transparent"
+                },
+                "alt": "gas",
+                "thumbnails": {}
+              }
+            ],
+            [
+              "link",
+              {
+                "__TYPE__": "LinkContent",
+                "key": "bc38457e-6188-4dab-83de-f89b5f5c89f5",
+                "value": {
+                  "__TYPE__": "ExternalLink",
+                  "url": "http://twitter.com"
+                }
+              }
+            ],
+            [
+              "label",
+              {
+                "__TYPE__": "StructuredTextContent",
+                "value": [
+                  {
+                    "type": "paragraph",
+                    "content": {
+                      "text": "Deserunt eu aliquip laboris eu nisi dolore velit enim aute laboris consectetur ut voluptate magna. Amet consectetur eu ut enim deserunt occaecat. Lorem sit id in nisi nulla amet fugiat ipsum ad irure aliqua cillum proident exercitation."
+                    }
+                  }
+                ]
+              }
+            ]
+          ]
+        }
+      ]
+    }
+  }
+]

@@ -1,0 +1,35 @@
+[
+  {
+    "__TYPE__": "SharedSliceContent",
+    "variation": "default",
+    "primary": {
+      "max": {
+        "__TYPE__": "FieldContent",
+        "value": "79",
+        "type": "Number"
+      },
+      "duration": {
+        "__TYPE__": "FieldContent",
+        "value": "74",
+        "type": "Number"
+      },
+      "text": {
+        "__TYPE__": "StructuredTextContent",
+        "value": [
+          {
+            "type": "paragraph",
+            "content": {
+              "text": "Eu incididunt elit eiusmod id pariatur quis. Duis fugiat duis Lorem ut adipisicing aute officia veniam nostrud et. Culpa adipisicing do aliquip aliqua quis culpa incididunt consequat amet."
+            }
+          }
+        ]
+      }
+    },
+    "items": [
+      {
+        "__TYPE__": "GroupItemContent",
+        "value": []
+      }
+    ]
+  }
+]

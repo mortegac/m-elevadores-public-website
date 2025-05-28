@@ -1,0 +1,82 @@
+[
+  {
+    "__TYPE__": "SharedSliceContent",
+    "variation": "default",
+    "primary": {
+      "title": {
+        "__TYPE__": "StructuredTextContent",
+        "value": [
+          {
+            "type": "heading2",
+            "content": {
+              "text": "Oxygen"
+            }
+          }
+        ]
+      }
+    },
+    "items": [
+      {
+        "__TYPE__": "GroupItemContent",
+        "value": [
+          [
+            "contenttext",
+            {
+              "__TYPE__": "FieldContent",
+              "value": "view",
+              "type": "Text"
+            }
+          ],
+          [
+            "subtitle",
+            {
+              "__TYPE__": "FieldContent",
+              "value": "quarter",
+              "type": "Text"
+            }
+          ]
+        ]
+      }
+    ]
+  },
+  {
+    "__TYPE__": "SharedSliceContent",
+    "variation": "noBackground",
+    "primary": {
+      "title": {
+        "__TYPE__": "StructuredTextContent",
+        "value": [
+          {
+            "type": "heading1",
+            "content": {
+              "text": "Women"
+            }
+          }
+        ]
+      }
+    },
+    "items": [
+      {
+        "__TYPE__": "GroupItemContent",
+        "value": [
+          [
+            "contenttext",
+            {
+              "__TYPE__": "FieldContent",
+              "value": "ability",
+              "type": "Text"
+            }
+          ],
+          [
+            "subtitle",
+            {
+              "__TYPE__": "FieldContent",
+              "value": "compound",
+              "type": "Text"
+            }
+          ]
+        ]
+      }
+    ]
+  }
+]

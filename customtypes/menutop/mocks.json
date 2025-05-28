@@ -1,0 +1,85 @@
+[
+  {
+    "logo": {
+      "__TYPE__": "ImageContent",
+      "origin": {
+        "id": "main",
+        "url": "https://images.unsplash.com/photo-1586952518485-11b180e92764",
+        "width": 4172,
+        "height": 4000
+      },
+      "url": "https://images.unsplash.com/photo-1586952518485-11b180e92764",
+      "width": 4172,
+      "height": 4000,
+      "edit": {
+        "zoom": 1,
+        "crop": {
+          "x": 0,
+          "y": 0
+        },
+        "background": "transparent"
+      },
+      "alt": "broken",
+      "thumbnails": {}
+    },
+    "title": {
+      "__TYPE__": "StructuredTextContent",
+      "value": [
+        {
+          "type": "paragraph",
+          "content": {
+            "text": "Ullamco consequat non labore ad eu enim eiusmod sint laboris enim laborum commodo. Irure ipsum tempor eiusmod culpa consectetur anim. Qui cillum ad aliquip cillum veniam duis sit Lorem nisi nostrud culpa."
+          }
+        }
+      ]
+    },
+    "calltoactiontext": {
+      "__TYPE__": "StructuredTextContent",
+      "value": [
+        {
+          "type": "paragraph",
+          "content": {
+            "text": "Ullamco id consectetur deserunt proident pariatur voluptate ipsum. Occaecat commodo labore eu dolore ipsum voluptate reprehenderit magna fugiat cupidatat veniam velit."
+          }
+        }
+      ]
+    },
+    "calltoactionurl": {
+      "__TYPE__": "LinkContent",
+      "key": "618e6ae4-741f-4aac-a9ab-2a330812d2d2",
+      "value": {
+        "__TYPE__": "ExternalLink",
+        "url": "https://slicemachine.dev"
+      }
+    },
+    "menulinks": {
+      "__TYPE__": "GroupContentType",
+      "value": [
+        {
+          "__TYPE__": "GroupItemContent",
+          "value": [
+            [
+              "label",
+              {
+                "__TYPE__": "FieldContent",
+                "value": "happily",
+                "type": "Text"
+              }
+            ],
+            [
+              "link",
+              {
+                "__TYPE__": "LinkContent",
+                "key": "52b57e22-1c7f-4fdd-97af-37d7a39295cf",
+                "value": {
+                  "__TYPE__": "ExternalLink",
+                  "url": "https://slicemachine.dev"
+                }
+              }
+            ]
+          ]
+        }
+      ]
+    }
+  }
+]

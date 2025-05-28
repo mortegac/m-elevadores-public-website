@@ -24,15 +24,13 @@ const nextConfig = async () => {
       styledComponents: true,
     },
     images: {
-      domains: ["images.prismic.io", "images.unsplash.com"],
+      domains: ['images.prismic.io', 'prismic-io.s3.amazonaws.com'],
       loader: "akamai",
       path: "",
     },
     experimental: {
-      // Defaults to 50MB
-      isrMemoryCacheSize: 0,
-      forceSwcTransforms: true,
-      runtime: "edge",
+      // Deshabilitar características experimentales que podrían causar problemas
+      forceSwcTransforms: false,
     },
   };
 };

@@ -1,0 +1,137 @@
+[
+  {
+    "__TYPE__": "SharedSliceContent",
+    "variation": "default",
+    "primary": {
+      "subtittle": {
+        "__TYPE__": "StructuredTextContent",
+        "value": [
+          {
+            "type": "paragraph",
+            "content": {
+              "text": "Duis reprehenderit elit anim ut. Ut nisi consequat labore non elit dolor enim excepteur ex ipsum laboris pariatur labore duis fugiat. Ipsum non amet nisi consequat aliqua do dolore consequat amet dolore aliquip do sit."
+            }
+          }
+        ]
+      },
+      "tittle": {
+        "__TYPE__": "StructuredTextContent",
+        "value": [
+          {
+            "type": "paragraph",
+            "content": {
+              "text": "Fugiat do aliquip ullamco consectetur nulla ea qui sit. Amet nisi qui anim ex elit consequat tempor veniam culpa non Lorem."
+            }
+          }
+        ]
+      },
+      "buttontext": {
+        "__TYPE__": "FieldContent",
+        "value": "classroom",
+        "type": "Text"
+      },
+      "buttonlink": {
+        "__TYPE__": "LinkContent",
+        "key": "cf6978b9-b7b8-4c68-b180-1e08083e6cfa",
+        "value": {
+          "__TYPE__": "ExternalLink",
+          "url": "https://slicemachine.dev"
+        }
+      },
+      "bgcolorInitial": {
+        "__TYPE__": "FieldContent",
+        "value": "#c3b0f5",
+        "type": "Color"
+      },
+      "bgcolorend": {
+        "__TYPE__": "FieldContent",
+        "value": "#55d2c9",
+        "type": "Color"
+      }
+    },
+    "items": [
+      {
+        "__TYPE__": "GroupItemContent",
+        "value": []
+      }
+    ]
+  },
+  {
+    "__TYPE__": "SharedSliceContent",
+    "variation": "noButtonNobg",
+    "primary": {
+      "subtittle": {
+        "__TYPE__": "StructuredTextContent",
+        "value": [
+          {
+            "type": "paragraph",
+            "content": {
+              "text": "Aliquip aute adipisicing laboris veniam minim cillum in."
+            }
+          }
+        ]
+      },
+      "tittle": {
+        "__TYPE__": "StructuredTextContent",
+        "value": [
+          {
+            "type": "paragraph",
+            "content": {
+              "text": "Enim dolore ad tempor irure aliqua eiusmod velit exercitation. Cillum adipisicing sint voluptate do sit ullamco occaecat ea consequat aute velit ea. Duis enim officia dolore ullamco non culpa elit exercitation cupidatat consequat irure."
+            }
+          }
+        ]
+      }
+    },
+    "items": [
+      {
+        "__TYPE__": "GroupItemContent",
+        "value": []
+      }
+    ]
+  },
+  {
+    "__TYPE__": "SharedSliceContent",
+    "variation": "noButton",
+    "primary": {
+      "subtittle": {
+        "__TYPE__": "StructuredTextContent",
+        "value": [
+          {
+            "type": "paragraph",
+            "content": {
+              "text": "Anim non do occaecat minim nisi eu labore nisi laborum. In labore do excepteur do labore do. Duis do in ea quis occaecat voluptate."
+            }
+          }
+        ]
+      },
+      "tittle": {
+        "__TYPE__": "StructuredTextContent",
+        "value": [
+          {
+            "type": "paragraph",
+            "content": {
+              "text": "Mollit aute nisi ea amet exercitation aliqua sit officia laboris est voluptate."
+            }
+          }
+        ]
+      },
+      "bgcolorInitial": {
+        "__TYPE__": "FieldContent",
+        "value": "#ec25a1",
+        "type": "Color"
+      },
+      "bgcolorend": {
+        "__TYPE__": "FieldContent",
+        "value": "#4ef049",
+        "type": "Color"
+      }
+    },
+    "items": [
+      {
+        "__TYPE__": "GroupItemContent",
+        "value": []
+      }
+    ]
+  }
+]
