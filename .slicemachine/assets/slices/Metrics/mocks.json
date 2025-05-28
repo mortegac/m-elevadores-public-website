@@ -1,0 +1,42 @@
+[
+  {
+    "variation": "default",
+    "version": "sktwi1xtmkfgx8626",
+    "items": [
+      {
+        "contenttext": "fierce",
+        "subtitle": "twelve"
+      }
+    ],
+    "primary": {
+      "title": [
+        {
+          "type": "heading2",
+          "text": "Certainly",
+          "spans": []
+        }
+      ]
+    },
+    "slice_type": "metrics"
+  },
+  {
+    "variation": "noBackground",
+    "version": "sktwi1xtmkfgx8626",
+    "items": [
+      {
+        "contenttext": "simple",
+        "subtitle": "direction"
+      }
+    ],
+    "primary": {
+      "title": [
+        {
+          "type": "heading1",
+          "text": "Refer",
+          "spans": []
+        }
+      ]
+    },
+    "slice_type": "metrics"
+  }
+]

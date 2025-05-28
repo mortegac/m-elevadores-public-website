@@ -1,0 +1,88 @@
+[
+  {
+    "variation": "default",
+    "version": "sktwi1xtmkfgx8626",
+    "items": [
+      {
+        "bgimage": {
+          "dimensions": {
+            "width": 900,
+            "height": 500
+          },
+          "alt": null,
+          "copyright": null,
+          "url": "https://images.unsplash.com/photo-1607582278043-57198ac8da43"
+        },
+        "servicetitle": [
+          {
+            "type": "heading2",
+            "text": "Completely",
+            "spans": []
+          }
+        ],
+        "description": [
+          {
+            "type": "paragraph",
+            "text": "Nisi dolor aute qui est commodo ut qui fugiat dolore amet proident. Exercitation id incididunt eu occaecat eiusmod cillum do sit cillum ut adipisicing.",
+            "spans": []
+          }
+        ],
+        "link": {
+          "link_type": "Web",
+          "url": "http://twitter.com"
+        }
+      }
+    ],
+    "primary": {
+      "title": [
+        {
+          "type": "heading1",
+          "text": "Atomic",
+          "spans": []
+        }
+      ]
+    },
+    "slice_type": "landing_services"
+  },
+  {
+    "variation": "nohover",
+    "version": "sktwi1xtmkfgx8626",
+    "items": [
+      {
+        "bgimage": {
+          "dimensions": {
+            "width": 900,
+            "height": 500
+          },
+          "alt": null,
+          "copyright": null,
+          "url": "https://images.unsplash.com/photo-1601933973783-43cf8a7d4c5f"
+        },
+        "servicetitle": [
+          {
+            "type": "heading2",
+            "text": "General",
+            "spans": []
+          }
+        ],
+        "description": [
+          {
+            "type": "paragraph",
+            "text": "Ullamco pariatur veniam minim anim ea. In voluptate pariatur culpa enim enim magna nulla deserunt officia ad consequat quis duis pariatur.",
+            "spans": []
+          }
+        ]
+      }
+    ],
+    "primary": {
+      "title": [
+        {
+          "type": "heading1",
+          "text": "Vowel",
+          "spans": []
+        }
+      ]
+    },
+    "slice_type": "landing_services"
+  }
+]

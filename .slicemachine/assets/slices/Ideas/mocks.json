@@ -1,0 +1,83 @@
+[
+  {
+    "variation": "default",
+    "version": "sktwi1xtmkfgx8626",
+    "items": [
+      {}
+    ],
+    "primary": {
+      "subtittle": [
+        {
+          "type": "paragraph",
+          "text": "Sunt veniam sit eiusmod aliqua minim exercitation duis culpa voluptate in tempor pariatur nisi ex laborum. Tempor ut eu ipsum mollit in proident consequat exercitation.",
+          "spans": []
+        }
+      ],
+      "tittle": [
+        {
+          "type": "paragraph",
+          "text": "Eu non proident cupidatat esse ut excepteur enim ad deserunt eiusmod sit anim velit enim.",
+          "spans": []
+        }
+      ],
+      "buttontext": "percent",
+      "buttonlink": {
+        "link_type": "Web",
+        "url": "https://slicemachine.dev"
+      },
+      "bgcolorInitial": "#163517",
+      "bgcolorend": "#94e2fc"
+    },
+    "slice_type": "ideas"
+  },
+  {
+    "variation": "noButtonNobg",
+    "version": "sktwi1xtmkfgx8626",
+    "items": [
+      {}
+    ],
+    "primary": {
+      "subtittle": [
+        {
+          "type": "paragraph",
+          "text": "Mollit magna laboris reprehenderit occaecat quis quis labore.",
+          "spans": []
+        }
+      ],
+      "tittle": [
+        {
+          "type": "paragraph",
+          "text": "Magna sint minim deserunt ut incididunt duis do ex ea exercitation officia. Nulla ea officia aliqua amet do.",
+          "spans": []
+        }
+      ]
+    },
+    "slice_type": "ideas"
+  },
+  {
+    "variation": "noButton",
+    "version": "sktwi1xtmkfgx8626",
+    "items": [
+      {}
+    ],
+    "primary": {
+      "subtittle": [
+        {
+          "type": "paragraph",
+          "text": "Cupidatat aute ad veniam ex pariatur labore enim eu.",
+          "spans": []
+        }
+      ],
+      "tittle": [
+        {
+          "type": "paragraph",
+          "text": "Eu reprehenderit do laboris mollit exercitation cupidatat ullamco ea labore eu ex amet. Aliqua ipsum voluptate adipisicing eu anim irure in ipsum est.",
+          "spans": []
+        }
+      ],
+      "bgcolorInitial": "#9ab21f",
+      "bgcolorend": "#64fae2"
+    },
+    "slice_type": "ideas"
+  }
+]

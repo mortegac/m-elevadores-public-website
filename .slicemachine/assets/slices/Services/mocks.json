@@ -1,0 +1,196 @@
+[
+  {
+    "variation": "default",
+    "version": "sktwi1xtmkfgx8626",
+    "items": [
+      {
+        "imagelist": {
+          "dimensions": {
+            "width": 900,
+            "height": 500
+          },
+          "alt": null,
+          "copyright": null,
+          "url": "https://images.unsplash.com/photo-1589321599763-d66926c29613"
+        },
+        "titlelist": "left",
+        "descriptionlist": "recent",
+        "linktext": "near",
+        "link": {
+          "link_type": "Web",
+          "url": "https://prismic.io"
+        }
+      }
+    ],
+    "primary": {
+      "title": [
+        {
+          "type": "heading2",
+          "text": "Prevent",
+          "spans": []
+        }
+      ],
+      "description": [
+        {
+          "type": "paragraph",
+          "text": "Nostrud elit non anim aute reprehenderit ut non. Cillum consequat aliqua eu nostrud aliquip cupidatat nulla ex cupidatat dolore anim sint do. Adipisicing anim occaecat nulla aute.",
+          "spans": []
+        }
+      ],
+      "image": {
+        "dimensions": {
+          "width": 900,
+          "height": 500
+        },
+        "alt": null,
+        "copyright": null,
+        "url": "https://images.unsplash.com/photo-1491975474562-1f4e30bc9468"
+      },
+      "buttontext": "ordinary"
+    },
+    "slice_type": "services"
+  },
+  {
+    "variation": "noIconsNoButtons",
+    "version": "sktwi1xtmkfgx8626",
+    "items": [
+      {}
+    ],
+    "primary": {
+      "title": [
+        {
+          "type": "heading2",
+          "text": "Zebra",
+          "spans": []
+        }
+      ],
+      "description": [
+        {
+          "type": "paragraph",
+          "text": "Pariatur adipisicing eiusmod laborum incididunt labore aliqua. Ipsum id ipsum laborum Lorem.",
+          "spans": []
+        }
+      ],
+      "image": {
+        "dimensions": {
+          "width": 900,
+          "height": 500
+        },
+        "alt": null,
+        "copyright": null,
+        "url": "https://images.unsplash.com/photo-1593642532973-d31b6557fa68"
+      }
+    },
+    "slice_type": "services"
+  },
+  {
+    "variation": "noIcons",
+    "version": "sktwi1xtmkfgx8626",
+    "items": [
+      {}
+    ],
+    "primary": {
+      "title": [
+        {
+          "type": "heading2",
+          "text": "Shore",
+          "spans": []
+        }
+      ],
+      "description": [
+        {
+          "type": "paragraph",
+          "text": "Cillum dolore cupidatat id minim qui.",
+          "spans": []
+        }
+      ],
+      "image": {
+        "dimensions": {
+          "width": 900,
+          "height": 500
+        },
+        "alt": null,
+        "copyright": null,
+        "url": "https://images.unsplash.com/photo-1547394765-185e1e68f34e"
+      },
+      "buttontext": "twenty"
+    },
+    "slice_type": "services"
+  },
+  {
+    "variation": "imageText",
+    "version": "sktwi1xtmkfgx8626",
+    "items": [
+      {}
+    ],
+    "primary": {
+      "title": [
+        {
+          "type": "heading2",
+          "text": "Smell",
+          "spans": []
+        }
+      ],
+      "image": {
+        "dimensions": {
+          "width": 900,
+          "height": 500
+        },
+        "alt": null,
+        "copyright": null,
+        "url": "https://images.unsplash.com/photo-1515378960530-7c0da6231fb1"
+      }
+    },
+    "slice_type": "services"
+  },
+  {
+    "variation": "defaultNoVerMas",
+    "version": "sktwi1xtmkfgx8626",
+    "items": [
+      {
+        "imagelist": {
+          "dimensions": {
+            "width": 900,
+            "height": 500
+          },
+          "alt": null,
+          "copyright": null,
+          "url": "https://images.unsplash.com/photo-1606248897732-2c5ffe759c04"
+        },
+        "titlelist": "rush",
+        "descriptionlist": "silver"
+      }
+    ],
+    "primary": {
+      "title": [
+        {
+          "type": "heading2",
+          "text": "Select",
+          "spans": []
+        }
+      ],
+      "description": [
+        {
+          "type": "paragraph",
+          "text": "Cillum tempor cupidatat nisi ad.",
+          "spans": []
+        }
+      ],
+      "image": {
+        "dimensions": {
+          "width": 900,
+          "height": 500
+        },
+        "alt": null,
+        "copyright": null,
+        "url": "https://images.unsplash.com/photo-1541807084-5c52b6b3adef"
+      },
+      "buttontext": "north",
+      "buttonlink": {
+        "link_type": "Web",
+        "url": "http://google.com"
+      }
+    },
+    "slice_type": "services"
+  }
+]

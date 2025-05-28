@@ -1,0 +1,66 @@
+[
+  {
+    "variation": "default",
+    "version": "sktwi1xtmkfgx8626",
+    "items": [
+      {
+        "icon": {
+          "dimensions": {
+            "width": 900,
+            "height": 500
+          },
+          "alt": null,
+          "copyright": null,
+          "url": "https://images.unsplash.com/photo-1587613865763-4b8b0d19e8ab"
+        },
+        "keyword": [
+          {
+            "type": "paragraph",
+            "text": "Irure commodo amet deserunt ut excepteur ex ut pariatur id.",
+            "spans": []
+          }
+        ]
+      }
+    ],
+    "primary": {
+      "title": [
+        {
+          "type": "heading1",
+          "text": "Ordinary",
+          "spans": []
+        }
+      ],
+      "subtitle": [
+        {
+          "type": "paragraph",
+          "text": "Eu mollit fugiat laborum. Dolor dolor ea eu culpa.",
+          "spans": []
+        }
+      ],
+      "formtitle": [
+        {
+          "type": "heading2",
+          "text": "Sister",
+          "spans": []
+        }
+      ],
+      "formsubtitle": [
+        {
+          "type": "paragraph",
+          "text": "Fugiat irure nostrud deserunt est adipisicing magna ipsum dolor est ad pariatur. Culpa esse ad dolore nulla enim minim incididunt.",
+          "spans": []
+        }
+      ],
+      "bgimage": {
+        "dimensions": {
+          "width": 900,
+          "height": 500
+        },
+        "alt": null,
+        "copyright": null,
+        "url": "https://images.unsplash.com/photo-1593642633279-1796119d5482"
+      }
+    },
+    "slice_type": "landing_banner"
+  }
+]

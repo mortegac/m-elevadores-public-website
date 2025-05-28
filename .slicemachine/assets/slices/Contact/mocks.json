@@ -1,0 +1,48 @@
+[
+  {
+    "variation": "default",
+    "version": "sktwi1xtmkfgx8626",
+    "items": [
+      {}
+    ],
+    "primary": {
+      "title": [
+        {
+          "type": "heading2",
+          "text": "Something",
+          "spans": []
+        }
+      ],
+      "subtitle": [
+        {
+          "type": "heading2",
+          "text": "Substance",
+          "spans": []
+        }
+      ],
+      "name": "organization",
+      "email": "improve",
+      "message": "cotton"
+    },
+    "slice_type": "contact"
+  },
+  {
+    "variation": "cotizarForm",
+    "version": "sktwi1xtmkfgx8626",
+    "items": [
+      {}
+    ],
+    "primary": {
+      "subtitle": [
+        {
+          "type": "heading2",
+          "text": "Yellow",
+          "spans": []
+        }
+      ],
+      "name": "dozen",
+      "email": "audience"
+    },
+    "slice_type": "contact"
+  }
+]
