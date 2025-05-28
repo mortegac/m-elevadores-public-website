@@ -1,0 +1,95 @@
+[
+  {
+    "variation": "default",
+    "version": "sktwi1xtmkfgx8626",
+    "items": [
+      {
+        "logoImage": {
+          "dimensions": {
+            "width": 900,
+            "height": 500
+          },
+          "alt": null,
+          "copyright": null,
+          "url": "https://images.unsplash.com/photo-1571126770897-2d612d1f7b89"
+        }
+      }
+    ],
+    "primary": {
+      "title": [
+        {
+          "type": "heading2",
+          "text": "Previous",
+          "spans": []
+        }
+      ],
+      "description": [
+        {
+          "type": "paragraph",
+          "text": "Dolor id id aliqua ut dolor nulla adipisicing est laborum voluptate veniam culpa veniam velit aute. Nulla tempor nulla fugiat. Anim labore dolore et velit irure.",
+          "spans": []
+        }
+      ]
+    },
+    "slice_type": "logo_list"
+  },
+  {
+    "variation": "onlyLogosBg",
+    "version": "sktwi1xtmkfgx8626",
+    "items": [
+      {
+        "logoImage": {
+          "dimensions": {
+            "width": 900,
+            "height": 500
+          },
+          "alt": null,
+          "copyright": null,
+          "url": "https://images.unsplash.com/photo-1547082299-de196ea013d6"
+        }
+      }
+    ],
+    "primary": {},
+    "slice_type": "logo_list"
+  },
+  {
+    "variation": "buttonTitleDescription",
+    "version": "sktwi1xtmkfgx8626",
+    "items": [
+      {
+        "logoImage": {
+          "dimensions": {
+            "width": 900,
+            "height": 500
+          },
+          "alt": null,
+          "copyright": null,
+          "url": "https://images.unsplash.com/photo-1499951360447-b19be8fe80f5"
+        },
+        "subtitle": [
+          {
+            "type": "paragraph",
+            "text": "Veniam enim laboris cillum ullamco cupidatat consequat duis velit do. Ullamco laborum esse cupidatat est mollit pariatur velit nostrud aliquip exercitation fugiat elit deserunt ullamco. Lorem quis Lorem laboris ullamco.",
+            "spans": []
+          }
+        ],
+        "description": "cut",
+        "buttonlink": {
+          "link_type": "Web",
+          "url": "https://prismic.io"
+        },
+        "buttontext": "quarter"
+      }
+    ],
+    "primary": {
+      "title": [
+        {
+          "type": "paragraph",
+          "text": "Nulla proident consequat velit esse exercitation cillum dolore dolore enim voluptate consectetur est.",
+          "spans": []
+        }
+      ]
+    },
+    "slice_type": "logo_list"
+  }
+]

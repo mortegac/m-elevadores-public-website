@@ -1,0 +1,34 @@
+[
+  {
+    "variation": "default",
+    "version": "sktwi1xtmkfgx8626",
+    "items": [
+      {
+        "question": [
+          {
+            "type": "paragraph",
+            "text": "Voluptate irure occaecat deserunt nisi. Irure quis duis elit elit magna incididunt. Sit adipisicing magna ea magna et excepteur sint velit exercitation eiusmod elit adipisicing.",
+            "spans": []
+          }
+        ],
+        "answer": [
+          {
+            "type": "paragraph",
+            "text": "Est non est ut sint. Pariatur eu voluptate sint occaecat incididunt adipisicing elit officia nulla laboris.",
+            "spans": []
+          }
+        ]
+      }
+    ],
+    "primary": {
+      "title": [
+        {
+          "type": "heading1",
+          "text": "Pretty",
+          "spans": []
+        }
+      ]
+    },
+    "slice_type": "landing_faq"
+  }
+]

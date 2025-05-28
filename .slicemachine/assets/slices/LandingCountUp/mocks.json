@@ -1,0 +1,21 @@
+[
+  {
+    "variation": "default",
+    "version": "sktwi1xtmkfgx8626",
+    "items": [
+      {}
+    ],
+    "primary": {
+      "max": 79,
+      "duration": 54,
+      "text": [
+        {
+          "type": "paragraph",
+          "text": "Qui cupidatat laboris consequat enim ut officia magna officia irure officia. Nostrud dolor aliquip incididunt irure ut sint cillum in esse tempor.",
+          "spans": []
+        }
+      ]
+    },
+    "slice_type": "landing_count_up"
+  }
+]

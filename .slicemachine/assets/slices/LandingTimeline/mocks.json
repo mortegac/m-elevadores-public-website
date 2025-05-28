@@ -1,0 +1,27 @@
+[
+  {
+    "variation": "default",
+    "version": "sktwi1xtmkfgx8626",
+    "items": [
+      {
+        "step": [
+          {
+            "type": "paragraph",
+            "text": "Aliqua culpa elit commodo deserunt laborum est voluptate. Aliqua veniam consequat dolore reprehenderit incididunt. Lorem tempor ut consequat officia reprehenderit nostrud.",
+            "spans": []
+          }
+        ]
+      }
+    ],
+    "primary": {
+      "title": [
+        {
+          "type": "heading1",
+          "text": "Shake",
+          "spans": []
+        }
+      ]
+    },
+    "slice_type": "landing_timeline"
+  }
+]

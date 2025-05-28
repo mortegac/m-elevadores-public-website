@@ -1,0 +1,44 @@
+[
+  {
+    "variation": "default",
+    "version": "sktwi1xtmkfgx8626",
+    "items": [
+      {
+        "usericon": {
+          "dimensions": {
+            "width": 900,
+            "height": 500
+          },
+          "alt": null,
+          "copyright": null,
+          "url": "https://images.unsplash.com/photo-1471897488648-5eae4ac6686b"
+        },
+        "username": [
+          {
+            "type": "paragraph",
+            "text": "Magna velit exercitation voluptate anim ex do veniam minim in est.",
+            "spans": []
+          }
+        ],
+        "userreview": [
+          {
+            "type": "paragraph",
+            "text": "Deserunt adipisicing aute excepteur laborum magna mollit ipsum. Ut eiusmod proident quis laborum ex in est eiusmod excepteur pariatur ut non dolore. Quis commodo mollit velit dolore excepteur id minim deserunt fugiat ex qui.",
+            "spans": []
+          }
+        ],
+        "stars": 29
+      }
+    ],
+    "primary": {
+      "title": [
+        {
+          "type": "heading1",
+          "text": "Properly",
+          "spans": []
+        }
+      ]
+    },
+    "slice_type": "landing_customer_review"
+  }
+]
