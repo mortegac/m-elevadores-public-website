@@ -57,8 +57,5 @@
   "repository": {
     "type": "git",
     "url": ""
-  },
-  "optionalDependencies": {
-    "@next/swc-linux-x64-gnu": "^14.2.5"
   }
 }
