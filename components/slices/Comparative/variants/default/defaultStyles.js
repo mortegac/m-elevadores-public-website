@@ -27,37 +27,35 @@ export const Content = styled.div`
 //   }
 // `;
 
-
 export const ButtonContainer = styled.button`
-margin-top: 36px;
-display: flex;
-flex-direction: row;
-justify-content: center;
-align-items: center;
-font-weight: bold;
-font-family: ${(props) => props.theme.typography.fontFamily};
-white-space: nowrap;
-border-radius: ${(props) => props.theme.button.borderRadius};
-font-size: 16px;
-line-height: 24px;
-border: none;
-cursor: pointer;
-transition: background 0.3s ease;
-width: fit-content;
-height: ${(props) => props.theme.button.height};
-background:${(props) => props.theme.button.bgPrimary};
-border: 1px solid ${(props) => props.theme.colors.textLightPrimary};
-color:${(props) => props.theme.colors.white};
-:hover {
-  background-color: ${(props) => props.theme.button.bgPrimaryOver};
+  margin-top: 36px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  font-weight: bold;
+  font-family: ${(props) => props.theme.typography.fontFamily};
+  white-space: nowrap;
+  border-radius: ${(props) => props.theme.button.borderRadius};
+  font-size: 16px;
+  line-height: 24px;
+  border: none;
+  cursor: pointer;
+  transition: background 0.3s ease;
+  width: fit-content;
+  height: ${(props) => props.theme.button.height};
+  background: ${(props) => props.theme.button.bgPrimary};
+  border: 1px solid ${(props) => props.theme.colors.textLightPrimary};
   color: ${(props) => props.theme.colors.white};
-}
-padding:${(props) => props.theme.button.padding};
+  :hover {
+    background-color: ${(props) => props.theme.button.bgPrimaryOver};
+    color: ${(props) => props.theme.colors.white};
+  }
+  padding: ${(props) => props.theme.button.padding};
 
-
-@media (max-width: ${(props) => props.theme.breakpoints.md}) {
-  width: 100%;
-}
+  @media (max-width: ${(props) => props.theme.breakpoints.md}) {
+    width: 100%;
+  }
 `;
 
 export const Description = styled.div`
@@ -137,10 +135,9 @@ export const Card = styled.div`
   position: relative;
   @media (max-width: ${(props) => props.theme.breakpoints.md}) {
     width: 98%;
-    
   }
   .description {
-   margin: 42px 0;
+    margin: 42px 0;
   }
   .list-check {
     width: 100%;
@@ -150,7 +147,7 @@ export const Card = styled.div`
     align-items: center;
     padding: 32px 16px;
     p {
-      width: 86%;      
+      width: 86%;
     }
     @media (max-width: ${(props) => props.theme.breakpoints.md}) {
       flex-direction: column;
@@ -166,9 +163,7 @@ export const Card = styled.div`
       }
     }
   }
-  
-  
-  
+
   // @media (max-width: 500px) {
   //   padding: 24px;
   // }
@@ -176,7 +171,7 @@ export const Card = styled.div`
   //   padding: 0px;
   //   border: none;
   // }
- `;
+`;
 
 export const ItemsContainer = styled.ul`
   margin: 0;

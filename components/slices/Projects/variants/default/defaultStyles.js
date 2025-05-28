@@ -14,63 +14,70 @@ export const Container = styled.div`
 `;
 
 export const ImgContent = styled.div`
-
-img {
-  width: 535px;
-  height: 612px;
-}
+  img {
+    width: 535px;
+    height: 612px;
+  }
 `;
 
 export const Description = styled.div`
-display: flex;
-flex-direction: column;
-margin-right: 3rem;
-@media (max-width: ${(props) => props.theme.breakpoints.md}) {
-  width: 100%;
-  margin-right: 0;
-}
-//  h2 {
-//     margin: 0;
-//     margin-bottom: 24px;
-//     font-weight:  ${(props) => props.theme.typography.h2.desktop.fontWeight};
-//     line-height:  ${(props) => props.theme.typography.h2.desktop.lineHeight};
-//     font-size: ${(props) => props.theme.typography.h2.desktop.fontSize};
-//     color: ${(props) => props.theme.colors.textDarkPrimary};
-//     text-align: start;
-//     @media (max-width: ${(props) => props.theme.breakpoints.md}) {
-//       width: 70%;
-//       font-weight:  ${(props) => props.theme.typography.h2.desktop.fontWeight};
-//       line-height:  ${(props) => props.theme.typography.h2.desktop.lineHeight};
-//       font-size: ${(props) => props.theme.typography.h2.desktop.fontSize};
-//       margin-bottom: 16px;
-//     }
-//   }
-//   h3 {
-//     font-weight:  ${(props) => props.theme.typography.h3.desktop.fontWeight};
-//     line-height:  ${(props) => props.theme.typography.h3.desktop.lineHeight};
-//     font-size: ${(props) => props.theme.typography.h3.desktop.fontSize};
-//     text-align: start;
-//     color: ${(props) => props.theme.colors.textSecondary};
-//     margin-bottom: 8px;
-//     @media (max-width: ${(props) => props.theme.breakpoints.md}) {
-//       width: 70%;
-//       margin-bottom: 16px;
-//       font-weight:  ${(props) => props.theme.typography.h3.desktop.fontWeight};
-//       line-height:  ${(props) => props.theme.typography.h3.desktop.lineHeight};
-//       font-size: ${(props) => props.theme.typography.h3.desktop.fontSize};
-//     }
-//   }
+  display: flex;
+  flex-direction: column;
+  margin-right: 3rem;
+  @media (max-width: ${(props) => props.theme.breakpoints.md}) {
+    width: 100%;
+    margin-right: 0;
+  }
+  //  h2 {
+  //     margin: 0;
+  //     margin-bottom: 24px;
+  //     font-weight:  ${(props) =>
+    props.theme.typography.h2.desktop.fontWeight};
+  //     line-height:  ${(props) =>
+    props.theme.typography.h2.desktop.lineHeight};
+  //     font-size: ${(props) => props.theme.typography.h2.desktop.fontSize};
+  //     color: ${(props) => props.theme.colors.textDarkPrimary};
+  //     text-align: start;
+  //     @media (max-width: ${(props) => props.theme.breakpoints.md}) {
+  //       width: 70%;
+  //       font-weight:  ${(props) =>
+    props.theme.typography.h2.desktop.fontWeight};
+  //       line-height:  ${(props) =>
+    props.theme.typography.h2.desktop.lineHeight};
+  //       font-size: ${(props) => props.theme.typography.h2.desktop.fontSize};
+  //       margin-bottom: 16px;
+  //     }
+  //   }
+  //   h3 {
+  //     font-weight:  ${(props) =>
+    props.theme.typography.h3.desktop.fontWeight};
+  //     line-height:  ${(props) =>
+    props.theme.typography.h3.desktop.lineHeight};
+  //     font-size: ${(props) => props.theme.typography.h3.desktop.fontSize};
+  //     text-align: start;
+  //     color: ${(props) => props.theme.colors.textSecondary};
+  //     margin-bottom: 8px;
+  //     @media (max-width: ${(props) => props.theme.breakpoints.md}) {
+  //       width: 70%;
+  //       margin-bottom: 16px;
+  //       font-weight:  ${(props) =>
+    props.theme.typography.h3.desktop.fontWeight};
+  //       line-height:  ${(props) =>
+    props.theme.typography.h3.desktop.lineHeight};
+  //       font-size: ${(props) => props.theme.typography.h3.desktop.fontSize};
+  //     }
+  //   }
   p {
     margin: 0;
-    font-weight:  ${(props) => props.theme.typography.p.desktop.fontWeight};
-    line-height:  ${(props) => props.theme.typography.p.desktop.lineHeight};
+    font-weight: ${(props) => props.theme.typography.p.desktop.fontWeight};
+    line-height: ${(props) => props.theme.typography.p.desktop.lineHeight};
     font-size: ${(props) => props.theme.typography.p.desktop.fontSize};
     text-align: justify;
     color: ${(props) => props.theme.colors.textPrimary};
     @media (max-width: ${(props) => props.theme.breakpoints.md}) {
       // width: 70%;
-      font-weight:  ${(props) => props.theme.typography.p.desktop.fontWeight};
-      line-height:  ${(props) => props.theme.typography.p.desktop.lineHeight};
+      font-weight: ${(props) => props.theme.typography.p.desktop.fontWeight};
+      line-height: ${(props) => props.theme.typography.p.desktop.lineHeight};
       font-size: ${(props) => props.theme.typography.p.desktop.fontSize};
       margin-bottom: 16px;
     }
@@ -85,15 +92,12 @@ export const Title = styled.div`
     text-align: center;
     // margin: 40px 0;
   }
-  
- 
 `;
 export const ImgHolder = styled.div`
   width: 50%;
- 
-  
+
   margin-top: 1.5rem;
-  img{
+  img {
     max-width: 525px;
   }
   @media (max-width: ${(props) => props.theme.breakpoints.md}) {
@@ -103,7 +107,6 @@ export const ImgHolder = styled.div`
       width: 100%;
     }
   }
-  
 `;
 // export const ImgHolder = styled.div`
 //   display: flex;

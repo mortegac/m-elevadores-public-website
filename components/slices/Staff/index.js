@@ -1,6 +1,5 @@
 import { Default } from "./variants";
 
-
 export const Staff = ({ slice }) => {
   const { variation } = slice;
 

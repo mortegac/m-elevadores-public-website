@@ -5,8 +5,7 @@ export const Metrics = ({ slice }) => {
 
   const typeOfComponents = {
     ["default"]: Default,
-    ["noBackground"] : NoBackground,
-    
+    ["noBackground"]: NoBackground,
   };
 
   const TypeOfVariants = typeOfComponents[variation] || Default;

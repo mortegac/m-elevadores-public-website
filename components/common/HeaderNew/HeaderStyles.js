@@ -42,17 +42,17 @@ export const ButtonContainer = styled.button`
   cursor: pointer;
   transition: background 0.3s ease;
   height: ${(props) => props.theme.button.height};
-  
-  background:${(props) => props.theme.colors.white};
-  
-  color:${(props) => props.theme.colors.grey};
-  
+
+  background: ${(props) => props.theme.colors.white};
+
+  color: ${(props) => props.theme.colors.grey};
+
   :hover {
     background: #e4e1e1;
-    color:${(props) => props.theme.colors.grey};
+    color: ${(props) => props.theme.colors.grey};
   }
-  padding:${(props) => props.theme.button.padding};
-  
+  padding: ${(props) => props.theme.button.padding};
+
   @media (max-width: ${(props) => props.theme.breakpoints.md}) {
     width: 100%;
   }
@@ -98,7 +98,7 @@ export const SectionContainer = styled.div`
   height: 100%;
   // flex-direction: row;
   align-items: center;
-  
+
   .ham {
     cursor: pointer;
     -webkit-tap-highlight-color: transparent;

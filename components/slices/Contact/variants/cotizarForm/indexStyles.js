@@ -83,11 +83,11 @@ export const IconContainer = styled.div`
   height: 118px;
   left: 285px;
   top: 153px;
-  background: ${(props) => props.selected ? "#bab8b8" : "#FFFFFF"};
-  opacity:  ${(props) => props.selected ? "0.6" : "1"};
+  background: ${(props) => (props.selected ? "#bab8b8" : "#FFFFFF")};
+  opacity: ${(props) => (props.selected ? "0.6" : "1")};
   box-shadow: 0px 10px 19px rgba(0, 17, 51, 0.15);
   border-radius: 21.9899px;
-  span{
+  span {
     margin-top: 16px;
     text-align: center;
     font-size: 15px;
@@ -104,9 +104,6 @@ export const IconContainer = styled.div`
     opacity: 0.6;
     color: ${(props) => props.theme.colors.primary};
   }
-
-  
-
 `;
 // export const IconContainer2 = styled.div`
 // /* Picture */
@@ -122,7 +119,6 @@ export const IconContainer = styled.div`
 // box-shadow: 0px 10px 19px rgba(0, 17, 51, 0.15);
 // border-radius: 21.9899px;
 
-
 // /* sir123 */
 
 // position: absolute;
@@ -130,8 +126,6 @@ export const IconContainer = styled.div`
 // height: 619px;
 // left: -169.98px;
 // top: -6.83px;
-
-
 
 // /* Title */
 
@@ -152,8 +146,6 @@ export const IconContainer = styled.div`
 
 // color: rgba(0, 17, 51, 0.6);
 
-
-
 // /* Bus 2 */
 
 // position: absolute;
@@ -161,8 +153,6 @@ export const IconContainer = styled.div`
 // height: 32px;
 // left: 34px;
 // top: 21px;
-
-
 
 // /* Bus 1 */
 
@@ -176,14 +166,12 @@ export const IconContainer = styled.div`
 
 // `;
 
-
 export const Tooltip = styled.div`
- 
-.tooltip-text{
-  margin:-20px;
-  margin-left: -43px !important;
-  bottom: 102% !important;
-}
+  .tooltip-text {
+    margin: -20px;
+    margin-left: -43px !important;
+    bottom: 102% !important;
+  }
   svg {
     margin-bottom: 4px;
     margin-right: 6px;
@@ -192,7 +180,7 @@ export const Tooltip = styled.div`
     position: relative;
     display: inline-block;
     margin-top: 18px;
-    
+
     path {
       fill: #b4b8c1;
     }
@@ -201,7 +189,7 @@ export const Tooltip = styled.div`
   .tooltip:hover,
   .tooltip:active {
     path {
-      fill: #3FBB49;
+      fill: #3fbb49;
     }
   }
 
@@ -237,7 +225,7 @@ export const Tooltip = styled.div`
     opacity: 0.2;
     visibility: hidden;
     width: 400px;
-    background-color: #F3FDEC;
+    background-color: #f3fdec;
     color: #fff;
     border-radius: 24px;
     padding: 18px 18px;
@@ -268,7 +256,7 @@ export const Tooltip = styled.div`
 
     // left: 10%;
     // bottom: 0%;
-    
+
     // margin-left: -5px;
 
     // transform: translateY(10%);
@@ -276,14 +264,12 @@ export const Tooltip = styled.div`
     // border-width: 15px;
     // border-style: solid;
     // border-color: transparent rgb(188 188 188 / 20%) transparent transparent;
-    
-    
+
     // bottom: calc(50% - 10px);
     // top: 150px;
     // border-style: solid;
     // border-width: 0 8px 8px 8px;
     // border-color: transparent transparent #bfbfbf transparent;
-    
   }
 
   .tooltip:hover .tooltip-text {
@@ -328,8 +314,6 @@ export const Tooltip = styled.div`
 //   display: inline-block;
 // }
 
-
-
 // .popover__content {
 //   opacity: 0;
 //   visibility: hidden;
@@ -337,7 +321,7 @@ export const Tooltip = styled.div`
 //   left: -94px;
 //   top: -116px;
 //   transform: translate(0, 10px);
-//   padding: 1.5rem;  
+//   padding: 1.5rem;
 //   width: 200px;
 //   min-height: 150px;
 //   background: white;
@@ -370,7 +354,7 @@ export const Tooltip = styled.div`
 
 // `;
 export const ModalContainer = styled.div`
-  .bottomModal{
+  .bottomModal {
     width: 60%;
     color: white;
     font-weight: bold;
@@ -387,19 +371,18 @@ export const ModalContainer = styled.div`
     transition: background 0.3s ease;
     height: ${(props) => props.theme.button.height};
     border-radius: ${(props) => props.theme.button.borderRadius};
-    background:${(props) => props.theme.button.bgPrimary};
+    background: ${(props) => props.theme.button.bgPrimary};
     border: 1px solid ${(props) => props.theme.button.bgPrimary};
     :hover {
       background-color: ${(props) => props.theme.button.bgPrimaryOver};
     }
-    padding:${(props) => props.theme.button.padding};
-    
+    padding: ${(props) => props.theme.button.padding};
 
     @media (max-width: ${(props) => props.theme.breakpoints.md}) {
       width: 100%;
     }
   }
-  .bottomModal-simple{
+  .bottomModal-simple {
     width: 60%;
     color: ${(props) => props.theme.button.bgPrimary};
     font-weight: bold;
@@ -421,94 +404,91 @@ export const ModalContainer = styled.div`
     :hover {
       background-color: ${(props) => props.theme.button.bgPrimaryOver};
     }
-    padding:${(props) => props.theme.button.padding};
+    padding: ${(props) => props.theme.button.padding};
     margin-bottom: 16px;
-  
+
     @media (max-width: ${(props) => props.theme.breakpoints.md}) {
       width: 100%;
     }
   }
-  
-  
-h3{
-  color: green;
-  text-align: center;
-  margin: 24px 0 16px 0;
-  font-size: ${(props) => props.theme.typography.p.desktop.fontSize};
-  font-weight: ${(props) => props.theme.typography.p.desktop.lineHeight};
-  font-family: ${(props) => props.theme.typography.fontFamily};
-  font-size: 22px;
-  line-height: ${(props) => props.theme.typography.p.desktop.lineHeight};
-  margin-top: 14px;
-  letter-spacing: 0px;
-  width: 100%;
-  line-height: 1.4;
-  margin: 0;
-  padding: 1em 0.5em;
-  color: ${(props) => props.theme.colors.primary};
-}
-.modal-background {
-  display: ${(props) => props.isVisible};
-  width: 100%;
-  height: 100%;
-  background-color: rgba(0,0,0,0.5);
-  position: fixed;
-  top: 0;
-  left: 0;
-  z-index: 9998;
-}
-.modal {
-  overflow: scroll;
-  display: ${(props) => props.isVisible};
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  margin: auto;
-  width: 900px;
-  height: 700px;
-  background-color: #fff;
-  box-sizing: border-box;
-  border-radius: 4px;
-  z-index: 99999;
-}
-.modal > p {
-	padding: 15px;
+
+  h3 {
+    color: green;
+    text-align: center;
+    margin: 24px 0 16px 0;
+    font-size: ${(props) => props.theme.typography.p.desktop.fontSize};
+    font-weight: ${(props) => props.theme.typography.p.desktop.lineHeight};
+    font-family: ${(props) => props.theme.typography.fontFamily};
+    font-size: 22px;
+    line-height: ${(props) => props.theme.typography.p.desktop.lineHeight};
+    margin-top: 14px;
+    letter-spacing: 0px;
+    width: 100%;
+    line-height: 1.4;
     margin: 0;
-}
-.modal-header {
-	// background-color: #f9f9f9;
+    padding: 1em 0.5em;
+    color: ${(props) => props.theme.colors.primary};
+  }
+  .modal-background {
+    display: ${(props) => props.isVisible};
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 9998;
+  }
+  .modal {
+    overflow: scroll;
+    display: ${(props) => props.isVisible};
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+    width: 900px;
+    height: 700px;
+    background-color: #fff;
+    box-sizing: border-box;
+    border-radius: 4px;
+    z-index: 99999;
+  }
+  .modal > p {
+    padding: 15px;
+    margin: 0;
+  }
+  .modal-header {
+    // background-color: #f9f9f9;
     // border-bottom: 1px solid #dddddd;
     box-sizing: border-box;
     height: 20px;
-}
-.modal-header h3 {
-	margin: 0;
+  }
+  .modal-header h3 {
+    margin: 0;
     box-sizing: border-box;
     padding-left: 15px;
     line-height: 50px;
     color: #4d4d4d;
     font-size: 16px;
     display: inline-block;
-}
-.modal-header label {
-	  box-sizing: border-box;
+  }
+  .modal-header label {
+    box-sizing: border-box;
     border: 0;
     float: right;
     line-height: 50px;
     padding: 0 15px 0 15px;
     cursor: pointer;
-}
-.modal-header label:hover img {
-	opacity: 0.6;
-}
-
+  }
+  .modal-header label:hover img {
+    opacity: 0.6;
+  }
 `;
 
-
 export const TableHeader = styled.div`
-  .bottomModal{
+  .bottomModal {
     color: white;
     font-weight: bold;
     font-family: ${(props) => props.theme.typography.fontFamily};
@@ -525,13 +505,12 @@ export const TableHeader = styled.div`
     transition: background 0.3s ease;
     height: ${(props) => props.theme.button.height};
     border-radius: ${(props) => props.theme.button.borderRadius};
-    background:${(props) => props.theme.button.bgPrimary};
+    background: ${(props) => props.theme.button.bgPrimary};
     border: 1px solid ${(props) => props.theme.button.bgPrimary};
     :hover {
       background-color: ${(props) => props.theme.button.bgPrimaryOver};
     }
-    padding:${(props) => props.theme.button.padding};
-    
+    padding: ${(props) => props.theme.button.padding};
 
     @media (max-width: ${(props) => props.theme.breakpoints.md}) {
       width: 100%;
@@ -546,11 +525,11 @@ export const TableHeader = styled.div`
   padding-bottom: 2em;
   @media screen and (max-width: 600px) {
     flex-direction: column;
-    .rg-dek{
-      font-size: 10px;  
+    .rg-dek {
+      font-size: 10px;
     }
   }
-  .rg-dek{
+  .rg-dek {
     font-size: ${(props) => props.theme.typography.p.desktop.fontSize};
     font-weight: ${(props) => props.theme.typography.p.desktop.lineHeight};
     font-family: ${(props) => props.theme.typography.fontFamily};
@@ -580,11 +559,11 @@ export const TableContainer = styled.div`
   padding: 1em 0.5em;
   color: ${(props) => props.theme.colors.primary};
 
-.rg-header {
+  .rg-header {
     margin-bottom: 1em;
     text-align: left;
   }
-  
+
   .rg-header > * {
     // display: block;
   }
@@ -593,10 +572,10 @@ export const TableContainer = styled.div`
     font-size: 1em;
   }
   .rg-dek {
-    font-size: 1em;    
+    font-size: 1em;
     color: ${(props) => props.theme.colors.primary};
   }
-  
+
   .rg-source {
     margin: 0;
     font-size: 0.75em;
@@ -605,11 +584,11 @@ export const TableContainer = styled.div`
   .rg-source .pre-colon {
     text-transform: uppercase;
   }
-  
+
   .rg-source .post-colon {
     font-weight: bold;
   }
-  
+
   /* table */
   table.rg-table {
     width: 100%;
@@ -635,7 +614,6 @@ export const TableContainer = styled.div`
   }
   table.rg-table tr.highlight {
     background-color: #dcf1f0 !important;
-    
   }
   table.rg-table.zebra tr:nth-child(even) {
     background-color: #f6f6f6;
@@ -650,7 +628,6 @@ export const TableContainer = styled.div`
     padding-top: 1.35em;
     padding-bottom: 1.35em;
     // background-color: #fafafa;
-  
   }
   table.rg-table .highlight td {
     font-weight: bold;
@@ -659,7 +636,7 @@ export const TableContainer = styled.div`
   td.number {
     text-align: center;
   }
-  
+
   /* media queries */
   @media screen and (max-width: 600px) {
     .rg-container {
@@ -726,12 +703,8 @@ export const TableContainer = styled.div`
       background-color: inherit;
       font-weight: normal;
     }
-}
-
+  }
 `;
-
-
-
 
 // fin:  TABLE
 export const PageContainer = styled.div`
@@ -740,13 +713,13 @@ export const PageContainer = styled.div`
   align-items: center;
   width: 100%;
   min-height: 490px;
-  margin-top:64px;
-  margin-bottom:64px;
+  margin-top: 64px;
+  margin-bottom: 64px;
   text-align: left;
-  h2{
+  h2 {
     text-align: center;
   }
-  
+
   input::-webkit-outer-spin-button,
   input::-webkit-inner-spin-button {
     -webkit-appearance: none;
@@ -784,13 +757,13 @@ export const ButtonBox = styled.div`
   align-items: center;
   margin-top: 22px;
   width: 100%;
-  input[type="submit"]{
+  input[type="submit"] {
     height: ${(props) => props.theme.button.height};
     margin-top: 0 !important;
-    width:40% !important;
+    width: 40% !important;
   }
 
-  .buttonStyle{
+  .buttonStyle {
     font-weight: bold;
     font-family: ${(props) => props.theme.typography.fontFamily};
     white-space: nowrap;
@@ -805,14 +778,14 @@ export const ButtonBox = styled.div`
     transition: background 0.3s ease;
     height: ${(props) => props.theme.button.height};
     border-radius: ${(props) => props.theme.button.borderRadius};
-    
+
     color: ${(props) => props.theme.button.bgPrimary};
-    background:white;
+    background: white;
     border: 1px solid ${(props) => props.theme.button.bgPrimary};
     :hover {
       background-color: ${(props) => props.theme.button.bgPrimaryOver};
     }
-    padding:${(props) => props.theme.button.padding};
+    padding: ${(props) => props.theme.button.padding};
     margin-right: 16px;
 
     @media (max-width: ${(props) => props.theme.breakpoints.md}) {
@@ -892,60 +865,59 @@ export const Container = styled.div`
 `;
 
 export const FormContainer = styled.form`
+  .boxSeparateA {
+    width: 30%;
+    margin: 0 20px;
+    padding: 16px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    border-right: 2px solid #eeeeee;
+    // background-color: pink;
+    flex-direction: column;
+  }
+  .boxSeparateB {
+    width: 30%;
+    margin: 20px;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    flex-direction: column;
+  }
 
-.boxSeparateA{
-  width: 30%;
-  margin: 0 20px;
-  padding: 16px;
-  display: flex;
-  justify-content: flex-start;
-  align-items: flex-start;
-  border-right: 2px solid #eeeeee;
-  // background-color: pink;
-  flex-direction: column;
-}
-.boxSeparateB{
-  width: 30%;
-  margin: 20px;
-  display: flex;
-  justify-content: flex-end;
-  align-items: center;
-  flex-direction: column;
-}
+  .box-input {
+    position: relative;
+    display: flex;
+    width: 100%;
+    justify-content: flex-start;
+    align-items: center;
+    flex-direction: row;
 
-.box-input{
-  position: relative;
-  display: flex;
-  width: 100%;
-  justify-content: flex-start;
-  align-items: center;
-  flex-direction: row;
+    span {
+      margin-left: 16px;
+      font-size: ${(props) => props.theme.typography.p.desktop.fontSize};
+      line-height: ${(props) => props.theme.typography.p.desktop.lineHeight};
+      font-weight: ${(props) => props.theme.typography.p.desktop.lineHeight};
+      color: #a3a3a3;
+      font-family: ${(props) => props.theme.typography.fontFamily};
+      margin-top: 14px;
+      letter-spacing: 0px;
+      margin-bottom: 5px;
+    }
+  }
 
-  span { 
-    margin-left: 16px;
-    font-size: ${(props) => props.theme.typography.p.desktop.fontSize};
-    line-height: ${(props) => props.theme.typography.p.desktop.lineHeight};
-    font-weight: ${(props) => props.theme.typography.p.desktop.lineHeight};
-    color: #a3a3a3;
-    font-family: ${(props) => props.theme.typography.fontFamily};
-    margin-top: 14px;
-    letter-spacing: 0px;
-    margin-bottom: 5px;
-  } 
-}
-
-.box{
-  margin: 20px;
-  display: flex;
-  width: 100%;
-  justify-content: center;
-  align-items: flex-start;
-}
-.add-margin{
-  margin-top :22px;
-    margin-bottom :22px;
-}
-.textInput{
+  .box {
+    margin: 20px;
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    align-items: flex-start;
+  }
+  .add-margin {
+    margin-top: 22px;
+    margin-bottom: 22px;
+  }
+  .textInput {
     text-align: left;
     height: 48px;
     width: 100%;
@@ -961,8 +933,8 @@ export const FormContainer = styled.form`
     box-shadow: 0 0 0 0 transparent;
     // margin:22px 0;
     margin: 0;
-    margin-top :22px;
-    margin-bottom :22px;
+    margin-top: 22px;
+    margin-bottom: 22px;
     background-color: rgb(244, 244, 244);
   }
 
@@ -1022,7 +994,7 @@ export const FormContainer = styled.form`
       border: 1px solid #ff3355;
     }
   }
- textarea {
+  textarea {
     min-height: 48px;
     width: 100%;
     border: 1px solid rgba(0, 17, 51, 0.15);
@@ -1072,14 +1044,14 @@ export const FormContainer = styled.form`
     transition: background 0.3s ease;
     height: 48px;
     width: 100%;
-    background:${(props) => props.theme.button.bgPrimary};
+    background: ${(props) => props.theme.button.bgPrimary};
     border: 1px solid ${(props) => props.theme.button.bgPrimary};
-    color:${(props) => props.theme.colors.white};
+    color: ${(props) => props.theme.colors.white};
     :hover {
       background-color: ${(props) => props.theme.button.bgPrimaryOver};
       color: ${(props) => props.theme.colors.white};
     }
-    
+
     appearance: none;
     @media (max-width: 768px) {
       margin-bottom: 16px;
@@ -1137,21 +1109,19 @@ export const ButtonContainer = styled.button`
   transition: background 0.3s ease;
   height: ${(props) => props.theme.button.height};
   border-radius: ${(props) => props.theme.button.borderRadius};
-  background:${(props) => props.theme.button.bgPrimary};
+  background: ${(props) => props.theme.button.bgPrimary};
   border: 1px solid ${(props) => props.theme.button.bgPrimary};
-  color:${(props) => props.theme.colors.white};
+  color: ${(props) => props.theme.colors.white};
   :hover {
     background-color: ${(props) => props.theme.button.bgPrimaryOver};
     color: ${(props) => props.theme.colors.white};
   }
-  padding:${(props) => props.theme.button.padding};
-  
+  padding: ${(props) => props.theme.button.padding};
 
   @media (max-width: ${(props) => props.theme.breakpoints.md}) {
     width: 100%;
   }
 `;
-
 
 export const Description = styled.div`
   display: flex;
@@ -1168,15 +1138,15 @@ export const Description = styled.div`
   h2 {
     margin: 0;
     margin-bottom: 24px;
-    font-weight:  ${(props) => props.theme.typography.h2.desktop.fontWeight};
-    line-height:  ${(props) => props.theme.typography.h2.desktop.lineHeight};
+    font-weight: ${(props) => props.theme.typography.h2.desktop.fontWeight};
+    line-height: ${(props) => props.theme.typography.h2.desktop.lineHeight};
     font-size: ${(props) => props.theme.typography.h2.desktop.fontSize};
     color: ${(props) => props.theme.colors.textDarkblue};
     text-align: center;
     @media (max-width: ${(props) => props.theme.breakpoints.md}) {
       width: 70%;
-      font-weight:  ${(props) => props.theme.typography.h2.desktop.fontWeight};
-      line-height:  ${(props) => props.theme.typography.h2.desktop.lineHeight};
+      font-weight: ${(props) => props.theme.typography.h2.desktop.fontWeight};
+      line-height: ${(props) => props.theme.typography.h2.desktop.lineHeight};
       font-size: ${(props) => props.theme.typography.h2.desktop.fontSize};
       margin-bottom: 16px;
     }

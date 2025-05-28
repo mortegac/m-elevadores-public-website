@@ -164,34 +164,33 @@ export const ItemsContainerv2 = styled.ul`
         padding: 0;
       }
     }
-   span{
-    margin-top : 16px;
-    margin-bottom : 16px;
-    letter-spacing: 0.25px;
-    line-height: 24px;
-    font-size: 16px;
-    color: #605E5C;
-    text-align: center;
-   }
-   
-   h4 {
-    font-size: 18px;
-   }
+    span {
+      margin-top: 16px;
+      margin-bottom: 16px;
+      letter-spacing: 0.25px;
+      line-height: 24px;
+      font-size: 16px;
+      color: #605e5c;
+      text-align: center;
+    }
+
+    h4 {
+      font-size: 18px;
+    }
   }
 `;
 
-
 export const Button = styled.button`
-    border-radius: 22px;
-    height: 46px;
-    padding: 10px 30px;
-    border: 1px solid ${(props) => props.theme.colors.secondary};
-    font-weight:  ${(props) => props.theme.typography.btnText.desktop.fontWeight};
-    line-height:  ${(props) => props.theme.typography.btnText.desktop.lineHeight};
-    font-size: ${(props) => props.theme.typography.btnText.desktop.fontSize};
-    line-height: 24px;
-    cursor: pointer; 
-    color: ${(props) => props.theme.colors.secondary};
-    // background: ${(props) => props.theme.colors.bgColorQuaternary};
-    background: transparent;
+  border-radius: 22px;
+  height: 46px;
+  padding: 10px 30px;
+  border: 1px solid ${(props) => props.theme.colors.secondary};
+  font-weight: ${(props) => props.theme.typography.btnText.desktop.fontWeight};
+  line-height: ${(props) => props.theme.typography.btnText.desktop.lineHeight};
+  font-size: ${(props) => props.theme.typography.btnText.desktop.fontSize};
+  line-height: 24px;
+  cursor: pointer;
+  color: ${(props) => props.theme.colors.secondary};
+  // background: ${(props) => props.theme.colors.bgColorQuaternary};
+  background: transparent;
 `;

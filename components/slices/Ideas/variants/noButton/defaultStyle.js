@@ -27,22 +27,22 @@ export const Description = styled.div`
   h2 {
     margin: 0;
     margin-bottom: 24px;
-    font-weight:  ${(props) => props.theme.typography.h2.desktop.fontWeight};
-    line-height:  ${(props) => props.theme.typography.h2.desktop.lineHeight};
+    font-weight: ${(props) => props.theme.typography.h2.desktop.fontWeight};
+    line-height: ${(props) => props.theme.typography.h2.desktop.lineHeight};
     font-size: ${(props) => props.theme.typography.h2.desktop.fontSize};
     color: ${(props) => props.theme.colors.secondary};
     text-align: center;
     @media (max-width: ${(props) => props.theme.breakpoints.md}) {
       width: 70%;
-      font-weight:  ${(props) => props.theme.typography.h2.desktop.fontWeight};
-      line-height:  ${(props) => props.theme.typography.h2.desktop.lineHeight};
+      font-weight: ${(props) => props.theme.typography.h2.desktop.fontWeight};
+      line-height: ${(props) => props.theme.typography.h2.desktop.lineHeight};
       font-size: ${(props) => props.theme.typography.h2.desktop.fontSize};
       margin-bottom: 16px;
     }
   }
   h3 {
-    font-weight:  ${(props) => props.theme.typography.h3.desktop.fontWeight};
-    line-height:  ${(props) => props.theme.typography.h3.desktop.lineHeight};
+    font-weight: ${(props) => props.theme.typography.h3.desktop.fontWeight};
+    line-height: ${(props) => props.theme.typography.h3.desktop.lineHeight};
     font-size: ${(props) => props.theme.typography.h3.desktop.fontSize};
     text-align: center;
     color: ${(props) => props.theme.colors.secondary};
@@ -50,10 +50,9 @@ export const Description = styled.div`
     @media (max-width: ${(props) => props.theme.breakpoints.md}) {
       width: 70%;
       margin-bottom: 16px;
-      font-weight:  ${(props) => props.theme.typography.h3.desktop.fontWeight};
-      line-height:  ${(props) => props.theme.typography.h3.desktop.lineHeight};
+      font-weight: ${(props) => props.theme.typography.h3.desktop.fontWeight};
+      line-height: ${(props) => props.theme.typography.h3.desktop.lineHeight};
       font-size: ${(props) => props.theme.typography.h3.desktop.fontSize};
     }
   }
 `;
-

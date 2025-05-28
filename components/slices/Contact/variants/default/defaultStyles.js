@@ -6,13 +6,13 @@ export const PageContainer = styled.div`
   align-items: center;
   width: 100%;
   min-height: 490px;
-  margin-top:64px;
-  margin-bottom:64px;
+  margin-top: 64px;
+  margin-bottom: 64px;
   text-align: left;
-  h2{
+  h2 {
     text-align: center;
   }
-  
+
   input::-webkit-outer-spin-button,
   input::-webkit-inner-spin-button {
     -webkit-appearance: none;
@@ -76,7 +76,7 @@ export const FormContainer = styled.form`
     }
   }
   .dropdown {
-  height: 48px;
+    height: 48px;
     width: 100%;
     border: 1px solid rgba(0, 17, 51, 0.15);
     border-radius: 6px;
@@ -174,7 +174,7 @@ export const FormContainer = styled.form`
       border: 1px solid #ff3355;
     }
   }
- textarea {
+  textarea {
     min-height: 48px;
     width: 100%;
     border: 1px solid rgba(0, 17, 51, 0.15);
@@ -224,14 +224,14 @@ export const FormContainer = styled.form`
     transition: background 0.3s ease;
     height: 48px;
     width: 100%;
-    background:${(props) => props.theme.button.bgPrimary};
+    background: ${(props) => props.theme.button.bgPrimary};
     border: 1px solid ${(props) => props.theme.button.bgPrimary};
-    color:${(props) => props.theme.colors.white};
+    color: ${(props) => props.theme.colors.white};
     :hover {
       background-color: ${(props) => props.theme.button.bgPrimaryOver};
       color: ${(props) => props.theme.colors.white};
     }
-    
+
     appearance: none;
     @media (max-width: 768px) {
       margin-bottom: 16px;
@@ -289,21 +289,19 @@ export const ButtonContainer = styled.button`
   transition: background 0.3s ease;
   height: ${(props) => props.theme.button.height};
   border-radius: ${(props) => props.theme.button.borderRadius};
-  background:${(props) => props.theme.button.bgPrimary};
+  background: ${(props) => props.theme.button.bgPrimary};
   border: 1px solid ${(props) => props.theme.button.bgPrimary};
-  color:${(props) => props.theme.colors.white};
+  color: ${(props) => props.theme.colors.white};
   :hover {
     background-color: ${(props) => props.theme.button.bgPrimaryOver};
     color: ${(props) => props.theme.colors.white};
   }
-  padding:${(props) => props.theme.button.padding};
-  
+  padding: ${(props) => props.theme.button.padding};
 
   @media (max-width: ${(props) => props.theme.breakpoints.md}) {
     width: 100%;
   }
 `;
-
 
 export const Description = styled.div`
   display: flex;
@@ -320,15 +318,15 @@ export const Description = styled.div`
   h2 {
     margin: 0;
     margin-bottom: 24px;
-    font-weight:  ${(props) => props.theme.typography.h2.desktop.fontWeight};
-    line-height:  ${(props) => props.theme.typography.h2.desktop.lineHeight};
+    font-weight: ${(props) => props.theme.typography.h2.desktop.fontWeight};
+    line-height: ${(props) => props.theme.typography.h2.desktop.lineHeight};
     font-size: ${(props) => props.theme.typography.h2.desktop.fontSize};
     color: ${(props) => props.theme.colors.textDarkblue};
     text-align: center;
     @media (max-width: ${(props) => props.theme.breakpoints.md}) {
       width: 70%;
-      font-weight:  ${(props) => props.theme.typography.h2.desktop.fontWeight};
-      line-height:  ${(props) => props.theme.typography.h2.desktop.lineHeight};
+      font-weight: ${(props) => props.theme.typography.h2.desktop.fontWeight};
+      line-height: ${(props) => props.theme.typography.h2.desktop.lineHeight};
       font-size: ${(props) => props.theme.typography.h2.desktop.fontSize};
       margin-bottom: 16px;
     }

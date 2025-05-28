@@ -26,16 +26,16 @@ export const Description = styled.div`
   h1 {
     margin: 0;
     margin-bottom: 24px;
-    line-height:  ${(props) => props.theme.typography.h1.desktop.lineHeight};
+    line-height: ${(props) => props.theme.typography.h1.desktop.lineHeight};
     font-size: ${(props) => props.theme.typography.h1.desktop.fontSize};
     color: ${(props) => props.theme.colors.primary};
-    em { 
+    em {
       color: ${(props) => props.theme.colors.bgColorQuaternary};
       font-style: normal;
     }
     @media (max-width: ${(props) => props.theme.breakpoints.md}) {
       width: 70%;
-      line-height:  ${(props) => props.theme.typography.h1.mobile.lineHeight};
+      line-height: ${(props) => props.theme.typography.h1.mobile.lineHeight};
       font-size: ${(props) => props.theme.typography.h1.mobile.fontSize};
       margin-bottom: 16px;
     }
@@ -43,7 +43,7 @@ export const Description = styled.div`
   p {
     margin: 0;
     letter-spacing: 0.25px;
-    line-height:  ${(props) => props.theme.typography.p.desktop.lineHeight};
+    line-height: ${(props) => props.theme.typography.p.desktop.lineHeight};
     font-size: ${(props) => props.theme.typography.p.desktop.fontSize};
     @media (max-width: ${(props) => props.theme.breakpoints.md}) {
       margin-bottom: 32px;

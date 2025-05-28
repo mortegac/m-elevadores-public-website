@@ -1,4 +1,3 @@
-
 <!-- <img align="right" src="./assets/logo-miniswimmer.us.jpg" width="260px"> -->
 <h3 align="left" >m-elevadores.cl - WEBSITE</h3>
 
@@ -25,7 +24,6 @@
 1. Run Tests: `yarn test` while the server is running in another terminal
 
 2. Run Linter `yarn lint`.
-
 
 ## Dependencies
 

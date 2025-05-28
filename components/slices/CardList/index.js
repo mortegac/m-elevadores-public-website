@@ -1,6 +1,4 @@
-import {
-  Default,
-} from "./variants";
+import { Default } from "./variants";
 
 export const CardListSlice = ({ slice }) => {
   const { variation } = slice;

@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 export const PageContainerBase = styled.main`
-background: white;
+  background: white;
   display: flex;
   flex-direction: column;
   align-items: center;

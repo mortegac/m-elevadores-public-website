@@ -1,0 +1,84 @@
+{
+  "id": "landingnav",
+  "label": "landingNav",
+  "repeatable": false,
+  "status": true,
+  "json": {
+    "Main": {
+      "logo": {
+        "type": "Image",
+        "config": {
+          "label": "logo",
+          "constraint": {},
+          "thumbnails": []
+        }
+      },
+      "logourl": {
+        "type": "Link",
+        "config": {
+          "label": "logourl",
+          "placeholder": "",
+          "select": null
+        }
+      },
+      "navlink": {
+        "type": "Group",
+        "config": {
+          "label": "navlink",
+          "fields": {
+            "name": {
+              "type": "StructuredText",
+              "config": {
+                "label": "name",
+                "placeholder": "",
+                "allowTargetBlank": true,
+                "single": "paragraph,preformatted,heading1,heading2,heading3,heading4,heading5,heading6,strong,em,hyperlink,image,embed,list-item,o-list-item,rtl"
+              }
+            },
+            "link": {
+              "type": "Link",
+              "config": {
+                "label": "link",
+                "placeholder": "",
+                "select": null
+              }
+            }
+          }
+        }
+      },
+      "contanctbtn": {
+        "type": "Group",
+        "config": {
+          "label": "contanctbtn",
+          "fields": {
+            "icon": {
+              "type": "Image",
+              "config": {
+                "label": "icon",
+                "constraint": {},
+                "thumbnails": []
+              }
+            },
+            "link": {
+              "type": "Link",
+              "config": {
+                "label": "link",
+                "placeholder": "",
+                "select": null
+              }
+            },
+            "label": {
+              "type": "StructuredText",
+              "config": {
+                "label": "label",
+                "placeholder": "",
+                "allowTargetBlank": true,
+                "single": "paragraph"
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

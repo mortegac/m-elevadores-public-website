@@ -1,57 +1,54 @@
-import { API, graphqlOperation } from 'aws-amplify';
-import { GraphQLQuery } from '@aws-amplify/api';
+import { API, graphqlOperation } from "aws-amplify";
+import { GraphQLQuery } from "@aws-amplify/api";
 
-import { listBudgetProjects, getBudgetProject, } from '../graphql/queries';
-import { createBudgetProject, createTypeOfVehicle } from '../graphql/mutations';
-
-
+import { listBudgetProjects, getBudgetProject } from "../graphql/queries";
+import { createBudgetProject, createTypeOfVehicle } from "../graphql/mutations";
 
 export const createBudget = async (input) => {
   try {
+    window.console.log(">>>>>>>>>>input: ", input);
 
-    window.console.log('>>>>>>>>>>input: ', input)
+    const response = await API.graphql(
+      graphqlOperation(
+        createBudgetProject,
+        { input }
+        // { input: { ...input } }
+      )
+    );
 
-    const response = await API.graphql(graphqlOperation(
-      createBudgetProject,
-      { input }
-      // { input: { ...input } }
-    ));
-
-    window.console.log('>>>>>>>>>>createBudgetProject: ', response)
+    window.console.log(">>>>>>>>>>createBudgetProject: ", response);
     return response;
     // return []
-
   } catch (error) {
-    console.log('error: ', error)
+    console.log("error: ", error);
 
-    return []
+    return [];
   }
-}
+};
 export const createType = async (input) => {
   try {
+    window.console.log(">>>>>>>>>>input: ", input);
 
-    window.console.log('>>>>>>>>>>input: ', input)
+    const response = await API.graphql(
+      graphqlOperation(
+        createTypeOfVehicle,
+        { input }
+        // { input: { ...input } }
+      )
+    );
 
-    const response = await API.graphql(graphqlOperation(
-      createTypeOfVehicle,
-      { input }
-      // { input: { ...input } }
-    ));
-
-    window.console.log('>>>>>>>>>>createTypeOfVehicle: ', response)
+    window.console.log(">>>>>>>>>>createTypeOfVehicle: ", response);
     return response;
     // return []
-
   } catch (error) {
-    console.log('error: ', error)
+    console.log("error: ", error);
 
-    return []
+    return [];
   }
-}
+};
 
 export const fetchBudgets = async (idBudget) => {
   try {
-
     // console.log('>>>>>>>>>>fetchUsers: ')
     // const filterBudget = id === '' ? {} : { id: { eq: "f04e443b-934d-4ce6-b4b2-655fd4ab0644" } };
     // id: {eq: "f04e443b-934d-4ce6-b4b2-655fd4ab0644"},
@@ -63,7 +60,7 @@ export const fetchBudgets = async (idBudget) => {
     //     // ...filterBudget
     //     // ...filterisListed,
     //     // ...filterResidence,
-    //   }, // limit: parseFloat(limitFilter) 
+    //   }, // limit: parseFloat(limitFilter)
     // }
     // console.log('>>>>>>>>>>fetchBudgets: ', filterDetail)
     // const allData = await API.graphql(
@@ -73,24 +70,17 @@ export const fetchBudgets = async (idBudget) => {
     //   }
     // );
 
-    const allData = await API.graphql(graphqlOperation(
-      getBudgetProject,
-      { id: String(idBudget) }
-    ));
-
+    const allData = await API.graphql(
+      graphqlOperation(getBudgetProject, { id: String(idBudget) })
+    );
 
     // window.console.log('>>>>>>>>>>allData: ', allData.data.getBudgetProject)
     // const itemsData = [...allData.data.getBudgetProject]
 
     // return { ...allEves }
-    return { ...allData.data.getBudgetProject }
-
-
+    return { ...allData.data.getBudgetProject };
   } catch (error) {
-    console.log('>>>>>>>>>>error: ', error)
-    return { error }
+    console.log(">>>>>>>>>>error: ", error);
+    return { error };
   }
-}
-
-
-
+};

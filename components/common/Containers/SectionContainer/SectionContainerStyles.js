@@ -18,12 +18,12 @@ export const SectionContainerBase = styled.section`
     // padding-top: ${(props) => props.paddingMobileTop};
     // padding-bottom: ${(props) => props.paddingMobileBottom};
     // padding: ${(props) => props.boxed && "0 16px"};
-    borderRadius: 0;
+    borderradius: 0;
   }
-  
+
   @media (max-width: ${(props) => props.theme.breakpoints.sm}) {
     // margin: ${(props) => props.boxed && "32px 0"};
-    borderRadius: 0;
+    borderradius: 0;
   }
 `;
 
@@ -32,7 +32,7 @@ export const SectionBackgroundImage = styled.div`
   background-position: 100% 100%;
   background-repeat: no-repeat;
   background-size: cover;
-  
+
   position: absolute;
   width: 100%;
   height: 100%;

@@ -15,12 +15,12 @@ const FooterWrapper = styled.footer`
   justify-content: flex-start;
   padding: 24px 24px;
   // padding: 48px 24px;
-  background-color: ${props =>
+  background-color: ${(props) =>
     props.backgroundColor ? props.backgroundColor : "white"};
-  
+
   @media (max-width: 760px) {
-    padding:0px;
-    padding-top:48px;
+    padding: 0px;
+    padding-top: 48px;
   }
 `;
 
@@ -33,19 +33,19 @@ const FooterItemsContainer = styled.div`
   justify-content: flex-start;
   @media (max-width: 760px) {
     flex-direction: column;
-    margin:0px;
-    padding:0px;
+    margin: 0px;
+    padding: 0px;
   }
 `;
 
-const Footer = ({
-  items,
-}) => {
-  const { data: { data }, data: { textrights } } = items
+const Footer = ({ items }) => {
+  const {
+    data: { data },
+    data: { textrights },
+  } = items;
   return (
     <FooterWrapper backgroundColor={"#222222"}>
       <FooterItemsContainer>
-       
         <FooterCopyright copyrightText="M-Elevadores © 1999 , Inc. Todos los derechos reservados." />
         <FooterList title={""} items={items} />
         <SocialLinks socialTitle={" "} />

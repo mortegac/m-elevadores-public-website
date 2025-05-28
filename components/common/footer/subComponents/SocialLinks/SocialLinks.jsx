@@ -1,19 +1,18 @@
-import PropTypes from 'prop-types'
-import { SocialLinksContainer } from './SocialLinksStyles';
-import { LogoInstagram, LogoFacebook, LogoSpotify } from '../../../../Logos'
-
+import PropTypes from "prop-types";
+import { SocialLinksContainer } from "./SocialLinksStyles";
+import { LogoInstagram, LogoFacebook, LogoSpotify } from "../../../../Logos";
 
 const SocialLinks = ({ socialTitle = "", socialUrl = [] }) => {
-	return (
-		<SocialLinksContainer>
-			<h3>{socialTitle}</h3>
-			<ul>
-				<li>
-					{/* <a href={"https://www.instagram.com/_electromove/"}>
+  return (
+    <SocialLinksContainer>
+      <h3>{socialTitle}</h3>
+      <ul>
+        <li>
+          {/* <a href={"https://www.instagram.com/_electromove/"}>
 						<LogoInstagram bgColor={"white"} />
 					</a> */}
-				</li>
-				{/* <li>
+        </li>
+        {/* <li>
 					<a href={"https://www.facebook.com/electromove.org"}>
 						<LogoFacebook bgColor={"white"} />
 					</a>
@@ -23,25 +22,19 @@ const SocialLinks = ({ socialTitle = "", socialUrl = [] }) => {
 						<LogoSpotify bgColor={"white"} />
 					</a>
 				</li> */}
-			</ul>
-
-		</SocialLinksContainer>
-	)
-}
+      </ul>
+    </SocialLinksContainer>
+  );
+};
 
 SocialLinks.propTypes = {
-	socialTitle: PropTypes.string,
-	socialUrl: PropTypes.array
+  socialTitle: PropTypes.string,
+  socialUrl: PropTypes.array,
 };
 
 SocialLinks.defaultProps = {
-	socialTitle: "Follow us",
-	socialUrl: [
-		{ url: "#" },
-		{ url: "#" },
-		{ url: "#" },
-	]
+  socialTitle: "Follow us",
+  socialUrl: [{ url: "#" }, { url: "#" }, { url: "#" }],
 };
 
-
-export default SocialLinks
+export default SocialLinks;

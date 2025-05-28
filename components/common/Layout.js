@@ -10,10 +10,9 @@ import { getMetaTags } from "../../utils/seo";
  * The default layout for all pages.
  */
 
-
 export const Body = styled.body`
-  background-color:${(props) => props.theme.colors.secondary};
-  background:${(props) => props.theme.colors.secondary};
+  background-color: ${(props) => props.theme.colors.secondary};
+  background: ${(props) => props.theme.colors.secondary};
 `;
 
 export const Layout = (props) => {
@@ -30,12 +29,10 @@ export const Layout = (props) => {
           rel="canonical"
           href={`${activeDocMeta.sitename}${linkResolver(page)}`}
         />
-        {getMetaTags(
-          {
-            description,
-            title,
-          }
-        )}
+        {getMetaTags({
+          description,
+          title,
+        })}
       </Head>
       <Body>
         <PageContainer>
