@@ -16,6 +16,13 @@ export const Title = styled.div`
     text-align: center;
     margin: 0;
   }
+
+  @media (max-width: 768px) {
+    h1 {
+      line-height: 1;
+      margin-bottom: 10px;
+    }
+  }
 `;
 
 export const Subtitle = styled.div`

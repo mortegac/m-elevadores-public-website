@@ -17,6 +17,13 @@ export const Title = styled.div`
     margin-top: 1rem;
     margin-bottom: 2rem;
   }
+
+  @media (max-width: 768px) {
+    h1 {
+      margin-bottom: 1rem;
+      line-height: 1;
+    }
+  }
 `;
 
 export const ItemGrid = styled.div`
@@ -35,8 +42,13 @@ export const Item = styled.div`
   width: 150px;
   display: flex;
   flex-direction: column;
+  gap: 0.7rem;
   align-items: center;
   text-align: center;
+
+  @media (max-width: 768px) {
+    gap: 0.3rem;
+  }
 `;
 
 export const IconWrapper = styled.div`
@@ -76,13 +88,14 @@ export const Label = styled.div`
 
   p,
   span {
-    font-weight: inherit !important;
+    font-weight: 600;
     margin: 0;
     text-align: center;
     font-size: 1rem;
 
     @media (max-width: 768px) {
       font-size: 0.85rem;
+      line-height: 1;
     }
   }
 `;

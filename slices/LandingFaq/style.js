@@ -110,4 +110,15 @@ export const FaqSection = styled.section`
       padding: 0.5rem;
     }
   }
+
+  @media (max-width: 768px) {
+    .title h1 {
+      line-height: 1;
+      margin: 1rem 0;
+    }
+
+    .faq-list{
+      padding: 1rem 0;
+    }
+  }
 `;

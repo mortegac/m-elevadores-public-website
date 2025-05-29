@@ -11,23 +11,26 @@ const WhatsAppButton = styled.a`
   justify-content: center;
   background-color: #34d039;
   border-radius: 10px;
-  width: fit-content;
-  padding: 5px;
+  width: 50px;
+  height: 50px;
+  padding: 10px;
   position: fixed;
   bottom: 2rem;
   right: 3.5rem;
   z-index: 1000;
   transition: transform 0.2s ease, box-shadow 0.2s ease;
+  box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.2);
 
   &:hover {
     transform: scale(1.1);
-    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.2);
   }
 
   @media (max-width: 768px) {
-    display: block;
+    width: 45px;
+    height: 45px;
     right: 1rem;
     bottom: 1rem;
+    padding: 8px;
   }
 `;
 

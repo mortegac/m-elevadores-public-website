@@ -3,15 +3,23 @@ import styled from "styled-components";
 export const Section = styled.div`
   background-color: white;
   padding: 1rem 10rem;
-  @media (max-width: 1100px) {
-    padding: 1rem;
-  }
 
   h1 {
     color: #3962e9;
     text-align: center;
     margin-top: 0;
     font-size: 2rem;
+  }
+
+  @media (max-width: 1100px) {
+    padding: 1rem;
+  }
+
+  @media (max-width: 768px) {
+    h1 {
+      line-height: 1;
+      margin: 1rem 0;
+    }
   }
 `;
 
@@ -20,6 +28,7 @@ export const ServicesWrapper = styled.div`
   flex-wrap: wrap;
   gap: 1rem;
   justify-content: center;
+  padding: 1rem 0;
 `;
 
 export const Service = styled.div`
@@ -81,18 +90,16 @@ export const Service = styled.div`
   }
 
   .service-content h2 {
-    font-size: 1rem;
+    font-size: 1.2rem;
+    text-align: center;
     line-height: 1.2;
 
     @media (max-width: 768px) {
-      font-size: 1rem;
-      line-height: 1.2;
       opacity: 1;
       transform: translateY(0);
     }
 
     @media (max-width: 480px) {
-      font-size: 0.9rem;
       line-height: 1.1;
     }
   }

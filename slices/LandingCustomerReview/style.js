@@ -19,6 +19,13 @@ export const Title = styled.div`
     font-size: 2rem;
     color: #3962e9;
   }
+
+  @media (max-width: 768px) {
+    h1 {
+      line-height: 1;
+      margin: 1rem 0;
+    }
+  }
 `;
 
 export const StyledSlider = styled(Slider)`
@@ -51,7 +58,7 @@ export const Review = styled.div`
   border: 1px solid #ddd;
   border-radius: 10px;
   padding: 1rem;
-  max-width: 350px;
+  max-width: 450px;
   min-height: 300px;
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
   transition: transform 0.2s ease, box-shadow 0.2s ease;

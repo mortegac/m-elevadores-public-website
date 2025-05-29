@@ -9,18 +9,19 @@ export const Section = styled.section`
   background-color: #fff;
   padding: 3rem 10rem;
 
-  font-size: 4rem;
+  font-size: 2.5rem;
   font-weight: 800;
   color: #3962e9;
   text-align: center;
 
   @media (max-width: 1100px) {
-    font-size: 3.5rem;
+    font-size: 2rem;
+    line-height: 1;
   }
 
   @media (max-width: 768px) {
     padding: 2rem 1rem;
-    font-size: 2.5rem;
+    font-size: 2rem;
     flex-wrap: wrap;
   }
 
