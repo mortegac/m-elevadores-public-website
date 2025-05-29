@@ -27,7 +27,7 @@ export const Section = styled.div`
 
     background-size: cover;
     background-position: left center;
-    animation: panBackground 15s ease-in-out infinite alternate;
+    animation: panBackground 30s ease-in-out infinite alternate;
   }
 
   @keyframes panBackground {
