@@ -3,9 +3,6 @@ import styled from "styled-components";
 export const Section = styled.div`
   background-color: white;
   padding: 1rem 10rem;
-  @media (max-width: 768px) {
-    padding: 1rem;
-  }
 
   .title h1 {
     font-weight: 900;
@@ -95,16 +92,16 @@ export const Section = styled.div`
     }
   }
 
-  /* Connect to <p>
-  .step-number::after {
-    content: "";
-    position: absolute;
-    top: 100%;
-    bottom: 0;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 2px;
-    height: 20px;
-    background-color: #3962e9;
-  }*/
+  @media (max-width: 768px) {
+    padding: 1rem;
+
+    .title h1 {
+      line-height: 1;
+      margin: 1rem 0;
+    }
+
+    .mobile-step-wrapper{
+      padding: 1rem 0;
+    }
+  }
 `;
