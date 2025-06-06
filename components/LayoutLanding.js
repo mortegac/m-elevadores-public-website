@@ -51,6 +51,17 @@ export const LandingLayout = (props) => {
           description,
           title,
         })}
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-VJZB8M2VYD"></script>
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `
+                window.dataLayer = window.dataLayer || [];
+                function gtag(){dataLayer.push(arguments);}
+                gtag('js', new Date());
+
+                gtag('config', 'G-VJZB8M2VYD');`,
+          }}
+        />
       </Head>
 
       <LandingNav landingNav={header} />

@@ -1,6 +1,5 @@
 import { useEffect } from "react";
 import { useRouter } from "next/router";
-import Script from "next/script";
 import Head from "next/head";
 import Link from "next/link";
 import { PrismicProvider } from "@prismicio/react";
@@ -43,16 +42,15 @@ export default function App({ Component, pageProps }) {
           rel="stylesheet"
         ></link>
 
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-VJZB8M2VYD"></script>
         <script
           dangerouslySetInnerHTML={{
             __html: `
-        window.dataLayer = window.dataLayer || [];
-        function gtag(){dataLayer.push(arguments);}
-        gtag('js', new Date());
-        gtag('config', '${gtag.GA_TRACKING_ID}', {
-        page_path: window.location.pathname,
-        });
-        `,
+                window.dataLayer = window.dataLayer || [];
+                function gtag(){dataLayer.push(arguments);}
+                gtag('js', new Date());
+
+                gtag('config', 'G-VJZB8M2VYD');`,
           }}
         />
       </Head>
@@ -61,11 +59,6 @@ export default function App({ Component, pageProps }) {
         internalLinkComponent={internalLinkComponent}
       >
         <PrismicPreview repositoryName={repositoryName}>
-          <Script
-            strategy="afterInteractive"
-            src={`https://www.googletagmanager.com/gtag/js?id=${gtag.GA_TRACKING_ID}`}
-          />
-
           <ThemeProvider theme={Theme}>
             <GlobalStyle theme={Theme} />
             <Component {...pageProps} />
