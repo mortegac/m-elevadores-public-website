@@ -1,0 +1,21 @@
+[
+  {
+    "variation": "default",
+    "version": "sktwi1xtmkfgx8626",
+    "items": [
+      {}
+    ],
+    "primary": {
+      "max": 69,
+      "duration": 43,
+      "text": [
+        {
+          "type": "paragraph",
+          "text": "Nostrud et in dolore enim nostrud quis veniam fugiat sint in commodo non.",
+          "spans": []
+        }
+      ]
+    },
+    "slice_type": "landing_count_up"
+  }
+]

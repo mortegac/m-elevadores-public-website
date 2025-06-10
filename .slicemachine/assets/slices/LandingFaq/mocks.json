@@ -1,0 +1,34 @@
+[
+  {
+    "variation": "default",
+    "version": "sktwi1xtmkfgx8626",
+    "items": [
+      {
+        "question": [
+          {
+            "type": "paragraph",
+            "text": "Sunt nisi aliqua minim. Mollit dolor labore anim nulla consectetur eu pariatur officia qui sit proident irure consectetur commodo.",
+            "spans": []
+          }
+        ],
+        "answer": [
+          {
+            "type": "paragraph",
+            "text": "Adipisicing ea occaecat proident aute voluptate pariatur labore sit Lorem velit Lorem velit adipisicing.",
+            "spans": []
+          }
+        ]
+      }
+    ],
+    "primary": {
+      "title": [
+        {
+          "type": "heading1",
+          "text": "Colony",
+          "spans": []
+        }
+      ]
+    },
+    "slice_type": "landing_faq"
+  }
+]

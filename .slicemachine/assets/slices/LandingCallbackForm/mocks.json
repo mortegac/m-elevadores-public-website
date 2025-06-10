@@ -1,0 +1,26 @@
+[
+  {
+    "variation": "default",
+    "version": "sktwi1xtmkfgx8626",
+    "items": [
+      {}
+    ],
+    "primary": {
+      "title": [
+        {
+          "type": "heading1",
+          "text": "Creature",
+          "spans": []
+        }
+      ],
+      "description": [
+        {
+          "type": "paragraph",
+          "text": "Aliquip duis reprehenderit qui do laboris esse tempor incididunt duis do consectetur eiusmod id cupidatat. Duis ipsum eu cillum.",
+          "spans": []
+        }
+      ]
+    },
+    "slice_type": "landing_callback"
+  }
+]

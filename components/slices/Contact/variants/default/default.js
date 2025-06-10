@@ -218,9 +218,6 @@ const Base = (slice) => {
                   className={`dropdown ${errors.budget && "error"}`}
                 >
                   <option value="">Seleccione un presupuesto</option>
-                  <option value="Menos de $5.000.000">
-                    Menos de $5.000.000
-                  </option>
                   <option value="$5.000.000 - $10.000.000">
                     $5.000.000 - $10.000.000
                   </option>

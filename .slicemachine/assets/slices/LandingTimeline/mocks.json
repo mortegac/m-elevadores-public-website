@@ -1,0 +1,27 @@
+[
+  {
+    "variation": "default",
+    "version": "sktwi1xtmkfgx8626",
+    "items": [
+      {
+        "step": [
+          {
+            "type": "paragraph",
+            "text": "Do id ex veniam esse incididunt. Ex aliquip aliquip esse occaecat officia.",
+            "spans": []
+          }
+        ]
+      }
+    ],
+    "primary": {
+      "title": [
+        {
+          "type": "heading1",
+          "text": "Drink",
+          "spans": []
+        }
+      ]
+    },
+    "slice_type": "landing_timeline"
+  }
+]

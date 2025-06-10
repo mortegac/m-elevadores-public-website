@@ -1,0 +1,83 @@
+[
+  {
+    "variation": "default",
+    "version": "sktwi1xtmkfgx8626",
+    "items": [
+      {}
+    ],
+    "primary": {
+      "subtittle": [
+        {
+          "type": "paragraph",
+          "text": "Aliqua fugiat sit officia non in.",
+          "spans": []
+        }
+      ],
+      "tittle": [
+        {
+          "type": "paragraph",
+          "text": "Aliquip enim dolor id duis magna mollit irure commodo. Sit aliqua eu dolor in laborum eu velit elit ullamco esse minim et. Irure sint aute ullamco.",
+          "spans": []
+        }
+      ],
+      "buttontext": "continent",
+      "buttonlink": {
+        "link_type": "Web",
+        "url": "http://twitter.com"
+      },
+      "bgcolorInitial": "#f7a75a",
+      "bgcolorend": "#8f947a"
+    },
+    "slice_type": "ideas"
+  },
+  {
+    "variation": "noButtonNobg",
+    "version": "sktwi1xtmkfgx8626",
+    "items": [
+      {}
+    ],
+    "primary": {
+      "subtittle": [
+        {
+          "type": "paragraph",
+          "text": "Consequat irure enim eiusmod labore elit minim dolore.",
+          "spans": []
+        }
+      ],
+      "tittle": [
+        {
+          "type": "paragraph",
+          "text": "Veniam pariatur deserunt amet cupidatat dolor mollit excepteur. Sint id magna id sint enim.",
+          "spans": []
+        }
+      ]
+    },
+    "slice_type": "ideas"
+  },
+  {
+    "variation": "noButton",
+    "version": "sktwi1xtmkfgx8626",
+    "items": [
+      {}
+    ],
+    "primary": {
+      "subtittle": [
+        {
+          "type": "paragraph",
+          "text": "Qui excepteur Lorem adipisicing deserunt veniam enim ad laboris non ex esse consequat non proident. Duis nostrud proident et laborum sit nostrud esse duis fugiat nulla qui do.",
+          "spans": []
+        }
+      ],
+      "tittle": [
+        {
+          "type": "paragraph",
+          "text": "Dolore commodo aliquip non. Ad est aute non aute et velit do occaecat.",
+          "spans": []
+        }
+      ],
+      "bgcolorInitial": "#d1a49e",
+      "bgcolorend": "#49d5b9"
+    },
+    "slice_type": "ideas"
+  }
+]

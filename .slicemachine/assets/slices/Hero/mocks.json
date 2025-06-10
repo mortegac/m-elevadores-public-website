@@ -1,0 +1,129 @@
+[
+  {
+    "variation": "default",
+    "version": "sktwi1xtmkfgx8626",
+    "items": [
+      {}
+    ],
+    "primary": {
+      "invertedlayout": true,
+      "image": {
+        "dimensions": {
+          "width": 900,
+          "height": 500
+        },
+        "alt": null,
+        "copyright": null,
+        "url": "https://images.unsplash.com/photo-1587905069134-008460d7a636"
+      },
+      "description": [
+        {
+          "type": "paragraph",
+          "text": "Commodo et consectetur anim consectetur est aliqua fugiat labore ea minim minim esse ut Lorem exercitation. Aute elit deserunt do proident est.",
+          "spans": []
+        }
+      ],
+      "buttontext": "unless",
+      "buttonlink": {
+        "link_type": "Web",
+        "url": "http://google.com"
+      },
+      "mobileimage": {
+        "dimensions": {
+          "width": 900,
+          "height": 500
+        },
+        "alt": null,
+        "copyright": null,
+        "url": "https://images.unsplash.com/photo-1499951360447-b19be8fe80f5"
+      },
+      "title": [
+        {
+          "type": "paragraph",
+          "text": "Ipsum ea cillum ex proident reprehenderit veniam nisi reprehenderit Lorem proident reprehenderit cupidatat duis irure enim.",
+          "spans": []
+        }
+      ]
+    },
+    "slice_type": "hero"
+  },
+  {
+    "variation": "noButtonNoDescription",
+    "version": "sktwi1xtmkfgx8626",
+    "items": [
+      {}
+    ],
+    "primary": {
+      "invertedlayout": false,
+      "image": {
+        "dimensions": {
+          "width": 900,
+          "height": 500
+        },
+        "alt": null,
+        "copyright": null,
+        "url": "https://images.unsplash.com/photo-1515378960530-7c0da6231fb1"
+      },
+      "title": [
+        {
+          "type": "paragraph",
+          "text": "Consectetur est officia duis est ullamco qui do quis aliquip velit reprehenderit occaecat magna. Anim sunt velit mollit non velit esse sint eu est eiusmod anim consectetur dolor pariatur. Cupidatat dolore aliqua dolore exercitation ad dolor magna pariatur.",
+          "spans": []
+        }
+      ],
+      "mobileimage": {
+        "dimensions": {
+          "width": 900,
+          "height": 500
+        },
+        "alt": null,
+        "copyright": null,
+        "url": "https://images.unsplash.com/photo-1491975474562-1f4e30bc9468"
+      }
+    },
+    "slice_type": "hero"
+  },
+  {
+    "variation": "noButton",
+    "version": "sktwi1xtmkfgx8626",
+    "items": [
+      {}
+    ],
+    "primary": {
+      "invertedlayout": true,
+      "image": {
+        "dimensions": {
+          "width": 900,
+          "height": 500
+        },
+        "alt": null,
+        "copyright": null,
+        "url": "https://images.unsplash.com/photo-1491975474562-1f4e30bc9468"
+      },
+      "title": [
+        {
+          "type": "paragraph",
+          "text": "Culpa minim culpa aliquip eu esse id commodo et Lorem. Enim pariatur proident velit in dolore.",
+          "spans": []
+        }
+      ],
+      "description": [
+        {
+          "type": "paragraph",
+          "text": "Dolor cupidatat pariatur elit dolor minim anim occaecat ipsum proident reprehenderit Lorem adipisicing.",
+          "spans": []
+        }
+      ],
+      "mobileimage": {
+        "dimensions": {
+          "width": 900,
+          "height": 500
+        },
+        "alt": null,
+        "copyright": null,
+        "url": "https://images.unsplash.com/photo-1496181133206-80ce9b88a853"
+      }
+    },
+    "slice_type": "hero"
+  }
+]

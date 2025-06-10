@@ -1,0 +1,88 @@
+[
+  {
+    "variation": "default",
+    "version": "sktwi1xtmkfgx8626",
+    "items": [
+      {
+        "bgimage": {
+          "dimensions": {
+            "width": 900,
+            "height": 500
+          },
+          "alt": null,
+          "copyright": null,
+          "url": "https://images.unsplash.com/photo-1545239351-1141bd82e8a6"
+        },
+        "servicetitle": [
+          {
+            "type": "heading2",
+            "text": "Younger",
+            "spans": []
+          }
+        ],
+        "description": [
+          {
+            "type": "paragraph",
+            "text": "Proident aliqua ipsum do deserunt in officia irure ut anim culpa aliquip irure officia ad incididunt.",
+            "spans": []
+          }
+        ],
+        "link": {
+          "link_type": "Web",
+          "url": "http://google.com"
+        }
+      }
+    ],
+    "primary": {
+      "title": [
+        {
+          "type": "heading1",
+          "text": "Noted",
+          "spans": []
+        }
+      ]
+    },
+    "slice_type": "landing_services"
+  },
+  {
+    "variation": "nohover",
+    "version": "sktwi1xtmkfgx8626",
+    "items": [
+      {
+        "bgimage": {
+          "dimensions": {
+            "width": 900,
+            "height": 500
+          },
+          "alt": null,
+          "copyright": null,
+          "url": "https://images.unsplash.com/photo-1560762484-813fc97650a0"
+        },
+        "servicetitle": [
+          {
+            "type": "heading2",
+            "text": "Wooden",
+            "spans": []
+          }
+        ],
+        "description": [
+          {
+            "type": "paragraph",
+            "text": "Laborum pariatur cillum sunt ad consectetur occaecat cupidatat occaecat cupidatat Lorem sint Lorem cillum ut fugiat.",
+            "spans": []
+          }
+        ]
+      }
+    ],
+    "primary": {
+      "title": [
+        {
+          "type": "heading1",
+          "text": "Source",
+          "spans": []
+        }
+      ]
+    },
+    "slice_type": "landing_services"
+  }
+]

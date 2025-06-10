@@ -1,0 +1,42 @@
+[
+  {
+    "variation": "default",
+    "version": "sktwi1xtmkfgx8626",
+    "items": [
+      {
+        "contenttext": "elephant",
+        "subtitle": "arrow"
+      }
+    ],
+    "primary": {
+      "title": [
+        {
+          "type": "heading2",
+          "text": "Source",
+          "spans": []
+        }
+      ]
+    },
+    "slice_type": "metrics"
+  },
+  {
+    "variation": "noBackground",
+    "version": "sktwi1xtmkfgx8626",
+    "items": [
+      {
+        "contenttext": "secret",
+        "subtitle": "won"
+      }
+    ],
+    "primary": {
+      "title": [
+        {
+          "type": "heading1",
+          "text": "Ancient",
+          "spans": []
+        }
+      ]
+    },
+    "slice_type": "metrics"
+  }
+]

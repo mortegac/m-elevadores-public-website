@@ -1,0 +1,84 @@
+[
+  {
+    "variation": "default",
+    "version": "sktwi1xtmkfgx8626",
+    "items": [
+      {
+        "title": [
+          {
+            "type": "heading3",
+            "text": "Discovery",
+            "spans": []
+          }
+        ],
+        "description": "view",
+        "ico": {
+          "dimensions": {
+            "width": 900,
+            "height": 500
+          },
+          "alt": null,
+          "copyright": null,
+          "url": "https://images.unsplash.com/photo-1448932223592-d1fc686e76ea"
+        },
+        "description1": "suggest",
+        "ico2": {
+          "dimensions": {
+            "width": 900,
+            "height": 500
+          },
+          "alt": null,
+          "copyright": null,
+          "url": "https://images.unsplash.com/photo-1448932223592-d1fc686e76ea"
+        },
+        "description2": "choice",
+        "ico3": {
+          "dimensions": {
+            "width": 900,
+            "height": 500
+          },
+          "alt": null,
+          "copyright": null,
+          "url": "https://images.unsplash.com/photo-1589321578146-4c1ba445cc88"
+        },
+        "description3": "rope",
+        "ico4": {
+          "dimensions": {
+            "width": 900,
+            "height": 500
+          },
+          "alt": null,
+          "copyright": null,
+          "url": "https://images.unsplash.com/photo-1560457079-9a6532ccb118"
+        },
+        "description4": "attempt",
+        "ico5": {
+          "dimensions": {
+            "width": 900,
+            "height": 500
+          },
+          "alt": null,
+          "copyright": null,
+          "url": "https://images.unsplash.com/photo-1525547719571-a2d4ac8945e2"
+        },
+        "description5": "forgotten",
+        "buttontext": "field",
+        "buttonlink": {
+          "link_type": "Web",
+          "url": "http://twitter.com"
+        }
+      }
+    ],
+    "primary": {
+      "title": [
+        {
+          "type": "heading2",
+          "text": "Nature",
+          "spans": []
+        }
+      ],
+      "description": "rise"
+    },
+    "slice_type": "clients"
+  }
+]

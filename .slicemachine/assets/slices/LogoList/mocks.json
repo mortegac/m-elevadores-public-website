@@ -1,0 +1,95 @@
+[
+  {
+    "variation": "default",
+    "version": "sktwi1xtmkfgx8626",
+    "items": [
+      {
+        "logoImage": {
+          "dimensions": {
+            "width": 900,
+            "height": 500
+          },
+          "alt": null,
+          "copyright": null,
+          "url": "https://images.unsplash.com/photo-1504198070170-4ca53bb1c1fa"
+        }
+      }
+    ],
+    "primary": {
+      "title": [
+        {
+          "type": "heading2",
+          "text": "Pencil",
+          "spans": []
+        }
+      ],
+      "description": [
+        {
+          "type": "paragraph",
+          "text": "Dolor id labore culpa aliquip aliqua dolore irure pariatur magna qui aliqua.",
+          "spans": []
+        }
+      ]
+    },
+    "slice_type": "logo_list"
+  },
+  {
+    "variation": "onlyLogosBg",
+    "version": "sktwi1xtmkfgx8626",
+    "items": [
+      {
+        "logoImage": {
+          "dimensions": {
+            "width": 900,
+            "height": 500
+          },
+          "alt": null,
+          "copyright": null,
+          "url": "https://images.unsplash.com/photo-1591012911207-0dbac31f37da"
+        }
+      }
+    ],
+    "primary": {},
+    "slice_type": "logo_list"
+  },
+  {
+    "variation": "buttonTitleDescription",
+    "version": "sktwi1xtmkfgx8626",
+    "items": [
+      {
+        "logoImage": {
+          "dimensions": {
+            "width": 900,
+            "height": 500
+          },
+          "alt": null,
+          "copyright": null,
+          "url": "https://images.unsplash.com/photo-1493119508027-2b584f234d6c"
+        },
+        "subtitle": [
+          {
+            "type": "paragraph",
+            "text": "Cupidatat enim laboris ut sit exercitation ipsum non. Culpa do duis dolore cupidatat velit duis. Labore velit sunt est.",
+            "spans": []
+          }
+        ],
+        "description": "lovely",
+        "buttonlink": {
+          "link_type": "Web",
+          "url": "http://google.com"
+        },
+        "buttontext": "whatever"
+      }
+    ],
+    "primary": {
+      "title": [
+        {
+          "type": "paragraph",
+          "text": "Qui officia nulla ut aliqua excepteur cupidatat sint est esse. Elit do nulla aute nulla pariatur proident elit. Irure amet laboris quis.",
+          "spans": []
+        }
+      ]
+    },
+    "slice_type": "logo_list"
+  }
+]
