@@ -1,0 +1,50 @@
+[
+  {
+    "variation": "default",
+    "version": "sktwi1xtmkfgx8626",
+    "items": [
+      {
+        "cardTitle": [
+          {
+            "type": "heading3",
+            "text": "Plane",
+            "spans": []
+          }
+        ],
+        "cardDescription": [
+          {
+            "type": "paragraph",
+            "text": "Nisi cillum est culpa deserunt velit elit in qui mollit proident cillum esse. Excepteur exercitation in ut sunt anim consectetur irure esse amet ad voluptate commodo cillum labore amet. Dolor ipsum qui enim exercitation sint laborum incididunt proident nisi consequat consequat sit ut voluptate.",
+            "spans": []
+          }
+        ],
+        "cardImage": {
+          "dimensions": {
+            "width": 900,
+            "height": 500
+          },
+          "alt": null,
+          "copyright": null,
+          "url": "https://images.unsplash.com/photo-1607582278043-57198ac8da43"
+        }
+      }
+    ],
+    "primary": {
+      "title": [
+        {
+          "type": "paragraph",
+          "text": "Incididunt dolore aute sit. Eu exercitation ea qui do ipsum commodo deserunt laborum mollit veniam et in Lorem minim. Ipsum duis enim commodo aliqua nostrud cupidatat magna ex proident non id exercitation sunt.",
+          "spans": []
+        }
+      ],
+      "description": [
+        {
+          "type": "paragraph",
+          "text": "Dolor reprehenderit aliqua mollit sit. Culpa labore exercitation ad commodo velit.",
+          "spans": []
+        }
+      ]
+    },
+    "slice_type": "card_list"
+  }
+]

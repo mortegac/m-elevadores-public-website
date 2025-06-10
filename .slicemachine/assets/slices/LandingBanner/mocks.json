@@ -1,0 +1,66 @@
+[
+  {
+    "variation": "default",
+    "version": "sktwi1xtmkfgx8626",
+    "items": [
+      {
+        "icon": {
+          "dimensions": {
+            "width": 900,
+            "height": 500
+          },
+          "alt": null,
+          "copyright": null,
+          "url": "https://images.unsplash.com/photo-1491975474562-1f4e30bc9468"
+        },
+        "keyword": [
+          {
+            "type": "paragraph",
+            "text": "Fugiat qui excepteur proident nulla cillum sint ex et laboris elit sit labore. Deserunt dolor ad quis duis anim et culpa officia excepteur id ad eu.",
+            "spans": []
+          }
+        ]
+      }
+    ],
+    "primary": {
+      "title": [
+        {
+          "type": "heading1",
+          "text": "Everything",
+          "spans": []
+        }
+      ],
+      "subtitle": [
+        {
+          "type": "paragraph",
+          "text": "Duis minim qui amet qui consectetur ut nisi incididunt pariatur.",
+          "spans": []
+        }
+      ],
+      "formtitle": [
+        {
+          "type": "heading2",
+          "text": "Refused",
+          "spans": []
+        }
+      ],
+      "formsubtitle": [
+        {
+          "type": "paragraph",
+          "text": "Eiusmod adipisicing do nisi est id et Lorem sint ipsum non. Commodo proident ea velit quis anim. Irure qui eu eiusmod sit sunt officia anim voluptate aute proident.",
+          "spans": []
+        }
+      ],
+      "bgimage": {
+        "dimensions": {
+          "width": 900,
+          "height": 500
+        },
+        "alt": null,
+        "copyright": null,
+        "url": "https://images.unsplash.com/photo-1606248897732-2c5ffe759c04"
+      }
+    },
+    "slice_type": "landing_banner"
+  }
+]

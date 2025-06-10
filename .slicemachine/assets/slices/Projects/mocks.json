@@ -1,0 +1,36 @@
+[
+  {
+    "variation": "default",
+    "version": "sktwi1xtmkfgx8626",
+    "items": [
+      {}
+    ],
+    "primary": {
+      "imgswapp": {
+        "dimensions": {
+          "width": 900,
+          "height": 500
+        },
+        "alt": null,
+        "copyright": null,
+        "url": "https://images.unsplash.com/photo-1601933973783-43cf8a7d4c5f"
+      },
+      "subtitle": "clothes",
+      "description": [
+        {
+          "type": "paragraph",
+          "text": "Voluptate sunt fugiat sit fugiat deserunt amet excepteur veniam sunt sint irure ea. Ea id laborum et consequat culpa laborum labore ad culpa pariatur et ut incididunt veniam.",
+          "spans": []
+        }
+      ],
+      "title": [
+        {
+          "type": "heading2",
+          "text": "Porch",
+          "spans": []
+        }
+      ]
+    },
+    "slice_type": "projects"
+  }
+]

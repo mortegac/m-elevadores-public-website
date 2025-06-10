@@ -14,11 +14,6 @@ out/
 # Next.js static export folder
 export/
 
-# Prismic SliceMachine build and generated folders
-.slicemachine/
-.slicemachine/assets/
-.prismic/
-
 # Vercel deployment
 .vercel/
 

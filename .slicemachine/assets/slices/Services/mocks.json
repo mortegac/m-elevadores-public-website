@@ -1,0 +1,196 @@
+[
+  {
+    "variation": "default",
+    "version": "sktwi1xtmkfgx8626",
+    "items": [
+      {
+        "imagelist": {
+          "dimensions": {
+            "width": 900,
+            "height": 500
+          },
+          "alt": null,
+          "copyright": null,
+          "url": "https://images.unsplash.com/photo-1547394765-185e1e68f34e"
+        },
+        "titlelist": "vertical",
+        "descriptionlist": "composed",
+        "linktext": "melted",
+        "link": {
+          "link_type": "Web",
+          "url": "https://slicemachine.dev"
+        }
+      }
+    ],
+    "primary": {
+      "title": [
+        {
+          "type": "heading2",
+          "text": "Sheep",
+          "spans": []
+        }
+      ],
+      "description": [
+        {
+          "type": "paragraph",
+          "text": "Labore duis est non et. Aliqua mollit laboris nulla laborum. Eu anim sit proident sint id sint labore consectetur aliquip eu.",
+          "spans": []
+        }
+      ],
+      "image": {
+        "dimensions": {
+          "width": 900,
+          "height": 500
+        },
+        "alt": null,
+        "copyright": null,
+        "url": "https://images.unsplash.com/photo-1576662712957-9c79ae1280f8"
+      },
+      "buttontext": "young"
+    },
+    "slice_type": "services"
+  },
+  {
+    "variation": "noIconsNoButtons",
+    "version": "sktwi1xtmkfgx8626",
+    "items": [
+      {}
+    ],
+    "primary": {
+      "title": [
+        {
+          "type": "heading2",
+          "text": "Vapor",
+          "spans": []
+        }
+      ],
+      "description": [
+        {
+          "type": "paragraph",
+          "text": "Eu laboris in incididunt dolor qui in cillum voluptate ipsum deserunt proident. Ad pariatur duis cupidatat est consectetur cupidatat anim nisi.",
+          "spans": []
+        }
+      ],
+      "image": {
+        "dimensions": {
+          "width": 900,
+          "height": 500
+        },
+        "alt": null,
+        "copyright": null,
+        "url": "https://images.unsplash.com/photo-1589652717521-10c0d092dea9"
+      }
+    },
+    "slice_type": "services"
+  },
+  {
+    "variation": "noIcons",
+    "version": "sktwi1xtmkfgx8626",
+    "items": [
+      {}
+    ],
+    "primary": {
+      "title": [
+        {
+          "type": "heading2",
+          "text": "Stiff",
+          "spans": []
+        }
+      ],
+      "description": [
+        {
+          "type": "paragraph",
+          "text": "Dolore ut nulla fugiat culpa cillum Lorem cupidatat in.",
+          "spans": []
+        }
+      ],
+      "image": {
+        "dimensions": {
+          "width": 900,
+          "height": 500
+        },
+        "alt": null,
+        "copyright": null,
+        "url": "https://images.unsplash.com/photo-1499951360447-b19be8fe80f5"
+      },
+      "buttontext": "little"
+    },
+    "slice_type": "services"
+  },
+  {
+    "variation": "imageText",
+    "version": "sktwi1xtmkfgx8626",
+    "items": [
+      {}
+    ],
+    "primary": {
+      "title": [
+        {
+          "type": "heading2",
+          "text": "After",
+          "spans": []
+        }
+      ],
+      "image": {
+        "dimensions": {
+          "width": 900,
+          "height": 500
+        },
+        "alt": null,
+        "copyright": null,
+        "url": "https://images.unsplash.com/photo-1491975474562-1f4e30bc9468"
+      }
+    },
+    "slice_type": "services"
+  },
+  {
+    "variation": "defaultNoVerMas",
+    "version": "sktwi1xtmkfgx8626",
+    "items": [
+      {
+        "imagelist": {
+          "dimensions": {
+            "width": 900,
+            "height": 500
+          },
+          "alt": null,
+          "copyright": null,
+          "url": "https://images.unsplash.com/photo-1587905069134-008460d7a636"
+        },
+        "titlelist": "week",
+        "descriptionlist": "full"
+      }
+    ],
+    "primary": {
+      "title": [
+        {
+          "type": "heading2",
+          "text": "Ground",
+          "spans": []
+        }
+      ],
+      "description": [
+        {
+          "type": "paragraph",
+          "text": "Nisi ipsum mollit sit et nisi pariatur nostrud duis pariatur est. Et ad ipsum reprehenderit pariatur labore velit.",
+          "spans": []
+        }
+      ],
+      "image": {
+        "dimensions": {
+          "width": 900,
+          "height": 500
+        },
+        "alt": null,
+        "copyright": null,
+        "url": "https://images.unsplash.com/photo-1579931794097-0ad001e51edb"
+      },
+      "buttontext": "expression",
+      "buttonlink": {
+        "link_type": "Web",
+        "url": "http://twitter.com"
+      }
+    },
+    "slice_type": "services"
+  }
+]

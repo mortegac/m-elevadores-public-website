@@ -1,0 +1,48 @@
+[
+  {
+    "variation": "default",
+    "version": "sktwi1xtmkfgx8626",
+    "items": [
+      {}
+    ],
+    "primary": {
+      "title": [
+        {
+          "type": "heading2",
+          "text": "Owner",
+          "spans": []
+        }
+      ],
+      "subtitle": [
+        {
+          "type": "heading2",
+          "text": "Mouse",
+          "spans": []
+        }
+      ],
+      "name": "elephant",
+      "email": "future",
+      "message": "circle"
+    },
+    "slice_type": "contact"
+  },
+  {
+    "variation": "cotizarForm",
+    "version": "sktwi1xtmkfgx8626",
+    "items": [
+      {}
+    ],
+    "primary": {
+      "subtitle": [
+        {
+          "type": "heading2",
+          "text": "Share",
+          "spans": []
+        }
+      ],
+      "name": "huge",
+      "email": "cool"
+    },
+    "slice_type": "contact"
+  }
+]
