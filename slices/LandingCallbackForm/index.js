@@ -86,9 +86,19 @@ const LandingCallbackForm = ({ slice }) => {
       <Form onSubmit={handleSubmit(onSubmit)}>
         <InputWrapper>
           <label>Nombre</label>
-          <input type="text" {...register("name", { required: true })} />
+          <input
+            type="text"
+            placeholder="Ej. Juan Pérez"
+            {...register("name", {
+              required: "Por favor ingresa tu nombre",
+              minLength: {
+                value: 2,
+                message: "El nombre debe tener al menos 2 caracteres",
+              },
+            })}
+          />
           <span className={`error-message ${errors.name ? "visible" : ""}`}>
-            Por favor ingresa tu nombre
+            {errors.name?.message || "\u00A0"}
           </span>
         </InputWrapper>
 
@@ -96,10 +106,29 @@ const LandingCallbackForm = ({ slice }) => {
           <label>Teléfono</label>
           <input
             type="tel"
-            {...register("phone", { required: true, minLength: 12 })}
+            placeholder="Ej. +521234567890"
+            {...register("phone", {
+              required: "Por favor ingresa tu teléfono",
+              minLength: {
+                value: 7, // Incluye el "+" más al menos 6 dígitos
+                message:
+                  "El número debe tener al menos 6 dígitos después del '+'",
+              },
+              maxLength: {
+                value: 13, // "+" más 12 dígitos
+                message:
+                  "El número no puede tener más de 12 dígitos después del '+'",
+              },
+              pattern: {
+                value: /^\+\d+$/,
+                message: "Debe comenzar con '+' seguido solo de números",
+              },
+            })}
           />
-          <span className={`error-message ${errors.phone ? "visible" : ""}`}>
-            Por favor ingresa tu teléfono
+          <span
+            className={`error-message ${errors.phone ? "visible" : "hidden"}`}
+          >
+            {errors.phone?.message || " "}
           </span>
         </InputWrapper>
 
