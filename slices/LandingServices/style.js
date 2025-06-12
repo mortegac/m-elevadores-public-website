@@ -81,7 +81,7 @@ export const Service = styled.div`
   }
 
   .service-content h2 {
-    font-size: 1rem;
+    font-size: 1.25rem;
     line-height: 1.2;
 
     @media (max-width: 768px) {
@@ -92,7 +92,7 @@ export const Service = styled.div`
     }
 
     @media (max-width: 480px) {
-      font-size: 0.9rem;
+      font-size: 1rem;
       line-height: 1.1;
     }
   }

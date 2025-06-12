@@ -58,7 +58,7 @@ export const LandingLayout = (props) => {
         target="_blank"
         rel="noopener noreferrer"
       >
-        <FaWhatsapp color="white" size={32} />
+        <FaWhatsapp color="white" size={40} />
       </WhatsAppButton>
 
       <LandingFooter landingFooter={footer} />
