@@ -20,6 +20,16 @@ export default class MyDocument extends Document {
           />
         </Head>
         <body style={{ backgroundColor: "#243C70" }}>
+          {/* Google Tag Manager */}
+          <noscript>
+            <iframe
+              src="https://www.googletagmanager.com/ns.html?id=GTM-5XQBS8WN"
+              height="0"
+              width="0"
+              style={{ display: "none", visibility: "hidden" }}
+            ></iframe>
+          </noscript>
+          {/* End Google Tag Manager */}
           <Main />
           <NextScript />
         </body>
