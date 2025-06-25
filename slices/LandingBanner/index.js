@@ -1,4 +1,5 @@
-import { useState } from "react";
+import { useRouter } from "next/router";
+import { useEffect, useState } from "react";
 import { PrismicRichText } from "@prismicio/react";
 import { useForm } from "react-hook-form";
 import emailjs, { init } from "emailjs-com";
@@ -10,6 +11,7 @@ import {
   ButtonWrapper,
   KeywordWrapper,
   Keyword,
+  TextArea,
 } from "./style";
 
 /**
@@ -27,6 +29,14 @@ init(PUBLIC_KEY);
 const LandingBanner = ({ slice }) => {
   const { title, subtitle, formtitle, formsubtitle, bgimage } = slice.primary;
   const items = slice.items || [];
+  const router = useRouter();
+  const [currentLandingPage, setCurrentLandingPage] = useState("");
+
+  useEffect(() => {
+    if (typeof window !== "undefined") {
+      setCurrentLandingPage(`${window.location.origin}${router.asPath}`);
+    }
+  }, [router.asPath]);
 
   const {
     register,
@@ -44,13 +54,22 @@ const LandingBanner = ({ slice }) => {
   const onSubmit = (data) => {
     setStatus({ sent: true, success: null, message: "Enviando..." });
 
-    const { name, phone, email } = data;
+    const { name, phone, email, message } = data;
 
     const templateParams = {
       from_name: name,
       to_phone: phone,
       to_email: email,
-      message: `Nuevo contacto desde el formulario de landing. Nombre: ${name}, Teléfono: ${phone}, Email: ${email}`,
+      message: `
+        Nuevo contacto desde el formulario de landing.
+
+        📍 Página: ${currentLandingPage}
+
+        🧑 Nombre: ${name}
+        📧 Email: ${email}
+        📱 Teléfono: ${phone}
+        ${message ? `✉️ Mensaje: ${message}` : ""}
+      `,
       service: "",
       budget: "",
       reply_to: email,
@@ -165,6 +184,17 @@ const LandingBanner = ({ slice }) => {
             >
               {errors.phone?.message || " "}
             </span>
+          </InputWrapper>
+
+          <InputWrapper>
+            <label htmlFor="message">Mensaje (opcional)</label>
+            <TextArea
+              id="message"
+              placeholder="Escribe tu mensaje aquí..."
+              {...register("message")}
+              rows={4}
+            ></TextArea>
+            <span className="error-message hidden">&nbsp;</span>
           </InputWrapper>
 
           <ButtonWrapper>

@@ -1,7 +1,7 @@
 import { PrismicRichText } from "@prismicio/react";
 import { useForm } from "react-hook-form";
 import emailjs, { init } from "emailjs-com";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import {
   Button,
   ButtonWrapper,
@@ -11,6 +11,7 @@ import {
   Subtitle,
   Title,
 } from "./style";
+import { useRouter } from "next/router";
 
 /**
  * @typedef {import("@prismicio/client").Content.LandingCallbackSlice} LandingCallbackSlice
@@ -26,6 +27,15 @@ init(PUBLIC_KEY);
 
 const LandingCallbackForm = ({ slice }) => {
   const { title, description } = slice.primary;
+  const router = useRouter();
+  const [currentLandingPage, setCurrentLandingPage] = useState("");
+
+  useEffect(() => {
+    if (typeof window !== "undefined") {
+      setCurrentLandingPage(`${window.location.origin}${router.asPath}`);
+    }
+  }, [router.asPath]);
+
   const {
     register,
     handleSubmit,
@@ -41,16 +51,21 @@ const LandingCallbackForm = ({ slice }) => {
 
   const onSubmit = (data) => {
     setStatus({ sent: true, success: null, message: "Enviando..." });
+    const { name, phone } = data;
 
     const templateParams = {
-      from_name: data.name,
-      to_name: data.name,
-      to_phone: data.phone,
+      from_name: name,
+      to_name: name,
+      to_phone: phone,
       to_email: "",
       reply_to: "",
       service: "",
       budget: "",
-      message: `Nuevo contacto desde el formulario "Nosotros te contactamos".\n\nNombre: ${data.name}\nTeléfono: ${data.phone}`,
+      message: `Nuevo contacto desde el formulario "Nosotros te contactamos" en landing.
+
+      📍 Página: ${currentLandingPage}
+      🧑 Nombre: ${name}
+      📱 Teléfono: ${phone}`,
     };
 
     emailjs

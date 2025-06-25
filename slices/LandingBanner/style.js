@@ -99,6 +99,15 @@ export const InputWrapper = styled.div`
   }
 `;
 
+export const TextArea = styled.textarea`
+  resize: vertical;
+  max-height: 150px;
+  max-width: 100%;
+  width: 100%;
+  padding: 10px;
+  font-size: 1rem;
+`;
+
 export const ButtonWrapper = styled.div`
   button {
     width: 100%;
