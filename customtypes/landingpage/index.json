@@ -54,6 +54,9 @@
             },
             "landing_timeline": {
               "type": "SharedSlice"
+            },
+            "landing_empathy": {
+              "type": "SharedSlice"
             }
           }
         }

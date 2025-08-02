@@ -13,6 +13,7 @@ import {
   Keyword,
   TextArea,
 } from "./style";
+import { asText } from "@prismicio/helpers";
 
 /**
  * @typedef {import("@prismicio/client").Content.LandingBannerSlice} LandingBannerSlice
@@ -27,7 +28,8 @@ const PUBLIC_KEY = "qn8t4Q--1S8ntkmL4";
 init(PUBLIC_KEY);
 
 const LandingBanner = ({ slice }) => {
-  const { title, subtitle, formtitle, formsubtitle, bgimage } = slice.primary;
+  const { title, subtitle, formtitle, formsubtitle, bgimage, ctatext } =
+    slice.primary;
   const items = slice.items || [];
   const router = useRouter();
   const [currentLandingPage, setCurrentLandingPage] = useState("");
@@ -198,7 +200,7 @@ const LandingBanner = ({ slice }) => {
           </InputWrapper>
 
           <ButtonWrapper>
-            <button type="submit">Enviar</button>
+            <button type="submit">{asText(ctatext) || "Enviar"}</button>
           </ButtonWrapper>
         </Form>
         {status.sent && (

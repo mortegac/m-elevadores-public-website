@@ -1,0 +1,9 @@
+import MyComponent from '../../../../slices/LandingEmpathy';
+
+export default {
+  title: 'slices/LandingEmpathy'
+}
+
+
+export const _Default = () => <MyComponent slice={{"variation":"default","version":"sktwi1xtmkfgx8626","items":[{}],"primary":{"title":[{"type":"heading1","text":"Gentle","spans":[]}],"description":[{"type":"paragraph","text":"Pariatur est ad velit proident enim commodo velit anim nisi non voluptate. Laboris commodo irure deserunt duis ipsum non enim eiusmod ut ex non veniam ullamco elit. Sit aute incididunt enim.","spans":[]}],"footer":[{"type":"paragraph","text":"Officia occaecat officia commodo qui proident minim esse ipsum mollit.","spans":[]}],"bgimg":{"dimensions":{"width":900,"height":500},"alt":null,"copyright":null,"url":"https://images.unsplash.com/photo-1491975474562-1f4e30bc9468"}},"slice_type":"landing_empathy","id":"_Default"}} />
+_Default.storyName = ''

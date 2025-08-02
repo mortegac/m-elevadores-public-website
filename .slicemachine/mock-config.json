@@ -1,0 +1,31 @@
+{
+  "slices": {
+    "LandingBanner": {
+      "default": {
+        "primary": {
+          "ctatext": {
+            "config": {
+              "patternType": "PARAGRAPH",
+              "blocks": 1
+            }
+          }
+        }
+      }
+    },
+    "LandingEmpathy": {
+      "default": {
+        "primary": {
+          "footer": {
+            "config": {
+              "patternType": "PARAGRAPH",
+              "blocks": 1
+            }
+          }
+        }
+      }
+    }
+  },
+  "_cts": {
+    "landingpage": {}
+  }
+}
