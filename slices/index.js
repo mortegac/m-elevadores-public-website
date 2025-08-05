@@ -11,6 +11,7 @@ import LandingCountUp from './LandingCountUp';
 import LandingCustomerReview from './LandingCustomerReview';
 import LandingEmpathy from './LandingEmpathy';
 import LandingFaq from './LandingFaq';
+import LandingResponsibility from './LandingResponsibility';
 import LandingServices from './LandingServices';
 import LandingStandout from './LandingStandout';
 import LandingTimeline from './LandingTimeline';
@@ -32,6 +33,7 @@ export {
 	LandingCustomerReview,
 	LandingEmpathy,
 	LandingFaq,
+	LandingResponsibility,
 	LandingServices,
 	LandingStandout,
 	LandingTimeline,
@@ -54,6 +56,7 @@ export const components = {
 	landing_customer_review: LandingCustomerReview,
 	landing_empathy: LandingEmpathy,
 	landing_faq: LandingFaq,
+	landing_responsibility: LandingResponsibility,
 	landing_services: LandingServices,
 	landing_standout: LandingStandout,
 	landing_timeline: LandingTimeline,

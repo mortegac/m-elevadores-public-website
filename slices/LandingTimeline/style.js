@@ -12,7 +12,7 @@ export const Section = styled.div`
     font-size: 2rem;
     color: #3962e9;
     text-align: center;
-    margin: 0;
+    margin: 0 0 1rem 0;
   }
 
   .step-wrapper {

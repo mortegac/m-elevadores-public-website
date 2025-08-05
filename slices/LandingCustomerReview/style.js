@@ -51,7 +51,7 @@ export const Review = styled.div`
   border: 1px solid #ddd;
   border-radius: 10px;
   padding: 1rem;
-  max-width: 350px;
+  max-width: 450px;
   min-height: 300px;
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
   transition: transform 0.2s ease, box-shadow 0.2s ease;

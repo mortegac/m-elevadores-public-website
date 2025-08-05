@@ -83,7 +83,8 @@ export const InputWrapper = styled.div`
 
   input {
     padding: 0.5rem;
-    font-size: 1rem;
+    font-size: small;
+    font-family: inherit;
     border: none;
     border-radius: 5px;
   }
@@ -105,7 +106,8 @@ export const TextArea = styled.textarea`
   max-width: 100%;
   width: 100%;
   padding: 10px;
-  font-size: 1rem;
+  font-size: small;
+  font-family: inherit;
 `;
 
 export const ButtonWrapper = styled.div`
@@ -117,6 +119,7 @@ export const ButtonWrapper = styled.div`
     border: none;
     border-radius: 4px;
     cursor: pointer;
+    font-weight: 600;
 
     &:hover {
       background-color: #005bb5;

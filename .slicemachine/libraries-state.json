@@ -1745,6 +1745,96 @@
         },
         "screenshotPaths": {}
       },
+      "landing_responsibility": {
+        "library": "slices",
+        "id": "landing_responsibility",
+        "name": "LandingResponsibility",
+        "description": "LandingResponsibility",
+        "model": {
+          "id": "landing_responsibility",
+          "type": "SharedSlice",
+          "name": "LandingResponsibility",
+          "description": "LandingResponsibility",
+          "variations": [
+            {
+              "id": "default",
+              "name": "Default",
+              "docURL": "...",
+              "version": "sktwi1xtmkfgx8626",
+              "description": "LandingResponsibility",
+              "primary": {},
+              "items": {
+                "title": {
+                  "type": "StructuredText",
+                  "config": {
+                    "label": "title",
+                    "placeholder": "",
+                    "allowTargetBlank": true,
+                    "single": "heading1"
+                  }
+                },
+                "description": {
+                  "type": "StructuredText",
+                  "config": {
+                    "label": "description",
+                    "placeholder": "",
+                    "allowTargetBlank": true,
+                    "single": "paragraph"
+                  }
+                },
+                "standout": {
+                  "type": "StructuredText",
+                  "config": {
+                    "label": "standout",
+                    "placeholder": "",
+                    "allowTargetBlank": true,
+                    "single": "paragraph"
+                  }
+                }
+              },
+              "imageUrl": "https://images.prismic.io/slice-machine/621a5ec4-0387-4bc5-9860-2dd46cbc07cd_default_ss.png?auto=compress,format"
+            }
+          ]
+        },
+        "mocks": {
+          "default": {
+            "variation": "default",
+            "version": "sktwi1xtmkfgx8626",
+            "items": [
+              {
+                "title": [
+                  {
+                    "type": "heading1",
+                    "text": "Castle",
+                    "spans": []
+                  }
+                ],
+                "description": [
+                  {
+                    "type": "paragraph",
+                    "text": "Sunt cupidatat et cupidatat quis nulla.",
+                    "spans": []
+                  }
+                ],
+                "standout": [
+                  {
+                    "type": "paragraph",
+                    "text": "Pariatur anim consectetur veniam labore qui. Magna elit voluptate incididunt tempor quis dolor magna non eu.",
+                    "spans": []
+                  }
+                ]
+              }
+            ],
+            "primary": {},
+            "slice_type": "landing_responsibility"
+          }
+        },
+        "meta": {
+          "fileName": "index",
+          "extension": "js"
+        },
+        "screenshotPaths": {}
+      },
       "landing_services": {
         "library": "slices",
         "id": "landing_services",

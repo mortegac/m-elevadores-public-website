@@ -392,7 +392,7 @@ interface LandingnavDocumentData {
  */
 export type LandingnavDocument<Lang extends string = string> = prismic.PrismicDocumentWithoutUID<Simplify<LandingnavDocumentData>, "landingnav", Lang>;
 
-type LandingpageDocumentDataSlicesSlice = LandingStandoutSlice | LandingCountUpSlice | LandingFaqSlice | LandingCallbackSlice | LandingBannerSlice | LandingServicesSlice | LandingCustomerReviewSlice | LandingTimelineSlice | LandingEmpathySlice
+type LandingpageDocumentDataSlicesSlice = LandingStandoutSlice | LandingCountUpSlice | LandingFaqSlice | LandingCallbackSlice | LandingBannerSlice | LandingServicesSlice | LandingCustomerReviewSlice | LandingTimelineSlice | LandingEmpathySlice | LandingResponsibilitySlice
 
 /**
  * Content for landingPage documents
@@ -1819,6 +1819,64 @@ type LandingFaqSliceVariation = LandingFaqSliceDefault
 export type LandingFaqSlice = prismic.SharedSlice<"landing_faq", LandingFaqSliceVariation>;
 
 /**
+ * Primary content in *LandingResponsibility → Items*
+ */
+export interface LandingResponsibilitySliceDefaultItem {
+	/**
+	 * title field in *LandingResponsibility → Items*
+	 *
+	 * - **Field Type**: Rich Text
+	 * - **Placeholder**: *None*
+	 * - **API ID Path**: landing_responsibility.items[].title
+	 * - **Documentation**: https://prismic.io/docs/fields/rich-text
+	 */
+	title: prismic.RichTextField;
+	
+	/**
+	 * description field in *LandingResponsibility → Items*
+	 *
+	 * - **Field Type**: Rich Text
+	 * - **Placeholder**: *None*
+	 * - **API ID Path**: landing_responsibility.items[].description
+	 * - **Documentation**: https://prismic.io/docs/fields/rich-text
+	 */
+	description: prismic.RichTextField;
+	
+	/**
+	 * standout field in *LandingResponsibility → Items*
+	 *
+	 * - **Field Type**: Rich Text
+	 * - **Placeholder**: *None*
+	 * - **API ID Path**: landing_responsibility.items[].standout
+	 * - **Documentation**: https://prismic.io/docs/fields/rich-text
+	 */
+	standout: prismic.RichTextField;
+}
+
+/**
+ * Default variation for LandingResponsibility Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: LandingResponsibility
+ * - **Documentation**: https://prismic.io/docs/slices
+ */
+export type LandingResponsibilitySliceDefault = prismic.SharedSliceVariation<"default", Record<string, never>, Simplify<LandingResponsibilitySliceDefaultItem>>;
+
+/**
+ * Slice variation for *LandingResponsibility*
+ */
+type LandingResponsibilitySliceVariation = LandingResponsibilitySliceDefault
+
+/**
+ * LandingResponsibility Shared Slice
+ *
+ * - **API ID**: `landing_responsibility`
+ * - **Description**: LandingResponsibility
+ * - **Documentation**: https://prismic.io/docs/slices
+ */
+export type LandingResponsibilitySlice = prismic.SharedSlice<"landing_responsibility", LandingResponsibilitySliceVariation>;
+
+/**
  * Primary content in *LandingServices → Default → Primary*
  */
 export interface LandingServicesSliceDefaultPrimary {
@@ -2967,6 +3025,10 @@ declare module "@prismicio/client" {
 			LandingFaqSliceDefaultItem,
 			LandingFaqSliceVariation,
 			LandingFaqSliceDefault,
+			LandingResponsibilitySlice,
+			LandingResponsibilitySliceDefaultItem,
+			LandingResponsibilitySliceVariation,
+			LandingResponsibilitySliceDefault,
 			LandingServicesSlice,
 			LandingServicesSliceDefaultPrimary,
 			LandingServicesSliceDefaultItem,

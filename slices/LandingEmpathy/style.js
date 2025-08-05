@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 const defaultPattern =
-  "data:image/svg+xml;base64,PHN2ZyB4bWxucz0naHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmcnIHdpZHRoPScyMCcgaGVpZ2h0PScyMCcgdmlld0JveD0nMCAwIDIwIDIwJz48Y2lyY2xlIGN4PScxJyBjeT0nMScgcj0nMScgZmlsbD0nI2U1ZTVlNScgLz48L3N2Zz4=";
+  "data:image/svg+xml;base64,PHN2ZyB4bWxucz0naHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmcnIHdpZHRoPScyMCcgaGVpZ2h0PScyMCcgdmlld0JveD0nMCAwIDIwIDIwJz48Y2lyY2xlIGN4PScxJyBjeT0nMScgcj0nMicgZmlsbD0nI2U1ZTVlNScgLz48L3N2Zz4=";
 
 const Section = styled.section`
   background-image: ${({ bgimg }) => `url(${bgimg || defaultPattern})`};
