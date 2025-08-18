@@ -83,6 +83,7 @@ export const Service = styled.div`
   .service-content h2 {
     font-size: 1.25rem;
     line-height: 1.2;
+    margin-bottom: 7px;
 
     @media (max-width: 768px) {
       font-size: 1rem;
@@ -98,7 +99,8 @@ export const Service = styled.div`
   }
 
   .service-content p {
-    font-size: 0.8rem;
+    font-size: 0.95rem;
+    line-height: 1.2;
     max-height: 120px;
     overflow: auto;
 
@@ -109,7 +111,7 @@ export const Service = styled.div`
     }
 
     @media (max-width: 480px) {
-      font-size: 0.8rem;
+      font-size: 0.9rem;
     }
 
     &::-webkit-scrollbar {

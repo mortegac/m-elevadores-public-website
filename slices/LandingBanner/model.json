@@ -54,6 +54,15 @@
             "constraint": {},
             "thumbnails": []
           }
+        },
+        "ctatext": {
+          "type": "StructuredText",
+          "config": {
+            "label": "ctaText",
+            "placeholder": "",
+            "allowTargetBlank": true,
+            "single": "paragraph"
+          }
         }
       },
       "items": {

@@ -52,6 +52,8 @@ export const InputWrapper = styled.div`
     width: 100%;
     box-sizing: border-box;
     border: none;
+    font-size: small;
+    font-family: inherit;
   }
 
   label {
@@ -91,7 +93,7 @@ export const Button = styled.button`
   all: unset;
   padding: 8px;
   border-radius: 5px;
-  background-color: #2760d9;
+  background-color: #0070f3;
   color: white;
   font-weight: 600;
   text-align: center;
@@ -99,4 +101,8 @@ export const Button = styled.button`
   width: 100%;
   box-sizing: border-box;
   line-height: 1;
+
+  &:hover {
+    background-color: #005bb5;
+  }
 `;

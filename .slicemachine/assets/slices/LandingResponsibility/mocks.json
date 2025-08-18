@@ -1,0 +1,33 @@
+[
+  {
+    "variation": "default",
+    "version": "sktwi1xtmkfgx8626",
+    "items": [
+      {
+        "title": [
+          {
+            "type": "heading1",
+            "text": "Castle",
+            "spans": []
+          }
+        ],
+        "description": [
+          {
+            "type": "paragraph",
+            "text": "Sunt cupidatat et cupidatat quis nulla.",
+            "spans": []
+          }
+        ],
+        "standout": [
+          {
+            "type": "paragraph",
+            "text": "Pariatur anim consectetur veniam labore qui. Magna elit voluptate incididunt tempor quis dolor magna non eu.",
+            "spans": []
+          }
+        ]
+      }
+    ],
+    "primary": {},
+    "slice_type": "landing_responsibility"
+  }
+]
