@@ -15,6 +15,7 @@ import LandingResponsibility from './LandingResponsibility';
 import LandingServices from './LandingServices';
 import LandingStandout from './LandingStandout';
 import LandingTimeline from './LandingTimeline';
+import LandingVideoShowcase from './LandingVideoShowcase';
 import LogoList from './LogoList';
 import Metrics from './Metrics';
 import Projects from './Projects';
@@ -37,6 +38,7 @@ export {
 	LandingServices,
 	LandingStandout,
 	LandingTimeline,
+	LandingVideoShowcase,
 	LogoList,
 	Metrics,
 	Projects,
@@ -60,6 +62,7 @@ export const components = {
 	landing_services: LandingServices,
 	landing_standout: LandingStandout,
 	landing_timeline: LandingTimeline,
+	landing_video_showcase: LandingVideoShowcase,
 	logo_list: LogoList,
 	metrics: Metrics,
 	projects: Projects,

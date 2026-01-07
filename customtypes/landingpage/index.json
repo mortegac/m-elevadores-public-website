@@ -60,6 +60,9 @@
             },
             "landing_responsibility": {
               "type": "SharedSlice"
+            },
+            "landing_video_showcase": {
+              "type": "SharedSlice"
             }
           }
         }
