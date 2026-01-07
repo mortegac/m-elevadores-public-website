@@ -1662,6 +1662,16 @@ export interface LandingCustomerReviewSliceDefaultItem {
 	 * - **Documentation**: https://prismic.io/docs/fields/number
 	 */
 	stars: prismic.NumberField;
+	
+	/**
+	 * reviewLink field in *LandingCustomerReview → Items*
+	 *
+	 * - **Field Type**: Link
+	 * - **Placeholder**: *None*
+	 * - **API ID Path**: landing_customer_review.items[].reviewlink
+	 * - **Documentation**: https://prismic.io/docs/fields/link
+	 */
+	reviewlink: prismic.LinkField<string, string, unknown, prismic.FieldState, never>;
 }
 
 /**

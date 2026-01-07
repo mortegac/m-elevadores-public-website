@@ -72,9 +72,19 @@ const LandingCustomerReview = ({ slice }) => {
           const hasIcon = review.usericon?.url;
           const stars = review.stars || 0;
           const firstLetter = getFirstLetter(review.username);
+          const reviewUrl = review.reviewlink?.url;
+
+          const handleClick = () => {
+            if (!reviewUrl) return;
+            window.open(reviewUrl, "_blank", "noopener,noreferrer");
+          };
 
           return (
-            <Review key={index}>
+            <Review
+              key={index}
+              $clickable={!!reviewUrl}
+              onClick={reviewUrl ? handleClick : undefined}
+            >
               <ReviewHead>
                 {hasIcon ? (
                   <UserIcon
@@ -84,6 +94,7 @@ const LandingCustomerReview = ({ slice }) => {
                 ) : (
                   <LetterFallback>{firstLetter}</LetterFallback>
                 )}
+
                 <div>
                   <Username>
                     <PrismicRichText field={review.username} />
