@@ -1,0 +1,9 @@
+import MyComponent from '../../../../slices/LandingCustomerReview';
+
+export default {
+  title: 'slices/LandingCustomerReview'
+}
+
+
+export const _Default = () => <MyComponent slice={{"variation":"default","version":"sktwi1xtmkfgx8626","items":[{"usericon":{"dimensions":{"width":900,"height":500},"alt":null,"copyright":null,"url":"https://images.unsplash.com/photo-1589321578146-4c1ba445cc88"},"username":[{"type":"paragraph","text":"Consectetur cupidatat enim quis esse tempor irure eiusmod ad consectetur sit labore excepteur et sunt esse. Minim nostrud cupidatat occaecat aliqua do deserunt ea sint elit pariatur. Minim eu ut anim exercitation occaecat ex.","spans":[]}],"userreview":[{"type":"paragraph","text":"Laboris sunt cupidatat incididunt incididunt aute veniam quis. Ut et non officia ex quis nostrud id nostrud fugiat do ex occaecat. Sunt occaecat veniam esse eiusmod sint in amet.","spans":[]}],"stars":49,"reviewlink":{"link_type":"Web","url":"https://slicemachine.dev"}}],"primary":{"title":[{"type":"heading1","text":"Quiet","spans":[]}]},"slice_type":"landing_customer_review","id":"_Default"}} />
+_Default.storyName = ''

@@ -1493,6 +1493,14 @@
                     "label": "stars",
                     "placeholder": ""
                   }
+                },
+                "reviewlink": {
+                  "type": "Link",
+                  "config": {
+                    "label": "reviewLink",
+                    "placeholder": "",
+                    "select": null
+                  }
                 }
               },
               "imageUrl": "https://images.prismic.io/slice-machine/621a5ec4-0387-4bc5-9860-2dd46cbc07cd_default_ss.png?auto=compress,format"
@@ -1512,30 +1520,34 @@
                   },
                   "alt": null,
                   "copyright": null,
-                  "url": "https://images.unsplash.com/photo-1591012911207-0dbac31f37da"
+                  "url": "https://images.unsplash.com/photo-1589321578146-4c1ba445cc88"
                 },
                 "username": [
                   {
                     "type": "paragraph",
-                    "text": "Veniam aliquip reprehenderit et enim mollit dolor ad. Do voluptate ad occaecat Lorem aute elit magna ullamco mollit aute in anim officia ex. Ex labore veniam aliquip cupidatat.",
+                    "text": "Consectetur cupidatat enim quis esse tempor irure eiusmod ad consectetur sit labore excepteur et sunt esse. Minim nostrud cupidatat occaecat aliqua do deserunt ea sint elit pariatur. Minim eu ut anim exercitation occaecat ex.",
                     "spans": []
                   }
                 ],
                 "userreview": [
                   {
                     "type": "paragraph",
-                    "text": "Lorem magna velit labore consequat tempor amet. Magna duis adipisicing proident exercitation occaecat esse reprehenderit nostrud. Ea elit sunt ipsum deserunt duis incididunt esse nisi cupidatat est duis aliquip duis.",
+                    "text": "Laboris sunt cupidatat incididunt incididunt aute veniam quis. Ut et non officia ex quis nostrud id nostrud fugiat do ex occaecat. Sunt occaecat veniam esse eiusmod sint in amet.",
                     "spans": []
                   }
                 ],
-                "stars": 45
+                "stars": 49,
+                "reviewlink": {
+                  "link_type": "Web",
+                  "url": "https://slicemachine.dev"
+                }
               }
             ],
             "primary": {
               "title": [
                 {
                   "type": "heading1",
-                  "text": "Sense",
+                  "text": "Quiet",
                   "spans": []
                 }
               ]
@@ -2205,6 +2217,163 @@
               ]
             },
             "slice_type": "landing_timeline"
+          }
+        },
+        "meta": {
+          "fileName": "index",
+          "extension": "js"
+        },
+        "screenshotPaths": {}
+      },
+      "landing_video_showcase": {
+        "library": "slices",
+        "id": "landing_video_showcase",
+        "name": "LandingVideoShowcase",
+        "description": "LandingVideoShowcase",
+        "model": {
+          "id": "landing_video_showcase",
+          "type": "SharedSlice",
+          "name": "LandingVideoShowcase",
+          "description": "LandingVideoShowcase",
+          "variations": [
+            {
+              "id": "default",
+              "name": "Default",
+              "docURL": "...",
+              "version": "sktwi1xtmkfgx8626",
+              "description": "LandingVideoShowcase",
+              "primary": {
+                "title": {
+                  "type": "StructuredText",
+                  "config": {
+                    "single": "heading1",
+                    "label": "Title",
+                    "placeholder": "This is where it all begins..."
+                  }
+                },
+                "description": {
+                  "type": "StructuredText",
+                  "config": {
+                    "single": "paragraph",
+                    "label": "Description",
+                    "placeholder": "A nice description of your feature"
+                  }
+                }
+              },
+              "items": {
+                "video": {
+                  "type": "Link",
+                  "config": {
+                    "label": "video",
+                    "placeholder": "",
+                    "select": "media"
+                  }
+                }
+              },
+              "imageUrl": "https://images.prismic.io/slice-machine/621a5ec4-0387-4bc5-9860-2dd46cbc07cd_default_ss.png?auto=compress,format"
+            },
+            {
+              "id": "backgroundColor",
+              "name": "backgroundColor",
+              "docURL": "...",
+              "version": "sktwi1xtmkfgx8626",
+              "description": "LandingVideoShowcase",
+              "primary": {
+                "title": {
+                  "type": "StructuredText",
+                  "config": {
+                    "single": "heading1",
+                    "label": "Title",
+                    "placeholder": "This is where it all begins..."
+                  }
+                },
+                "description": {
+                  "type": "StructuredText",
+                  "config": {
+                    "single": "paragraph",
+                    "label": "Description",
+                    "placeholder": "A nice description of your feature"
+                  }
+                }
+              },
+              "items": {
+                "video": {
+                  "type": "Link",
+                  "config": {
+                    "label": "video",
+                    "placeholder": "",
+                    "select": "media"
+                  }
+                }
+              },
+              "imageUrl": "https://images.prismic.io/slice-machine/621a5ec4-0387-4bc5-9860-2dd46cbc07cd_default_ss.png?auto=compress,format"
+            }
+          ]
+        },
+        "mocks": {
+          "default": {
+            "variation": "default",
+            "version": "sktwi1xtmkfgx8626",
+            "items": [
+              {
+                "video": {
+                  "link_type": "Media",
+                  "name": "mock",
+                  "kind": "image",
+                  "url": "https://source.unsplash.com/random",
+                  "size": "10kB"
+                }
+              }
+            ],
+            "primary": {
+              "title": [
+                {
+                  "type": "heading1",
+                  "text": "Spider",
+                  "spans": []
+                }
+              ],
+              "description": [
+                {
+                  "type": "paragraph",
+                  "text": "Ut officia amet culpa laborum commodo mollit adipisicing labore proident esse id. Et id cillum do sunt dolor aute aliquip dolore quis proident.",
+                  "spans": []
+                }
+              ]
+            },
+            "slice_type": "landing_video_showcase"
+          },
+          "backgroundColor": {
+            "variation": "backgroundColor",
+            "version": "sktwi1xtmkfgx8626",
+            "items": [
+              {
+                "video": {
+                  "link_type": "Media",
+                  "name": "mock",
+                  "kind": "image",
+                  "url": "https://source.unsplash.com/random",
+                  "size": "10kB"
+                }
+              }
+            ],
+            "primary": {
+              "title": [
+                {
+                  "type": "heading1",
+                  "text": "Anything",
+                  "spans": []
+                }
+              ],
+              "description": [
+                {
+                  "type": "paragraph",
+                  "text": "Anim irure adipisicing pariatur consequat occaecat laborum.",
+                  "spans": []
+                }
+              ]
+            },
+            "slice_type": "landing_video_showcase"
           }
         },
         "meta": {

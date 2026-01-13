@@ -48,7 +48,9 @@
           }
         }
       }
-    }
+    },
+    "LandingCustomerReview": {},
+    "LandingVideoShowcase": {}
   },
   "_cts": {
     "landingpage": {}

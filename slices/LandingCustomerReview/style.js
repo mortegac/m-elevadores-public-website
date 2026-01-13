@@ -59,6 +59,8 @@ export const Review = styled.div`
   flex-direction: column;
   justify-content: center;
 
+  cursor: ${({ $clickable }) => ($clickable ? "pointer" : "default")};
+
   &:hover {
     transform: translateY(-4px);
     box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
