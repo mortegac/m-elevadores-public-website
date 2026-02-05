@@ -392,7 +392,7 @@ interface LandingnavDocumentData {
  */
 export type LandingnavDocument<Lang extends string = string> = prismic.PrismicDocumentWithoutUID<Simplify<LandingnavDocumentData>, "landingnav", Lang>;
 
-type LandingpageDocumentDataSlicesSlice = LandingStandoutSlice | LandingCountUpSlice | LandingFaqSlice | LandingCallbackSlice | LandingBannerSlice | LandingServicesSlice | LandingCustomerReviewSlice | LandingTimelineSlice | LandingEmpathySlice | LandingResponsibilitySlice
+type LandingpageDocumentDataSlicesSlice = LandingStandoutSlice | LandingCountUpSlice | LandingFaqSlice | LandingCallbackSlice | LandingBannerSlice | LandingServicesSlice | LandingCustomerReviewSlice | LandingTimelineSlice | LandingEmpathySlice | LandingResponsibilitySlice | LandingVideoShowcaseSlice
 
 /**
  * Content for landingPage documents
@@ -1662,6 +1662,16 @@ export interface LandingCustomerReviewSliceDefaultItem {
 	 * - **Documentation**: https://prismic.io/docs/fields/number
 	 */
 	stars: prismic.NumberField;
+	
+	/**
+	 * reviewLink field in *LandingCustomerReview → Items*
+	 *
+	 * - **Field Type**: Link
+	 * - **Placeholder**: *None*
+	 * - **API ID Path**: landing_customer_review.items[].reviewlink
+	 * - **Documentation**: https://prismic.io/docs/fields/link
+	 */
+	reviewlink: prismic.LinkField<string, string, unknown, prismic.FieldState, never>;
 }
 
 /**
@@ -2133,6 +2143,118 @@ type LandingTimelineSliceVariation = LandingTimelineSliceDefault
  * - **Documentation**: https://prismic.io/docs/slices
  */
 export type LandingTimelineSlice = prismic.SharedSlice<"landing_timeline", LandingTimelineSliceVariation>;
+
+/**
+ * Primary content in *LandingVideoShowcase → Default → Primary*
+ */
+export interface LandingVideoShowcaseSliceDefaultPrimary {
+	/**
+	 * Title field in *LandingVideoShowcase → Default → Primary*
+	 *
+	 * - **Field Type**: Rich Text
+	 * - **Placeholder**: This is where it all begins...
+	 * - **API ID Path**: landing_video_showcase.default.primary.title
+	 * - **Documentation**: https://prismic.io/docs/fields/rich-text
+	 */
+	title: prismic.RichTextField;
+	
+	/**
+	 * Description field in *LandingVideoShowcase → Default → Primary*
+	 *
+	 * - **Field Type**: Rich Text
+	 * - **Placeholder**: A nice description of your feature
+	 * - **API ID Path**: landing_video_showcase.default.primary.description
+	 * - **Documentation**: https://prismic.io/docs/fields/rich-text
+	 */
+	description: prismic.RichTextField;
+}
+
+/**
+ * Primary content in *LandingVideoShowcase → Items*
+ */
+export interface LandingVideoShowcaseSliceDefaultItem {
+	/**
+	 * video field in *LandingVideoShowcase → Items*
+	 *
+	 * - **Field Type**: Link to Media
+	 * - **Placeholder**: *None*
+	 * - **API ID Path**: landing_video_showcase.items[].video
+	 * - **Documentation**: https://prismic.io/docs/fields/link-to-media
+	 */
+	video: prismic.LinkToMediaField<prismic.FieldState, never>;
+}
+
+/**
+ * Default variation for LandingVideoShowcase Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: LandingVideoShowcase
+ * - **Documentation**: https://prismic.io/docs/slices
+ */
+export type LandingVideoShowcaseSliceDefault = prismic.SharedSliceVariation<"default", Simplify<LandingVideoShowcaseSliceDefaultPrimary>, Simplify<LandingVideoShowcaseSliceDefaultItem>>;
+
+/**
+ * Primary content in *LandingVideoShowcase → backgroundColor → Primary*
+ */
+export interface LandingVideoShowcaseSliceBackgroundColorPrimary {
+	/**
+	 * Title field in *LandingVideoShowcase → backgroundColor → Primary*
+	 *
+	 * - **Field Type**: Rich Text
+	 * - **Placeholder**: This is where it all begins...
+	 * - **API ID Path**: landing_video_showcase.backgroundColor.primary.title
+	 * - **Documentation**: https://prismic.io/docs/fields/rich-text
+	 */
+	title: prismic.RichTextField;
+	
+	/**
+	 * Description field in *LandingVideoShowcase → backgroundColor → Primary*
+	 *
+	 * - **Field Type**: Rich Text
+	 * - **Placeholder**: A nice description of your feature
+	 * - **API ID Path**: landing_video_showcase.backgroundColor.primary.description
+	 * - **Documentation**: https://prismic.io/docs/fields/rich-text
+	 */
+	description: prismic.RichTextField;
+}
+
+/**
+ * Primary content in *LandingVideoShowcase → Items*
+ */
+export interface LandingVideoShowcaseSliceBackgroundColorItem {
+	/**
+	 * video field in *LandingVideoShowcase → Items*
+	 *
+	 * - **Field Type**: Link to Media
+	 * - **Placeholder**: *None*
+	 * - **API ID Path**: landing_video_showcase.items[].video
+	 * - **Documentation**: https://prismic.io/docs/fields/link-to-media
+	 */
+	video: prismic.LinkToMediaField<prismic.FieldState, never>;
+}
+
+/**
+ * backgroundColor variation for LandingVideoShowcase Slice
+ *
+ * - **API ID**: `backgroundColor`
+ * - **Description**: LandingVideoShowcase
+ * - **Documentation**: https://prismic.io/docs/slices
+ */
+export type LandingVideoShowcaseSliceBackgroundColor = prismic.SharedSliceVariation<"backgroundColor", Simplify<LandingVideoShowcaseSliceBackgroundColorPrimary>, Simplify<LandingVideoShowcaseSliceBackgroundColorItem>>;
+
+/**
+ * Slice variation for *LandingVideoShowcase*
+ */
+type LandingVideoShowcaseSliceVariation = LandingVideoShowcaseSliceDefault | LandingVideoShowcaseSliceBackgroundColor
+
+/**
+ * LandingVideoShowcase Shared Slice
+ *
+ * - **API ID**: `landing_video_showcase`
+ * - **Description**: LandingVideoShowcase
+ * - **Documentation**: https://prismic.io/docs/slices
+ */
+export type LandingVideoShowcaseSlice = prismic.SharedSlice<"landing_video_showcase", LandingVideoShowcaseSliceVariation>;
 
 /**
  * Primary content in *LogoList → Default → Primary*
@@ -3047,6 +3169,14 @@ declare module "@prismicio/client" {
 			LandingTimelineSliceDefaultItem,
 			LandingTimelineSliceVariation,
 			LandingTimelineSliceDefault,
+			LandingVideoShowcaseSlice,
+			LandingVideoShowcaseSliceDefaultPrimary,
+			LandingVideoShowcaseSliceDefaultItem,
+			LandingVideoShowcaseSliceBackgroundColorPrimary,
+			LandingVideoShowcaseSliceBackgroundColorItem,
+			LandingVideoShowcaseSliceVariation,
+			LandingVideoShowcaseSliceDefault,
+			LandingVideoShowcaseSliceBackgroundColor,
 			LogoListSlice,
 			LogoListSliceDefaultPrimary,
 			LogoListSliceDefaultItem,
