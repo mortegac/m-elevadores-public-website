@@ -1,11 +1,9 @@
 import styled from "styled-components";
+import { sectionPadding } from "../../components/styles/mixins";
 
 export const Wrapper = styled.div`
   background-color: #fff;
-  padding: 0rem 10rem 2.5rem;
-  @media (max-width: 768px) {
-    padding: 1rem;
-  }
+  ${sectionPadding("1.5rem")}
 `;
 
 export const Icon = styled.span`
@@ -108,6 +106,24 @@ export const FaqSection = styled.section`
   .faq-answer {
     p {
       padding: 0.5rem;
+    }
+  }
+
+  @media (max-width: 768px) {
+    .title h1 {
+      font-size: clamp(1.5rem, 4.5vw, 2rem);
+    }
+
+    .faq-question {
+      gap: 1rem;
+      justify-content: flex-start;
+      font-size: 1.05rem;
+      padding: 12px;
+      min-height: 44px;
+      p {
+        margin: 0;
+        text-align: left;
+      }
     }
   }
 `;

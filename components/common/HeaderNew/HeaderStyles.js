@@ -262,12 +262,12 @@ export const MobileNavContainer = styled.div`
   transition: transform 0.3s ease;
 
   #NavMobile {
-    padding: 9px 0px 0px 24px;
+    padding: 9px 0px 0px 16px;
   }
 
   #NavMenuMobile {
-    margin-top: 38px;
-    padding-left: 24px;
+    margin-top: 24px;
+    padding-left: 16px;
   }
 
   .button-wrapper {
@@ -275,14 +275,11 @@ export const MobileNavContainer = styled.div`
     bottom: 0;
     width: 100%;
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
-    padding: 24px 24px 8px;
-    @media (max-width: ${(props) => props.theme.breakpoints.sm}) {
-      flex-direction: column;
-      gap: 24px;
-    }
+    padding: 16px;
+    gap: 12px;
     a {
       width: 100%;
       margin: 0;
@@ -304,18 +301,21 @@ export const MobileNavContainer = styled.div`
     align-items: flex-start;
     padding: 0px;
     margin-bottom: 0;
-    padding: 9px 0px 0px 24px;
+    padding: 9px 0px 0px 16px;
     &:first-child {
-      margin-top: 81px;
+      margin-top: 72px;
     }
     li {
       font-weight: normal;
-      font-size: 16px;
+      font-size: 18px;
       line-height: 24px;
-      margin-bottom: 42px;
+      margin-bottom: 16px;
+      padding: 12px 0;
+      min-height: 44px;
       letter-spacing: 0px;
       color: #00113399;
       display: flex;
+      align-items: center;
       &.lang {
         text-transform: uppercase;
         svg {

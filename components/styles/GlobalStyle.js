@@ -1,6 +1,14 @@
 import { createGlobalStyle } from "styled-components";
 
 export const GlobalStyle = createGlobalStyle`
+    html, body {
+        overflow-x: hidden;
+        -webkit-text-size-adjust: 100%;
+    }
+    img, video {
+        max-width: 100%;
+        height: auto;
+    }
     body {
         margin: 0;
         padding: 0;

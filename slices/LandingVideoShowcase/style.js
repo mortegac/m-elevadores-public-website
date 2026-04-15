@@ -1,17 +1,10 @@
 import styled from "styled-components";
+import { sectionPadding } from "../../components/styles/mixins";
 
 export const Section = styled.section`
-  padding: 1rem 10rem;
+  ${sectionPadding("2rem")}
   background: ${(props) =>
     props.$isBackgroundVariation ? "#243c70" : "#ffffff"};
-
-  @media (max-width: 1024px) {
-    padding: 3rem 3rem;
-  }
-
-  @media (max-width: 768px) {
-    padding: 2rem 1rem;
-  }
 `;
 
 export const Title = styled.div`
@@ -20,7 +13,7 @@ export const Title = styled.div`
 
   h1 {
     font-weight: 900;
-    font-size: 2rem;
+    font-size: clamp(1.5rem, 4.5vw, 2rem);
     color: ${(props) => (props.$isBackgroundVariation ? "white" : "#3962e9")};
   }
 `;
@@ -33,6 +26,13 @@ export const Description = styled.div`
   color: ${(props) =>
     props.$isBackgroundVariation ? "white" : "#555"};
   font-size: 1.05rem;
+
+  @media (max-width: ${({ theme }) => theme.breakpoints.md}) {
+    text-align: left;
+    font-size: 0.95rem;
+    margin-bottom: 2rem;
+    line-height: 1.65;
+  }
 `;
 
 export const VideoGrid = styled.div`

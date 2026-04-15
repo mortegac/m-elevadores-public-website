@@ -14,9 +14,15 @@ export const Container = styled.div`
 `;
 
 export const ImgContent = styled.div`
+  width: 100%;
+  display: flex;
+  justify-content: center;
   img {
-    width: 535px;
-    height: 612px;
+    width: 100%;
+    height: auto;
+    max-width: 535px;
+    aspect-ratio: 535 / 612;
+    object-fit: cover;
   }
 `;
 

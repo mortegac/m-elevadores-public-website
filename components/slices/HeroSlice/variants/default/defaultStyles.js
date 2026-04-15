@@ -189,15 +189,20 @@ export const ImgHolder = styled.div`
 
 export const Button = styled.button`
   border-radius: 22px;
-  height: 48px;
-  padding: 10px 30px;
+  min-height: 48px;
+  padding: 12px 30px;
   border: transparent;
   font-size: 16px;
   margin-top: 18px;
   line-height: 24px;
-  width: 280px;
-  height: 48px;
+  width: 100%;
+  max-width: 320px;
   cursor: pointer;
   color: ${(props) => props.theme.colors.secondary};
   background: ${(props) => props.theme.colors.white};
+
+  @media (min-width: ${(props) => props.theme.breakpoints.sm}) {
+    width: auto;
+    min-width: 240px;
+  }
 `;
