@@ -1,17 +1,15 @@
 import styled from "styled-components";
+import { sectionPadding } from "../../components/styles/mixins";
 
 export const Section = styled.div`
   background-color: white;
-  padding: 1rem 10rem;
-  @media (max-width: 1100px) {
-    padding: 1rem;
-  }
+  ${sectionPadding("2rem")}
 
   h1 {
     color: #3962e9;
     text-align: center;
     margin-top: 0;
-    font-size: 2rem;
+    font-size: clamp(1.5rem, 4.5vw, 2rem);
   }
 `;
 
@@ -20,6 +18,10 @@ export const ServicesWrapper = styled.div`
   flex-wrap: wrap;
   gap: 1rem;
   justify-content: center;
+
+  @media (max-width: 600px) {
+    gap: 0.75rem;
+  }
 `;
 
 export const Service = styled.div`
@@ -92,9 +94,9 @@ export const Service = styled.div`
       transform: translateY(0);
     }
 
-    @media (max-width: 480px) {
-      font-size: 1rem;
-      line-height: 1.1;
+    @media (max-width: 600px) {
+      font-size: 0.85rem;
+      line-height: 1.15;
     }
   }
 
@@ -110,8 +112,10 @@ export const Service = styled.div`
       transform: translateY(0);
     }
 
-    @media (max-width: 480px) {
-      font-size: 0.9rem;
+    @media (max-width: 600px) {
+      font-size: 0.8rem;
+      line-height: 1.2;
+      max-height: 60px;
     }
 
     &::-webkit-scrollbar {
@@ -139,6 +143,7 @@ export const Service = styled.div`
   }
 
   @media (max-width: 600px) {
-    flex: 0 1 100%;
+    flex: 0 1 calc(50% - 0.375rem);
+    height: 180px;
   }
 `;

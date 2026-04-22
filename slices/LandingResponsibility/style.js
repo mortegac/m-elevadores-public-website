@@ -1,34 +1,27 @@
 import styled from "styled-components";
+import { sectionPadding } from "../../components/styles/mixins";
 
 const Section = styled.div`
   background: white;
-  padding: 2rem 10rem;
-
-  @media (max-width: 768px) {
-    padding: 2rem 1rem;
-  }
+  ${sectionPadding("2rem")}
 `;
 
 const Grid = styled.div`
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
+  display: grid;
+  grid-template-columns: 1fr;
   gap: 1rem;
+
+  @media (min-width: ${({ theme }) => theme.breakpoints.md}) {
+    grid-template-columns: repeat(2, 1fr);
+  }
 `;
 
 const Card = styled.div`
   background: white;
   border-radius: 10px;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
-  padding: 2rem;
+  padding: clamp(1.25rem, 4vw, 3rem);
   transition: box-shadow 0.3s ease;
-  width: calc(50% - 0.5rem);
-  padding: 5rem;
-
-  @media (max-width: 768px) {
-    width: 100%;
-    padding: 1.25rem;
-  }
 
   .title h1 {
     color: #2f54eb;

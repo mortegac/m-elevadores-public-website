@@ -1,13 +1,10 @@
 import styled from "styled-components";
 import Slider from "react-slick";
+import { sectionPadding } from "../../components/styles/mixins";
 
 export const Section = styled.section`
-  padding: 2rem;
   background: white;
-  padding: 1rem 10rem;
-  @media (max-width: 768px) {
-    padding: 1rem;
-  }
+  ${sectionPadding("2rem")}
 `;
 
 export const Title = styled.div`
@@ -16,18 +13,18 @@ export const Title = styled.div`
 
   h1 {
     font-weight: 900;
-    font-size: 2rem;
+    font-size: clamp(1.5rem, 4.5vw, 2rem);
     color: #3962e9;
   }
 `;
 
 export const StyledSlider = styled(Slider)`
   .slick-list {
-    padding: 10px 0 !important;
+    padding: 10px 4px !important;
   }
 
   .slick-slide > div {
-    padding: 0 5px;
+    padding: 0 8px;
     display: flex;
     justify-content: center;
   }
@@ -50,14 +47,19 @@ export const Review = styled.div`
   background: #ffffff;
   border: 1px solid #ddd;
   border-radius: 10px;
-  padding: 1rem;
-  max-width: 450px;
-  min-height: 300px;
+  padding: 1.25rem;
+  max-width: 100%;
+  min-height: auto;
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
   transition: transform 0.2s ease, box-shadow 0.2s ease;
   display: flex;
   flex-direction: column;
   justify-content: center;
+
+  @media (min-width: ${({ theme }) => theme.breakpoints.sm}) {
+    max-width: 450px;
+    min-height: 300px;
+  }
 
   cursor: ${({ $clickable }) => ($clickable ? "pointer" : "default")};
 

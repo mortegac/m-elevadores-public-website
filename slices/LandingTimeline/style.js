@@ -1,15 +1,13 @@
 import styled from "styled-components";
+import { sectionPadding } from "../../components/styles/mixins";
 
 export const Section = styled.div`
   background-color: white;
-  padding: 1rem 10rem;
-  @media (max-width: 768px) {
-    padding: 1rem;
-  }
+  ${sectionPadding("2rem")}
 
   .title h1 {
     font-weight: 900;
-    font-size: 2rem;
+    font-size: clamp(1.5rem, 4.5vw, 2rem);
     color: #3962e9;
     text-align: center;
     margin: 0 0 1rem 0;
@@ -68,12 +66,16 @@ export const Section = styled.div`
     display: flex;
     flex-direction: column;
     justify-content: center;
-    gap: 1rem;
+    gap: 0.75rem;
 
     .mobile-step {
       align-items: center;
       display: flex;
       gap: 1rem;
+      background: #f5f7ff;
+      padding: 1rem;
+      border-radius: 10px;
+      border-left: 3px solid #3962e9;
     }
 
     .mobile-step-number {
@@ -94,17 +96,4 @@ export const Section = styled.div`
     .mobile-step-text {
     }
   }
-
-  /* Connect to <p>
-  .step-number::after {
-    content: "";
-    position: absolute;
-    top: 100%;
-    bottom: 0;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 2px;
-    height: 20px;
-    background-color: #3962e9;
-  }*/
 `;
