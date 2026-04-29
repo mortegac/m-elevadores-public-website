@@ -1,5 +1,6 @@
 import * as prismic from "@prismicio/client";
 import sm from "../sm.json";
+import { PRODUCTS } from "../lib/products";
 
 const SITE = "https://www.melevadores.cl";
 
@@ -35,7 +36,13 @@ export async function getServerSideProps({ res }) {
 
     const urls = [
       urlEntry(`${SITE}/`, "1.0", "daily"),
-      ...pages.map((p) => urlEntry(`${SITE}/${p.uid}`, "0.8", "weekly")),
+      urlEntry(`${SITE}/catalogo`, "0.9", "weekly"),
+      urlEntry(`${SITE}/catalogo/salvaescaleras`, "0.9", "weekly"),
+      urlEntry(`${SITE}/guia-de-compra`, "0.8", "weekly"),
+      ...PRODUCTS.map((p) =>
+        urlEntry(`${SITE}/catalogo/${p.slug}`, "0.8", "weekly")
+      ),
+      ...pages.map((p) => urlEntry(`${SITE}/${p.uid}`, "0.7", "weekly")),
       ...landings.map((p) =>
         urlEntry(`${SITE}/landing/${p.uid}`, "0.6", "monthly")
       ),
