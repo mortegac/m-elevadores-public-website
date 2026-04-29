@@ -19,11 +19,16 @@ const LandingCountUp = ({ slice }) => {
   return (
     <Section ref={ref}>
       <Counter>
-        <span style={{ visibility: "hidden", whiteSpace: "nowrap" }}>
+        {/* Static value always in DOM for SSR/crawlers */}
+        <span aria-hidden="true" style={{ visibility: "hidden", whiteSpace: "nowrap" }}>
           +{max}
         </span>
-        <span style={{ position: "absolute", left: 0, top: 0 }}>
-          {inView && <CountUp end={max} duration={duration} prefix="+" />}
+        <span style={{ position: "absolute", left: 0, top: 0 }} aria-label={`+${max}`}>
+          {inView ? (
+            <CountUp end={max} duration={duration} prefix="+" />
+          ) : (
+            <noscript>+{max}</noscript>
+          )}
         </span>
       </Counter>
 

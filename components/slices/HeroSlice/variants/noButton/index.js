@@ -1,6 +1,6 @@
 import { SliceFactory } from "../../../../common/Containers";
 import { Description, Content, ImgHolder } from "../default/defaultStyles";
-import { RichText } from "prismic-reactjs";
+import { asText } from "@prismicio/helpers";
 
 const Base = (slice) => {
   const { description, image, title, mobileimage } = slice.primary;
@@ -17,8 +17,8 @@ const Base = (slice) => {
         </picture> */}
       {/* </ImgHolder> */}
       <Description>
-        {title[0]?.text && RichText.render(title)}
-        {description[0]?.text && RichText.render(description)}
+        {title[0]?.text && <h1>{asText(title)}</h1>}
+        {description[0]?.text && <p>{asText(description)}</p>}
       </Description>
     </Content>
   );

@@ -34,20 +34,31 @@ const WhatsAppButton = styled.a`
 export const LandingLayout = (props) => {
   const { children, header, footer, page, activeDocMeta } = props;
   const title = page?.data?.seoTitle || "M-Elevadores";
-  const description = page?.data?.seodescription || "-";
+  const description =
+    page?.data?.seodescription ||
+    "M-Elevadores — Plataformas salvaescaleras para personas con movilidad reducida en Chile.";
+  const canonicalUrl = `${activeDocMeta.sitename}/landing/${page?.uid ?? ""}`;
 
   return (
     <>
       <Head>
         <title>{title}</title>
-        <link
-          rel="canonical"
-          href={`${activeDocMeta.sitename}${page ? `/${page.uid}` : ""}`}
+        <link rel="canonical" href={canonicalUrl} />
+        {getMetaTags({ description, title, url: canonicalUrl })}
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "Service",
+              "@id": `${canonicalUrl}#service`,
+              name: title,
+              provider: { "@id": "https://www.melevadores.cl/#business" },
+              areaServed: { "@type": "Country", name: "Chile" },
+              serviceType: "Venta e instalación de equipos de accesibilidad",
+            }),
+          }}
         />
-        {getMetaTags({
-          description,
-          title,
-        })}
       </Head>
 
       <LandingNav landingNav={header} />

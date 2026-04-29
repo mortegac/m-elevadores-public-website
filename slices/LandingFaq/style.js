@@ -71,7 +71,8 @@ export const Icon = styled.span`
 `;
 
 export const FaqSection = styled.section`
-  .title h1 {
+  .title h1,
+  .title h2 {
     font-size: 2rem;
     text-align: center;
     color: #3962e9;

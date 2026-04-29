@@ -1,9 +1,5 @@
-# *
+# M-Elevadores robots.txt
 User-agent: *
 Allow: /
 
-# Host
-Host: https://www.m-elevadores.cl/
-
-# Sitemaps
-Sitemap: https://www.miniswimmer.us/sitemap.xml
+Sitemap: https://www.melevadores.cl/sitemap.xml

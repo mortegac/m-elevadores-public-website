@@ -30,9 +30,9 @@ export const Header = ({ header, pagename, activeDocMeta }) => {
         <LinkLogo />
         <LeftWrap>
           <ul>{renderedMenuLinks(menuLinks, pagename)}</ul>
-          <Anchor id={calltoactionUri} href={calltoactionUri}>
+          <Anchor href={`/${calltoactionUri}`}>
             <ButtonContainer fullwidth={true}>
-              {calltoactiontext[0]?.text || "Contact"}
+              {calltoactiontext[0]?.text || "Contáctanos"}
             </ButtonContainer>
           </Anchor>
         </LeftWrap>
@@ -59,13 +59,9 @@ export const Header = ({ header, pagename, activeDocMeta }) => {
                 <LinkLogo />
               </div>
               <ul>{renderedMenuLinks(menuLinks, pagename)}</ul>
-              <Anchor
-                id={calltoactionUri}
-                href={calltoactionUri}
-                target="_blank"
-              >
+              <Anchor href={`/${calltoactionUri}`}>
                 <ButtonContainer fullwidth={true}>
-                  {calltoactiontext[0]?.text || "Contact"}
+                  {calltoactiontext[0]?.text || "Contáctanos"}
                 </ButtonContainer>
               </Anchor>
             </>

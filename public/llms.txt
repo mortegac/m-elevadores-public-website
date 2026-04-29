@@ -1,0 +1,52 @@
+# M-Elevadores — llms.txt
+# https://llmstxt.org/
+
+M-Elevadores es una empresa chilena especializada en la comercialización, instalación y mantenimiento de plataformas salvaescaleras y soluciones de accesibilidad para personas con movilidad reducida.
+
+## Empresa
+
+- **Nombre:** M-Elevadores SpA
+- **País:** Chile
+- **Dirección:** Marchant Pereira 150 of 1002, Providencia, Región Metropolitana
+- **Teléfono:** +56959382761
+- **Email:** contacto@melevadores.cl
+- **Sitio web:** https://www.melevadores.cl
+- **Horario:** Lunes a viernes 9:00–18:00
+
+## Servicios
+
+1. **Plataformas salvaescaleras** — Dispositivos motorizados que permiten a personas con movilidad reducida subir y bajar escaleras de forma segura y cómoda. Instalación en escaleras rectas y curvas.
+2. **Mantenimiento multimarca** — Servicio preventivo y correctivo de ascensores de todas las marcas del mercado.
+3. **Reparación y normalización** — Diagnóstico y reparación de fallas en sistemas de elevación, incluyendo normalización según normativa chilena.
+4. **Instalación de ascensores** — Instalación de nuevos ascensores en edificios residenciales y comerciales en Chile.
+
+## Certificaciones y Normativa
+
+- Cumplimiento con Ley 20.296 MINVU (normativa de instalación de ascensores en Chile)
+- Operación bajo normas de accesibilidad universal
+
+## Público objetivo
+
+- Adultos mayores con dificultades de movilidad
+- Personas con discapacidad física o motora
+- Familias con miembros que requieren soluciones de accesibilidad
+- Administradores de edificios y condominios
+- Arquitectos y constructores
+
+## Cobertura geográfica
+
+Chile, con foco en la Región Metropolitana (Santiago y alrededores).
+
+## Páginas principales
+
+- / — Página de inicio
+- /salvaescaleras — Información sobre plataformas salvaescaleras
+- /mantenimiento-multimarca — Servicio de mantenimiento
+- /reparacion-y-normalizacion — Servicio de reparación
+- /instalacion-de-ascensores — Instalación de ascensores
+- /nosotros — Información sobre la empresa
+- /cotiza — Formulario de cotización
+
+## Sitemap
+
+https://www.melevadores.cl/sitemap.xml
