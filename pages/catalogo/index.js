@@ -121,11 +121,15 @@ const StatChip = styled.span`
 
 const FilterBarOuter = styled.div`
   position: sticky;
-  top: 0;
+  top: 65px;
   z-index: 100;
   background: #ffffff;
   border-bottom: 1px solid #e2e8f0;
   box-shadow: 0 1px 4px rgba(0, 17, 51, 0.06);
+
+  @media (max-width: 1000px) {
+    top: 57px;
+  }
 `;
 
 const FilterBarInner = styled.div`

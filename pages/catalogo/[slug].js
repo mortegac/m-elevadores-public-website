@@ -367,7 +367,11 @@ const FaqAnswer = styled.div`
 // ---------------------------------------------------------------------------
 const RightColumn = styled.div`
   position: sticky;
-  top: 24px;
+  top: 89px; /* 65px nav height + 24px gap */
+
+  @media (max-width: 1000px) {
+    top: 81px; /* 57px nav mobile + 24px gap */
+  }
 
   @media (max-width: 960px) {
     display: none;
