@@ -35,6 +35,7 @@ const PageWrapper = styled.div`
   background: #f8fafc;
   font-family: Quicksand, sans-serif;
   min-height: 100vh;
+  width: 100%;
 `;
 
 const Container = styled.div`

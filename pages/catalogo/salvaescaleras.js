@@ -37,6 +37,7 @@ const fadeIn = keyframes`
 const PageWrapper = styled.main`
   font-family: "Quicksand", sans-serif;
   color: ${DARK};
+  width: 100%;
 `;
 
 const Container = styled.div`

@@ -30,6 +30,7 @@ const CATEGORY_BG = {
 const PageWrapper = styled.div`
   background: #f8fafc;
   font-family: Quicksand, sans-serif;
+  width: 100%;
 `;
 
 const Container = styled.div`
@@ -77,7 +78,7 @@ const HeroH1 = styled.h1`
   font-size: 52px;
   font-weight: 800;
   line-height: 60px;
-  color: #ffffff;
+  && { color: #ffffff; }
   margin: 0 0 16px;
 
   @media (max-width: 960px) {
@@ -90,7 +91,7 @@ const HeroSubtitle = styled.p`
   font-size: 18px;
   font-weight: 400;
   line-height: 28px;
-  color: rgba(255, 255, 255, 0.85);
+  && { color: rgba(255, 255, 255, 0.85); }
   margin: 0 0 28px;
   max-width: 560px;
 
@@ -495,22 +496,23 @@ const CtaSection = styled.section`
 `;
 
 const CtaInner = styled.div`
-  max-width: 640px;
+  max-width: 1136px;
   margin: 0 auto;
-  text-align: center;
   padding: 0 24px;
 `;
 
 const CtaHeading = styled.h2`
   font-family: Quicksand, sans-serif;
-  font-size: 28px;
-  font-weight: 800;
-  line-height: 36px;
-  color: #001133;
+  font-size: 36px;
+  font-weight: 700;
+  line-height: 64px;
+  && { color: #323130; }
   margin: 0 0 12px;
+  text-align: center;
 
   @media (max-width: 960px) {
-    font-size: 24px;
+    font-size: 28px;
+    line-height: 40px;
   }
 `;
 
@@ -518,8 +520,9 @@ const CtaSubtext = styled.p`
   font-size: 16px;
   font-weight: 400;
   line-height: 24px;
-  color: #605e5c;
+  && { color: #605e5c; }
   margin: 0 0 28px;
+  text-align: center;
 `;
 
 const CtaButtons = styled.div`
