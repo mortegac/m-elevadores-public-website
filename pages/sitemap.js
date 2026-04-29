@@ -55,17 +55,12 @@ const MainInner = styled.div`
 
 const Grid = styled.div`
   display: flex;
-  flex-wrap: wrap;
-  gap: 32px;
+  flex-direction: column;
+  gap: 40px;
 `;
 
 const Column = styled.div`
-  flex: 1 1 260px;
-  min-width: 0;
-
-  @media (max-width: 600px) {
-    flex-basis: 100%;
-  }
+  width: 100%;
 `;
 
 const CategoryTitle = styled.h2`
@@ -84,21 +79,27 @@ const LinkList = styled.ul`
   list-style: none;
   padding: 0;
   margin: 0;
-  display: flex;
-  flex-direction: column;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 2px 32px;
+
+  @media (max-width: 600px) {
+    grid-template-columns: 1fr;
+  }
 `;
 
 const LinkItem = styled.li`
   a {
     display: flex;
     align-items: center;
-    gap: 6px;
+    gap: 8px;
     color: ${NAVY};
-    font-size: 0.875rem;
+    font-size: 0.9rem;
     text-decoration: none;
-    padding: 4px 0;
+    padding: 8px 0;
     font-family: "Quicksand", sans-serif;
     transition: color 0.15s;
+    border-bottom: 1px solid ${BORDER};
 
     &::before {
       content: "→";
