@@ -19,7 +19,7 @@ const nextConfig = async () => {
 
   return {
     reactStrictMode: true,
-    swcMinify: true,
+    swcMinify: false,
     compiler: {
       removeConsole: true,
       styledComponents: true,
@@ -31,7 +31,6 @@ const nextConfig = async () => {
     },
     experimental: {
       isrMemoryCacheSize: 0,
-      forceSwcTransforms: true,
     },
     async headers() {
       return [

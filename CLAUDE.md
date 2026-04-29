@@ -16,6 +16,21 @@ yarn export       # Build + static export to ./dist
 
 No tests exist (`yarn test` echoes a placeholder and exits).
 
+## CRITICAL — Build verification before every commit
+
+**ALWAYS run `yarn build` locally and confirm it exits with no errors before doing `git commit` and `git push`.**
+
+```bash
+yarn build   # must complete with "Done in X.Xs" and no errors
+```
+
+Vercel uses a Linux x64 environment with a different Node.js version than local. Errors that pass locally but fail on Vercel are hard to diagnose. Running the build locally catches 95% of them.
+
+**Known fragile areas — do not change without re-running the build:**
+- `next.config.js` — `swcMinify` must stay `false`. Setting it to `true` crashes Vercel's Terser/SWC WASM due to a version mismatch between `@next/swc-linux-x64-gnu@14.2.5` (optional dep) and Next.js 12.2.1.
+- `experimental.forceSwcTransforms` — removed; it conflicted with the same SWC version mismatch on Linux.
+- Any change to `package.json` dependencies — run `yarn install && yarn build` together.
+
 
 ### AWS Configuration (Amplify Gen 2)
 Amplify is configured in `src/main.tsx` using `amplify_outputs.json` (at the project root):
