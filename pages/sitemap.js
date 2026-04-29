@@ -1,162 +1,174 @@
 import Head from "next/head";
-import styled from "styled-components";
 import Link from "next/link";
+import styled from "styled-components";
 import { createClient } from "../prismicio";
-import { asText } from "@prismicio/helpers";
+import { Layout } from "../components/common/Layout";
 
 const SITE = process.env.NEXT_PUBLIC_SITENAME || "https://www.melevadores.cl";
 
+// ── Design tokens (M-Elevadores brand) ───────────────────────────────────────
+const BLUE = "#0066CC";
+const NAVY = "#243C70";
+const DARK = "#001133";
+const GRAY = "#605E5C";
+const LIGHT_BG = "#F8FAFC";
+const BORDER = "#E2E8F0";
+
 // ── Styles ────────────────────────────────────────────────────────────────────
 
-const Page = styled.div`
-  background: #f5f7fa;
-  min-height: 100vh;
-  padding: 64px 24px;
-  font-family: "Quicksand", sans-serif;
+const HeroSection = styled.section`
+  background-color: ${LIGHT_BG};
+  border-bottom: 1px solid ${BORDER};
+  padding: 48px 0;
 `;
 
-const Inner = styled.div`
-  max-width: 900px;
+const HeroInner = styled.div`
+  max-width: 1136px;
   margin: 0 auto;
-`;
+  padding: 0 24px;
 
-const Hero = styled.div`
-  text-align: center;
-  margin-bottom: 48px;
   h1 {
-    font-size: 2.2rem;
+    font-family: "Quicksand", sans-serif;
+    font-size: clamp(1.75rem, 4vw, 2.25rem);
     font-weight: 800;
-    color: #243c70;
+    color: ${DARK};
     margin: 0 0 8px;
   }
+
   p {
-    color: #605e5c;
     font-size: 1rem;
-  }
-`;
-
-const Category = styled.section`
-  background: #fff;
-  border-radius: 12px;
-  padding: 28px 32px;
-  margin-bottom: 24px;
-  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.07);
-`;
-
-const CategoryHeader = styled.div`
-  display: flex;
-  align-items: center;
-  gap: 12px;
-  margin-bottom: 20px;
-  border-bottom: 2px solid #f0f0f0;
-  padding-bottom: 12px;
-
-  h2 {
-    font-size: 1rem;
-    font-weight: 700;
-    color: #243c70;
-    text-transform: uppercase;
-    letter-spacing: 0.08em;
+    color: ${GRAY};
     margin: 0;
   }
+`;
 
-  span {
-    background: #e8edf7;
-    color: #243c70;
-    font-size: 0.75rem;
-    font-weight: 700;
-    padding: 2px 8px;
-    border-radius: 99px;
+const MainSection = styled.main`
+  background: #fff;
+  padding: 48px 0 64px;
+`;
+
+const MainInner = styled.div`
+  max-width: 1136px;
+  margin: 0 auto;
+  padding: 0 24px;
+`;
+
+const Grid = styled.div`
+  display: flex;
+  flex-wrap: wrap;
+  gap: 32px;
+`;
+
+const Column = styled.div`
+  flex: 1 1 260px;
+  min-width: 0;
+
+  @media (max-width: 600px) {
+    flex-basis: 100%;
   }
 `;
 
-const PageGrid = styled.ul`
+const CategoryTitle = styled.h2`
+  font-family: "Quicksand", sans-serif;
+  font-size: 0.875rem;
+  font-weight: 700;
+  color: ${DARK};
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  border-left: 3px solid ${BLUE};
+  padding-left: 12px;
+  margin: 0 0 16px;
+`;
+
+const LinkList = styled.ul`
   list-style: none;
   padding: 0;
   margin: 0;
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
-  gap: 12px;
+  display: flex;
+  flex-direction: column;
 `;
 
-const PageItem = styled.li`
+const LinkItem = styled.li`
   a {
     display: flex;
-    flex-direction: column;
-    gap: 2px;
-    padding: 12px 16px;
-    background: #f8f9ff;
-    border: 1px solid #e8edf7;
-    border-radius: 8px;
+    align-items: center;
+    gap: 6px;
+    color: ${NAVY};
+    font-size: 0.875rem;
     text-decoration: none;
-    transition: border-color 0.15s, background 0.15s;
+    padding: 4px 0;
+    font-family: "Quicksand", sans-serif;
+    transition: color 0.15s;
+
+    &::before {
+      content: "→";
+      color: ${BLUE};
+      font-size: 0.75rem;
+      flex-shrink: 0;
+    }
 
     &:hover {
-      border-color: #0066cc;
-      background: #eef3ff;
+      color: ${BLUE};
+      text-decoration: underline;
     }
   }
 `;
 
-const PageTitle = styled.span`
-  font-size: 0.9rem;
-  font-weight: 600;
-  color: #323130;
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
-`;
-
-const PageUrl = styled.span`
-  font-size: 0.75rem;
-  color: #0066cc;
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
-`;
-
-const Badge = styled.span`
-  display: inline-block;
+const PageLabel = styled.span`
   font-size: 0.65rem;
   font-weight: 700;
-  padding: 1px 6px;
+  padding: 1px 5px;
   border-radius: 4px;
   text-transform: uppercase;
-  letter-spacing: 0.05em;
-  margin-top: 4px;
-  align-self: flex-start;
-  background: ${({ type }) =>
-    type === "homepage"
-      ? "#d4edda"
-      : type === "landing"
-      ? "#fff3cd"
-      : "#e2e8f0"};
-  color: ${({ type }) =>
-    type === "homepage"
-      ? "#155724"
-      : type === "landing"
-      ? "#856404"
-      : "#4a5568"};
+  letter-spacing: 0.04em;
+  margin-left: auto;
+  background: ${({ variant }) =>
+    variant === "homepage" ? "#dbeafe" : variant === "landing" ? "#fef3c7" : "#e0e7ff"};
+  color: ${({ variant }) =>
+    variant === "homepage" ? "#1e40af" : variant === "landing" ? "#92400e" : "#3730a3"};
 `;
 
-const Footer = styled.div`
-  text-align: center;
-  margin-top: 40px;
+const Divider = styled.hr`
+  border: none;
+  border-top: 1px solid ${BORDER};
+  margin: 40px 0 0;
+`;
+
+const FooterNote = styled.p`
   font-size: 0.8rem;
   color: #a19f9d;
+  margin: 16px 0 0;
+  text-align: right;
+
   a {
-    color: #0066cc;
+    color: ${BLUE};
     text-decoration: none;
+    &:hover {
+      text-decoration: underline;
+    }
   }
 `;
 
 // ── Component ─────────────────────────────────────────────────────────────────
 
-export default function SitemapPage({ homepage, pages, landings, generatedAt }) {
+export default function SitemapPage({
+  menu,
+  footer,
+  page,
+  activeDocMeta,
+  pages,
+  landings,
+  generatedAt,
+}) {
   const total = 1 + pages.length + landings.length;
 
   return (
-    <>
+    <Layout
+      header={menu || {}}
+      footer={footer || {}}
+      page={page}
+      activeDocMeta={activeDocMeta}
+    >
       <Head>
         <title>Mapa del Sitio | M-Elevadores</title>
         <meta
@@ -166,124 +178,139 @@ export default function SitemapPage({ homepage, pages, landings, generatedAt }) 
         <link rel="canonical" href={`${SITE}/sitemap`} />
       </Head>
 
-      <Page>
-        <Inner>
-          <Hero>
-            <h1>Mapa del Sitio</h1>
-            <p>
-              {total} página{total !== 1 ? "s" : ""} en{" "}
-              <strong>melevadores.cl</strong>
-            </p>
-          </Hero>
+      <HeroSection>
+        <HeroInner>
+          <h1>Mapa del Sitio</h1>
+          <p>
+            Encuentra cualquier página de{" "}
+            <strong>melevadores.cl</strong> —{" "}
+            {total} página{total !== 1 ? "s" : ""} disponible{total !== 1 ? "s" : ""}.
+          </p>
+        </HeroInner>
+      </HeroSection>
 
-          {/* Inicio */}
-          <Category>
-            <CategoryHeader>
-              <h2>Inicio</h2>
-              <span>1</span>
-            </CategoryHeader>
-            <PageGrid>
-              <PageItem>
-                <Link href="/">
-                  <a>
-                    <PageTitle>
-                      {homepage?.data?.seoTitle || "M-Elevadores"}
-                    </PageTitle>
-                    <PageUrl>/</PageUrl>
-                    <Badge type="homepage">Inicio</Badge>
-                  </a>
-                </Link>
-              </PageItem>
-            </PageGrid>
-          </Category>
+      <MainSection>
+        <MainInner>
+          <Grid>
+            {/* Inicio */}
+            <Column>
+              <CategoryTitle>Inicio</CategoryTitle>
+              <LinkList>
+                <LinkItem>
+                  <Link href="/">
+                    <a>
+                      Inicio — M-Elevadores
+                      <PageLabel variant="homepage">Inicio</PageLabel>
+                    </a>
+                  </Link>
+                </LinkItem>
+              </LinkList>
+            </Column>
 
-          {/* Páginas principales */}
-          {pages.length > 0 && (
-            <Category>
-              <CategoryHeader>
-                <h2>Páginas</h2>
-                <span>{pages.length}</span>
-              </CategoryHeader>
-              <PageGrid>
-                {pages.map((p) => (
-                  <PageItem key={p.uid}>
-                    <Link href={`/${p.uid}`}>
-                      <a>
-                        <PageTitle>
-                          {p.data?.seoTitle || p.uid}
-                        </PageTitle>
-                        <PageUrl>/{p.uid}</PageUrl>
-                        <Badge type="page">Página</Badge>
-                      </a>
-                    </Link>
-                  </PageItem>
-                ))}
-              </PageGrid>
-            </Category>
-          )}
+            {/* Páginas principales */}
+            {pages.length > 0 && (
+              <Column>
+                <CategoryTitle>Páginas</CategoryTitle>
+                <LinkList>
+                  {pages.map((p) => (
+                    <LinkItem key={p.uid}>
+                      <Link href={`/${p.uid}`}>
+                        <a>
+                          {p.label || formatUid(p.uid)}
+                          <PageLabel variant="page">Página</PageLabel>
+                        </a>
+                      </Link>
+                    </LinkItem>
+                  ))}
+                </LinkList>
+              </Column>
+            )}
 
-          {/* Landing pages */}
-          {landings.length > 0 && (
-            <Category>
-              <CategoryHeader>
-                <h2>Landing Pages</h2>
-                <span>{landings.length}</span>
-              </CategoryHeader>
-              <PageGrid>
-                {landings.map((p) => (
-                  <PageItem key={p.uid}>
-                    <Link href={`/landing/${p.uid}`}>
-                      <a>
-                        <PageTitle>
-                          {p.data?.seoTitle || p.uid}
-                        </PageTitle>
-                        <PageUrl>/landing/{p.uid}</PageUrl>
-                        <Badge type="landing">Landing</Badge>
-                      </a>
-                    </Link>
-                  </PageItem>
-                ))}
-              </PageGrid>
-            </Category>
-          )}
+            {/* Landing pages */}
+            {landings.length > 0 && (
+              <Column>
+                <CategoryTitle>Landing Pages</CategoryTitle>
+                <LinkList>
+                  {landings.map((p) => (
+                    <LinkItem key={p.uid}>
+                      <Link href={`/landing/${p.uid}`}>
+                        <a>
+                          {p.label || formatUid(p.uid)}
+                          <PageLabel variant="landing">Landing</PageLabel>
+                        </a>
+                      </Link>
+                    </LinkItem>
+                  ))}
+                </LinkList>
+              </Column>
+            )}
+          </Grid>
 
-          <Footer>
-            Generado el {generatedAt} ·{" "}
-            <a
-              href="/sitemap.xml"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
+          <Divider />
+          <FooterNote>
+            Actualizado el {generatedAt} ·{" "}
+            <a href="/sitemap.xml" target="_blank" rel="noopener noreferrer">
               Descargar sitemap.xml
             </a>
-          </Footer>
-        </Inner>
-      </Page>
-    </>
+          </FooterNote>
+        </MainInner>
+      </MainSection>
+    </Layout>
   );
 }
 
-export async function getStaticProps() {
+// ── Helpers ───────────────────────────────────────────────────────────────────
+
+function formatUid(uid = "") {
+  return uid
+    .split("-")
+    .map((w) => w.charAt(0).toUpperCase() + w.slice(1))
+    .join(" ");
+}
+
+// ── Data fetching ─────────────────────────────────────────────────────────────
+
+export async function getStaticProps({ previewData }) {
   try {
-    const client = createClient();
-    const [homepage, pages, landings] = await Promise.all([
-      client.getSingle("homepage").catch(() => null),
+    const client = createClient({ previewData });
+
+    const [menu, footer, pages, landings] = await Promise.all([
+      client.getSingle("menutop").catch(() => ({})),
+      client.getSingle("footermenu").catch(() => ({})),
       client.getAllByType("page"),
       client.getAllByType("landingpage"),
     ]);
 
+    const sitemapPage = {
+      uid: "sitemap",
+      lang: "es-cl",
+      type: "page",
+      slugs: ["sitemap"],
+      data: {
+        seoTitle: "Mapa del Sitio | M-Elevadores",
+        seodescription:
+          "Directorio completo de todas las páginas de M-Elevadores.",
+      },
+    };
+
     return {
       props: {
-        homepage: homepage
-          ? { data: { seoTitle: homepage.data?.seoTitle || null } }
-          : null,
+        menu,
+        footer,
+        page: sitemapPage,
+        activeDocMeta: {
+          lang: "es-cl",
+          type: "page",
+          url: "/sitemap",
+          sitename: SITE,
+        },
         pages: pages.map((p) => ({
           uid: p.uid,
-          data: { seoTitle: p.data?.seoTitle || null },
+          label: p.data?.seoTitle || null,
         })),
         landings: landings.map((p) => ({
           uid: p.uid,
-          data: { seoTitle: p.data?.seoTitle || null },
+          label: p.data?.seoTitle || null,
         })),
         generatedAt: new Date().toLocaleDateString("es-CL", {
           year: "numeric",
@@ -295,7 +322,21 @@ export async function getStaticProps() {
     };
   } catch {
     return {
-      props: { homepage: null, pages: [], landings: [], generatedAt: "-" },
+      props: {
+        menu: {},
+        footer: {},
+        page: {
+          uid: "sitemap",
+          lang: "es-cl",
+          type: "page",
+          slugs: ["sitemap"],
+          data: { seoTitle: "Mapa del Sitio", seodescription: "" },
+        },
+        activeDocMeta: { lang: "es-cl", type: "page", url: "/sitemap", sitename: SITE },
+        pages: [],
+        landings: [],
+        generatedAt: "-",
+      },
       revalidate: 60,
     };
   }
