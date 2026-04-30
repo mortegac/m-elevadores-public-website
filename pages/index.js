@@ -293,35 +293,35 @@ function FeaturedProducts() {
 const SLIDES = [
   {
     label: "Salvaescaleras",
-    heading: "Sube y baja sin esfuerzo",
-    description: "Instalación en 1 día, sin obras. Para escaleras rectas y curvas en todo Chile.",
-    cta: "Ver salvaescaleras",
+    heading: "Mejora la accesibilidad de tu hogar o negocio",
+    description: "Dispositivos salvaescaleras seguros y certificados con garantía profesional. Instalación en 1 día, sin obras.",
+    cta: "Más información",
     href: "/catalogo/salvaescaleras",
     image: "/images/products/salvaescaleras-recto-solo-v2.png",
   },
   {
-    label: "Plataformas elevadoras",
-    heading: "Accesibilidad universal",
-    description: "Soluciones para silla de ruedas certificadas NCh3271. Interiores y exteriores.",
-    cta: "Ver plataformas",
+    label: "Mantenimiento Multimarca",
+    heading: "Mantenimiento mensual de ascensores",
+    description: "Técnicos certificados que cumplen toda la normativa vigente. Multimarca. ¡Solicita tu revisión ahora!",
+    cta: "Más información",
     href: "/catalogo",
-    image: "/images/products/plataforma-exterior.png",
+    image: "/images/products/ascensor-detalles.png",
   },
   {
-    label: "Ascensores",
-    heading: "Eleva tu edificio",
-    description: "Residenciales, condominios y comerciales. Certificados NCh440 y Ley 20.296.",
-    cta: "Ver ascensores",
-    href: "/catalogo",
-    image: "/images/products/ascensor-rhx17.png",
-  },
-  {
-    label: "Modernización",
-    heading: "Renueva sin reemplazar",
-    description: "Actualizamos ascensores de cualquier marca. Ahorra hasta 45% en energía.",
-    cta: "Ver modernización",
+    label: "Reparación y Normalización",
+    heading: "Servicio integral de reparación",
+    description: "Modernización de ascensores, reemplazo de piezas, actualización electrónica y certificación según normativa vigente.",
+    cta: "Más información",
     href: "/catalogo/modernizacion-replus",
-    image: "/images/products/control-masha.png",
+    image: "/images/products/ascensor-traccion.png",
+  },
+  {
+    label: "Instalación de Ascensores",
+    heading: "Importación e instalación para tu proyecto",
+    description: "Ascensores para proyectos residenciales y comerciales. Asesoría personalizada y los mejores precios del mercado.",
+    cta: "Más información",
+    href: "/catalogo",
+    image: "/images/products/ascensor-rhx16.png",
   },
 ];
 
@@ -428,26 +428,18 @@ const SlideImageWrap = styled.div`
   }
 `;
 
-const SlideOvalCluster = styled.div`
-  display: grid;
-  grid-template-columns: 140px 140px;
-  gap: 14px;
-`;
+const SlideImg = styled.img`
+  width: 100%;
+  max-width: 460px;
+  height: 360px;
+  object-fit: cover;
+  border-radius: 20px;
+  box-shadow: 0 12px 48px rgba(0, 0, 0, 0.35);
+  display: block;
 
-const SlideOval = styled.div`
-  border-radius: 50% / 55%;
-  overflow: hidden;
-  height: 200px;
-
-  &:nth-child(2) { transform: translateY(24px); }
-  &:nth-child(3) { transform: translateY(-12px); }
-  &:nth-child(4) { transform: translateY(12px); }
-
-  img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    display: block;
+  @media (max-width: 959px) {
+    max-width: 100%;
+    height: 220px;
   }
 `;
 
@@ -470,16 +462,10 @@ const EmblaDot = styled.button`
   padding: 0;
 `;
 
-const OVAL_IMAGES = [
-  { src: "/images/products/ascensor-cabina.png", alt: "Ascensor cabina" },
-  { src: "/images/products/ascensor-rhx16.png", alt: "Ascensor RHX16" },
-  { src: "/images/products/ascensor-traccion.png", alt: "Sistema tracción" },
-  { src: "/images/products/plataforma-detalle.png", alt: "Plataforma detalle" },
-];
 
 function EmblaCarousel() {
   const [emblaRef, emblaApi] = useEmblaCarousel(
-    { loop: true, direction: "rtl" },
+    { loop: true },
     [Autoplay({ delay: 5000, stopOnInteraction: false }), Fade()]
   );
 
@@ -518,13 +504,7 @@ function EmblaCarousel() {
                   </Link>
                 </SlideContent>
                 <SlideImageWrap>
-                  <SlideOvalCluster>
-                    {OVAL_IMAGES.map((img, j) => (
-                      <SlideOval key={j}>
-                        <img src={img.src} alt={img.alt} loading="lazy" />
-                      </SlideOval>
-                    ))}
-                  </SlideOvalCluster>
+                  <SlideImg src={slide.image} alt={slide.label} loading="lazy" />
                 </SlideImageWrap>
               </SlideInner>
             </EmblaSlide>
