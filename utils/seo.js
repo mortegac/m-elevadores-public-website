@@ -11,84 +11,87 @@ export const getAlternates = ({ alternate_languages, sitename }) => {
   ));
 };
 
-// Open Graph tags
-export const getMetaTags = ({ description, author, title }) =>
+const OG_IMAGE =
+  "https://images.prismic.io/m-elevadores/Ztovabzzk9ZrXEZc_SEO-melevadores.png";
+
+const FALLBACK_DESCRIPTION =
+  "M-Elevadores — Plataformas salvaescaleras para personas con movilidad reducida en Chile.";
+
+export const getMetaTags = ({ description, title, url }) =>
   [
     {
-      name: `description`,
-      content: description || dummy(""),
+      name: "description",
+      content: description || FALLBACK_DESCRIPTION,
     },
     {
-      name: `twitter:card`,
-      content: `summary`,
+      name: "twitter:card",
+      content: "summary_large_image",
     },
     {
-      name: `twitter:creator`,
+      name: "twitter:creator",
       content: "@melevadores",
     },
     {
-      name: `twitter:title`,
-      content: title || dummy(""),
+      name: "twitter:title",
+      content: title || "M-Elevadores",
     },
     {
-      name: `twitter:description`,
-      content: description || dummy(""),
+      name: "twitter:description",
+      content: description || FALLBACK_DESCRIPTION,
     },
     {
-      property: `og:title`,
-      content: title || dummy(""),
+      name: "twitter:image",
+      content: OG_IMAGE,
     },
     {
-      property: `og:description`,
-      content: description || dummy(""),
+      property: "og:title",
+      content: title || "M-Elevadores",
     },
     {
-      property: `og:url`,
-      content: "https://melevadores.cl",
+      property: "og:description",
+      content: description || FALLBACK_DESCRIPTION,
     },
     {
-      property: `og:type`,
-      content: `website`,
+      property: "og:url",
+      content: url || "https://www.melevadores.cl",
     },
     {
-      name: `og:image`,
-      content:
-        "https://images.prismic.io/m-elevadores/Ztovabzzk9ZrXEZc_SEO-melevadores.png",
+      property: "og:type",
+      content: "website",
     },
     {
-      name: `og:image:alt`,
-      content: "melevadores.cl",
+      property: "og:image",
+      content: OG_IMAGE,
     },
     {
-      name: `og:image:width`,
+      property: "og:image:alt",
+      content: "M-Elevadores — Salvaescaleras y plataformas elevadoras Chile",
+    },
+    {
+      property: "og:image:width",
       content: "1200",
     },
     {
-      name: `og:image:height`,
+      property: "og:image:height",
       content: "630",
     },
     {
-      name: `og:site_name`,
-      content: "melevadores",
+      property: "og:site_name",
+      content: "M-Elevadores",
     },
     {
-      name: `viewport`,
-      content:
-        "width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1",
+      property: "og:locale",
+      content: "es_CL",
     },
     {
-      name: `keywords`,
-      content:
-        "Comercializamos plataformas salvaescaleras que son soluciones de accesibilidad ideales para personas con movilidad reducida. Estos dispositivos motorizados permiten subir y bajar escaleras de forma segura y cómoda.",
+      name: "viewport",
+      content: "width=device-width, initial-scale=1",
     },
-  ].map((items, i) => <meta key={`meta-${i}`} {...items}></meta>);
-
-export const dummy = (content = "") => [
-  {
-    text: content,
-    type: "heading 1",
-    spans: [],
-  },
-];
+    {
+      name: "keywords",
+      content:
+        "ascensores, salvaescaleras, plataformas elevadoras, accesibilidad, movilidad reducida, Chile",
+    },
+  ].map((attrs, i) => <meta key={`meta-${i}`} {...attrs} />);
 
 export const getTitle = ({ type, title }) => title.replace(/['"]+/g, "");

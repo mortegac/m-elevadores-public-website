@@ -1,6 +1,6 @@
 import { useEffect } from "react";
 import { useRouter } from "next/router";
-import Head from "next/head";
+import Script from "next/script";
 import Link from "next/link";
 import { PrismicProvider } from "@prismicio/react";
 import { PrismicPreview } from "@prismicio/next";
@@ -10,6 +10,8 @@ import { repositoryName, linkResolver } from "../prismicio";
 import { GlobalStyle, Theme } from "../components/styles";
 import * as gtag from "../utils/gtag";
 
+const GA_ID = "G-VJZB8M2VYD";
+
 const internalLinkComponent = ({ href, children, ...props }) => (
   <Link href={href}>
     <a {...props}>{children}</a>
@@ -18,6 +20,7 @@ const internalLinkComponent = ({ href, children, ...props }) => (
 
 export default function App({ Component, pageProps }) {
   const router = useRouter();
+
   useEffect(() => {
     const handleRouteChange = (url) => {
       gtag.pageview(url);
@@ -30,50 +33,35 @@ export default function App({ Component, pageProps }) {
 
   return (
     <>
-      <Head>
-        <meta
-          name="viewport"
-          content="width=device-width, initial-scale=1, viewport-fit=cover"
-        />
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link
-          rel="preconnect"
-          href="https://fonts.gstatic.com"
-          crossOrigin="true"
-        />
-        <link
-          href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@300;700&display=swap"
-          rel="stylesheet"
-        ></link>
-
-        <script
-          async
-          src="https://www.googletagmanager.com/gtag/js?id=G-VJZB8M2VYD"
-        ></script>
-        <script
-          dangerouslySetInnerHTML={{
-            __html: `
-                window.dataLayer = window.dataLayer || [];
-                function gtag(){dataLayer.push(arguments);}
-                gtag('js', new Date());
-
-                gtag('config', 'G-VJZB8M2VYD');`,
-          }}
-        />
-        {/* Google Tag Manager */}
-        <script
-          id="gtm-init"
-          strategy="afterInteractive"
-          dangerouslySetInnerHTML={{
-            __html: `(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-              new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-              j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-              'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-            })(window,document,'script','dataLayer','GTM-5TR6ZVP4');`,
-          }}
-        />
-        {/* End Google Tag Manager */}
-      </Head>
+      {/* Google Analytics — deferred until page is interactive */}
+      <Script
+        strategy="afterInteractive"
+        src={`https://www.googletagmanager.com/gtag/js?id=${GA_ID}`}
+      />
+      <Script
+        id="ga-init"
+        strategy="afterInteractive"
+        dangerouslySetInnerHTML={{
+          __html: `
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', '${GA_ID}');
+          `,
+        }}
+      />
+      {/* Google Tag Manager — deferred until page is interactive */}
+      <Script
+        id="gtm-init"
+        strategy="afterInteractive"
+        dangerouslySetInnerHTML={{
+          __html: `(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+            new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+            j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+            'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+          })(window,document,'script','dataLayer','GTM-5TR6ZVP4');`,
+        }}
+      />
       <PrismicProvider
         linkResolver={linkResolver}
         internalLinkComponent={internalLinkComponent}

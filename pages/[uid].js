@@ -1,25 +1,13 @@
-// import React from "react";
-// import * as prismicH from "@prismicio/helpers";
-// import Head from "next/head";
-// import { SliceZone } from "@prismicio/react";
-// import { asText } from "@prismicio/helpers";
-// import { createClient, linkResolver } from "../prismicio";
-// import { components } from "../slices/index";
-// import { Layout } from "../components/Layout";
-// import SEO from "../components/SEO";
-
 import React from "react";
-import Head from "next/head";
 import * as prismicH from "@prismicio/helpers";
 import { SliceZone } from "@prismicio/react";
 import { createClient, linkResolver } from "../prismicio";
-import { asText } from "@prismicio/helpers";
 import { components } from "../slices/index";
 import { Layout } from "../components/common/Layout";
 
 const Page = (props) => {
   if (props?.error || !props || !props?.page?.lang) {
-    return <>{console.error(props, "[uid]")}</>;
+    return null;
   }
 
   const { page, menu, footer } = props;
@@ -47,58 +35,33 @@ const Page = (props) => {
 export async function getStaticProps({ previewData, params: { uid } }) {
   try {
     const client = createClient({ previewData });
-    let page = {};
-
-    // window.console.log('<<<< uid >>>>>', uid)
-    try {
-      // page = await client.getSingle("page");
-      page = await client.getByUID("page", uid);
-      // page = await client.getByUID("page", uid);defaultLocale: locales[0],
-    } catch (error) {
-      page = await client.getByUID("page", uid);
-      // page = await client.getByUID("page", uid);
-    }
-    let menu = {};
-    try {
-      menu = await client.getSingle("menutop");
-    } catch (error) {
-      menu = await client.getSingle("menutop");
-    }
-    let footer = {};
-    try {
-      footer = await client.getSingle("footermenu");
-    } catch (error) {
-      footer = await client.getSingle("footermenu");
-    }
+    const [page, menu, footer] = await Promise.all([
+      client.getByUID("page", uid),
+      client.getSingle("menutop"),
+      client.getSingle("footermenu"),
+    ]);
 
     return {
-      props: {
-        page: page || null,
-        menu,
-        footer,
-        uid,
-      },
+      props: { page, menu, footer, uid },
       revalidate: 60,
     };
   } catch (error) {
-    return {
-      props: {
-        error: JSON.stringify(error),
-      },
-    };
+    if (
+      error?.message?.includes("No documents") ||
+      error?.response?.status === 404
+    ) {
+      return { notFound: true };
+    }
+    return { props: { error: JSON.stringify(error) } };
   }
 }
 
-export async function getStaticPaths(context) {
-  const client = createClient({ context });
+export async function getStaticPaths() {
+  const client = createClient();
   const pages = await client.getAllByType("page");
-  // const pages = await client.getAllByType("page", { lang: "*" });
-  const allPages = [...pages];
-  // console.log('---allPages----', allPages)
-
   return {
-    paths: allPages.map((page) => prismicH.asLink(page, linkResolver)),
-    fallback: true,
+    paths: pages.map((page) => prismicH.asLink(page, linkResolver)),
+    fallback: "blocking",
   };
 }
 

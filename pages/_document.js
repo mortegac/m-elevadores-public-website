@@ -1,18 +1,18 @@
 import Document, { Html, Head, Main, NextScript } from "next/document";
 import { ServerStyleSheet } from "styled-components";
 
-//Dont Touch!
-
 export default class MyDocument extends Document {
   render() {
     return (
-      <Html>
+      <Html lang="es-CL">
         <Head>
+          <meta charSet="utf-8" />
+          <link rel="icon" href="/favicon.ico" />
           <link rel="preconnect" href="https://fonts.googleapis.com" />
           <link
             rel="preconnect"
             href="https://fonts.gstatic.com"
-            crossOrigin="true"
+            crossOrigin="anonymous"
           />
           <link
             href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;500;600;700&display=swap"
@@ -20,16 +20,14 @@ export default class MyDocument extends Document {
           />
         </Head>
         <body style={{ backgroundColor: "#243C70" }}>
-          {/* Google Tag Manager */}
           <noscript>
             <iframe
               src="https://www.googletagmanager.com/ns.html?id=GTM-5TR6ZVP4"
               height="0"
               width="0"
               style={{ display: "none", visibility: "hidden" }}
-            ></iframe>
+            />
           </noscript>
-          {/* End Google Tag Manager */}
           <Main />
           <NextScript />
         </body>

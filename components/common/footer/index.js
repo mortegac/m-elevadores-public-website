@@ -46,7 +46,7 @@ const Footer = ({ items }) => {
   return (
     <FooterWrapper backgroundColor={"#222222"}>
       <FooterItemsContainer>
-        <FooterCopyright copyrightText="M-Elevadores © 1999 , Inc. Todos los derechos reservados." />
+        <FooterCopyright copyrightText={`M-Elevadores © ${new Date().getFullYear()} SpA. Todos los derechos reservados.`} />
         <FooterList title={""} items={items} />
         <SocialLinks socialTitle={" "} />
       </FooterItemsContainer>

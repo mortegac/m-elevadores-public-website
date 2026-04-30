@@ -1,33 +1,35 @@
 import { PrismicRichText } from "@prismicio/react";
+import { asText } from "@prismicio/helpers";
 import { FaqSection, Icon, Wrapper } from "./style";
-import { useState, useRef, useLayoutEffect } from "react";
-import { AnimatePresence, motion } from "framer-motion";
+import { useState } from "react";
 
 const LandingFaq = ({ slice }) => {
   const title = slice?.primary?.title;
   const items = slice?.items || [];
-
   const [openIndex, setOpenIndex] = useState(null);
-  const [heights, setHeights] = useState({});
 
-  const refs = useRef([]);
+  const toggle = (index) => setOpenIndex((prev) => (prev === index ? null : index));
 
-  const toggle = (index) => {
-    setOpenIndex((prev) => (prev === index ? null : index));
+  const faqSchema = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: items
+      .filter((item) => item.question?.[0]?.text && item.answer?.[0]?.text)
+      .map((item) => ({
+        "@type": "Question",
+        name: asText(item.question),
+        acceptedAnswer: { "@type": "Answer", text: asText(item.answer) },
+      })),
   };
-
-  useLayoutEffect(() => {
-    const newHeights = {};
-    refs.current.forEach((ref, i) => {
-      if (ref) {
-        newHeights[i] = ref.scrollHeight;
-      }
-    });
-    setHeights(newHeights);
-  }, [items]);
 
   return (
     <Wrapper id="faq">
+      {faqSchema.mainEntity.length > 0 && (
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
+        />
+      )}
       <FaqSection>
         <div className="title">
           <PrismicRichText field={title} />
@@ -36,43 +38,23 @@ const LandingFaq = ({ slice }) => {
         <div className="faq-list">
           {items.map((item, idx) => {
             const isOpen = openIndex === idx;
-
             return (
               <div key={idx} className={`faq-item ${isOpen ? "open" : ""}`}>
                 <div className="faq-question" onClick={() => toggle(idx)}>
                   <Icon className={isOpen ? "open" : ""} />
                   <PrismicRichText field={item.question} />
                 </div>
-
-                <div className="faq-answer">
-                  <AnimatePresence initial={false}>
-                    {isOpen && (
-                      <motion.div
-                        key={isOpen ? "open" : "closed"}
-                        initial={{ height: 0, opacity: 0 }}
-                        animate={{
-                          height: heights[idx] ?? "auto",
-                          opacity: 1,
-                          visibility: "visible",
-                        }}
-                        exit={{
-                          height: 0,
-                          opacity: 0,
-                          transitionEnd: {
-                            visibility: "hidden",
-                          },
-                        }}
-                        transition={{ duration: 0.35, ease: "easeInOut" }}
-                      >
-                        <div
-                          ref={(el) => (refs.current[idx] = el)}
-                          style={{ overflow: "hidden" }}
-                        >
-                          <PrismicRichText field={item.answer} />
-                        </div>
-                      </motion.div>
-                    )}
-                  </AnimatePresence>
+                {/* Answer is always in the DOM for SSR/crawlers; CSS controls visibility */}
+                <div
+                  className="faq-answer"
+                  style={{
+                    maxHeight: isOpen ? "2000px" : "0",
+                    overflow: "hidden",
+                    opacity: isOpen ? 1 : 0,
+                    transition: "max-height 0.4s ease-in-out, opacity 0.3s ease",
+                  }}
+                >
+                  <PrismicRichText field={item.answer} />
                 </div>
               </div>
             );

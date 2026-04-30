@@ -5,8 +5,7 @@ import { LandingLayout } from "../../components/LayoutLanding";
 
 const LandingPage = (props) => {
   if (props?.error || !props?.page?.lang) {
-    console.error(props, "[uid]");
-    return <p>Error loading page.</p>;
+    return null;
   }
 
   const { page, landingNav, landingFooter } = props;
@@ -33,37 +32,33 @@ const LandingPage = (props) => {
 export async function getStaticProps({ previewData, params: { uid } }) {
   try {
     const client = createClient({ previewData });
-
-    const page = await client.getByUID("landingpage", uid);
-    const landingNav = await client.getSingle("landingnav");
-    const landingFooter = await client.getSingle("landingfooter");
+    const [page, landingNav, landingFooter] = await Promise.all([
+      client.getByUID("landingpage", uid),
+      client.getSingle("landingnav"),
+      client.getSingle("landingfooter"),
+    ]);
 
     return {
-      props: {
-        page: page || null,
-        landingNav,
-        landingFooter,
-      },
+      props: { page, landingNav, landingFooter },
       revalidate: 60,
     };
   } catch (error) {
-    return {
-      props: {
-        error: JSON.stringify(error),
-      },
-    };
+    if (
+      error?.message?.includes("No documents") ||
+      error?.response?.status === 404
+    ) {
+      return { notFound: true };
+    }
+    return { props: { error: JSON.stringify(error) } };
   }
 }
 
 export async function getStaticPaths() {
   const client = createClient();
   const pages = await client.getAllByType("landingpage");
-
   return {
-    paths: pages.map((page) => ({
-      params: { uid: page.uid },
-    })),
-    fallback: true,
+    paths: pages.map((page) => ({ params: { uid: page.uid } })),
+    fallback: "blocking",
   };
 }
 

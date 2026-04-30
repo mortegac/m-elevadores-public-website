@@ -19,20 +19,41 @@ export const Layout = (props) => {
   const { children, header, footer, page, activeDocMeta } = props;
 
   const title = page?.data?.seoTitle || "M-Elevadores";
-  const description = page?.data?.seodescription || "-";
+  const description =
+    page?.data?.seodescription ||
+    "M-Elevadores — Plataformas salvaescaleras para personas con movilidad reducida en Chile.";
+  const canonicalUrl = `${activeDocMeta.sitename}${linkResolver(page)}`;
 
   return (
     <>
       <Head>
         <title>{title}</title>
-        <link
-          rel="canonical"
-          href={`${activeDocMeta.sitename}${linkResolver(page)}`}
+        <link rel="canonical" href={canonicalUrl} />
+        {getMetaTags({ description, title, url: canonicalUrl })}
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "LocalBusiness",
+              "@id": "https://www.melevadores.cl/#business",
+              name: "M-Elevadores",
+              url: "https://www.melevadores.cl",
+              telephone: "+56959382761",
+              email: "contacto@melevadores.cl",
+              address: {
+                "@type": "PostalAddress",
+                streetAddress: "Marchant Pereira 150 of 1002",
+                addressLocality: "Providencia",
+                addressRegion: "Región Metropolitana",
+                addressCountry: "CL",
+              },
+              areaServed: { "@type": "Country", name: "Chile" },
+              image:
+                "https://images.prismic.io/m-elevadores/Ztovabzzk9ZrXEZc_SEO-melevadores.png",
+            }),
+          }}
         />
-        {getMetaTags({
-          description,
-          title,
-        })}
       </Head>
       <Body>
         <PageContainer>

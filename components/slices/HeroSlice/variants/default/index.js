@@ -6,19 +6,17 @@ import {
   Anchor,
   ButtonContainer,
 } from "../default/defaultStyles";
-import { RichText } from "prismic-reactjs";
+import { asText } from "@prismicio/helpers";
 
 const Base = (props) => {
   const { description, image, title, mobileimage, buttontext, buttonlink } =
     props.primary;
 
-  // window && window.console.log('--props.primary--', props.primary)
-
   return (
     <Content backgroundColor={"transparent"}>
       <Description>
-        {title[0]?.text && RichText.render(title)}
-        {description[0]?.text && RichText.render(description)}
+        {title[0]?.text && <h1>{asText(title)}</h1>}
+        {description[0]?.text && <p>{asText(description)}</p>}
         {/* {buttontext &&
           <Button>
             {buttontext ? buttontext : `Cotiza`}
@@ -38,7 +36,7 @@ const Base = (props) => {
         <picture>
           <source srcSet={image.url} media="(max-width: 450px)" />
           <source srcSet={mobileimage.url} media="(max-width: 960px)" />
-          <img src={image.url} alt="HeroImg" />
+          <img src={image.url} alt={image.alt || "M-Elevadores — Instalación de ascensores y salvaescaleras en Chile"} />
         </picture>
       </ImgHolder>
     </Content>

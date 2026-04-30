@@ -162,7 +162,7 @@ const LandingBanner = ({ slice }) => {
             <label>Teléfono</label>
             <input
               type="tel"
-              placeholder="Ej. +521234567890"
+              placeholder="Ej. +56912345678"
               {...register("phone", {
                 required: "Por favor ingresa tu teléfono",
                 minLength: {

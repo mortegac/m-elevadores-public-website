@@ -7,7 +7,7 @@ import sm from "./sm.json";
  */
 export const endpoint = sm.apiEndpoint;
 export const accessToken = sm.apiAccessToken;
-export const defaultLanguage = "en-us";
+export const defaultLanguage = "es-cl";
 export const repositoryName = prismic.getRepositoryName(sm.apiEndpoint);
 
 /**
