@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import Link from "next/link";
 
 import { renderedMenuLinks, LinkLogo } from "./utils";
 
@@ -29,7 +30,17 @@ export const Header = ({ header, pagename, activeDocMeta }) => {
       <SectionContainer>
         <LinkLogo />
         <LeftWrap>
-          <ul>{renderedMenuLinks(menuLinks, pagename)}</ul>
+          <ul>
+            {renderedMenuLinks(menuLinks, pagename)}
+            <Link href="/catalogo" passHref>
+              <a className={pagename === "catalogo" ? "selected" : ""}>
+                <li className="nav-item">
+                  Catálogo
+                  <div className="underline"></div>
+                </li>
+              </a>
+            </Link>
+          </ul>
           <Anchor href={`/${calltoactionUri}`}>
             <ButtonContainer fullwidth={true}>
               {calltoactiontext[0]?.text || "Contáctanos"}
@@ -58,7 +69,14 @@ export const Header = ({ header, pagename, activeDocMeta }) => {
               <div style={{ padding: "10px 10px" }}>
                 <LinkLogo />
               </div>
-              <ul>{renderedMenuLinks(menuLinks, pagename)}</ul>
+              <ul>
+                {renderedMenuLinks(menuLinks, pagename)}
+                <Link href="/catalogo" passHref>
+                  <a className={pagename === "catalogo" ? "selected" : ""}>
+                    <li>Catálogo</li>
+                  </a>
+                </Link>
+              </ul>
               <Anchor href={`/${calltoactionUri}`}>
                 <ButtonContainer fullwidth={true}>
                   {calltoactiontext[0]?.text || "Contáctanos"}
