@@ -6,6 +6,7 @@ import styled, { css } from "styled-components";
 import { createClient } from "../../prismicio";
 import { Layout } from "../../components/common/Layout";
 import { PRODUCTS, CATEGORIES } from "../../lib/products";
+import CotizacionBanner from "../../components/common/CotizacionBanner";
 
 const SITE = process.env.NEXT_PUBLIC_SITENAME || "https://www.melevadores.cl";
 const WHATSAPP_URL =
@@ -844,6 +845,9 @@ const CatalogoPage = ({ menu, footer, products, categories }) => {
               </TrustList>
             </Container>
           </TrustStrip>
+
+          {/* ── Cotización exprés ────────────────────────────────────── */}
+          <CotizacionBanner products={PRODUCTS} />
 
           {/* ── CTA section ───────────────────────────────────────────── */}
           <CtaSection>

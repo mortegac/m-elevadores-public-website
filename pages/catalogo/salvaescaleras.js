@@ -5,6 +5,7 @@ import styled, { keyframes } from "styled-components";
 import { createClient } from "../../prismicio";
 import { Layout } from "../../components/common/Layout";
 import { getProductsByCategory } from "../../lib/products";
+import CotizacionBanner from "../../components/common/CotizacionBanner";
 
 const SITE = process.env.NEXT_PUBLIC_SITENAME || "https://www.melevadores.cl";
 const WA_NUMBER = "56959382761";
@@ -1004,6 +1005,11 @@ const SalvaescalerasPage = ({ menu, footer, salvaescalerasProducts }) => {
               <FaqAccordion faqs={FAQS} />
             </Container>
           </Section>
+
+          {/* ---------------------------------------------------------------- */}
+          {/* COTIZACIÓN EXPRÉS                                               */}
+          {/* ---------------------------------------------------------------- */}
+          <CotizacionBanner products={salvaescalerasProducts} />
 
           {/* ---------------------------------------------------------------- */}
           {/* CTA                                                              */}
