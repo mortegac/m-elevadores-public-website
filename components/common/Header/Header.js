@@ -1,7 +1,8 @@
 import React, { useState } from "react";
 import Link from "next/link";
+import { useRouter } from "next/router";
 
-import { renderedMenuLinks, LinkLogo } from "./utils";
+import { LinkLogo } from "./utils";
 
 import {
   LeftWrap,
@@ -12,18 +13,28 @@ import {
   MobileNavContainer,
 } from "./HeaderStyles";
 
-export const Header = ({ header, pagename, activeDocMeta }) => {
+const NAV_ITEMS = [
+  { slug: "home",               label: "Inicio",        href: "/" },
+  { slug: "catalogo",           label: "Catálogo",      href: "/catalogo" },
+  { slug: "salvaescaleras",     label: "Salvaescaleras",href: "/catalogo/salvaescaleras" },
+  { slug: "guia-de-compra",     label: "Guía",          href: "/guia-de-compra" },
+  { slug: "testimonios",        label: "Testimonios",   href: "/testimonios" },
+  { slug: "nosotros",           label: "Nosotros",      href: "/nosotros" },
+];
+
+export const Header = ({ header, activeDocMeta }) => {
   const [open, setOpen] = useState(false);
+  const router = useRouter();
 
-  const HamburgerBehavior = () => {
-    setOpen(!open);
-  };
+  if (activeDocMeta && header) activeDocMeta.lang = header.lang;
 
-  activeDocMeta.lang = header.lang;
-
-  const menuLinks = header?.data?.menulinks || [];
   const calltoactiontext = header?.data?.calltoactiontext || [];
-  const calltoactionUri = header?.data?.calltoactionurl.uid || {};
+  const calltoactionUri  = header?.data?.calltoactionurl?.uid || "";
+
+  const isActive = (href) => {
+    if (href === "/") return router.pathname === "/";
+    return router.pathname.startsWith(href);
+  };
 
   return (
     <NavContainer>
@@ -31,27 +42,29 @@ export const Header = ({ header, pagename, activeDocMeta }) => {
         <LinkLogo />
         <LeftWrap>
           <ul>
-            {renderedMenuLinks(menuLinks, pagename)}
-            <Link href="/catalogo" passHref>
-              <a className={pagename === "catalogo" ? "selected" : ""}>
-                <li className="nav-item">
-                  Catálogo
-                  <div className="underline"></div>
-                </li>
-              </a>
-            </Link>
+            {NAV_ITEMS.map((item) => (
+              <Link key={item.slug} href={item.href} passHref>
+                <a className={isActive(item.href) ? "selected" : ""}>
+                  <li className="nav-item">
+                    {item.label}
+                    <div className="underline"></div>
+                  </li>
+                </a>
+              </Link>
+            ))}
           </ul>
-          <Anchor href={`/${calltoactionUri}`}>
+          <Anchor href={calltoactionUri ? `/${calltoactionUri}` : "https://wa.me/56959382761"}>
             <ButtonContainer fullwidth={true}>
-              {calltoactiontext[0]?.text || "Contáctanos"}
+              {calltoactiontext[0]?.text || "Cotiza aquí"}
             </ButtonContainer>
           </Anchor>
         </LeftWrap>
+
         <svg
           className={`ham hamRotate ham8 ${open && "active"}`}
           viewBox="0 0 100 100"
           width="50"
-          onClick={HamburgerBehavior}
+          onClick={() => setOpen(!open)}
         >
           <path
             className="line top"
@@ -63,6 +76,7 @@ export const Header = ({ header, pagename, activeDocMeta }) => {
             d="m 70,67 h -40 c 0,0 -7.5,-0.802118 -7.5,-8.365747 0,-7.563629 7.5,-8.634253 7.5,-8.634253 h 20"
           />
         </svg>
+
         <MobileNavContainer className={open && "on"}>
           {open && (
             <>
@@ -70,16 +84,17 @@ export const Header = ({ header, pagename, activeDocMeta }) => {
                 <LinkLogo />
               </div>
               <ul>
-                {renderedMenuLinks(menuLinks, pagename)}
-                <Link href="/catalogo" passHref>
-                  <a className={pagename === "catalogo" ? "selected" : ""}>
-                    <li>Catálogo</li>
-                  </a>
-                </Link>
+                {NAV_ITEMS.map((item) => (
+                  <Link key={item.slug} href={item.href} passHref>
+                    <a className={isActive(item.href) ? "selected" : ""}>
+                      <li>{item.label}</li>
+                    </a>
+                  </Link>
+                ))}
               </ul>
-              <Anchor href={`/${calltoactionUri}`}>
+              <Anchor href={calltoactionUri ? `/${calltoactionUri}` : "https://wa.me/56959382761"}>
                 <ButtonContainer fullwidth={true}>
-                  {calltoactiontext[0]?.text || "Contáctanos"}
+                  {calltoactiontext[0]?.text || "Cotiza aquí"}
                 </ButtonContainer>
               </Anchor>
             </>
