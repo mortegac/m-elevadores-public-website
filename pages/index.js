@@ -1,4 +1,7 @@
-import React, { useState, useEffect } from "react";
+import React, { useCallback } from "react";
+import useEmblaCarousel from "embla-carousel-react";
+import Autoplay from "embla-carousel-autoplay";
+import Fade from "embla-carousel-fade";
 import Head from "next/head";
 import Link from "next/link";
 import { SliceZone } from "@prismicio/react";
@@ -38,143 +41,6 @@ const sectionPadding = css`
     padding: 20px 1.25rem;
   }
 `;
-
-/* ─────────────────────────────────────────────
-   Section 1 — Hero Banner
-───────────────────────────────────────────── */
-const HeroBannerSection = styled.section`
-  background-color: ${COLOR.navy};
-  width: 100%;
-`;
-
-const HeroBannerInner = styled.div`
-  ${containerStyle}
-  ${sectionPadding}
-  display: grid;
-  grid-template-columns: 60% 40%;
-  align-items: center;
-  gap: 48px;
-
-  @media (max-width: 959px) {
-    grid-template-columns: 1fr;
-    gap: 32px;
-  }
-`;
-
-const HeroLeft = styled.div`
-  display: flex;
-  flex-direction: column;
-  gap: 28px;
-`;
-
-const HeroHeading = styled.h2`
-  font-family: Quicksand, sans-serif;
-  font-size: 52px;
-  font-weight: 800;
-  line-height: 1.15;
-  color: ${COLOR.white};
-  margin: 0;
-
-  @media (max-width: 959px) {
-    font-size: 32px;
-  }
-`;
-
-const HeroCtaButton = styled.a`
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  height: 46px;
-  padding: 0 30px;
-  border-radius: 22px;
-  border: 2px solid ${COLOR.white};
-  color: ${COLOR.white};
-  font-family: Quicksand, sans-serif;
-  font-size: 16px;
-  font-weight: 700;
-  text-decoration: none;
-  transition: background-color 0.2s, color 0.2s;
-  align-self: flex-start;
-  min-width: 160px;
-  min-height: 48px;
-
-  &:hover {
-    background-color: ${COLOR.white};
-    color: ${COLOR.navy};
-  }
-`;
-
-const HeroRight = styled.div`
-  display: flex;
-  justify-content: center;
-  align-items: center;
-`;
-
-const OvalCluster = styled.div`
-  display: grid;
-  grid-template-columns: 130px 130px;
-  grid-template-rows: 180px 180px;
-  gap: 12px;
-`;
-
-const OvalImg = styled.div`
-  border-radius: 50% / 60%;
-  overflow: hidden;
-  width: 130px;
-  height: 180px;
-
-  &:nth-child(1) {
-    transform: rotate(5deg);
-  }
-  &:nth-child(2) {
-    transform: rotate(-5deg) translateY(16px);
-  }
-  &:nth-child(3) {
-    transform: rotate(-3deg) translateY(-8px);
-  }
-  &:nth-child(4) {
-    transform: rotate(4deg) translateY(8px);
-  }
-
-  img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    display: block;
-  }
-`;
-
-const HERO_IMAGES = [
-  { src: "/images/products/ascensor-cabina.png", alt: "Cabina de ascensor" },
-  { src: "/images/products/ascensor-rhx16.png", alt: "Ascensor RHX16" },
-  { src: "/images/products/ascensor-rhx17.png", alt: "Ascensor RHX17" },
-  { src: "/images/products/ascensor-traccion.png", alt: "Ascensor tracción" },
-];
-
-function HeroBanner() {
-  return (
-    <HeroBannerSection>
-      <HeroBannerInner>
-        <HeroLeft>
-          <HeroHeading>
-            Líderes en mantenimiento, reparación e instalación de ascensores
-            multimarca.
-          </HeroHeading>
-          <HeroCtaButton href="/catalogo">Cotiza aquí</HeroCtaButton>
-        </HeroLeft>
-        <HeroRight>
-          <OvalCluster>
-            {HERO_IMAGES.map((img) => (
-              <OvalImg key={img.src}>
-                <img src={img.src} alt={img.alt} loading="lazy" />
-              </OvalImg>
-            ))}
-          </OvalCluster>
-        </HeroRight>
-      </HeroBannerInner>
-    </HeroBannerSection>
-  );
-}
 
 /* ─────────────────────────────────────────────
    Section 2 — Featured Products Grid
@@ -422,293 +288,260 @@ function FeaturedProducts() {
 }
 
 /* ─────────────────────────────────────────────
-   Section 3 — Services Carousel
+   Embla Carousel — Services Hero
 ───────────────────────────────────────────── */
 const SLIDES = [
   {
-    num: "01",
-    title: "Salvaescaleras",
+    label: "Salvaescaleras",
     heading: "Sube y baja sin esfuerzo",
-    description:
-      "Instalación en 1 día, sin obras. Para escaleras rectas y curvas.",
+    description: "Instalación en 1 día, sin obras. Para escaleras rectas y curvas en todo Chile.",
     cta: "Ver salvaescaleras",
-    href: "/catalogo/salvaescaleras-recto-solo",
+    href: "/catalogo/salvaescaleras",
     image: "/images/products/salvaescaleras-recto-solo-v2.png",
-    imageAlt: "Salvaescaleras recto",
   },
   {
-    num: "02",
-    title: "Plataformas elevadoras",
+    label: "Plataformas elevadoras",
     heading: "Accesibilidad universal",
-    description:
-      "Soluciones para silla de ruedas, interiores y exteriores.",
+    description: "Soluciones para silla de ruedas certificadas NCh3271. Interiores y exteriores.",
     cta: "Ver plataformas",
-    href: "/catalogo/plataforma-vertical-dignity",
+    href: "/catalogo",
     image: "/images/products/plataforma-exterior.png",
-    imageAlt: "Plataforma elevadora exterior",
   },
   {
-    num: "03",
-    title: "Ascensores",
+    label: "Ascensores",
     heading: "Eleva tu edificio",
-    description:
-      "Residenciales, condominios y comerciales. Certificados NCh440.",
+    description: "Residenciales, condominios y comerciales. Certificados NCh440 y Ley 20.296.",
     cta: "Ver ascensores",
-    href: "/catalogo/ascensor-residencial-home",
+    href: "/catalogo",
     image: "/images/products/ascensor-rhx17.png",
-    imageAlt: "Ascensor residencial RHX17",
   },
   {
-    num: "04",
-    title: "Modernización",
+    label: "Modernización",
     heading: "Renueva sin reemplazar",
-    description:
-      "Actualizamos cualquier marca. Ahorra hasta 45% en energía.",
+    description: "Actualizamos ascensores de cualquier marca. Ahorra hasta 45% en energía.",
     cta: "Ver modernización",
     href: "/catalogo/modernizacion-replus",
     image: "/images/products/control-masha.png",
-    imageAlt: "Control modernización MASHA",
   },
 ];
 
-const CarouselSection = styled.section`
-  background-color: ${COLOR.navy};
-  position: relative;
+const EmblaViewport = styled.div`
   overflow: hidden;
-`;
-
-const CarouselTrack = styled.div`
-  position: relative;
   width: 100%;
 `;
 
-const CarouselSlide = styled.div`
-  display: ${({ active }) => (active ? "grid" : "none")};
-  grid-template-columns: 1fr 1fr;
-  height: 480px;
+const EmblaContainer = styled.div`
+  display: flex;
+  touch-action: pan-y pinch-zoom;
+`;
+
+const EmblaSlide = styled.div`
+  flex: 0 0 100%;
+  min-width: 0;
+  background-color: #243C70;
+  position: relative;
+`;
+
+const SlideInner = styled.div`
   max-width: 1136px;
   margin: 0 auto;
-  padding: 0 24px;
+  padding: 80px 24px;
+  display: grid;
+  grid-template-columns: 55% 45%;
   align-items: center;
   gap: 48px;
-  opacity: ${({ active }) => (active ? 1 : 0)};
-  transition: opacity 0.4s ease;
+  min-height: 480px;
 
   @media (max-width: 959px) {
     grid-template-columns: 1fr;
-    height: auto;
-    padding: 40px 24px;
+    padding: 48px 24px;
+    min-height: auto;
     gap: 24px;
   }
 `;
 
-const SlideLeft = styled.div`
+const SlideContent = styled.div`
   display: flex;
   flex-direction: column;
   gap: 20px;
 `;
 
-const SlideNumBadge = styled.span`
+const SlideLabel = styled.span`
   font-family: Quicksand, sans-serif;
   font-size: 13px;
   font-weight: 700;
-  color: rgba(255, 255, 255, 0.55);
   letter-spacing: 2px;
   text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.65);
 `;
 
-const SlideCategory = styled.p`
+const SlideH2 = styled.h2`
   font-family: Quicksand, sans-serif;
-  font-size: 14px;
-  font-weight: 700;
-  color: rgba(255, 255, 255, 0.7);
-  margin: 0;
-  text-transform: uppercase;
-  letter-spacing: 1px;
-`;
-
-const SlideHeading = styled.h2`
-  font-family: Quicksand, sans-serif;
-  font-size: 44px;
+  font-size: 52px;
   font-weight: 800;
-  color: ${COLOR.white};
   line-height: 1.1;
+  && { color: #ffffff; }
   margin: 0;
 
   @media (max-width: 959px) {
-    font-size: 28px;
+    font-size: 32px;
   }
 `;
 
-const SlideDesc = styled.p`
+const SlideP = styled.p`
   font-family: Quicksand, sans-serif;
-  font-size: 16px;
-  color: rgba(255, 255, 255, 0.85);
-  margin: 0;
+  font-size: 17px;
   line-height: 1.6;
+  && { color: rgba(255, 255, 255, 0.82); }
+  margin: 0;
+  max-width: 440px;
 `;
 
-const SlideCtaBtn = styled.a`
+const SlideCta = styled.a`
   display: inline-flex;
   align-items: center;
-  justify-content: center;
-  height: 46px;
+  height: 48px;
   padding: 0 30px;
   border-radius: 22px;
-  background-color: ${COLOR.blue};
-  color: ${COLOR.white};
+  background: #ffffff;
+  color: #243C70;
   font-family: Quicksand, sans-serif;
   font-size: 15px;
   font-weight: 700;
   text-decoration: none;
   align-self: flex-start;
-  min-height: 48px;
-  transition: background-color 0.2s;
+  transition: background 0.2s, color 0.2s;
 
   &:hover {
-    background-color: ${COLOR.blueHover};
+    background: #e8eef8;
   }
 `;
 
-const SlideRight = styled.div`
+const SlideImageWrap = styled.div`
+  position: relative;
   display: flex;
-  align-items: center;
   justify-content: center;
-
-  @media (max-width: 959px) {
-    order: -1;
-  }
-`;
-
-const SlideImageWrapper = styled.div`
-  width: 100%;
-  max-width: 420px;
-  height: 340px;
-  border-radius: 16px;
-  overflow: hidden;
-  box-shadow: 0 8px 40px rgba(0, 0, 0, 0.35);
-
-  @media (max-width: 959px) {
-    max-width: 100%;
-    height: 200px;
-  }
-`;
-
-const SlideImg = styled.img`
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  display: block;
-`;
-
-const CarouselControls = styled.div`
-  position: absolute;
-  top: 50%;
-  left: 0;
-  right: 0;
-  transform: translateY(-50%);
-  display: flex;
-  justify-content: space-between;
-  padding: 0 12px;
-  pointer-events: none;
-  z-index: 2;
+  align-items: center;
 
   @media (max-width: 959px) {
     display: none;
   }
 `;
 
-const ArrowBtn = styled.button`
-  width: 44px;
-  height: 44px;
-  border-radius: 50%;
-  border: none;
-  background: rgba(255, 255, 255, 0.18);
-  color: ${COLOR.white};
-  font-size: 20px;
-  cursor: pointer;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  pointer-events: all;
-  transition: background 0.2s;
-  min-height: 48px;
-  min-width: 48px;
+const SlideOvalCluster = styled.div`
+  display: grid;
+  grid-template-columns: 140px 140px;
+  gap: 14px;
+`;
 
-  &:hover {
-    background: rgba(255, 255, 255, 0.32);
+const SlideOval = styled.div`
+  border-radius: 50% / 55%;
+  overflow: hidden;
+  height: 200px;
+
+  &:nth-child(2) { transform: translateY(24px); }
+  &:nth-child(3) { transform: translateY(-12px); }
+  &:nth-child(4) { transform: translateY(12px); }
+
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
   }
 `;
 
-const DotRow = styled.div`
+const EmblaDotsRow = styled.div`
   display: flex;
   justify-content: center;
   gap: 8px;
-  padding: 20px 0 28px;
+  padding: 20px 0 24px;
+  background: #243C70;
 `;
 
-const Dot = styled.button`
+const EmblaDot = styled.button`
   width: ${({ active }) => (active ? "24px" : "8px")};
   height: 8px;
   border-radius: 4px;
-  background: ${({ active }) =>
-    active ? COLOR.white : "rgba(255,255,255,0.35)"};
+  background: ${({ active }) => (active ? "#ffffff" : "rgba(255,255,255,0.35)")};
   border: none;
   cursor: pointer;
   transition: width 0.3s, background 0.3s;
   padding: 0;
-  min-height: 20px;
 `;
 
-function ServicesCarousel() {
-  const [current, setCurrent] = useState(0);
-  const total = SLIDES.length;
+const OVAL_IMAGES = [
+  { src: "/images/products/ascensor-cabina.png", alt: "Ascensor cabina" },
+  { src: "/images/products/ascensor-rhx16.png", alt: "Ascensor RHX16" },
+  { src: "/images/products/ascensor-traccion.png", alt: "Sistema tracción" },
+  { src: "/images/products/plataforma-detalle.png", alt: "Plataforma detalle" },
+];
 
-  useEffect(() => {
-    const id = setInterval(() => {
-      setCurrent((c) => (c + 1) % total);
-    }, 5000);
-    return () => clearInterval(id);
-  }, [total]);
+function EmblaCarousel() {
+  const [emblaRef, emblaApi] = useEmblaCarousel(
+    { loop: true, direction: "rtl" },
+    [Autoplay({ delay: 5000, stopOnInteraction: false }), Fade()]
+  );
 
-  const prev = () => setCurrent((c) => (c - 1 + total) % total);
-  const next = () => setCurrent((c) => (c + 1) % total);
+  const [selectedIndex, setSelectedIndex] = React.useState(0);
+
+  const onSelect = useCallback(() => {
+    if (!emblaApi) return;
+    setSelectedIndex(emblaApi.selectedScrollSnap());
+  }, [emblaApi]);
+
+  React.useEffect(() => {
+    if (!emblaApi) return;
+    emblaApi.on("select", onSelect);
+    onSelect();
+    return () => emblaApi.off("select", onSelect);
+  }, [emblaApi, onSelect]);
+
+  const scrollTo = useCallback(
+    (index) => emblaApi && emblaApi.scrollTo(index),
+    [emblaApi]
+  );
 
   return (
-    <CarouselSection aria-label="Servicios M-Elevadores">
-      <CarouselTrack>
-        {SLIDES.map((slide, i) => (
-          <CarouselSlide key={slide.num} active={i === current}>
-            <SlideLeft>
-              <SlideNumBadge>{slide.num} / {String(total).padStart(2, "0")}</SlideNumBadge>
-              <SlideCategory>{slide.title}</SlideCategory>
-              <SlideHeading>{slide.heading}</SlideHeading>
-              <SlideDesc>{slide.description}</SlideDesc>
-              <SlideCtaBtn href={slide.href}>{slide.cta}</SlideCtaBtn>
-            </SlideLeft>
-            <SlideRight>
-              <SlideImageWrapper>
-                <SlideImg src={slide.image} alt={slide.imageAlt} loading="lazy" />
-              </SlideImageWrapper>
-            </SlideRight>
-          </CarouselSlide>
-        ))}
-        <CarouselControls>
-          <ArrowBtn onClick={prev} aria-label="Slide anterior">&#8592;</ArrowBtn>
-          <ArrowBtn onClick={next} aria-label="Siguiente slide">&#8594;</ArrowBtn>
-        </CarouselControls>
-      </CarouselTrack>
-      <DotRow>
+    <section aria-label="Servicios M-Elevadores">
+      <EmblaViewport ref={emblaRef}>
+        <EmblaContainer>
+          {SLIDES.map((slide, i) => (
+            <EmblaSlide key={i}>
+              <SlideInner>
+                <SlideContent>
+                  <SlideLabel>{slide.label}</SlideLabel>
+                  <SlideH2>{slide.heading}</SlideH2>
+                  <SlideP>{slide.description}</SlideP>
+                  <Link href={slide.href} passHref>
+                    <SlideCta>{slide.cta} →</SlideCta>
+                  </Link>
+                </SlideContent>
+                <SlideImageWrap>
+                  <SlideOvalCluster>
+                    {OVAL_IMAGES.map((img, j) => (
+                      <SlideOval key={j}>
+                        <img src={img.src} alt={img.alt} loading="lazy" />
+                      </SlideOval>
+                    ))}
+                  </SlideOvalCluster>
+                </SlideImageWrap>
+              </SlideInner>
+            </EmblaSlide>
+          ))}
+        </EmblaContainer>
+      </EmblaViewport>
+      <EmblaDotsRow>
         {SLIDES.map((_, i) => (
-          <Dot
+          <EmblaDot
             key={i}
-            active={i === current}
-            onClick={() => setCurrent(i)}
+            active={i === selectedIndex}
+            onClick={() => scrollTo(i)}
             aria-label={`Ir al slide ${i + 1}`}
           />
         ))}
-      </DotRow>
-    </CarouselSection>
+      </EmblaDotsRow>
+    </section>
   );
 }
 
@@ -776,9 +609,8 @@ const Home = (props) => {
         activeDocMeta={activeDoc}
       >
         <SliceZone slices={page?.data?.slices} components={components} />
-        <HeroBanner />
+        <EmblaCarousel />
         <FeaturedProducts />
-        <ServicesCarousel />
       </Layout>
     </motion.div>
   );
