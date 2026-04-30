@@ -77,7 +77,7 @@ const HeroH1 = styled.h1`
   font-size: 52px;
   font-weight: 800;
   line-height: 60px;
-  color: #fff;
+  && { color: #fff; }
   margin: 0 0 16px;
 
   @media (max-width: ${BP}) {
@@ -90,7 +90,7 @@ const HeroSubtitle = styled.p`
   font-size: 20px;
   font-weight: 400;
   line-height: 30px;
-  color: rgba(255, 255, 255, 0.85);
+  && { color: rgba(255, 255, 255, 0.85); }
   max-width: 600px;
   margin: 0 0 32px;
 
@@ -492,7 +492,8 @@ const CtaSection = styled.section`
 const CtaTitle = styled.h2`
   font-size: 32px;
   font-weight: 800;
-  color: #fff;
+  && { color: #fff; }
+  text-align: center;
   margin: 0 0 12px;
 
   @media (max-width: ${BP}) {
@@ -502,7 +503,7 @@ const CtaTitle = styled.h2`
 
 const CtaSubtitle = styled.p`
   font-size: 17px;
-  color: rgba(255, 255, 255, 0.8);
+  && { color: rgba(255, 255, 255, 0.8); }
   margin: 0 0 36px;
   line-height: 26px;
 `;

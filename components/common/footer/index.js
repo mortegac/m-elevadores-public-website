@@ -196,12 +196,6 @@ const Footer = ({ items }) => {
             <Link href="/guia-de-compra" passHref>
               <NavLink>Guía de compra</NavLink>
             </Link>
-            <Link href="#" passHref>
-              <NavLink>Certificaciones</NavLink>
-            </Link>
-            <Link href="#" passHref>
-              <NavLink>Blog</NavLink>
-            </Link>
           </Col>
 
           {/* Column 4 — Contacto */}

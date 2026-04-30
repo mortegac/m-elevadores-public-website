@@ -279,6 +279,7 @@ const CtaHeading = styled.h2`
   font-size: 36px;
   font-weight: 800;
   line-height: 44px;
+  text-align: center;
   && {
     color: #ffffff;
   }

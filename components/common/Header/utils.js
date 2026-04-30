@@ -37,7 +37,7 @@ export const LinkLogo = () => (
         <picture>
           <source srcSet={"logo.png"} media="(max-width: 500px)" />
           <source srcSet={"logo.png"} media="(max-width: 960px)" />
-          <img src={"logo.png"} alt="m-elevadores" />
+          <img src={"logo.png"} alt="m-elevadores" style={{filter:"brightness(0) invert(1)", maxHeight:"40px"}} />
         </picture>
       </a>
     </Link>

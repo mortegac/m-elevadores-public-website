@@ -177,7 +177,7 @@ const PoliticaPrivacidadPage = ({ menu, footer }) => {
               <SectionTitle>1. Responsable del Tratamiento</SectionTitle>
               <Paragraph>
                 El responsable del tratamiento de sus datos personales es{" "}
-                <strong>M-Elevadores SpA</strong>, RUT [PENDIENTE], con
+                <strong>M-Elevadores SpA</strong>, con
                 domicilio en Marchant Pereira 150 of. 1002, Providencia,
                 Santiago, Chile.
               </Paragraph>
