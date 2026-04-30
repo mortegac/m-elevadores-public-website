@@ -248,12 +248,21 @@ const Card = styled.article`
 
 const CardImageArea = styled.div`
   position: relative;
-  height: 160px;
+  height: 200px;
   background: ${({ color }) => color || "#E8EBF5"};
   display: flex;
   align-items: center;
   justify-content: center;
   flex-shrink: 0;
+  overflow: hidden;
+`;
+
+const CardImg = styled.img`
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  display: block;
 `;
 
 const CategoryIcon = styled.div`
@@ -645,8 +654,11 @@ function ProductCard({ product }) {
 
   return (
     <Card>
-      <CardImageArea color={catBg}>
-        <CategoryIcon>{catIcon}</CategoryIcon>
+      <CardImageArea color={product.image ? "#f0f0f0" : catBg}>
+        {product.image
+          ? <CardImg src={product.image} alt={product.name} loading="lazy" />
+          : <CategoryIcon>{catIcon}</CategoryIcon>
+        }
         <CategoryBadge color={catColor}>{catLabel}</CategoryBadge>
         {product.badge && <PromoBadge>{product.badge}</PromoBadge>}
       </CardImageArea>
