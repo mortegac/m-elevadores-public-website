@@ -51,7 +51,7 @@ const BrandLogo = styled.img`
 
 const BrandDescription = styled.p`
   font-size: 14px;
-  color: rgba(255, 255, 255, 0.8);
+  && { color: rgba(255, 255, 255, 0.8); }
   line-height: 1.7;
   max-width: 280px;
   margin: 0;
@@ -225,8 +225,12 @@ const Footer = ({ items }) => {
             Ley 20.296 MINVU.
           </LegalText>
           <LegalLinks>
-            <LegalLink href="#">Política de privacidad</LegalLink>
-            <LegalLink href="#">Términos de uso</LegalLink>
+            <Link href="/politica-de-privacidad" passHref>
+              <LegalLink>Política de privacidad</LegalLink>
+            </Link>
+            <Link href="/terminos-de-uso" passHref>
+              <LegalLink>Términos de uso</LegalLink>
+            </Link>
           </LegalLinks>
         </LegalInner>
       </LegalBar>
