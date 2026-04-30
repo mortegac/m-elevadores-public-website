@@ -140,7 +140,7 @@ const ProductTitle = styled.h1`
   font-weight: 800;
   line-height: 48px;
   margin: 0 0 12px;
-  color: #fff;
+  && { color: #fff; }
 
   @media (max-width: 960px) {
     font-size: 32px;
@@ -153,7 +153,7 @@ const Tagline = styled.p`
   font-weight: 400;
   line-height: 28px;
   margin: 0 0 20px;
-  color: rgba(255, 255, 255, 0.8);
+  && { color: rgba(255, 255, 255, 0.8); }
 
   @media (max-width: 960px) {
     font-size: 17px;
@@ -187,6 +187,14 @@ const ImagePlaceholder = styled.div`
   align-items: center;
   justify-content: center;
   gap: 16px;
+  overflow: hidden;
+
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
 
   @media (max-width: 960px) {
     height: 260px;
@@ -609,6 +617,14 @@ const RelatedCardImage = styled.div`
   align-items: center;
   justify-content: center;
   font-size: 44px;
+  overflow: hidden;
+
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
 `;
 
 const RelatedCardBody = styled.div`
@@ -817,11 +833,23 @@ function ProductDetailPage({ product, relatedProducts, menu, footer }) {
                 </HeroBlock>
 
                 {/* Image placeholder */}
-                <ImagePlaceholder bgColor={categoryColor} role="img" aria-label={`Imagen de ${product.name}`}>
-                  <CategoryIconLarge aria-hidden="true">
-                    {categoryIcon}
-                  </CategoryIconLarge>
-                  <ImagePlaceholderLabel>{product.name}</ImagePlaceholderLabel>
+                <ImagePlaceholder
+                  bgColor={product.heroImage || product.image ? "#eef1f8" : categoryColor}
+                  role="img"
+                  aria-label={`Imagen de ${product.name}`}
+                >
+                  {product.heroImage || product.image ? (
+                    <img
+                      src={product.heroImage || product.image}
+                      alt={product.name}
+                      loading="lazy"
+                    />
+                  ) : (
+                    <>
+                      <CategoryIconLarge aria-hidden="true">{categoryIcon}</CategoryIconLarge>
+                      <ImagePlaceholderLabel>{product.name}</ImagePlaceholderLabel>
+                    </>
+                  )}
                 </ImagePlaceholder>
 
                 {/* Long description */}
@@ -930,10 +958,13 @@ function ProductDetailPage({ product, relatedProducts, menu, footer }) {
                           aria-label={`Ver ${related.name}`}
                         >
                           <RelatedCardImage
-                            bgColor={CATEGORY_COLORS[related.category]}
+                            bgColor={related.image ? "#eef1f8" : CATEGORY_COLORS[related.category]}
                             aria-hidden="true"
                           >
-                            {CATEGORY_ICONS[related.category]}
+                            {related.image
+                              ? <img src={related.image} alt={related.name} loading="lazy" />
+                              : CATEGORY_ICONS[related.category]
+                            }
                           </RelatedCardImage>
                           <RelatedCardBody>
                             <RelatedCardCategory>
