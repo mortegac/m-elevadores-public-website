@@ -10,7 +10,7 @@ import { getMetaTags } from "../../utils/seo";
  * The default layout for all pages.
  */
 
-export const Body = styled.body`
+export const Body = styled.div`
   background-color: ${(props) => props.theme.colors.secondary};
   background: ${(props) => props.theme.colors.secondary};
 `;

@@ -156,7 +156,7 @@ const Footer = ({ items }) => {
         <Grid>
           {/* Column 1 — Brand */}
           <BrandCol>
-            <BrandLogo src="/logo.png" alt="M-Elevadores" />
+            <BrandLogo src="/logo.png" alt="M-Elevadores" width="160" height="50" />
             <BrandDescription>
               Expertos en soluciones integrales de ascensores y accesibilidad.
               Certificados Ley 20.296 MINVU. Comprometidos con la dignidad y

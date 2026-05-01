@@ -13,12 +13,12 @@ export default class MyDocument extends Document {
           <link rel="dns-prefetch" href="//fonts.gstatic.com" />
           <link rel="dns-prefetch" href="//images.prismic.io" />
           <link rel="dns-prefetch" href="//melevadores.cdn.prismic.io" />
+          <link rel="dns-prefetch" href="//www.googletagmanager.com" />
+          <link rel="dns-prefetch" href="//www.google-analytics.com" />
           <link rel="preconnect" href="https://fonts.googleapis.com" />
-          <link
-            rel="preconnect"
-            href="https://fonts.gstatic.com"
-            crossOrigin="anonymous"
-          />
+          <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
+          <link rel="preconnect" href="https://images.prismic.io" crossOrigin="anonymous" />
+          <link rel="preconnect" href="https://m-elevadores.cdn.prismic.io" crossOrigin="anonymous" />
           <link
             href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;500;600;700&display=swap"
             rel="stylesheet"
