@@ -1,3 +1,4 @@
+import Head from "next/head";
 import { SliceSimulator } from "@prismicio/slice-simulator-react";
 import { SliceZone } from "@prismicio/react";
 
@@ -6,12 +7,17 @@ import state from "../.slicemachine/libraries-state.json";
 
 const SliceSimulatorPage = () => {
   return (
-    <SliceSimulator
-      sliceZone={({ slices }) => (
-        <SliceZone slices={slices} components={components} />
-      )}
-      state={state}
-    />
+    <>
+      <Head>
+        <meta name="robots" content="noindex, nofollow" />
+      </Head>
+      <SliceSimulator
+        sliceZone={({ slices }) => (
+          <SliceZone slices={slices} components={components} />
+        )}
+        state={state}
+      />
+    </>
   );
 };
 

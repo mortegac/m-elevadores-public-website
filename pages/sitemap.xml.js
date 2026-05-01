@@ -1,5 +1,6 @@
 import * as prismic from "@prismicio/client";
 import sm from "../sm.json";
+import { PRODUCTS } from "../lib/products";
 
 const SITE = "https://www.melevadores.cl";
 
@@ -13,6 +14,7 @@ ${urls.join("\n")}
 function urlEntry(loc, priority = "0.8", changefreq = "weekly") {
   return `  <url>
     <loc>${loc}</loc>
+    <lastmod>${new Date().toISOString().slice(0, 10)}</lastmod>
     <changefreq>${changefreq}</changefreq>
     <priority>${priority}</priority>
   </url>`;
@@ -35,7 +37,16 @@ export async function getServerSideProps({ res }) {
 
     const urls = [
       urlEntry(`${SITE}/`, "1.0", "daily"),
-      ...pages.map((p) => urlEntry(`${SITE}/${p.uid}`, "0.8", "weekly")),
+      urlEntry(`${SITE}/catalogo`, "0.9", "weekly"),
+      urlEntry(`${SITE}/catalogo/salvaescaleras`, "0.8", "weekly"),
+      urlEntry(`${SITE}/guia-de-compra`, "0.7", "monthly"),
+      urlEntry(`${SITE}/testimonios`, "0.7", "monthly"),
+      urlEntry(`${SITE}/politica-de-privacidad`, "0.3", "yearly"),
+      urlEntry(`${SITE}/terminos-de-uso`, "0.3", "yearly"),
+      ...PRODUCTS.map((p) =>
+        urlEntry(`${SITE}/catalogo/${p.slug}`, "0.8", "monthly")
+      ),
+      ...pages.map((p) => urlEntry(`${SITE}/${p.uid}`, "0.7", "weekly")),
       ...landings.map((p) =>
         urlEntry(`${SITE}/landing/${p.uid}`, "0.6", "monthly")
       ),

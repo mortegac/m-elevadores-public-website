@@ -150,6 +150,34 @@ const FooterNote = styled.p`
   }
 `;
 
+// ── Static catalog & utility pages ───────────────────────────────────────────
+
+const CATALOG_INDEX = [
+  { href: "/catalogo", label: "Catálogo de Productos" },
+  { href: "/catalogo/salvaescaleras", label: "Salvaescaleras en Chile" },
+];
+
+const CATALOG_PRODUCTS = [
+  { href: "/catalogo/salvaescaleras-recto-solo",     label: "Salvaescaleras Recto SOLO" },
+  { href: "/catalogo/salvaescaleras-curvo-flex",     label: "Salvaescaleras Curvo FLEX" },
+  { href: "/catalogo/plataforma-vertical-dignity",   label: "Plataforma Vertical DIGNITY" },
+  { href: "/catalogo/plataforma-inclinada-access",   label: "Plataforma Inclinada ACCESS" },
+  { href: "/catalogo/ascensor-residencial-home",     label: "Ascensor Residencial HOME" },
+  { href: "/catalogo/ascensor-condominio-tower",     label: "Ascensor Condominio TOWER" },
+  { href: "/catalogo/ascensor-comercial-prime",      label: "Ascensor Comercial PRIME" },
+  { href: "/catalogo/modernizacion-replus",          label: "Modernización RE-PLUS" },
+];
+
+const UTILITY_PAGES = [
+  { href: "/testimonios",           label: "Testimonios de Clientes" },
+  { href: "/guia-de-compra",        label: "Guía de Compra" },
+  { href: "/politica-de-privacidad", label: "Política de Privacidad" },
+  { href: "/terminos-de-uso",       label: "Términos de Uso" },
+];
+
+const STATIC_COUNT =
+  CATALOG_INDEX.length + CATALOG_PRODUCTS.length + UTILITY_PAGES.length;
+
 // ── Component ─────────────────────────────────────────────────────────────────
 
 export default function SitemapPage({
@@ -161,7 +189,7 @@ export default function SitemapPage({
   landings,
   generatedAt,
 }) {
-  const total = 1 + pages.length + landings.length;
+  const total = 1 + pages.length + landings.length + STATIC_COUNT;
 
   return (
     <Layout
@@ -226,6 +254,57 @@ export default function SitemapPage({
                 </LinkList>
               </Column>
             )}
+
+            {/* Catálogo — índice y categorías */}
+            <Column>
+              <CategoryTitle>Catálogo</CategoryTitle>
+              <LinkList>
+                {CATALOG_INDEX.map((item) => (
+                  <LinkItem key={item.href}>
+                    <Link href={item.href}>
+                      <a>
+                        {item.label}
+                        <PageLabel variant="page">Catálogo</PageLabel>
+                      </a>
+                    </Link>
+                  </LinkItem>
+                ))}
+              </LinkList>
+            </Column>
+
+            {/* Catálogo — fichas de producto */}
+            <Column>
+              <CategoryTitle>Productos</CategoryTitle>
+              <LinkList>
+                {CATALOG_PRODUCTS.map((item) => (
+                  <LinkItem key={item.href}>
+                    <Link href={item.href}>
+                      <a>
+                        {item.label}
+                        <PageLabel variant="page">Producto</PageLabel>
+                      </a>
+                    </Link>
+                  </LinkItem>
+                ))}
+              </LinkList>
+            </Column>
+
+            {/* Páginas de utilidad */}
+            <Column>
+              <CategoryTitle>Información</CategoryTitle>
+              <LinkList>
+                {UTILITY_PAGES.map((item) => (
+                  <LinkItem key={item.href}>
+                    <Link href={item.href}>
+                      <a>
+                        {item.label}
+                        <PageLabel variant="page">Página</PageLabel>
+                      </a>
+                    </Link>
+                  </LinkItem>
+                ))}
+              </LinkList>
+            </Column>
 
             {/* Landing pages */}
             {landings.length > 0 && (

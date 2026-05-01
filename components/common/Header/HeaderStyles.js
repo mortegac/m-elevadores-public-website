@@ -226,7 +226,7 @@ export const LeftWrap = styled.div`
     a.selected {
       li {
         letter-spacing: 0px;
-        color: ${(props) => props.theme.colors.primary};
+        color: #0066CC;
         .underline {
           opacity: 1;
         }
@@ -325,7 +325,7 @@ export const MobileNavContainer = styled.div`
       }
       &.selected {
         a {
-          color: ${(props) => props.theme.colors.primary};
+          color: #0066CC;
         }
       }
       a {
@@ -336,7 +336,7 @@ export const MobileNavContainer = styled.div`
         text-decoration: none;
         color: #00113399;
         &.selected {
-          color: ${(props) => props.theme.colors.primary};
+          color: #0066CC;
         }
       }
     }
