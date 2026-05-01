@@ -4,6 +4,8 @@ import { SliceZone } from "@prismicio/react";
 import { createClient, linkResolver } from "../prismicio";
 import { components } from "../slices/index";
 import { Layout } from "../components/common/Layout";
+import CotizacionBanner from "../components/common/CotizacionBanner";
+import { PRODUCTS } from "../lib/products";
 
 const Page = (props) => {
   if (props?.error || !props || !props?.page?.lang) {
@@ -28,6 +30,7 @@ const Page = (props) => {
       activeDocMeta={activeDoc}
     >
       <SliceZone slices={page?.data?.slices} components={components} />
+      {page?.uid === "nosotros" && <CotizacionBanner products={PRODUCTS} />}
     </Layout>
   );
 };
