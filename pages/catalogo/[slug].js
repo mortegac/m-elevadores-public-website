@@ -18,6 +18,7 @@ const CATEGORY_COLORS = {
   salvaescaleras: "#243C70",
   plataformas: "#0066CC",
   ascensores: "#001133",
+  escaleras: "#1565C0",
   modernizacion: "#605E5C",
 };
 
@@ -25,6 +26,7 @@ const CATEGORY_ICONS = {
   salvaescaleras: "🪜",
   plataformas: "♿",
   ascensores: "🛗",
+  escaleras: "🏗️",
   modernizacion: "🔧",
 };
 
