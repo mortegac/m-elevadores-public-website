@@ -45,10 +45,10 @@ const WhatsAppFab = styled.a`
 export const Layout = (props) => {
   const { children, header, footer, page, activeDocMeta } = props;
 
-  const title = page?.data?.seoTitle || "M-Elevadores";
+  const title = page?.data?.seoTitle || "M-Elevadores | Ascensores, Salvaescaleras y Plataformas en Chile";
   const description =
     page?.data?.seodescription ||
-    "M-Elevadores — Plataformas salvaescaleras para personas con movilidad reducida en Chile.";
+    "M-Elevadores — Líderes en instalación y mantenimiento de ascensores en Chile. Salvaescaleras y plataformas elevadoras certificadas. Cotiza gratis.";
   const canonicalUrl = `${activeDocMeta.sitename}${linkResolver(page)}`;
 
   return (

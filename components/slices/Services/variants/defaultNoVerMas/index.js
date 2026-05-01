@@ -64,7 +64,6 @@ const Base = (props) => {
                           <ContentContainer>
                             <h3>{box.titlelist}</h3>
                             <p>{box.descriptionlist}</p>
-                            {console.log("--props?.primary.--", props?.primary)}
                             {/* { buttonlink &&
                            <Anchor id={buttonlink?.uid} href={buttonlink?.uid} >
                               <Button fullwidth={false}>

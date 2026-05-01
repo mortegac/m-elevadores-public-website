@@ -14,7 +14,6 @@ const LogoListv2 = (props) => {
                 key={`box-item-${index}`}
                 // style={{ backgroundColor: "black" }}
               >
-                {console.log(">>>list  ", box)}
                 <img src={box?.logoImage?.url || "-"} alt="" />
                 <h4>{box.subtitle[0]?.text ? box.subtitle[0].text : <></>}</h4>
                 <span>{box.description ? box.description : <></>}</span>

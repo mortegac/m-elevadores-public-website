@@ -33,7 +33,7 @@ const Base = (props) => {
           >
             <picture>
               <source srcSet={image.url} media="(max-width: 630px)" />
-              <img src={image.url} alt="HeroImg" />
+              <img src={image.url} alt="HeroImg" fetchpriority="high" loading="eager" />
             </picture>
           </motion.div>
         </ImgHolder>

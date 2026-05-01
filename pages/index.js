@@ -296,7 +296,7 @@ const SLIDES = [
     description: "Ascensores para proyectos residenciales y comerciales. Asesoría personalizada y los mejores precios del mercado.",
     cta: "Más información",
     href: "/catalogo",
-    image: "/images/slider-instalacion.png",
+    image: "/images/slider-instalacion.webp",
   },
   {
     label: "Mantenimiento Multimarca",
@@ -304,7 +304,7 @@ const SLIDES = [
     description: "Técnicos certificados que cumplen toda la normativa vigente. Multimarca. ¡Solicita tu revisión ahora!",
     cta: "Más información",
     href: "/catalogo",
-    image: "/images/slider-mantenimiento.png",
+    image: "/images/slider-mantenimiento.webp",
   },
   {
     label: "Reparación y Normalización",
@@ -312,7 +312,7 @@ const SLIDES = [
     description: "Modernización de ascensores, reemplazo de piezas, actualización electrónica y certificación según normativa vigente.",
     cta: "Más información",
     href: "/catalogo/modernizacion-replus",
-    image: "/images/slider-reparacion.png",
+    image: "/images/slider-reparacion.webp",
   },
   {
     label: "Salvaescaleras",
@@ -320,7 +320,7 @@ const SLIDES = [
     description: "Dispositivos salvaescaleras seguros y certificados con garantía profesional. Instalación en 1 día, sin obras.",
     cta: "Más información",
     href: "/catalogo/salvaescaleras",
-    image: "/images/products/salvaescaleras-recto-solo-v2.png",
+    image: "/images/products/salvaescaleras-recto-solo-v2.webp",
   },
 
 ];

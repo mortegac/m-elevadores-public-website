@@ -33,11 +33,11 @@ const LinkPage = (data, pagename) => {
 export const LinkLogo = () => (
   <div>
     <Link href={`/`} passHref>
-      <a>
+      <a aria-label="M-Elevadores — Inicio">
         <picture>
           <source srcSet={"logo.png"} media="(max-width: 500px)" />
           <source srcSet={"logo.png"} media="(max-width: 960px)" />
-          <img src={"logo.png"} alt="m-elevadores" style={{filter:"brightness(0) invert(1)", maxHeight:"40px"}} />
+          <img src={"logo.png"} alt="m-elevadores" style={{filter:"brightness(0) invert(1)"}} width="160" height="40" />
         </picture>
       </a>
     </Link>
