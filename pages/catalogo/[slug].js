@@ -706,16 +706,29 @@ function ProductDetailPage({ product, relatedProducts, menu, footer }) {
     "@type": "Product",
     name: product.name,
     description: product.longDescription,
-    brand: {
-      "@type": "Brand",
-      name: "M-Elevadores",
-    },
+    image: product.image ? `${sitename}${product.image}` : `${sitename}/images/products/ascensor-rhx16.webp`,
+    url: canonicalUrl,
+    brand: { "@type": "Brand", name: "M-Elevadores" },
     offers: {
       "@type": "Offer",
+      priceCurrency: "CLP",
+      price: product.priceRange || "Cotización personalizada",
       availability: "https://schema.org/InStock",
-      areaServed: "CL",
+      url: canonicalUrl,
+      seller: { "@type": "Organization", name: "M-Elevadores", url: "https://www.melevadores.cl" },
+      areaServed: { "@type": "Country", name: "Chile" },
     },
   };
+
+  const faqJsonLd = product.faq && product.faq.length > 0 ? {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: product.faq.map(({ q, a }) => ({
+      "@type": "Question",
+      name: q,
+      acceptedAnswer: { "@type": "Answer", text: a },
+    })),
+  } : null;
 
   const breadcrumbJsonLd = {
     "@context": "https://schema.org",
@@ -772,7 +785,7 @@ function ProductDetailPage({ product, relatedProducts, menu, footer }) {
         <meta property="og:title" content={product.seoTitle} />
         <meta property="og:description" content={product.seoDescription} />
         <meta property="og:url" content={canonicalUrl} />
-        <meta property="og:type" content="website" />
+        <meta property="og:type" content="product" />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(productJsonLd) }}
@@ -781,6 +794,12 @@ function ProductDetailPage({ product, relatedProducts, menu, footer }) {
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }}
         />
+        {faqJsonLd && (
+          <script
+            type="application/ld+json"
+            dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }}
+          />
+        )}
       </Head>
 
       <Layout

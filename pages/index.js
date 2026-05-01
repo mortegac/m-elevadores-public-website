@@ -5,7 +5,6 @@ import Fade from "embla-carousel-fade";
 import Head from "next/head";
 import Link from "next/link";
 import { SliceZone } from "@prismicio/react";
-import { motion } from "framer-motion";
 import styled, { css } from "styled-components";
 
 import { createClient } from "../prismicio";
@@ -557,11 +556,7 @@ const Home = (props) => {
   const pageDescription = page?.data?.seodescription || SEO_DESCRIPTION;
 
   return (
-    <motion.div
-      initial={{ opacity: 0 }}
-      animate={{ opacity: 1 }}
-      exit={{ opacity: 0 }}
-    >
+    <div>
       <Head>
         <title>{pageTitle}</title>
         <meta name="description" content={pageDescription} />
@@ -590,11 +585,24 @@ const Home = (props) => {
         page={page}
         activeDocMeta={activeDoc}
       >
+        <h1 style={{
+          position: 'absolute',
+          width: '1px',
+          height: '1px',
+          padding: 0,
+          margin: '-1px',
+          overflow: 'hidden',
+          clip: 'rect(0,0,0,0)',
+          whiteSpace: 'nowrap',
+          border: 0,
+        }}>
+          Ascensores, Salvaescaleras y Plataformas Elevadoras en Chile
+        </h1>
         <EmblaCarousel />
         <SliceZone slices={page?.data?.slices} components={components} />
         <FeaturedProducts />
       </Layout>
-    </motion.div>
+    </div>
   );
 };
 

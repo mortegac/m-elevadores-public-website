@@ -78,6 +78,20 @@ export const Layout = (props) => {
               areaServed: { "@type": "Country", name: "Chile" },
               image:
                 "https://images.prismic.io/m-elevadores/Ztovabzzk9ZrXEZc_SEO-melevadores.png",
+              openingHoursSpecification: [
+                {
+                  "@type": "OpeningHoursSpecification",
+                  dayOfWeek: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+                  opens: "09:00",
+                  closes: "18:30",
+                },
+              ],
+              priceRange: "$$",
+              sameAs: [
+                "https://www.instagram.com/melevadores",
+                "https://www.facebook.com/melevadores",
+                "https://www.linkedin.com/company/m-elevadores",
+              ],
             }),
           }}
         />

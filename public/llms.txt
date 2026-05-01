@@ -1,52 +1,42 @@
 # M-Elevadores — llms.txt
-# https://llmstxt.org/
+# Chilean elevator and accessibility solutions company
+# https://www.melevadores.cl
 
-M-Elevadores es una empresa chilena especializada en la comercialización, instalación y mantenimiento de plataformas salvaescaleras y soluciones de accesibilidad para personas con movilidad reducida.
+> M-Elevadores SpA specializes in stairlifts, platform lifts, elevators, and elevator modernization in Chile. Certified under Ley 20.296 MINVU. 25+ years of experience. Free technical visits throughout Chile.
 
-## Empresa
+## Main Pages
 
-- **Nombre:** M-Elevadores SpA
-- **País:** Chile
-- **Dirección:** Marchant Pereira 150 of 1002, Providencia, Región Metropolitana
-- **Teléfono:** +56959382761
-- **Email:** contacto@melevadores.cl
-- **Sitio web:** https://www.melevadores.cl
-- **Horario:** Lunes a viernes 9:00–18:00
+- [Inicio](https://www.melevadores.cl/): Homepage with product catalog overview and services
+- [Catálogo](https://www.melevadores.cl/catalogo): Full product catalog — 12 products across 5 categories
+- [Salvaescaleras](https://www.melevadores.cl/catalogo/salvaescaleras): Stairlift category page — straight and curved models
+- [Guía de Compra](https://www.melevadores.cl/guia-de-compra): Interactive product recommendation guide
+- [Testimonios](https://www.melevadores.cl/testimonios): Customer testimonials — 4,000+ installations
+- [Nosotros](https://www.melevadores.cl/nosotros): Company information, history, certifications
 
-## Servicios
+## Product Catalog
 
-1. **Plataformas salvaescaleras** — Dispositivos motorizados que permiten a personas con movilidad reducida subir y bajar escaleras de forma segura y cómoda. Instalación en escaleras rectas y curvas.
-2. **Mantenimiento multimarca** — Servicio preventivo y correctivo de ascensores de todas las marcas del mercado.
-3. **Reparación y normalización** — Diagnóstico y reparación de fallas en sistemas de elevación, incluyendo normalización según normativa chilena.
-4. **Instalación de ascensores** — Instalación de nuevos ascensores en edificios residenciales y comerciales en Chile.
+### Salvaescaleras (Stairlifts)
+- [Salvaescaleras Recto SOLO](https://www.melevadores.cl/catalogo/salvaescaleras-recto-solo): Straight stairlift. 125 kg capacity. 1-day installation. Folds to 28 cm. For straight staircases up to 14 m.
 
-## Certificaciones y Normativa
+### Plataformas Elevadoras (Platform Lifts)
+- [Plataforma Vertical DIGNITY](https://www.melevadores.cl/catalogo/plataforma-vertical-dignity): Vertical wheelchair platform. 400 kg, 90×140 cm. NCh3271 certified. Interior and exterior.
+- [Plataforma Inclinada ACCESS](https://www.melevadores.cl/catalogo/plataforma-inclinada-access): Inclined stair platform. 300 kg. Foldable. For schools, churches, public buildings. Ley 20.422 compliant.
 
-- Cumplimiento con Ley 20.296 MINVU (normativa de instalación de ascensores en Chile)
-- Operación bajo normas de accesibilidad universal
+### Ascensores (Elevators)
+- [Ascensor Residencial HOME](https://www.melevadores.cl/catalogo/ascensor-residencial-home): Home elevator. 400 kg (~5 persons). No pit required (6 cm prep). 4 stops. 2-3 week installation.
+- [Ascensor Condominio TOWER](https://www.melevadores.cl/catalogo/ascensor-condominio-tower): Residential building elevator. 630–1,600 kg. 25 stops. 24/7 monitoring app. Ley 20.296 certified.
+- [Ascensor Comercial PRIME](https://www.melevadores.cl/catalogo/ascensor-comercial-prime): Commercial elevator. Up to 2,500 kg. 4 m/s. Destination control system. ISO 25745 Class A.
+- [Ascensor Panorámico VIEW](https://www.melevadores.cl/catalogo/ascensor-panoramico-view): Panoramic glass elevator. 630–1,600 kg. 5 shaft configurations. For hotels and corporate buildings.
+- [Ascensor Camilla MED](https://www.melevadores.cl/catalogo/ascensor-camilla-med): Hospital/stretcher elevator. 1,600–2,000 kg. Wide door opening. For clinics and hospitals.
+- [Ascensor Residencial VILLA](https://www.melevadores.cl/catalogo/ascensor-residencial-villa): Luxury home elevator. IoT app. Panoramic option. SHV3000/SHV5000 series for villas and lofts.
 
-## Público objetivo
+### Escaleras Mecánicas (Escalators)
+- [Escalera Mecánica GRE](https://www.melevadores.cl/catalogo/escalera-mecanica-gre): Commercial escalator. Up to 7.9 m rise. 3 inclinations. Indoor/outdoor. 16 hr/day operation.
 
-- Adultos mayores con dificultades de movilidad
-- Personas con discapacidad física o motora
-- Familias con miembros que requieren soluciones de accesibilidad
-- Administradores de edificios y condominios
-- Arquitectos y constructores
+### Modernización (Modernization)
+- [Modernización RE-PLUS](https://www.melevadores.cl/catalogo/modernizacion-replus): Full elevator modernization. Any brand. Up to 45% energy savings. Ley 20.296 certification included.
+- [Decoración de Cabina DECO](https://www.melevadores.cl/catalogo/decoracion-cabina-deco): Aesthetic cabin renovation. 1-3 days. No mechanical work. Any brand. LCD panels, LED lighting.
 
-## Cobertura geográfica
-
-Chile, con foco en la Región Metropolitana (Santiago y alrededores).
-
-## Páginas principales
-
-- / — Página de inicio
-- /salvaescaleras — Información sobre plataformas salvaescaleras
-- /mantenimiento-multimarca — Servicio de mantenimiento
-- /reparacion-y-normalizacion — Servicio de reparación
-- /instalacion-de-ascensores — Instalación de ascensores
-- /nosotros — Información sobre la empresa
-- /cotiza — Formulario de cotización
-
-## Sitemap
-
-https://www.melevadores.cl/sitemap.xml
+## Legal
+- [Política de Privacidad](https://www.melevadores.cl/politica-de-privacidad)
+- [Términos de Uso](https://www.melevadores.cl/terminos-de-uso)
