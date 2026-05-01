@@ -588,8 +588,8 @@ const Home = (props) => {
         page={page}
         activeDocMeta={activeDoc}
       >
-        <SliceZone slices={page?.data?.slices} components={components} />
         <EmblaCarousel />
+        <SliceZone slices={page?.data?.slices} components={components} />
         <FeaturedProducts />
       </Layout>
     </motion.div>
