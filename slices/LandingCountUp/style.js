@@ -16,6 +16,14 @@ export const Section = styled.section`
   color: #3962e9;
   text-align: center;
 
+  @media (min-width: 768px) {
+    gap: 1.5rem;
+  }
+
+  @media (min-width: ${({ theme }) => theme.breakpoints.md}) {
+    gap: 2.5rem;
+  }
+
   p {
     margin: 0;
     font: inherit;

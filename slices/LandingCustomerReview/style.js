@@ -29,6 +29,22 @@ export const StyledSlider = styled(Slider)`
     justify-content: center;
   }
 
+  @media (min-width: 768px) {
+    .slick-slide > div {
+      padding: 0 12px;
+    }
+  }
+
+  @media (min-width: ${({ theme }) => theme.breakpoints.md}) {
+    .slick-list {
+      padding: 16px 8px !important;
+    }
+
+    .slick-slide > div {
+      padding: 0 16px;
+    }
+  }
+
   .slick-dots {
     bottom: -30px;
   }

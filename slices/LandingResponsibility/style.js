@@ -11,8 +11,13 @@ const Grid = styled.div`
   grid-template-columns: 1fr;
   gap: 1rem;
 
-  @media (min-width: ${({ theme }) => theme.breakpoints.md}) {
+  @media (min-width: 768px) {
     grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+  }
+
+  @media (min-width: ${({ theme }) => theme.breakpoints.md}) {
+    gap: 2rem;
   }
 `;
 

@@ -110,6 +110,26 @@ export const FaqSection = styled.section`
     }
   }
 
+  @media (min-width: 768px) {
+    .faq-question {
+      font-size: 1.15rem;
+      padding: 0.6rem 0.5rem;
+    }
+  }
+
+  @media (min-width: ${({ theme }) => theme.breakpoints.md}) {
+    .faq-question {
+      font-size: 1.2rem;
+      padding: 0.75rem 0.5rem;
+    }
+
+    .faq-answer p {
+      font-size: 1rem;
+      padding: 0.75rem 0.5rem;
+      line-height: 1.7;
+    }
+  }
+
   @media (max-width: 768px) {
     .title h1 {
       font-size: clamp(1.5rem, 4.5vw, 2rem);

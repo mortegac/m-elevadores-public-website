@@ -21,10 +21,14 @@ export const Section = styled.div`
     display: ${({ bgimage }) => (bgimage ? "block" : "none")};
   }
 
-  @media (min-width: ${({ theme }) => theme.breakpoints.md}) {
+  @media (min-width: 768px) {
     grid-template-columns: 1.1fr 1fr;
-    gap: 3rem;
+    gap: 2rem;
     align-items: center;
+  }
+
+  @media (min-width: ${({ theme }) => theme.breakpoints.md}) {
+    gap: 3rem;
   }
 `;
 

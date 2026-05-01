@@ -96,4 +96,24 @@ export const Section = styled.div`
     .mobile-step-text {
     }
   }
+
+  @media (min-width: 768px) {
+    .step-wrapper {
+      gap: 60px;
+    }
+
+    .step .step-text {
+      max-width: 150px;
+    }
+  }
+
+  @media (min-width: ${({ theme }) => theme.breakpoints.md}) {
+    .step-wrapper {
+      gap: 80px;
+    }
+
+    .step .step-text {
+      max-width: 180px;
+    }
+  }
 `;

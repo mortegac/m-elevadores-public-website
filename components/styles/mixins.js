@@ -3,9 +3,14 @@ import { css } from "styled-components";
 export const sectionPadding = (mobilePadding = "2rem") => css`
   padding: ${mobilePadding} 1.25rem;
 
+  @media (min-width: 768px) {
+    padding-left: 2rem;
+    padding-right: 2rem;
+  }
+
   @media (min-width: ${({ theme }) => theme.breakpoints.md}) {
     padding: ${({ theme }) =>
-      theme.sectionContainer?.padding?.desktop || "64px 0px"};
+      theme.sectionContainer?.padding?.desktop || "2.5rem 5%"};
   }
 `;
 

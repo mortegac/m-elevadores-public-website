@@ -14,6 +14,14 @@ export const Title = styled.div`
     text-align: center;
     margin: 0;
 
+    @media (min-width: 768px) {
+      font-size: 2.25rem;
+    }
+
+    @media (min-width: ${({ theme }) => theme.breakpoints.md}) {
+      font-size: 2.5rem;
+    }
+
     @media (max-width: 768px) {
       font-size: clamp(1.4rem, 6vw, 1.75rem);
       line-height: 1.2;

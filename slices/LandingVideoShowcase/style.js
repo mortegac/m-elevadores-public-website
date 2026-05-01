@@ -40,6 +40,14 @@ export const VideoGrid = styled.div`
   flex-wrap: wrap;
   gap: 1.5rem;
   justify-content: center;
+
+  @media (min-width: 768px) {
+    gap: 2rem;
+  }
+
+  @media (min-width: ${({ theme }) => theme.breakpoints.md}) {
+    gap: 2.5rem;
+  }
 `;
 
 export const VideoItem = styled.div`

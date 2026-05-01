@@ -3,7 +3,7 @@ export const Theme = {
   optOutHeight: "64px",
   sectionContainer: {
     padding: {
-      desktop: "64px 0px",
+      desktop: "2.5rem 5%",
       mobile: "0px 0px",
       // mobile: "32px 0px",
     },
