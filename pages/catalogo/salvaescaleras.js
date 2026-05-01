@@ -892,8 +892,6 @@ const SalvaescalerasPage = ({ menu, footer, salvaescalerasProducts }) => {
                       ))}
                     </SpecList>
 
-                    <PriceTag>{soloProduct?.priceRange}</PriceTag>
-
                     <BtnPrimary
                       href={`${WA_BASE}${encodeURIComponent(
                         "Hola, me interesa cotizar el Salvaescaleras Recto SOLO. ¿Pueden ayudarme?"
@@ -925,8 +923,6 @@ const SalvaescalerasPage = ({ menu, footer, salvaescalerasProducts }) => {
                         </SpecItem>
                       ))}
                     </SpecList>
-
-                    <PriceTag>{flexProduct?.priceRange}</PriceTag>
 
                     <BtnPrimary
                       href={`${WA_BASE}${encodeURIComponent(

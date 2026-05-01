@@ -264,7 +264,6 @@ function FeaturedProducts() {
                   </CategoryBadge>
                   <CardName>{product.name}</CardName>
                   <CardDesc>{product.description}</CardDesc>
-                  <CardPrice>{product.priceRange}</CardPrice>
                 </CardBody>
                 <CardActions>
                   <CardBtnOutline href={`/catalogo/${product.slug}`}>
@@ -292,12 +291,12 @@ function FeaturedProducts() {
 ───────────────────────────────────────────── */
 const SLIDES = [
   {
-    label: "Salvaescaleras",
-    heading: "Mejora la accesibilidad de tu hogar o negocio",
-    description: "Dispositivos salvaescaleras seguros y certificados con garantía profesional. Instalación en 1 día, sin obras.",
+    label: "Instalación de Ascensores",
+    heading: "Importación e instalación para tu proyecto",
+    description: "Ascensores para proyectos residenciales y comerciales. Asesoría personalizada y los mejores precios del mercado.",
     cta: "Más información",
-    href: "/catalogo/salvaescaleras",
-    image: "/images/products/salvaescaleras-recto-solo-v2.png",
+    href: "/catalogo",
+    image: "/images/slider-instalacion.png",
   },
   {
     label: "Mantenimiento Multimarca",
@@ -316,13 +315,14 @@ const SLIDES = [
     image: "/images/slider-reparacion.png",
   },
   {
-    label: "Instalación de Ascensores",
-    heading: "Importación e instalación para tu proyecto",
-    description: "Ascensores para proyectos residenciales y comerciales. Asesoría personalizada y los mejores precios del mercado.",
+    label: "Salvaescaleras",
+    heading: "Mejora la accesibilidad de tu hogar o negocio",
+    description: "Dispositivos salvaescaleras seguros y certificados con garantía profesional. Instalación en 1 día, sin obras.",
     cta: "Más información",
-    href: "/catalogo",
-    image: "/images/slider-instalacion.png",
+    href: "/catalogo/salvaescaleras",
+    image: "/images/products/salvaescaleras-recto-solo-v2.png",
   },
+
 ];
 
 const EmblaViewport = styled.div`

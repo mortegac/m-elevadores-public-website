@@ -683,8 +683,6 @@ function ProductCard({ product }) {
           </SpecChip>
         </SpecsRow>
 
-        <PriceLabel>{product.priceRange}</PriceLabel>
-
         <CardActions>
           <Link href={`/catalogo/${product.slug}`} passHref>
             <BtnSecondary>Ver detalles</BtnSecondary>

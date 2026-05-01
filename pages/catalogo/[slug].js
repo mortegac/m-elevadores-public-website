@@ -910,7 +910,6 @@ function ProductDetailPage({ product, relatedProducts, menu, footer }) {
               <RightColumn>
                 <QuoteCard>
                   <QuoteCardProductName>{product.name}</QuoteCardProductName>
-                  <PriceRange>{product.priceRange}</PriceRange>
                   <FreeVisitBadge>
                     <GreenTick aria-hidden="true">✓</GreenTick>
                     Visita técnica gratuita incluida
@@ -971,9 +970,6 @@ function ProductDetailPage({ product, relatedProducts, menu, footer }) {
                               {related.category}
                             </RelatedCardCategory>
                             <RelatedCardName>{related.name}</RelatedCardName>
-                            <RelatedCardPrice>
-                              {related.priceRange}
-                            </RelatedCardPrice>
                           </RelatedCardBody>
                         </RelatedCard>
                       </Link>
@@ -986,7 +982,6 @@ function ProductDetailPage({ product, relatedProducts, menu, footer }) {
 
           {/* ---- MOBILE STICKY BOTTOM BAR ---- */}
           <MobileStickyBar>
-            <MobilePriceLabel>{product.priceRange}</MobilePriceLabel>
             <MobileCTAButton
               href={whatsappUrl}
               target="_blank"

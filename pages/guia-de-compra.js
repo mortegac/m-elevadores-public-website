@@ -564,9 +564,9 @@ function getRecommendedSlug(answers) {
     return "salvaescaleras-recto-solo";
   }
 
-  // Casa + curva → salvaescaleras-curvo-flex
+  // Casa + curva → salvaescaleras-recto-solo (curvo-flex no longer available)
   if ((location === "casa" || location === "duplex") && space === "curva") {
-    return "salvaescaleras-curvo-flex";
+    return "salvaescaleras-recto-solo";
   }
 
   // Default
@@ -735,7 +735,6 @@ const GuiaDeCompraPage = ({ menu, footer }) => {
                     </ResultSpecItem>
                   </ResultSpecList>
 
-                  <ResultPrice>{recommendedProduct.priceRange}</ResultPrice>
                 </ResultCard>
 
                 <ResultActions>
