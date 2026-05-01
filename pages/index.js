@@ -305,7 +305,7 @@ const SLIDES = [
     description: "Técnicos certificados que cumplen toda la normativa vigente. Multimarca. ¡Solicita tu revisión ahora!",
     cta: "Más información",
     href: "/catalogo",
-    image: "/images/products/ascensor-detalles.png",
+    image: "/images/slider-mantenimiento.png",
   },
   {
     label: "Reparación y Normalización",
@@ -313,7 +313,7 @@ const SLIDES = [
     description: "Modernización de ascensores, reemplazo de piezas, actualización electrónica y certificación según normativa vigente.",
     cta: "Más información",
     href: "/catalogo/modernizacion-replus",
-    image: "/images/products/ascensor-traccion.png",
+    image: "/images/slider-reparacion.png",
   },
   {
     label: "Instalación de Ascensores",
@@ -321,18 +321,20 @@ const SLIDES = [
     description: "Ascensores para proyectos residenciales y comerciales. Asesoría personalizada y los mejores precios del mercado.",
     cta: "Más información",
     href: "/catalogo",
-    image: "/images/products/ascensor-rhx16.png",
+    image: "/images/slider-instalacion.png",
   },
 ];
 
 const EmblaViewport = styled.div`
   overflow: hidden;
   width: 100%;
+  background-color: #243C70;
 `;
 
 const EmblaContainer = styled.div`
   display: flex;
   touch-action: pan-y pinch-zoom;
+  background-color: #243C70;
 `;
 
 const EmblaSlide = styled.div`
