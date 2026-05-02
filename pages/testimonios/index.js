@@ -6,6 +6,7 @@ import styled from "styled-components";
 import { createClient } from "../../prismicio";
 import { Layout } from "../../components/common/Layout";
 import { TESTIMONIALS } from "../../lib/testimonials";
+import { PRODUCTS } from "../../lib/products";
 import CotizacionBanner from "../../components/common/CotizacionBanner";
 
 const SITE = process.env.NEXT_PUBLIC_SITENAME || "https://www.melevadores.cl";
@@ -255,6 +256,100 @@ const PersonMeta = styled.span`
   font-size: 14px;
   font-weight: 500;
   color: #605e5c;
+`;
+
+// ─── Products section ─────────────────────────────────────────────────────────
+
+const ProductsSection = styled.section`
+  background: #ffffff;
+  padding: 56px 0;
+
+  @media (max-width: 960px) {
+    padding: 40px 0;
+  }
+`;
+
+const ProductsSectionTitle = styled.h2`
+  font-family: Quicksand, sans-serif;
+  font-size: 32px;
+  font-weight: 800;
+  line-height: 40px;
+  && { color: #001133; }
+  margin: 0 0 8px;
+  text-align: center;
+`;
+
+const ProductsSectionSubtitle = styled.p`
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 24px;
+  && { color: #605e5c; }
+  margin: 0 0 40px;
+  text-align: center;
+`;
+
+const ProductsGrid = styled.div`
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+
+  @media (max-width: 960px) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  @media (max-width: 600px) {
+    grid-template-columns: 1fr;
+  }
+`;
+
+const ProductCard = styled.a`
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 16px;
+  background: #f8fafc;
+  border: 1.5px solid #e2e8f0;
+  border-radius: 10px;
+  text-decoration: none;
+  transition: border-color 0.2s, box-shadow 0.2s;
+
+  &:hover {
+    border-color: #0066cc;
+    box-shadow: 0 4px 16px rgba(0, 102, 204, 0.1);
+  }
+`;
+
+const ProductCardImg = styled.img`
+  width: 72px;
+  height: 56px;
+  object-fit: cover;
+  border-radius: 6px;
+  flex-shrink: 0;
+  background: #e8ecf2;
+`;
+
+const ProductCardInfo = styled.div`
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  min-width: 0;
+`;
+
+const ProductCardName = styled.span`
+  font-family: Quicksand, sans-serif;
+  font-size: 13px;
+  font-weight: 700;
+  color: #001133;
+  line-height: 1.3;
+`;
+
+const ProductCardCategory = styled.span`
+  font-family: Quicksand, sans-serif;
+  font-size: 11px;
+  font-weight: 600;
+  color: #0066cc;
+  text-transform: uppercase;
+  letter-spacing: 0.4px;
 `;
 
 // ─── CTA section ─────────────────────────────────────────────────────────────
@@ -513,6 +608,42 @@ const TestimoniosPage = ({ menu, footer }) => {
 
           {/* ── Cotización exprés ────────────────────────────────────── */}
           <CotizacionBanner products={[]} />
+
+          {/* ── Catálogo de productos ─────────────────────────────── */}
+          <ProductsSection>
+            <Container>
+              <ProductsSectionTitle>Nuestros productos</ProductsSectionTitle>
+              <ProductsSectionSubtitle>
+                Soluciones de accesibilidad y elevación certificadas para cada necesidad
+              </ProductsSectionSubtitle>
+              <ProductsGrid>
+                {PRODUCTS.map((product) => (
+                  <Link key={product.slug} href={`/catalogo/${product.slug}`} passHref>
+                    <ProductCard>
+                      {product.image ? (
+                        <ProductCardImg
+                          src={product.image}
+                          alt={product.name}
+                          loading="lazy"
+                          width="72"
+                          height="56"
+                        />
+                      ) : (
+                        <ProductCardImg
+                          as="div"
+                          style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: '24px' }}
+                        />
+                      )}
+                      <ProductCardInfo>
+                        <ProductCardName>{product.name}</ProductCardName>
+                        <ProductCardCategory>{product.category}</ProductCardCategory>
+                      </ProductCardInfo>
+                    </ProductCard>
+                  </Link>
+                ))}
+              </ProductsGrid>
+            </Container>
+          </ProductsSection>
 
           {/* ── CTA section ───────────────────────────────────────────── */}
           <CtaSection>

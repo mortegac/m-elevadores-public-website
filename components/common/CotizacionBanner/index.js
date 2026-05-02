@@ -250,7 +250,7 @@ export default function CotizacionBanner({ products = [] }) {
             <Subtext>
               Envíanos una foto de tu escalera o hueco de ascensor. Te
               confirmamos viabilidad en menos de 24 horas y agendamos visita
-              técnica sin costo.
+              técnica sin costo dependiendo de la región en donde te encuentres.
             </Subtext>
             <ButtonsRow>
               <BtnWhite
