@@ -113,43 +113,52 @@ const SlideLabel = styled.span`
 
 const SlideH2 = styled.h2`
   font-family: Quicksand, sans-serif;
-  font-size: 52px;
-  font-weight: 800;
-  line-height: 1.1;
+  margin: 0;
   && {
+    font-size: 52px;
+    font-weight: 800;
+    line-height: 1.1;
     color: #ffffff;
   }
-  margin: 0;
 
   @media (max-width: 959px) {
-    font-size: 30px;
-    line-height: 1.2;
+    && {
+      font-size: 30px;
+      line-height: 1.2;
+    }
   }
 
   @media (max-width: 480px) {
-    font-size: 24px;
-    line-height: 1.25;
+    && {
+      font-size: 22px;
+      line-height: 1.25;
+    }
   }
 `;
 
 const SlideP = styled.p`
   font-family: Quicksand, sans-serif;
-  font-size: 17px;
-  line-height: 1.6;
-  && {
-    color: rgba(255, 255, 255, 0.82);
-  }
   margin: 0;
   max-width: 440px;
+  && {
+    font-size: 17px;
+    line-height: 1.6;
+    color: rgba(255, 255, 255, 0.82);
+  }
 
   @media (max-width: 959px) {
     max-width: 100%;
-    font-size: 15px;
-    line-height: 1.5;
+    && {
+      font-size: 15px;
+      line-height: 1.5;
+    }
   }
 
   @media (max-width: 480px) {
-    font-size: 14px;
+    && {
+      font-size: 14px;
+      line-height: 1.5;
+    }
   }
 `;
 
