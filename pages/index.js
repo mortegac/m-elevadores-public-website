@@ -129,10 +129,13 @@ const CardBody = styled.div`
 `;
 
 const CATEGORY_META = {
-  salvaescaleras: { color: "#E8F4FD", text: "#0066CC", emoji: "🛗", label: "Salvaescaleras" },
-  plataformas:    { color: "#EDF7F0", text: "#1A7A3B", emoji: "♿", label: "Plataforma" },
-  ascensores:     { color: "#EEF2FF", text: "#3B47CC", emoji: "🏢", label: "Ascensor" },
-  modernizacion:  { color: "#FFF3E0", text: "#BF6000", emoji: "🔧", label: "Modernización" },
+  salvaescaleras: { color: "#E8F4FD", text: "#0066CC", emoji: "🛗",  label: "Salvaescaleras" },
+  plataformas:    { color: "#EDF7F0", text: "#1A7A3B", emoji: "♿",  label: "Plataforma" },
+  ascensores:     { color: "#EEF2FF", text: "#3B47CC", emoji: "🏢",  label: "Ascensor" },
+  modernizacion:  { color: "#FFF3E0", text: "#BF6000", emoji: "🔧",  label: "Modernización" },
+  montacargas:    { color: "#FFF3E0", text: "#FF6F00", emoji: "📦",  label: "Montacargas" },
+  alzahombres:    { color: "#E8F5E9", text: "#1B5E20", emoji: "🦺",  label: "Alza Hombres" },
+  escaleras:      { color: "#F3E5F5", text: "#6A1B9A", emoji: "🏗️", label: "Escalera Mecánica" },
 };
 
 const CategoryBadge = styled.span`
