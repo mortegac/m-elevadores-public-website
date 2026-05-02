@@ -194,18 +194,18 @@ const Select = styled.select`
 const SubmitBtn = styled.button`
   width: 100%;
   height: 52px;
-  background: #0066cc;
+  background: ${({ disabled }) => (disabled ? "#94b8e0" : "#0066cc")};
   color: #ffffff;
   border-radius: 22px;
   font-family: Quicksand, sans-serif;
   font-size: 16px;
   font-weight: 700;
   border: none;
-  cursor: pointer;
+  cursor: ${({ disabled }) => (disabled ? "not-allowed" : "pointer")};
   margin-top: 8px;
   transition: background 0.18s;
 
-  &:hover {
+  &:hover:not(:disabled) {
     background: #0052a3;
   }
 `;
@@ -217,20 +217,105 @@ const TrustText = styled.p`
   margin: 14px 0 0;
 `;
 
+const FieldError = styled.span`
+  font-size: 12px;
+  color: #e53935;
+  font-family: Quicksand, sans-serif;
+  margin-top: 4px;
+  display: block;
+`;
+
+const StatusBanner = styled.div`
+  padding: 12px 16px;
+  border-radius: 8px;
+  font-size: 14px;
+  font-family: Quicksand, sans-serif;
+  font-weight: 600;
+  margin-bottom: 12px;
+  background: ${({ type }) => (type === "success" ? "#e8f5e9" : "#ffebee")};
+  color: ${({ type }) => (type === "success" ? "#2e7d32" : "#c62828")};
+  border: 1px solid ${({ type }) => (type === "success" ? "#a5d6a7" : "#ef9a9a")};
+`;
+
+// ─── Validation ───────────────────────────────────────────────────────────────
+
+function validateFields({ nombre, telefono, producto }) {
+  const errors = {};
+  if (!nombre.trim()) errors.nombre = "El nombre es requerido.";
+  if (!telefono.trim()) {
+    errors.telefono = "El teléfono es requerido.";
+  } else if (!/^[\d\s+\-().]{6,20}$/.test(telefono.trim())) {
+    errors.telefono = "Ingresa un teléfono válido (ej: +56 9 1234 5678).";
+  }
+  if (!producto) errors.producto = "Selecciona un producto.";
+  return errors;
+}
+
 // ─── Component ────────────────────────────────────────────────────────────────
 
 export default function CotizacionBanner({ products = [] }) {
   const [nombre, setNombre] = useState("");
   const [telefono, setTelefono] = useState("");
   const [producto, setProducto] = useState("");
+  const [errors, setErrors] = useState({});
+  const [loading, setLoading] = useState(false);
+  const [status, setStatus] = useState(null); // null | 'success' | 'error'
+  const [statusMessage, setStatusMessage] = useState("");
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    const msg = `Hola, quiero cotizar. Nombre: ${nombre}. Teléfono: ${telefono}. Producto: ${producto || "No especificado"}.`;
-    window.open(
-      `https://wa.me/56959382761?text=${encodeURIComponent(msg)}`,
-      "_blank"
-    );
+
+    console.log("[CotizacionBanner] Submit iniciado", { nombre, telefono, producto });
+
+    // Client-side validation
+    const fieldErrors = validateFields({ nombre, telefono, producto });
+    if (Object.keys(fieldErrors).length > 0) {
+      console.log("[CotizacionBanner] Errores de validación:", fieldErrors);
+      setErrors(fieldErrors);
+      setStatus(null);
+      return;
+    }
+
+    setErrors({});
+    setLoading(true);
+    setStatus(null);
+    setStatusMessage("");
+
+    const payload = { nombre: nombre.trim(), telefono: telefono.trim(), producto };
+    console.log("[CotizacionBanner] Enviando payload a /api/cotizacion:", payload);
+
+    try {
+      const res = await fetch("/api/cotizacion", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(payload),
+      });
+
+      console.log("[CotizacionBanner] Respuesta HTTP status:", res.status);
+
+      const data = await res.json();
+      console.log("[CotizacionBanner] Respuesta JSON:", data);
+
+      if (res.ok && data.ok) {
+        setStatus("success");
+        setStatusMessage(data.message || "¡Formulario enviado! Te contactaremos pronto.");
+        setNombre("");
+        setTelefono("");
+        setProducto("");
+        console.log("[CotizacionBanner] ✅ Éxito:", data.message);
+      } else {
+        setStatus("error");
+        setStatusMessage(data.message || "Ocurrió un error. Intenta de nuevo.");
+        console.error("[CotizacionBanner] ❌ Error de API:", data.message);
+      }
+    } catch (err) {
+      console.error("[CotizacionBanner] ❌ Error de red:", err.message);
+      setStatus("error");
+      setStatusMessage("No pudimos conectarnos al servidor. Intenta más tarde.");
+    } finally {
+      setLoading(false);
+      console.log("[CotizacionBanner] Submit finalizado, loading=false");
+    }
   };
 
   const photoUrl =
@@ -277,6 +362,10 @@ export default function CotizacionBanner({ products = [] }) {
               <CardSubtitle>Te respondemos el mismo día hábil.</CardSubtitle>
 
               <form onSubmit={handleSubmit} noValidate>
+                {status && (
+                  <StatusBanner type={status}>{statusMessage}</StatusBanner>
+                )}
+
                 <FieldStack>
                   <FieldWrapper>
                     <FieldLabel htmlFor="cotizacion-nombre">Nombre</FieldLabel>
@@ -285,9 +374,11 @@ export default function CotizacionBanner({ products = [] }) {
                       type="text"
                       placeholder="Nombre y apellido"
                       value={nombre}
-                      onChange={(e) => setNombre(e.target.value)}
-                      required
+                      onChange={(e) => { setNombre(e.target.value); setErrors((p) => ({ ...p, nombre: undefined })); }}
+                      style={errors.nombre ? { borderColor: "#e53935" } : {}}
+                      disabled={loading}
                     />
+                    {errors.nombre && <FieldError>{errors.nombre}</FieldError>}
                   </FieldWrapper>
 
                   <FieldWrapper>
@@ -299,9 +390,11 @@ export default function CotizacionBanner({ products = [] }) {
                       type="tel"
                       placeholder="+56 9..."
                       value={telefono}
-                      onChange={(e) => setTelefono(e.target.value)}
-                      required
+                      onChange={(e) => { setTelefono(e.target.value); setErrors((p) => ({ ...p, telefono: undefined })); }}
+                      style={errors.telefono ? { borderColor: "#e53935" } : {}}
+                      disabled={loading}
                     />
+                    {errors.telefono && <FieldError>{errors.telefono}</FieldError>}
                   </FieldWrapper>
 
                   <FieldWrapper>
@@ -311,7 +404,9 @@ export default function CotizacionBanner({ products = [] }) {
                     <Select
                       id="cotizacion-producto"
                       value={producto}
-                      onChange={(e) => setProducto(e.target.value)}
+                      onChange={(e) => { setProducto(e.target.value); setErrors((p) => ({ ...p, producto: undefined })); }}
+                      style={errors.producto ? { borderColor: "#e53935" } : {}}
+                      disabled={loading}
                     >
                       <option value="">Selecciona un producto</option>
                       {products.map((p) => (
@@ -323,10 +418,13 @@ export default function CotizacionBanner({ products = [] }) {
                         No estoy seguro/a
                       </option>
                     </Select>
+                    {errors.producto && <FieldError>{errors.producto}</FieldError>}
                   </FieldWrapper>
                 </FieldStack>
 
-                <SubmitBtn type="submit">Cotizar por WhatsApp</SubmitBtn>
+                <SubmitBtn type="submit" disabled={loading}>
+                  {loading ? "Enviando..." : "Recibir cotización"}
+                </SubmitBtn>
               </form>
 
               <TrustText>
