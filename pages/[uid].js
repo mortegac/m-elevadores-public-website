@@ -5,6 +5,7 @@ import { createClient, linkResolver } from "../prismicio";
 import { components } from "../slices/index";
 import { Layout } from "../components/common/Layout";
 import CotizacionBanner from "../components/common/CotizacionBanner";
+import EmblaCarousel from "../components/common/EmblaCarousel";
 import { PRODUCTS } from "../lib/products";
 
 const Page = (props) => {
@@ -29,6 +30,7 @@ const Page = (props) => {
       page={page}
       activeDocMeta={activeDoc}
     >
+      {page?.uid === "cotiza" && <EmblaCarousel />}
       <SliceZone slices={page?.data?.slices} components={components} />
       {page?.uid === "nosotros" && <CotizacionBanner products={PRODUCTS} />}
     </Layout>
