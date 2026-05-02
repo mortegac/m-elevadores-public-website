@@ -1,5 +1,7 @@
 import React, { useState } from "react";
-import styled from "styled-components";
+import styled, { createGlobalStyle } from "styled-components";
+import PhoneInput, { isValidPhoneNumber } from "react-phone-number-input";
+import "react-phone-number-input/style.css";
 
 // ─── Styled components ────────────────────────────────────────────────────────
 
@@ -225,6 +227,67 @@ const FieldError = styled.span`
   display: block;
 `;
 
+const PhoneInputGlobal = createGlobalStyle`
+  .PhoneInput {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    width: 100%;
+    height: 48px;
+    border: 1.5px solid ${({ hasError }) => (hasError ? "#e53935" : "#e2e8f0")};
+    border-radius: 8px;
+    padding: 0 14px;
+    background: #ffffff;
+    box-sizing: border-box;
+    transition: border-color 0.18s;
+  }
+  .PhoneInput:focus-within {
+    border-color: #0066cc;
+    outline: none;
+  }
+  .PhoneInputCountry {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    flex-shrink: 0;
+  }
+  .PhoneInputCountrySelect {
+    border: none;
+    background: transparent;
+    font-family: Quicksand, sans-serif;
+    font-size: 14px;
+    cursor: pointer;
+    outline: none;
+    padding: 0;
+  }
+  .PhoneInputCountryIcon {
+    width: 24px;
+    height: 18px;
+    border-radius: 2px;
+    overflow: hidden;
+    flex-shrink: 0;
+  }
+  .PhoneInputInput {
+    flex: 1;
+    border: none;
+    outline: none;
+    font-family: Quicksand, sans-serif;
+    font-size: 15px;
+    color: #323130;
+    background: transparent;
+    height: 100%;
+  }
+  .PhoneInputInput::placeholder {
+    color: #a19f9d;
+  }
+`;
+
+const PhoneInputError = styled.div`
+  .PhoneInput {
+    border-color: #e53935 !important;
+  }
+`;
+
 const StatusBanner = styled.div`
   padding: 12px 16px;
   border-radius: 8px;
@@ -242,10 +305,10 @@ const StatusBanner = styled.div`
 function validateFields({ nombre, telefono, producto }) {
   const errors = {};
   if (!nombre.trim()) errors.nombre = "El nombre es requerido.";
-  if (!telefono.trim()) {
+  if (!telefono) {
     errors.telefono = "El teléfono es requerido.";
-  } else if (!/^[\d\s+\-().]{6,20}$/.test(telefono.trim())) {
-    errors.telefono = "Ingresa un teléfono válido (ej: +56 9 1234 5678).";
+  } else if (!isValidPhoneNumber(telefono)) {
+    errors.telefono = "Ingresa un número de teléfono válido.";
   }
   if (!producto) errors.producto = "Selecciona un producto.";
   return errors;
@@ -326,6 +389,7 @@ export default function CotizacionBanner({ products = [] }) {
 
   return (
     <Section aria-label="Cotización exprés">
+      <PhoneInputGlobal hasError={!!errors.telefono} />
       <Inner>
         <Grid>
           {/* ── Left column ───────────────────────────────────────────── */}
@@ -385,15 +449,21 @@ export default function CotizacionBanner({ products = [] }) {
                     <FieldLabel htmlFor="cotizacion-telefono">
                       Teléfono / WhatsApp
                     </FieldLabel>
-                    <Input
-                      id="cotizacion-telefono"
-                      type="tel"
-                      placeholder="+56 9..."
-                      value={telefono}
-                      onChange={(e) => { setTelefono(e.target.value); setErrors((p) => ({ ...p, telefono: undefined })); }}
-                      style={errors.telefono ? { borderColor: "#e53935" } : {}}
-                      disabled={loading}
-                    />
+                    <PhoneInputError style={errors.telefono ? {} : { display: "contents" }}>
+                      <PhoneInput
+                        id="cotizacion-telefono"
+                        defaultCountry="CL"
+                        value={telefono}
+                        onChange={(value) => {
+                          setTelefono(value || "");
+                          setErrors((p) => ({ ...p, telefono: undefined }));
+                        }}
+                        placeholder="+56 9 1234 5678"
+                        disabled={loading}
+                        international
+                        countryCallingCodeEditable={false}
+                      />
+                    </PhoneInputError>
                     {errors.telefono && <FieldError>{errors.telefono}</FieldError>}
                   </FieldWrapper>
 
