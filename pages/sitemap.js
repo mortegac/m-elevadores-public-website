@@ -159,7 +159,6 @@ const CATALOG_INDEX = [
 
 const CATALOG_PRODUCTS = [
   { href: "/catalogo/salvaescaleras-recto-solo",     label: "Salvaescaleras Recto SOLO" },
-  { href: "/catalogo/salvaescaleras-curvo-flex",     label: "Salvaescaleras Curvo FLEX" },
   { href: "/catalogo/plataforma-vertical-dignity",   label: "Plataforma Vertical DIGNITY" },
   { href: "/catalogo/plataforma-inclinada-access",   label: "Plataforma Inclinada ACCESS" },
   { href: "/catalogo/ascensor-residencial-home",     label: "Ascensor Residencial HOME" },
