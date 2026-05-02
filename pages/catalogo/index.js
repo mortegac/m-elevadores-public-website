@@ -18,6 +18,8 @@ const CATEGORY_COLORS = {
   ascensores: "#243C70",
   escaleras: "#1565C0",
   modernizacion: "#E65100",
+  montacargas: "#FF6F00",
+  alzahombres: "#1B5E20",
 };
 
 const CATEGORY_BG = {
@@ -26,6 +28,8 @@ const CATEGORY_BG = {
   ascensores: "#E8EBF5",
   escaleras: "#E3F2FD",
   modernizacion: "#FFF3E0",
+  montacargas: "#FFF3E0",
+  alzahombres: "#E8F5E9",
 };
 
 // ─── Layout primitives ────────────────────────────────────────────────────────
