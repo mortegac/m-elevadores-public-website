@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import styled, { createGlobalStyle } from "styled-components";
 import PhoneInput, { isValidPhoneNumber } from "react-phone-number-input";
-import "react-phone-number-input/style.css";
 
 // ─── Styled components ────────────────────────────────────────────────────────
 
@@ -234,7 +233,7 @@ const PhoneInputGlobal = createGlobalStyle`
     gap: 8px;
     width: 100%;
     height: 48px;
-    border: 1.5px solid ${({ hasError }) => (hasError ? "#e53935" : "#e2e8f0")};
+    border: 1.5px solid #e2e8f0;
     border-radius: 8px;
     padding: 0 14px;
     background: #ffffff;
@@ -248,7 +247,7 @@ const PhoneInputGlobal = createGlobalStyle`
   .PhoneInputCountry {
     display: flex;
     align-items: center;
-    gap: 6px;
+    gap: 4px;
     flex-shrink: 0;
   }
   .PhoneInputCountrySelect {
@@ -258,13 +257,36 @@ const PhoneInputGlobal = createGlobalStyle`
     font-size: 14px;
     cursor: pointer;
     outline: none;
-    padding: 0;
+    padding: 0 4px 0 0;
+    appearance: none;
+    -webkit-appearance: none;
+    color: #323130;
   }
   .PhoneInputCountryIcon {
     width: 24px;
     height: 18px;
-    border-radius: 2px;
     overflow: hidden;
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+  }
+  .PhoneInputCountryIcon--square {
+    width: 20px;
+    height: 20px;
+  }
+  .PhoneInputCountryIconImg {
+    display: block;
+    width: 100%;
+    height: auto;
+  }
+  .PhoneInputCountrySelectArrow {
+    display: block;
+    width: 0;
+    height: 0;
+    border-left: 4px solid transparent;
+    border-right: 4px solid transparent;
+    border-top: 5px solid #605e5c;
+    margin-left: 2px;
     flex-shrink: 0;
   }
   .PhoneInputInput {
@@ -276,9 +298,13 @@ const PhoneInputGlobal = createGlobalStyle`
     color: #323130;
     background: transparent;
     height: 100%;
+    min-width: 0;
   }
   .PhoneInputInput::placeholder {
     color: #a19f9d;
+  }
+  .PhoneInput--focus {
+    border-color: #0066cc;
   }
 `;
 

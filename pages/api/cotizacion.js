@@ -186,14 +186,55 @@ function buildInboxInput({ nombre, email, telefono, producto, customerId }) {
     // fromEmail omitted — GSI key, DynamoDB rejects empty strings
     bodyText,
     snippet: `${nombreStr} - ${emailStr} - ${productoStr}`.slice(0, 200),
-    type: "WEB-FORM",
+    type: "PAGINA-WEB",
     source: "melevadores.cl",
     isRead: false,
     hasAttachments: false,
     toEmails: ["contacto@melevadores.cl"],
-    labels: ["WEB-FORM"],
+    labels: ["PAGINA-WEB"],
     ...(customerId && { customerId }),
   };
+}
+
+// ─── EmailJS (server-side REST API call) ─────────────────────────────────────
+
+const EMAILJS_SERVICE  = "service_q11ht56";
+const EMAILJS_TEMPLATE = "template_wn0oacf";
+const EMAILJS_USER     = "qn8t4Q--1S8ntkmL4";
+
+async function sendEmailJS({ customer, inbox, producto }) {
+  const templateParams = {
+    to_name:     "M-Elevadores",
+    from_name:   customer.name  || "",
+    from_email:  customer.email || "",
+    phone:       customer.phone || "",
+    service:     producto        || "No especificado",
+    message_id:  inbox?.id       || "",
+    customer_id: customer.id     || "",
+    reply_to:    customer.email  || "",
+  };
+
+  console.log("[cotizacion] Sending EmailJS:", EMAILJS_SERVICE, EMAILJS_TEMPLATE, templateParams);
+
+  const res = await fetch("https://api.emailjs.com/api/v1.0/email/send", {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({
+      service_id:      EMAILJS_SERVICE,
+      template_id:     EMAILJS_TEMPLATE,
+      user_id:         EMAILJS_USER,
+      template_params: templateParams,
+    }),
+  });
+
+  const text = await res.text();
+  console.log("[cotizacion] EmailJS response:", res.status, text);
+
+  if (!res.ok) {
+    // Non-blocking — log but don't fail the request
+    console.error("[cotizacion] EmailJS error:", res.status, text);
+  }
+  return res.ok;
 }
 
 // ─── Handler ──────────────────────────────────────────────────────────────────
@@ -248,6 +289,19 @@ export default async function handler(req, res) {
     const data = await appsync(CREATE_INBOX_MUTATION, { input });
     const record = data?.createV2GmailInbox;
     console.log("[cotizacion] Inbox record created:", record?.id);
+
+    // Step 3: Send notification email via EmailJS (non-blocking — won't fail the response)
+    console.log("[cotizacion] Step 3: Send EmailJS notification");
+    sendEmailJS({
+      customer: {
+        id:    customer?.id    || "",
+        name:  customer?.name  || cleanNombre,
+        email: customer?.email || cleanEmail,
+        phone: customer?.phone || cleanTelefono,
+      },
+      inbox:    record,
+      producto: cleanProducto,
+    }).catch((err) => console.error("[cotizacion] EmailJS send error:", err.message));
 
     return res.status(200).json({
       ok: true,
