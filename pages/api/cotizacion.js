@@ -121,40 +121,59 @@ async function appsync(query, variables) {
 }
 
 // ─── Customer upsert ──────────────────────────────────────────────────────────
+// Flow:
+//   1. Query listV2Customers by email
+//   2a. Found → get existing id → update name/phone → return {id, name, email, phone}
+//   2b. Not found → createV2Customer → return {id, name, email, phone}
 
 async function upsertCustomer({ nombre, email, telefono }) {
-  console.log("[cotizacion] Looking up customer by email:", email);
-
+  // Step 1: search by email to avoid duplicates
+  console.log("[cotizacion] Step 1a: Searching customer by email:", email);
   const listData = await appsync(FIND_CUSTOMER_BY_EMAIL, {
     filter: { email: { eq: email } },
   });
 
   const existing = listData?.listV2Customers?.items?.[0];
 
-  if (existing) {
-    console.log("[cotizacion] Customer found, updating:", existing.id);
+  if (existing?.id) {
+    // Step 2a: customer found — update and return existing id
+    console.log("[cotizacion] Step 2a: Customer found id=" + existing.id + " → updating name/phone");
     const updateData = await appsync(UPDATE_CUSTOMER, {
       input: {
-        id: existing.id,
-        name: nombre,
+        id:    existing.id,
+        name:  nombre,
         phone: telefono,
         status: existing.status || "lead",
       },
     });
-    return updateData?.updateV2Customer;
-  } else {
-    console.log("[cotizacion] Customer not found, creating new");
-    const createData = await appsync(CREATE_CUSTOMER, {
-      input: {
-        name: nombre,
-        email: email,
-        phone: telefono,
-        status: "lead",
-        requestDate: new Date().toISOString().slice(0, 10),
-      },
-    });
-    return createData?.createV2Customer;
+    const updated = updateData?.updateV2Customer;
+    // Always return the found id even if update partially fails
+    return {
+      id:    updated?.id    || existing.id,
+      name:  updated?.name  || nombre,
+      email: updated?.email || existing.email,
+      phone: updated?.phone || telefono,
+    };
   }
+
+  // Step 2b: no customer found — create new
+  console.log("[cotizacion] Step 2b: Customer not found → creating new");
+  const createData = await appsync(CREATE_CUSTOMER, {
+    input: {
+      name:        nombre,
+      email:       email,
+      phone:       telefono,
+      status:      "lead",
+      requestDate: new Date().toISOString().slice(0, 10),
+    },
+  });
+  const created = createData?.createV2Customer;
+  return {
+    id:    created?.id,
+    name:  created?.name  || nombre,
+    email: created?.email || email,
+    phone: created?.phone || telefono,
+  };
 }
 
 // ─── Inbox input builder ──────────────────────────────────────────────────────
