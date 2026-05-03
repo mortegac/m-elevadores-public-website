@@ -50,8 +50,8 @@ const CREATE_INBOX_MUTATION = /* GraphQL */ `
 `;
 
 const FIND_CUSTOMER_BY_EMAIL = /* GraphQL */ `
-  query ListV2Customers($filter: ModelV2CustomerFilterInput) {
-    listV2Customers(filter: $filter) {
+  query ListV2CustomerByEmail($email: String!) {
+    listV2CustomerByEmail(email: $email, limit: 1) {
       items {
         id
         name
@@ -122,18 +122,16 @@ async function appsync(query, variables) {
 
 // ─── Customer upsert ──────────────────────────────────────────────────────────
 // Flow:
-//   1. Query listV2Customers by email
+//   1. Query listV2CustomerByEmail (byEmail GSI) to avoid table scan
 //   2a. Found → get existing id → update name/phone → return {id, name, email, phone}
 //   2b. Not found → createV2Customer → return {id, name, email, phone}
 
 async function upsertCustomer({ nombre, email, telefono }) {
   // Step 1: search by email to avoid duplicates
   console.log("[cotizacion] Step 1a: Searching customer by email:", email);
-  const listData = await appsync(FIND_CUSTOMER_BY_EMAIL, {
-    filter: { email: { eq: email } },
-  });
+  const listData = await appsync(FIND_CUSTOMER_BY_EMAIL, { email });
 
-  const existing = listData?.listV2Customers?.items?.[0];
+  const existing = listData?.listV2CustomerByEmail?.items?.[0];
 
   if (existing?.id) {
     // Step 2a: customer found — update and return existing id

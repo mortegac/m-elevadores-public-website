@@ -2,6 +2,7 @@ import React, { useState, useEffect, useRef, useReducer } from "react";
 import { useForm } from "react-hook-form";
 import Link from "next/link";
 import emailjs, { init } from "emailjs-com";
+import PhoneInput, { isValidPhoneNumber } from "react-phone-number-input";
 
 import { SliceFactory } from "../../../../common/Containers";
 import {
@@ -25,6 +26,7 @@ const Base = (slice) => {
     text: "Parece que no podemos encontrar la página que estás buscando",
   });
   const [emailValue, setEmailValue] = useState("");
+  const [phoneValue, setPhoneValue] = useState("");
 
   const {
     register,
@@ -45,6 +47,11 @@ const Base = (slice) => {
       title: "Espera por un momento ⌛",
       text: "Estamos enviando su solicitud.",
     });
+
+    if (phoneValue && !isValidPhoneNumber(phoneValue)) {
+      // optionally show an error, for now just log
+      console.warn("[Contact] Invalid phone number:", phoneValue);
+    }
 
     const templateParams = {
       from_name: data.firstname,
@@ -69,6 +76,7 @@ const Base = (slice) => {
             text: "Nos pondremos en contacto lo antes posible.",
             response: response || "",
           });
+          setPhoneValue("");
         },
         function (error) {
           setIsSentEmail({
@@ -168,20 +176,36 @@ const Base = (slice) => {
             </span>
 
             {/* --------  PHONE --------- */}
-            <label htmlFor="phone">{name[0].text || "Teléfono"}</label>
-            <input
-              {...register("phone", {
-                required: true,
-                minLength: 12,
-              })}
-              type="text"
-              name="phone"
-              id="phone"
-              className={errors.phone && "error"}
-            />
-            <span className="error">
-              {errors.phone && "Por favor ingrese su teléfono"}
-            </span>
+            <div>
+              <label htmlFor="cotizacion-contact-phone">
+                {name[0].text || "Teléfono"}
+              </label>
+              <PhoneInput
+                id="cotizacion-contact-phone"
+                defaultCountry="CL"
+                value={phoneValue}
+                onChange={(value) => {
+                  setPhoneValue(value || "");
+                  setValue("phone", value || "");
+                }}
+                placeholder="+56 9 1234 5678"
+                international
+                countryCallingCodeEditable={false}
+                style={{
+                  display: "flex",
+                  alignItems: "center",
+                  gap: "8px",
+                  width: "100%",
+                  height: "48px",
+                  border: "1.5px solid #e2e8f0",
+                  borderRadius: "8px",
+                  padding: "0 14px",
+                  background: "#ffffff",
+                  boxSizing: "border-box",
+                }}
+              />
+              {errors.phone && <span className="error-msg">Por favor ingrese su teléfono válido</span>}
+            </div>
 
             {/* --------  SERVICE --------- */}
             <label htmlFor="service">
