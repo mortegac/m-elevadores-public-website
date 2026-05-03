@@ -302,9 +302,14 @@ const StatusBanner = styled.div`
 
 // ─── Validation ───────────────────────────────────────────────────────────────
 
-function validateFields({ nombre, telefono, producto }) {
+function validateFields({ nombre, email, telefono, producto }) {
   const errors = {};
   if (!nombre.trim()) errors.nombre = "El nombre es requerido.";
+  if (!email.trim()) {
+    errors.email = "El email es requerido.";
+  } else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email.trim())) {
+    errors.email = "Ingresa un email válido.";
+  }
   if (!telefono) {
     errors.telefono = "El teléfono es requerido.";
   } else if (!isValidPhoneNumber(telefono)) {
@@ -318,6 +323,7 @@ function validateFields({ nombre, telefono, producto }) {
 
 export default function CotizacionBanner({ products = [] }) {
   const [nombre, setNombre] = useState("");
+  const [email, setEmail] = useState("");
   const [telefono, setTelefono] = useState("");
   const [producto, setProducto] = useState("");
   const [errors, setErrors] = useState({});
@@ -328,10 +334,10 @@ export default function CotizacionBanner({ products = [] }) {
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    console.log("[CotizacionBanner] Submit iniciado", { nombre, telefono, producto });
+    console.log("[CotizacionBanner] Submit iniciado", { nombre, email, telefono, producto });
 
     // Client-side validation
-    const fieldErrors = validateFields({ nombre, telefono, producto });
+    const fieldErrors = validateFields({ nombre, email, telefono, producto });
     if (Object.keys(fieldErrors).length > 0) {
       console.log("[CotizacionBanner] Errores de validación:", fieldErrors);
       setErrors(fieldErrors);
@@ -344,7 +350,7 @@ export default function CotizacionBanner({ products = [] }) {
     setStatus(null);
     setStatusMessage("");
 
-    const payload = { nombre: nombre.trim(), telefono: telefono.trim(), producto };
+    const payload = { nombre: nombre.trim(), email: email.trim(), telefono: telefono.trim(), producto };
     console.log("[CotizacionBanner] Enviando payload a /api/cotizacion:", payload);
 
     try {
@@ -363,6 +369,7 @@ export default function CotizacionBanner({ products = [] }) {
         setStatus("success");
         setStatusMessage(data.message || "¡Formulario enviado! Te contactaremos pronto.");
         setNombre("");
+        setEmail("");
         setTelefono("");
         setProducto("");
         console.log("[CotizacionBanner] ✅ Éxito:", data.message);
@@ -446,6 +453,20 @@ export default function CotizacionBanner({ products = [] }) {
                   </FieldWrapper>
 
                   <FieldWrapper>
+                    <FieldLabel htmlFor="cotizacion-email">Email</FieldLabel>
+                    <Input
+                      id="cotizacion-email"
+                      type="email"
+                      placeholder="tu@email.com"
+                      value={email}
+                      onChange={(e) => { setEmail(e.target.value); setErrors((p) => ({ ...p, email: undefined })); }}
+                      style={errors.email ? { borderColor: "#e53935" } : {}}
+                      disabled={loading}
+                    />
+                    {errors.email && <FieldError>{errors.email}</FieldError>}
+                  </FieldWrapper>
+
+                  <FieldWrapper>
                     <FieldLabel htmlFor="cotizacion-telefono">
                       Teléfono / WhatsApp
                     </FieldLabel>
@@ -469,7 +490,7 @@ export default function CotizacionBanner({ products = [] }) {
 
                   <FieldWrapper>
                     <FieldLabel htmlFor="cotizacion-producto">
-                      ¿Qué producto te interesa?
+                      Servicio requerido
                     </FieldLabel>
                     <Select
                       id="cotizacion-producto"
