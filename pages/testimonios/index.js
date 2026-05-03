@@ -9,6 +9,12 @@ import { TESTIMONIALS } from "../../lib/testimonials";
 import { PRODUCTS } from "../../lib/products";
 import CotizacionBanner from "../../components/common/CotizacionBanner";
 
+const TESTIMONIOS_SERVICES = [
+  { slug: "salvaescaleras",           name: "Salvaescaleras" },
+  { slug: "reparacion-normalizacion", name: "Reparación y Normalización" },
+  { slug: "instalacion-ascensores",   name: "Instalación de Ascensores" },
+];
+
 const SITE = process.env.NEXT_PUBLIC_SITENAME || "https://www.melevadores.cl";
 const WHATSAPP_URL =
   "https://wa.me/56959382761?text=Hola%2C%20quiero%20agendar%20una%20visita%20técnica%20gratuita";
@@ -607,7 +613,7 @@ const TestimoniosPage = ({ menu, footer }) => {
           </GridSection>
 
           {/* ── Cotización exprés ────────────────────────────────────── */}
-          <CotizacionBanner products={[]} />
+          <CotizacionBanner products={TESTIMONIOS_SERVICES} />
 
           {/* ── Catálogo de productos ─────────────────────────────── */}
           <ProductsSection>
