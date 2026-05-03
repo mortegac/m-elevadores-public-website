@@ -198,7 +198,7 @@ function buildInboxInput({ nombre, email, telefono, producto, customerId }) {
     threadId: msgId,
     dateSent: now.toISOString(),
     dateStr: now.toISOString().slice(0, 10),
-    gmailAccount: "contacto@melevadores.cl",
+    gmailAccount: "melevadores.chile@gmail.com",
     subject: `Cotización web: ${productoStr}`,
     fromName: nombreStr || undefined,
     // fromEmail omitted — GSI key, DynamoDB rejects empty strings
@@ -208,7 +208,7 @@ function buildInboxInput({ nombre, email, telefono, producto, customerId }) {
     source: "melevadores.cl",
     isRead: false,
     hasAttachments: false,
-    toEmails: ["contacto@melevadores.cl"],
+    toEmails: ["melevadores.chile@gmail.com"],
     labels: ["PAGINA-WEB"],
     ...(customerId && { customerId }),
   };
