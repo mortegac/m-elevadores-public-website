@@ -17,8 +17,9 @@
 
 import outputs from "../../amplify_outputs.json";
 
-const APPSYNC_URL = outputs.data.url;
-const APPSYNC_API_KEY = outputs.data.api_key;
+// Prefer env vars; fall back to amplify_outputs.json so local dev works without .env.local
+const APPSYNC_URL     = process.env.APPSYNC_URL     || outputs.data.url;
+const APPSYNC_API_KEY = process.env.APPSYNC_API_KEY || outputs.data.api_key;
 
 const ALLOWED_METHODS = ["POST"];
 const MAX_FIELD_LENGTH = 1000;
@@ -198,9 +199,10 @@ function buildInboxInput({ nombre, email, telefono, producto, customerId }) {
 
 // ─── EmailJS (server-side REST API call) ─────────────────────────────────────
 
-const EMAILJS_SERVICE  = "service_q11ht56";
-const EMAILJS_TEMPLATE = "template_wn0oacf";
-const EMAILJS_USER     = "qn8t4Q--1S8ntkmL4";
+const EMAILJS_SERVICE     = process.env.EMAILJS_SERVICE_ID  || "service_q11ht56";
+const EMAILJS_TEMPLATE    = process.env.EMAILJS_TEMPLATE_ID || "template_wn0oacf";
+const EMAILJS_USER        = process.env.EMAILJS_USER_ID     || "qn8t4Q--1S8ntkmL4";
+const EMAILJS_PRIVATE_KEY = process.env.EMAILJS_PRIVATE_KEY || "";
 
 async function sendEmailJS({ customer, inbox, producto }) {
   const templateParams = {
@@ -223,6 +225,7 @@ async function sendEmailJS({ customer, inbox, producto }) {
       service_id:      EMAILJS_SERVICE,
       template_id:     EMAILJS_TEMPLATE,
       user_id:         EMAILJS_USER,
+      ...(EMAILJS_PRIVATE_KEY && { accessToken: EMAILJS_PRIVATE_KEY }),
       template_params: templateParams,
     }),
   });
