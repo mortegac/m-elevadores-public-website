@@ -18,6 +18,12 @@ import { useRouter } from "next/router";
  * @param { LandingCallbackProps }
  */
 
+const getLandingOrigen = (path) => {
+  if (path.includes("accesibilidad-residencial")) return "Accesibilidad";
+  if (path.includes("mantencion-reparacion"))     return "Instalación";
+  if (path.includes("instalacion-ascensores"))    return "instalacion-ascensores-montacargas";
+  return "WEB-FORM";
+};
 
 const LandingCallbackForm = ({ slice }) => {
   const { title, description } = slice.primary;
@@ -57,6 +63,7 @@ const LandingCallbackForm = ({ slice }) => {
           telefono: phone,
           producto: currentLandingPage || "Solicitud de llamada",
           mensaje:  `Solicitud de contacto desde: ${currentLandingPage}`,
+          origen:   getLandingOrigen(router.asPath),
         }),
       });
       const result = await res.json();

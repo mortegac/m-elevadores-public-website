@@ -176,7 +176,7 @@ async function upsertCustomer({ nombre, email, telefono }) {
 
 // ─── Inbox input builder ──────────────────────────────────────────────────────
 
-function buildInboxInput({ nombre, email, telefono, producto, mensaje, customerId }) {
+function buildInboxInput({ nombre, email, telefono, producto, mensaje, origen, customerId }) {
   const now = new Date();
   const msgId = generateId();
   const productoStr = sanitize(producto || "No especificado");
@@ -207,7 +207,7 @@ function buildInboxInput({ nombre, email, telefono, producto, mensaje, customerI
     bodyText,
     snippet: `${nombreStr} - ${emailStr} - ${productoStr}`.slice(0, 200),
     type: "PAGINA-WEB",
-    source: "melevadores.cl",
+    source: origen || "WEB-FORM",
     isRead: false,
     hasAttachments: false,
     toEmails: ["melevadores.chile@gmail.com"],
@@ -271,7 +271,7 @@ export default async function handler(req, res) {
     return res.status(400).json({ ok: false, message: "Cuerpo inválido." });
   }
 
-  const { nombre, email, telefono, producto, mensaje } = body;
+  const { nombre, email, telefono, producto, mensaje, origen } = body;
 
   if (!nombre || !sanitize(nombre)) {
     return res.status(400).json({ ok: false, message: "El nombre es requerido." });
@@ -288,6 +288,7 @@ export default async function handler(req, res) {
   const cleanTelefono = sanitize(telefono);
   const cleanProducto = sanitize(producto || "No especificado");
   const cleanMensaje  = sanitize(mensaje  || "");
+  const cleanOrigen   = sanitize(origen || "WEB-FORM");
 
   try {
     // Step 1: Create or update customer
@@ -307,6 +308,7 @@ export default async function handler(req, res) {
       telefono:   cleanTelefono,
       producto:   cleanProducto,
       mensaje:    cleanMensaje,
+      origen:     cleanOrigen,
       customerId: customer?.id || undefined,
     });
 

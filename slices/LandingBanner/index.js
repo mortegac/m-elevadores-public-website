@@ -20,6 +20,12 @@ import { asText } from "@prismicio/helpers";
  * @param {LandingBannerProps} props
  */
 
+const getLandingOrigen = (path) => {
+  if (path.includes("accesibilidad-residencial")) return "Accesibilidad";
+  if (path.includes("mantencion-reparacion"))     return "Instalación";
+  if (path.includes("instalacion-ascensores"))    return "instalacion-ascensores-montacargas";
+  return "WEB-FORM";
+};
 
 const LandingBanner = ({ slice }) => {
   const { title, subtitle, formtitle, formsubtitle, bgimage, ctatext } =
@@ -61,6 +67,7 @@ const LandingBanner = ({ slice }) => {
           telefono: phone,
           producto: currentLandingPage || "Landing page",
           mensaje:  message || "",
+          origen:   getLandingOrigen(router.asPath),
         }),
       });
       const result = await res.json();
