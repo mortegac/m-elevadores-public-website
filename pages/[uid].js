@@ -30,7 +30,7 @@ const Page = (props) => {
       page={page}
       activeDocMeta={activeDoc}
     >
-      {page?.uid === "cotiza" && <EmblaCarousel />}
+      {(page?.uid === "cotiza" || page?.uid === "nosotros") && <EmblaCarousel />}
       <SliceZone slices={page?.data?.slices} components={components} />
       {(page?.uid === "nosotros" || page?.uid === "cotiza") && <CotizacionBanner products={PRODUCTS} />}
     </Layout>

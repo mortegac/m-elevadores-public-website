@@ -1,6 +1,5 @@
 import { PrismicRichText } from "@prismicio/react";
 import { useForm } from "react-hook-form";
-import emailjs, { init } from "emailjs-com";
 import { useEffect, useState } from "react";
 import {
   Button,
@@ -19,11 +18,6 @@ import { useRouter } from "next/router";
  * @param { LandingCallbackProps }
  */
 
-// EmailJS configuration
-const SERVICE_ID = "service_q11ht56";
-const TEMPLATE_ID = "template_wn0oacf";
-const PUBLIC_KEY = "qn8t4Q--1S8ntkmL4";
-init(PUBLIC_KEY);
 
 const LandingCallbackForm = ({ slice }) => {
   const { title, description } = slice.primary;
@@ -49,44 +43,36 @@ const LandingCallbackForm = ({ slice }) => {
     message: "",
   });
 
-  const onSubmit = (data) => {
+  const onSubmit = async (data) => {
     setStatus({ sent: true, success: null, message: "Enviando..." });
-    const { name, phone } = data;
+    const { name, phone, email } = data;
 
-    const templateParams = {
-      from_name: name,
-      to_name: name,
-      to_phone: phone,
-      to_email: "",
-      reply_to: "",
-      service: "",
-      budget: "",
-      message: `Nuevo contacto desde el formulario "Nosotros te contactamos" en landing.
-
-      📍 Página: ${currentLandingPage}
-      🧑 Nombre: ${name}
-      📱 Teléfono: ${phone}`,
-    };
-
-    emailjs
-      .send(SERVICE_ID, TEMPLATE_ID, templateParams)
-      .then(() => {
-        setStatus({
-          sent: true,
-          success: true,
-          message: "¡Gracias! Te contactaremos pronto.",
-        });
-        reset();
-      })
-      .catch((error) => {
-        console.error("EmailJS Error:", error);
-        setStatus({
-          sent: true,
-          success: false,
-          message:
-            "Ocurrió un error al enviar el formulario. Intenta nuevamente.",
-        });
+    try {
+      const res = await fetch("/api/cotizacion", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          nombre:   name,
+          email:    email,
+          telefono: phone,
+          producto: currentLandingPage || "Solicitud de llamada",
+          mensaje:  `Solicitud de contacto desde: ${currentLandingPage}`,
+        }),
       });
+      const result = await res.json();
+      console.log("[LandingCallback] API response:", result);
+
+      if (res.ok && result.ok) {
+        setStatus({ sent: true, success: true, message: "¡Gracias! Te contactaremos pronto." });
+        reset();
+      } else {
+        setStatus({ sent: true, success: false, message: result.message || "Ocurrió un error. Intenta nuevamente." });
+        console.error("[LandingCallback] API error:", result.message);
+      }
+    } catch (err) {
+      console.error("[LandingCallback] Network error:", err.message);
+      setStatus({ sent: true, success: false, message: "Ocurrió un error al enviar. Intenta nuevamente." });
+    }
   };
 
   return (
@@ -115,6 +101,19 @@ const LandingCallbackForm = ({ slice }) => {
           <span className={`error-message ${errors.name ? "visible" : ""}`}>
             {errors.name?.message || "\u00A0"}
           </span>
+        </InputWrapper>
+
+        {/* ── EMAIL ── */}
+        <InputWrapper>
+          <input
+            {...register("email", {
+              required: true,
+              pattern: /^[^\s@]+@[^\s@]+\.[^\s@]+$/,
+            })}
+            type="email"
+            placeholder="tu@email.com"
+          />
+          {errors.email && <span>Por favor ingresa tu email</span>}
         </InputWrapper>
 
         <InputWrapper>
