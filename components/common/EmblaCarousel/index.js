@@ -50,6 +50,13 @@ const SLIDES = [
 /* ─────────────────────────────────────────────
    Styled components
 ───────────────────────────────────────────── */
+
+/* Fix 2 — wrapper ensures section never gets constrained by
+   PageContainerBase's align-items:center flex parent */
+const EmblaSection = styled.section`
+  width: 100%;
+`;
+
 const EmblaViewport = styled.div`
   overflow: hidden;
   width: 100%;
@@ -69,18 +76,28 @@ const EmblaSlide = styled.div`
   position: relative;
 `;
 
+/* Fix 4 — grid-template-areas so CTA moves below image on mobile */
 const SlideInner = styled.div`
   max-width: 1136px;
   margin: 0 auto;
   padding: 80px 24px;
   display: grid;
   grid-template-columns: 55% 45%;
-  align-items: center;
+  grid-template-rows: 1fr auto;
+  grid-template-areas:
+    "content image"
+    "cta     image";
+  align-items: start;
   gap: 48px;
   min-height: 480px;
 
   @media (max-width: 959px) {
     grid-template-columns: 1fr;
+    grid-template-rows: auto auto auto;
+    grid-template-areas:
+      "content"
+      "image"
+      "cta";
     padding: 40px 20px 32px;
     min-height: auto;
     gap: 20px;
@@ -92,10 +109,24 @@ const SlideInner = styled.div`
   }
 `;
 
+/* Fix 3 — 8px horizontal padding on slide content */
 const SlideContent = styled.div`
+  grid-area: content;
   display: flex;
   flex-direction: column;
   gap: 20px;
+  padding: 0 8px;
+`;
+
+/* Fix 4 — CTA in its own grid area, appears below image on mobile */
+const SlideCtaWrap = styled.div`
+  grid-area: cta;
+  padding: 0 8px;
+  padding-top: 8px;
+
+  @media (max-width: 959px) {
+    padding-top: 0;
+  }
 `;
 
 const SlideLabel = styled.span`
@@ -174,29 +205,23 @@ const SlideCta = styled.a`
   font-size: 15px;
   font-weight: 700;
   text-decoration: none;
-  align-self: flex-start;
   transition: background 0.2s, color 0.2s;
 
   &:hover {
     background: #e8eef8;
   }
 
-  @media (max-width: 480px) {
+  @media (max-width: 959px) {
     width: 100%;
     justify-content: center;
   }
 `;
 
 const SlideImageWrap = styled.div`
-  position: relative;
+  grid-area: image;
   display: flex;
   justify-content: center;
-  align-items: center;
-
-  @media (max-width: 959px) {
-    display: flex;
-    justify-content: center;
-  }
+  align-items: flex-start;
 `;
 
 const SlideImg = styled.img`
@@ -232,16 +257,17 @@ const EmblaDotsRow = styled.div`
   }
 `;
 
+/* Fix 1 — active dot: 2px height; touch target via padding */
 const EmblaDot = styled.button`
   width: ${({ active }) => (active ? "24px" : "8px")};
-  height: 8px;
-  border-radius: 4px;
+  height: 2px;
+  border-radius: 2px;
   background: ${({ active }) =>
     active ? "#ffffff" : "rgba(255,255,255,0.35)"};
   border: none;
   cursor: pointer;
   transition: width 0.3s, background 0.3s;
-  padding: 18px 0;
+  padding: 10px 0;
   box-sizing: content-box;
 `;
 
@@ -274,7 +300,7 @@ function EmblaCarousel() {
   );
 
   return (
-    <section aria-label="Servicios M-Elevadores">
+    <EmblaSection aria-label="Servicios M-Elevadores">
       <EmblaViewport ref={emblaRef}>
         <EmblaContainer>
           {SLIDES.map((slide, i) => (
@@ -284,9 +310,6 @@ function EmblaCarousel() {
                   <SlideLabel>{slide.label}</SlideLabel>
                   <SlideH2>{slide.heading}</SlideH2>
                   <SlideP>{slide.description}</SlideP>
-                  <Link href={slide.href} passHref>
-                    <SlideCta>{slide.cta} →</SlideCta>
-                  </Link>
                 </SlideContent>
                 <SlideImageWrap>
                   <SlideImg
@@ -295,6 +318,11 @@ function EmblaCarousel() {
                     loading="lazy"
                   />
                 </SlideImageWrap>
+                <SlideCtaWrap>
+                  <Link href={slide.href} passHref>
+                    <SlideCta>{slide.cta} →</SlideCta>
+                  </Link>
+                </SlideCtaWrap>
               </SlideInner>
             </EmblaSlide>
           ))}
@@ -310,7 +338,7 @@ function EmblaCarousel() {
           />
         ))}
       </EmblaDotsRow>
-    </section>
+    </EmblaSection>
   );
 }
 
