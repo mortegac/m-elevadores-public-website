@@ -32,7 +32,7 @@ const Page = (props) => {
     >
       {page?.uid === "cotiza" && <EmblaCarousel />}
       <SliceZone slices={page?.data?.slices} components={components} />
-      {page?.uid === "nosotros" && <CotizacionBanner products={PRODUCTS} />}
+      {(page?.uid === "nosotros" || page?.uid === "cotiza") && <CotizacionBanner products={PRODUCTS} />}
     </Layout>
   );
 };

@@ -9,6 +9,7 @@ import { components } from "../slices/index";
 import { Layout } from "../components/common/Layout";
 import { PRODUCTS } from "../lib/products";
 import EmblaCarousel from "../components/common/EmblaCarousel";
+import CotizacionBanner from "../components/common/CotizacionBanner";
 
 /* ─────────────────────────────────────────────
    Shared tokens (DESIGN.md)
@@ -360,6 +361,7 @@ const Home = (props) => {
         <EmblaCarousel />
         <SliceZone slices={page?.data?.slices} components={components} />
         <FeaturedProducts />
+        <CotizacionBanner products={PRODUCTS} />
       </Layout>
     </div>
   );

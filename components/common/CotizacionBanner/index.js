@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import styled, { createGlobalStyle } from "styled-components";
 import PhoneInput, { isValidPhoneNumber } from "react-phone-number-input";
-import "react-phone-number-input/style.css";
 
 // ─── Styled components ────────────────────────────────────────────────────────
 
@@ -234,7 +233,7 @@ const PhoneInputGlobal = createGlobalStyle`
     gap: 8px;
     width: 100%;
     height: 48px;
-    border: 1.5px solid ${({ hasError }) => (hasError ? "#e53935" : "#e2e8f0")};
+    border: 1.5px solid #e2e8f0;
     border-radius: 8px;
     padding: 0 14px;
     background: #ffffff;
@@ -248,7 +247,7 @@ const PhoneInputGlobal = createGlobalStyle`
   .PhoneInputCountry {
     display: flex;
     align-items: center;
-    gap: 6px;
+    gap: 4px;
     flex-shrink: 0;
   }
   .PhoneInputCountrySelect {
@@ -258,13 +257,36 @@ const PhoneInputGlobal = createGlobalStyle`
     font-size: 14px;
     cursor: pointer;
     outline: none;
-    padding: 0;
+    padding: 0 4px 0 0;
+    appearance: none;
+    -webkit-appearance: none;
+    color: #323130;
   }
   .PhoneInputCountryIcon {
     width: 24px;
     height: 18px;
-    border-radius: 2px;
     overflow: hidden;
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+  }
+  .PhoneInputCountryIcon--square {
+    width: 20px;
+    height: 20px;
+  }
+  .PhoneInputCountryIconImg {
+    display: block;
+    width: 100%;
+    height: auto;
+  }
+  .PhoneInputCountrySelectArrow {
+    display: block;
+    width: 0;
+    height: 0;
+    border-left: 4px solid transparent;
+    border-right: 4px solid transparent;
+    border-top: 5px solid #605e5c;
+    margin-left: 2px;
     flex-shrink: 0;
   }
   .PhoneInputInput {
@@ -276,9 +298,13 @@ const PhoneInputGlobal = createGlobalStyle`
     color: #323130;
     background: transparent;
     height: 100%;
+    min-width: 0;
   }
   .PhoneInputInput::placeholder {
     color: #a19f9d;
+  }
+  .PhoneInput--focus {
+    border-color: #0066cc;
   }
 `;
 
@@ -302,9 +328,14 @@ const StatusBanner = styled.div`
 
 // ─── Validation ───────────────────────────────────────────────────────────────
 
-function validateFields({ nombre, telefono, producto }) {
+function validateFields({ nombre, email, telefono, producto }) {
   const errors = {};
   if (!nombre.trim()) errors.nombre = "El nombre es requerido.";
+  if (!email.trim()) {
+    errors.email = "El email es requerido.";
+  } else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email.trim())) {
+    errors.email = "Ingresa un email válido.";
+  }
   if (!telefono) {
     errors.telefono = "El teléfono es requerido.";
   } else if (!isValidPhoneNumber(telefono)) {
@@ -318,6 +349,7 @@ function validateFields({ nombre, telefono, producto }) {
 
 export default function CotizacionBanner({ products = [] }) {
   const [nombre, setNombre] = useState("");
+  const [email, setEmail] = useState("");
   const [telefono, setTelefono] = useState("");
   const [producto, setProducto] = useState("");
   const [errors, setErrors] = useState({});
@@ -328,10 +360,10 @@ export default function CotizacionBanner({ products = [] }) {
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    console.log("[CotizacionBanner] Submit iniciado", { nombre, telefono, producto });
+    console.log("[CotizacionBanner] Submit iniciado", { nombre, email, telefono, producto });
 
     // Client-side validation
-    const fieldErrors = validateFields({ nombre, telefono, producto });
+    const fieldErrors = validateFields({ nombre, email, telefono, producto });
     if (Object.keys(fieldErrors).length > 0) {
       console.log("[CotizacionBanner] Errores de validación:", fieldErrors);
       setErrors(fieldErrors);
@@ -344,7 +376,7 @@ export default function CotizacionBanner({ products = [] }) {
     setStatus(null);
     setStatusMessage("");
 
-    const payload = { nombre: nombre.trim(), telefono: telefono.trim(), producto };
+    const payload = { nombre: nombre.trim(), email: email.trim(), telefono: telefono.trim(), producto };
     console.log("[CotizacionBanner] Enviando payload a /api/cotizacion:", payload);
 
     try {
@@ -363,6 +395,7 @@ export default function CotizacionBanner({ products = [] }) {
         setStatus("success");
         setStatusMessage(data.message || "¡Formulario enviado! Te contactaremos pronto.");
         setNombre("");
+        setEmail("");
         setTelefono("");
         setProducto("");
         console.log("[CotizacionBanner] ✅ Éxito:", data.message);
@@ -446,6 +479,20 @@ export default function CotizacionBanner({ products = [] }) {
                   </FieldWrapper>
 
                   <FieldWrapper>
+                    <FieldLabel htmlFor="cotizacion-email">Email</FieldLabel>
+                    <Input
+                      id="cotizacion-email"
+                      type="email"
+                      placeholder="tu@email.com"
+                      value={email}
+                      onChange={(e) => { setEmail(e.target.value); setErrors((p) => ({ ...p, email: undefined })); }}
+                      style={errors.email ? { borderColor: "#e53935" } : {}}
+                      disabled={loading}
+                    />
+                    {errors.email && <FieldError>{errors.email}</FieldError>}
+                  </FieldWrapper>
+
+                  <FieldWrapper>
                     <FieldLabel htmlFor="cotizacion-telefono">
                       Teléfono / WhatsApp
                     </FieldLabel>
@@ -469,7 +516,7 @@ export default function CotizacionBanner({ products = [] }) {
 
                   <FieldWrapper>
                     <FieldLabel htmlFor="cotizacion-producto">
-                      ¿Qué producto te interesa?
+                      Servicio requerido
                     </FieldLabel>
                     <Select
                       id="cotizacion-producto"
