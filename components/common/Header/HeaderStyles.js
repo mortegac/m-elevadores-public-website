@@ -118,7 +118,7 @@ export const SectionContainer = styled.div`
   .hamRotate.active {
     transform: rotate(45deg);
     .line {
-      stroke: #001133c1;
+      stroke: #ffffff;
     }
   }
   .hamRotate180.active {
@@ -127,7 +127,7 @@ export const SectionContainer = styled.div`
   .line {
     fill: none;
     transition: stroke-dasharray 400ms, stroke-dashoffset 400ms;
-    stroke: #013;
+    stroke: #ffffff;
     stroke-width: 5.5;
     stroke-linecap: round;
     transition: all 0.4s ease;

@@ -1,7 +1,6 @@
-import React, { useState, useEffect, useRef, useReducer } from "react";
+import React, { useState, useEffect } from "react";
 import { useForm } from "react-hook-form";
 import Link from "next/link";
-import emailjs, { init } from "emailjs-com";
 import PhoneInput, { isValidPhoneNumber } from "react-phone-number-input";
 
 import { SliceFactory } from "../../../../common/Containers";
@@ -13,9 +12,6 @@ import {
 } from "../default/defaultStyles";
 import { RichText } from "prismic-reactjs";
 
-const SERVICE = "service_q11ht56";
-const TEMPLATE = "template_wn0oacf";
-init("qn8t4Q--1S8ntkmL4"); // Public Key
 
 const Base = (slice) => {
   const { title, subtitle, email, message, name } = slice.primary;
@@ -40,7 +36,7 @@ const Base = (slice) => {
   // Observar el valor del select de servicio
   const selectedService = watch("service");
 
-  const onSubmit = (data) => {
+  const onSubmit = async (data) => {
     setIsSentEmail({
       sentEmail: true,
       isFailure: false,
@@ -49,55 +45,52 @@ const Base = (slice) => {
     });
 
     if (phoneValue && !isValidPhoneNumber(phoneValue)) {
-      // optionally show an error, for now just log
       console.warn("[Contact] Invalid phone number:", phoneValue);
     }
 
-    const templateParams = {
-      from_name: data.firstname,
-      to_email: data.email,
-      to_phone: data.phone,
-      to_name: data.firstname,
-      message: data.message,
-      reply_to: data.email,
-      service: data.service,
-      budget: data.budget,
-    };
+    try {
+      const res = await fetch("/api/cotizacion", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          nombre:   data.firstname,
+          email:    data.email,
+          telefono: phoneValue || data.phone || "",
+          producto: data.service || "No especificado",
+          mensaje:  data.message || "",
+          origen:   "WEB-FORM",
+        }),
+      });
 
-    emailjs
-      .send(SERVICE, TEMPLATE, { ...templateParams })
-      .then(
-        // emailjs.send("service_1ufc0ju", "template_vk47fc7", templateParams).then(
-        function (response) {
-          setIsSentEmail({
-            sentEmail: true,
-            isFailure: false,
-            title: "Gracias 🎉",
-            text: "Nos pondremos en contacto lo antes posible.",
-            response: response || "",
-          });
-          setPhoneValue("");
-        },
-        function (error) {
-          setIsSentEmail({
-            sentEmail: true,
-            isFailure: true,
-            title: "Página no encontrada 😭",
-            text: "Parece que no podemos encontrar la página que estás buscando",
-            response: response || "",
-          });
-          console.log("FAILED...", error);
-        }
-      )
-      .catch((err) =>
+      const result = await res.json();
+      console.log("[Contact] API response:", result);
+
+      if (res.ok && result.ok) {
+        setIsSentEmail({
+          sentEmail: true,
+          isFailure: false,
+          title: "Gracias 🎉",
+          text: "Nos pondremos en contacto lo antes posible.",
+        });
+        setPhoneValue("");
+      } else {
         setIsSentEmail({
           sentEmail: true,
           isFailure: true,
-          title: "Página no encontrada 😭",
-          text: "Parece que no podemos encontrar la página que estás buscando",
-          response: response || "",
-        })
-      );
+          title: "Error al enviar 😭",
+          text: result.message || "No pudimos enviar su solicitud. Intente de nuevo.",
+        });
+        console.error("[Contact] API error:", result.message);
+      }
+    } catch (err) {
+      console.error("[Contact] Network error:", err.message);
+      setIsSentEmail({
+        sentEmail: true,
+        isFailure: true,
+        title: "Error de conexión 😭",
+        text: "No pudimos conectarnos. Por favor intente más tarde.",
+      });
+    }
   };
 
   const emailValidation = (e, errors) => {

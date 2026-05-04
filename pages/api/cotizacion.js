@@ -176,19 +176,21 @@ async function upsertCustomer({ nombre, email, telefono }) {
 
 // ─── Inbox input builder ──────────────────────────────────────────────────────
 
-function buildInboxInput({ nombre, email, telefono, producto, customerId }) {
+function buildInboxInput({ nombre, email, telefono, producto, mensaje, origen, customerId }) {
   const now = new Date();
   const msgId = generateId();
-  const productoStr = producto || "No especificado";
-  const nombreStr = sanitize(nombre);
-  const emailStr = sanitize(email || "");
+  const productoStr = sanitize(producto || "No especificado");
+  const nombreStr   = sanitize(nombre);
+  const emailStr    = sanitize(email || "");
   const telefonoStr = sanitize(telefono);
+  const mensajeStr  = sanitize(mensaje || "");
 
   const bodyText = [
     `Nombre: ${nombreStr}`,
     `Email: ${emailStr}`,
     `Teléfono: ${telefonoStr}`,
     `Servicio: ${productoStr}`,
+    mensajeStr ? `Mensaje: ${mensajeStr}` : null,
   ]
     .filter(Boolean)
     .join("\n");
@@ -205,7 +207,7 @@ function buildInboxInput({ nombre, email, telefono, producto, customerId }) {
     bodyText,
     snippet: `${nombreStr} - ${emailStr} - ${productoStr}`.slice(0, 200),
     type: "PAGINA-WEB",
-    source: "melevadores.cl",
+    source: origen || "WEB-FORM",
     isRead: false,
     hasAttachments: false,
     toEmails: ["melevadores.chile@gmail.com"],
@@ -269,7 +271,7 @@ export default async function handler(req, res) {
     return res.status(400).json({ ok: false, message: "Cuerpo inválido." });
   }
 
-  const { nombre, email, telefono, producto, mensaje } = body;
+  const { nombre, email, telefono, producto, mensaje, origen } = body;
 
   if (!nombre || !sanitize(nombre)) {
     return res.status(400).json({ ok: false, message: "El nombre es requerido." });
@@ -281,10 +283,12 @@ export default async function handler(req, res) {
     return res.status(400).json({ ok: false, message: "El teléfono es requerido." });
   }
 
-  const cleanNombre = sanitize(nombre);
-  const cleanEmail = sanitize(email).toLowerCase();
+  const cleanNombre   = sanitize(nombre);
+  const cleanEmail    = sanitize(email).toLowerCase();
   const cleanTelefono = sanitize(telefono);
   const cleanProducto = sanitize(producto || "No especificado");
+  const cleanMensaje  = sanitize(mensaje  || "");
+  const cleanOrigen   = sanitize(origen || "WEB-FORM");
 
   try {
     // Step 1: Create or update customer
@@ -299,10 +303,12 @@ export default async function handler(req, res) {
     // Step 2: Create inbox message linked to customer
     console.log("[cotizacion] Step 2: Create inbox message");
     const input = buildInboxInput({
-      nombre: cleanNombre,
-      email: cleanEmail,
-      telefono: cleanTelefono,
-      producto: cleanProducto,
+      nombre:     cleanNombre,
+      email:      cleanEmail,
+      telefono:   cleanTelefono,
+      producto:   cleanProducto,
+      mensaje:    cleanMensaje,
+      origen:     cleanOrigen,
       customerId: customer?.id || undefined,
     });
 

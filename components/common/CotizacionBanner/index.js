@@ -376,7 +376,7 @@ export default function CotizacionBanner({ products = [] }) {
     setStatus(null);
     setStatusMessage("");
 
-    const payload = { nombre: nombre.trim(), email: email.trim(), telefono: telefono.trim(), producto };
+    const payload = { nombre: nombre.trim(), email: email.trim(), telefono: telefono.trim(), producto, origen: "WEB-FORM" };
     console.log("[CotizacionBanner] Enviando payload a /api/cotizacion:", payload);
 
     try {
