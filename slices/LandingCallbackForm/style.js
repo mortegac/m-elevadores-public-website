@@ -50,6 +50,9 @@ export const Form = styled.form`
   flex-wrap: wrap;
   gap: 0.5rem;
   align-items: flex-end;
+  max-width: 800px;
+  width: 100%;
+  margin: 0 auto;
 
   @media (max-width: 768px) {
     flex-direction: column;

@@ -108,6 +108,15 @@ export const InputWrapper = styled.div`
 
   input {
     ${touchInput}
+    font-family: ${({ theme }) => theme.typography.fontFamily || "Quicksand, sans-serif"};
+    font-weight: 400;
+    line-height: 1.5;
+    color: #333;
+    
+    &::placeholder {
+      color: #999;
+      font-weight: 400;
+    }
   }
 
   .error-message {
@@ -126,6 +135,15 @@ export const TextArea = styled.textarea`
   resize: vertical;
   max-height: 150px;
   min-height: 96px;
+  font-family: ${({ theme }) => theme.typography.fontFamily || "Quicksand, sans-serif"};
+  font-weight: 400;
+  line-height: 1.5;
+  color: #333;
+  
+  &::placeholder {
+    color: #999;
+    font-weight: 400;
+  }
 `;
 
 export const ButtonWrapper = styled.div`

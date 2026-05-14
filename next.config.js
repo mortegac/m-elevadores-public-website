@@ -22,7 +22,7 @@ const SECURITY_HEADERS = [
       "img-src 'self' data: blob: https://images.prismic.io https://m-elevadores.cdn.prismic.io https://images.unsplash.com https://www.google-analytics.com https://www.googletagmanager.com https://www.google.com",
       "connect-src 'self' https://melevadores.cdn.prismic.io https://m-elevadores.cdn.prismic.io https://www.google-analytics.com https://www.googletagmanager.com https://www.google.com https://api.emailjs.com https://xograe6thrd75kdnsq2ggl7flq.appsync-api.us-east-2.amazonaws.com",
       "frame-src https://www.googletagmanager.com",
-      "object-src 'none'",
+      "media-src 'self' https://m-elevadores.cdn.prismic.io https://images.prismic.io",
     ].join("; "),
   },
 ];

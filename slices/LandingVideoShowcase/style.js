@@ -65,7 +65,7 @@ export const VideoItem = styled.div`
 
 export const Video = styled.video`
   width: 100%;
-  max-height: 500px;
+  max-height: 600px;
   object-fit: contain;
   border-radius: 14px;
   box-shadow: 0 10px 40px rgba(0, 0, 0, 0.12), 0 0 0 1px rgba(57, 98, 233, 0.1);

@@ -51,20 +51,21 @@ const LandingCallbackForm = ({ slice }) => {
 
   const onSubmit = (data) => {
     setStatus({ sent: true, success: null, message: "Enviando..." });
-    const { name, phone } = data;
+    const { name, phone, email } = data;
 
     const templateParams = {
       from_name: name,
       to_name: name,
       to_phone: phone,
-      to_email: "",
-      reply_to: "",
+      to_email: email,
+      reply_to: email,
       service: "",
       budget: "",
       message: `Nuevo contacto desde el formulario "Nosotros te contactamos" en landing.
 
       📍 Página: ${currentLandingPage}
       🧑 Nombre: ${name}
+      📧 Email: ${email}
       📱 Teléfono: ${phone}`,
     };
 
@@ -114,6 +115,26 @@ const LandingCallbackForm = ({ slice }) => {
           />
           <span className={`error-message ${errors.name ? "visible" : ""}`}>
             {errors.name?.message || "\u00A0"}
+          </span>
+        </InputWrapper>
+
+        <InputWrapper>
+          <label>Email</label>
+          <input
+            type="email"
+            placeholder="Ej. juan@email.com"
+            {...register("email", {
+              required: "Por favor ingresa tu email",
+              pattern: {
+                value: /^[^\s@]+@[^\s@]+\.[^\s@]+$/,
+                message: "Por favor ingresa un email válido",
+              },
+            })}
+          />
+          <span
+            className={`error-message ${errors.email ? "visible" : "hidden"}`}
+          >
+            {errors.email?.message || " "}
           </span>
         </InputWrapper>
 
