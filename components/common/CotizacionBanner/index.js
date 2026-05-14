@@ -1,5 +1,6 @@
 import React, { useState } from "react";
-import styled from "styled-components";
+import styled, { createGlobalStyle } from "styled-components";
+import PhoneInput, { isValidPhoneNumber } from "react-phone-number-input";
 
 // ─── Styled components ────────────────────────────────────────────────────────
 
@@ -194,18 +195,18 @@ const Select = styled.select`
 const SubmitBtn = styled.button`
   width: 100%;
   height: 52px;
-  background: #0066cc;
+  background: ${({ disabled }) => (disabled ? "#94b8e0" : "#0066cc")};
   color: #ffffff;
   border-radius: 22px;
   font-family: Quicksand, sans-serif;
   font-size: 16px;
   font-weight: 700;
   border: none;
-  cursor: pointer;
+  cursor: ${({ disabled }) => (disabled ? "not-allowed" : "pointer")};
   margin-top: 8px;
   transition: background 0.18s;
 
-  &:hover {
+  &:hover:not(:disabled) {
     background: #0052a3;
   }
 `;
@@ -217,20 +218,200 @@ const TrustText = styled.p`
   margin: 14px 0 0;
 `;
 
+const FieldError = styled.span`
+  font-size: 12px;
+  color: #e53935;
+  font-family: Quicksand, sans-serif;
+  margin-top: 4px;
+  display: block;
+`;
+
+const PhoneInputGlobal = createGlobalStyle`
+  .PhoneInput {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    width: 100%;
+    height: 48px;
+    border: 1.5px solid #e2e8f0;
+    border-radius: 8px;
+    padding: 0 14px;
+    background: #ffffff;
+    box-sizing: border-box;
+    transition: border-color 0.18s;
+  }
+  .PhoneInput:focus-within {
+    border-color: #0066cc;
+    outline: none;
+  }
+  .PhoneInputCountry {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    flex-shrink: 0;
+  }
+  .PhoneInputCountrySelect {
+    border: none;
+    background: transparent;
+    font-family: Quicksand, sans-serif;
+    font-size: 14px;
+    cursor: pointer;
+    outline: none;
+    padding: 0 4px 0 0;
+    appearance: none;
+    -webkit-appearance: none;
+    color: #323130;
+  }
+  .PhoneInputCountryIcon {
+    width: 24px;
+    height: 18px;
+    overflow: hidden;
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+  }
+  .PhoneInputCountryIcon--square {
+    width: 20px;
+    height: 20px;
+  }
+  .PhoneInputCountryIconImg {
+    display: block;
+    width: 100%;
+    height: auto;
+  }
+  .PhoneInputCountrySelectArrow {
+    display: block;
+    width: 0;
+    height: 0;
+    border-left: 4px solid transparent;
+    border-right: 4px solid transparent;
+    border-top: 5px solid #605e5c;
+    margin-left: 2px;
+    flex-shrink: 0;
+  }
+  .PhoneInputInput {
+    flex: 1;
+    border: none;
+    outline: none;
+    font-family: Quicksand, sans-serif;
+    font-size: 15px;
+    color: #323130;
+    background: transparent;
+    height: 100%;
+    min-width: 0;
+  }
+  .PhoneInputInput::placeholder {
+    color: #a19f9d;
+  }
+  .PhoneInput--focus {
+    border-color: #0066cc;
+  }
+`;
+
+const PhoneInputError = styled.div`
+  .PhoneInput {
+    border-color: #e53935 !important;
+  }
+`;
+
+const StatusBanner = styled.div`
+  padding: 12px 16px;
+  border-radius: 8px;
+  font-size: 14px;
+  font-family: Quicksand, sans-serif;
+  font-weight: 600;
+  margin-bottom: 12px;
+  background: ${({ type }) => (type === "success" ? "#e8f5e9" : "#ffebee")};
+  color: ${({ type }) => (type === "success" ? "#2e7d32" : "#c62828")};
+  border: 1px solid ${({ type }) => (type === "success" ? "#a5d6a7" : "#ef9a9a")};
+`;
+
+// ─── Validation ───────────────────────────────────────────────────────────────
+
+function validateFields({ nombre, email, telefono, producto }) {
+  const errors = {};
+  if (!nombre.trim()) errors.nombre = "El nombre es requerido.";
+  if (!email.trim()) {
+    errors.email = "El email es requerido.";
+  } else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email.trim())) {
+    errors.email = "Ingresa un email válido.";
+  }
+  if (!telefono) {
+    errors.telefono = "El teléfono es requerido.";
+  } else if (!isValidPhoneNumber(telefono)) {
+    errors.telefono = "Ingresa un número de teléfono válido.";
+  }
+  if (!producto) errors.producto = "Selecciona un producto.";
+  return errors;
+}
+
 // ─── Component ────────────────────────────────────────────────────────────────
 
 export default function CotizacionBanner({ products = [] }) {
   const [nombre, setNombre] = useState("");
+  const [email, setEmail] = useState("");
   const [telefono, setTelefono] = useState("");
   const [producto, setProducto] = useState("");
+  const [errors, setErrors] = useState({});
+  const [loading, setLoading] = useState(false);
+  const [status, setStatus] = useState(null); // null | 'success' | 'error'
+  const [statusMessage, setStatusMessage] = useState("");
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    const msg = `Hola, quiero cotizar. Nombre: ${nombre}. Teléfono: ${telefono}. Producto: ${producto || "No especificado"}.`;
-    window.open(
-      `https://wa.me/56959382761?text=${encodeURIComponent(msg)}`,
-      "_blank"
-    );
+
+    console.log("[CotizacionBanner] Submit iniciado", { nombre, email, telefono, producto });
+
+    // Client-side validation
+    const fieldErrors = validateFields({ nombre, email, telefono, producto });
+    if (Object.keys(fieldErrors).length > 0) {
+      console.log("[CotizacionBanner] Errores de validación:", fieldErrors);
+      setErrors(fieldErrors);
+      setStatus(null);
+      return;
+    }
+
+    setErrors({});
+    setLoading(true);
+    setStatus(null);
+    setStatusMessage("");
+
+    const payload = { nombre: nombre.trim(), email: email.trim(), telefono: telefono.trim(), producto, origen: "WEB-FORM" };
+    console.log("[CotizacionBanner] Enviando payload a /api/cotizacion:", payload);
+
+    try {
+      const res = await fetch("/api/cotizacion", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(payload),
+      });
+
+      console.log("[CotizacionBanner] Respuesta HTTP status:", res.status);
+
+      const data = await res.json();
+      console.log("[CotizacionBanner] Respuesta JSON:", data);
+
+      if (res.ok && data.ok) {
+        setStatus("success");
+        setStatusMessage(data.message || "¡Formulario enviado! Te contactaremos pronto.");
+        setNombre("");
+        setEmail("");
+        setTelefono("");
+        setProducto("");
+        console.log("[CotizacionBanner] ✅ Éxito:", data.message);
+      } else {
+        setStatus("error");
+        setStatusMessage(data.message || "Ocurrió un error. Intenta de nuevo.");
+        console.error("[CotizacionBanner] ❌ Error de API:", data.message);
+      }
+    } catch (err) {
+      console.error("[CotizacionBanner] ❌ Error de red:", err.message);
+      setStatus("error");
+      setStatusMessage("No pudimos conectarnos al servidor. Intenta más tarde.");
+    } finally {
+      setLoading(false);
+      console.log("[CotizacionBanner] Submit finalizado, loading=false");
+    }
   };
 
   const photoUrl =
@@ -241,6 +422,7 @@ export default function CotizacionBanner({ products = [] }) {
 
   return (
     <Section aria-label="Cotización exprés">
+      <PhoneInputGlobal hasError={!!errors.telefono} />
       <Inner>
         <Grid>
           {/* ── Left column ───────────────────────────────────────────── */}
@@ -250,7 +432,7 @@ export default function CotizacionBanner({ products = [] }) {
             <Subtext>
               Envíanos una foto de tu escalera o hueco de ascensor. Te
               confirmamos viabilidad en menos de 24 horas y agendamos visita
-              técnica sin costo.
+              técnica sin costo dependiendo de la región en donde te encuentres.
             </Subtext>
             <ButtonsRow>
               <BtnWhite
@@ -277,6 +459,10 @@ export default function CotizacionBanner({ products = [] }) {
               <CardSubtitle>Te respondemos el mismo día hábil.</CardSubtitle>
 
               <form onSubmit={handleSubmit} noValidate>
+                {status && (
+                  <StatusBanner type={status}>{statusMessage}</StatusBanner>
+                )}
+
                 <FieldStack>
                   <FieldWrapper>
                     <FieldLabel htmlFor="cotizacion-nombre">Nombre</FieldLabel>
@@ -285,33 +471,59 @@ export default function CotizacionBanner({ products = [] }) {
                       type="text"
                       placeholder="Nombre y apellido"
                       value={nombre}
-                      onChange={(e) => setNombre(e.target.value)}
-                      required
+                      onChange={(e) => { setNombre(e.target.value); setErrors((p) => ({ ...p, nombre: undefined })); }}
+                      style={errors.nombre ? { borderColor: "#e53935" } : {}}
+                      disabled={loading}
                     />
+                    {errors.nombre && <FieldError>{errors.nombre}</FieldError>}
+                  </FieldWrapper>
+
+                  <FieldWrapper>
+                    <FieldLabel htmlFor="cotizacion-email">Email</FieldLabel>
+                    <Input
+                      id="cotizacion-email"
+                      type="email"
+                      placeholder="tu@email.com"
+                      value={email}
+                      onChange={(e) => { setEmail(e.target.value); setErrors((p) => ({ ...p, email: undefined })); }}
+                      style={errors.email ? { borderColor: "#e53935" } : {}}
+                      disabled={loading}
+                    />
+                    {errors.email && <FieldError>{errors.email}</FieldError>}
                   </FieldWrapper>
 
                   <FieldWrapper>
                     <FieldLabel htmlFor="cotizacion-telefono">
                       Teléfono / WhatsApp
                     </FieldLabel>
-                    <Input
-                      id="cotizacion-telefono"
-                      type="tel"
-                      placeholder="+56 9..."
-                      value={telefono}
-                      onChange={(e) => setTelefono(e.target.value)}
-                      required
-                    />
+                    <PhoneInputError style={errors.telefono ? {} : { display: "contents" }}>
+                      <PhoneInput
+                        id="cotizacion-telefono"
+                        defaultCountry="CL"
+                        value={telefono}
+                        onChange={(value) => {
+                          setTelefono(value || "");
+                          setErrors((p) => ({ ...p, telefono: undefined }));
+                        }}
+                        placeholder="+56 9 1234 5678"
+                        disabled={loading}
+                        international
+                        countryCallingCodeEditable={false}
+                      />
+                    </PhoneInputError>
+                    {errors.telefono && <FieldError>{errors.telefono}</FieldError>}
                   </FieldWrapper>
 
                   <FieldWrapper>
                     <FieldLabel htmlFor="cotizacion-producto">
-                      ¿Qué producto te interesa?
+                      Servicio requerido
                     </FieldLabel>
                     <Select
                       id="cotizacion-producto"
                       value={producto}
-                      onChange={(e) => setProducto(e.target.value)}
+                      onChange={(e) => { setProducto(e.target.value); setErrors((p) => ({ ...p, producto: undefined })); }}
+                      style={errors.producto ? { borderColor: "#e53935" } : {}}
+                      disabled={loading}
                     >
                       <option value="">Selecciona un producto</option>
                       {products.map((p) => (
@@ -323,10 +535,13 @@ export default function CotizacionBanner({ products = [] }) {
                         No estoy seguro/a
                       </option>
                     </Select>
+                    {errors.producto && <FieldError>{errors.producto}</FieldError>}
                   </FieldWrapper>
                 </FieldStack>
 
-                <SubmitBtn type="submit">Cotizar por WhatsApp</SubmitBtn>
+                <SubmitBtn type="submit" disabled={loading}>
+                  {loading ? "Enviando..." : "Recibir cotización"}
+                </SubmitBtn>
               </form>
 
               <TrustText>

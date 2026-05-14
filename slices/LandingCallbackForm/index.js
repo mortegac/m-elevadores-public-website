@@ -1,6 +1,5 @@
 import { PrismicRichText } from "@prismicio/react";
 import { useForm } from "react-hook-form";
-import emailjs, { init } from "emailjs-com";
 import { useEffect, useState } from "react";
 import {
   Button,
@@ -19,11 +18,12 @@ import { useRouter } from "next/router";
  * @param { LandingCallbackProps }
  */
 
-// EmailJS configuration
-const SERVICE_ID = "service_q11ht56";
-const TEMPLATE_ID = "template_wn0oacf";
-const PUBLIC_KEY = "qn8t4Q--1S8ntkmL4";
-init(PUBLIC_KEY);
+const getLandingOrigen = (path) => {
+  if (path.includes("accesibilidad-residencial")) return "Accesibilidad";
+  if (path.includes("mantencion-reparacion"))     return "Instalación";
+  if (path.includes("instalacion-ascensores"))    return "instalacion-ascensores-montacargas";
+  return "WEB-FORM";
+};
 
 const LandingCallbackForm = ({ slice }) => {
   const { title, description } = slice.primary;
@@ -49,7 +49,7 @@ const LandingCallbackForm = ({ slice }) => {
     message: "",
   });
 
-  const onSubmit = (data) => {
+  const onSubmit = async (data) => {
     setStatus({ sent: true, success: null, message: "Enviando..." });
     const { name, phone, email } = data;
 
@@ -88,6 +88,20 @@ const LandingCallbackForm = ({ slice }) => {
             "Ocurrió un error al enviar el formulario. Intenta nuevamente.",
         });
       });
+      const result = await res.json();
+      console.log("[LandingCallback] API response:", result);
+
+      if (res.ok && result.ok) {
+        setStatus({ sent: true, success: true, message: "¡Gracias! Te contactaremos pronto." });
+        reset();
+      } else {
+        setStatus({ sent: true, success: false, message: result.message || "Ocurrió un error. Intenta nuevamente." });
+        console.error("[LandingCallback] API error:", result.message);
+      }
+    } catch (err) {
+      console.error("[LandingCallback] Network error:", err.message);
+      setStatus({ sent: true, success: false, message: "Ocurrió un error al enviar. Intenta nuevamente." });
+    }
   };
 
   return (
@@ -116,6 +130,19 @@ const LandingCallbackForm = ({ slice }) => {
           <span className={`error-message ${errors.name ? "visible" : ""}`}>
             {errors.name?.message || "\u00A0"}
           </span>
+        </InputWrapper>
+
+        {/* ── EMAIL ── */}
+        <InputWrapper>
+          <input
+            {...register("email", {
+              required: true,
+              pattern: /^[^\s@]+@[^\s@]+\.[^\s@]+$/,
+            })}
+            type="email"
+            placeholder="tu@email.com"
+          />
+          {errors.email && <span>Por favor ingresa tu email</span>}
         </InputWrapper>
 
         <InputWrapper>

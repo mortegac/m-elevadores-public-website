@@ -20,6 +20,8 @@ const CATEGORY_COLORS = {
   ascensores: "#001133",
   escaleras: "#1565C0",
   modernizacion: "#605E5C",
+  montacargas: "#FF6F00",
+  alzahombres: "#1B5E20",
 };
 
 const CATEGORY_ICONS = {
@@ -28,6 +30,8 @@ const CATEGORY_ICONS = {
   ascensores: "🛗",
   escaleras: "🏗️",
   modernizacion: "🔧",
+  montacargas: "📦",
+  alzahombres: "🦺",
 };
 
 // ---------------------------------------------------------------------------

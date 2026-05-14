@@ -1,7 +1,7 @@
-import React, { useState, useEffect, useRef, useReducer } from "react";
+import React, { useState, useEffect } from "react";
 import { useForm } from "react-hook-form";
 import Link from "next/link";
-import emailjs, { init } from "emailjs-com";
+import PhoneInput, { isValidPhoneNumber } from "react-phone-number-input";
 
 import { SliceFactory } from "../../../../common/Containers";
 import {
@@ -12,9 +12,6 @@ import {
 } from "../default/defaultStyles";
 import { RichText } from "prismic-reactjs";
 
-const SERVICE = "service_q11ht56";
-const TEMPLATE = "template_wn0oacf";
-init("qn8t4Q--1S8ntkmL4"); // Public Key
 
 const Base = (slice) => {
   const { title, subtitle, email, message, name } = slice.primary;
@@ -25,6 +22,7 @@ const Base = (slice) => {
     text: "Parece que no podemos encontrar la página que estás buscando",
   });
   const [emailValue, setEmailValue] = useState("");
+  const [phoneValue, setPhoneValue] = useState("");
 
   const {
     register,
@@ -38,7 +36,7 @@ const Base = (slice) => {
   // Observar el valor del select de servicio
   const selectedService = watch("service");
 
-  const onSubmit = (data) => {
+  const onSubmit = async (data) => {
     setIsSentEmail({
       sentEmail: true,
       isFailure: false,
@@ -46,50 +44,53 @@ const Base = (slice) => {
       text: "Estamos enviando su solicitud.",
     });
 
-    const templateParams = {
-      from_name: data.firstname,
-      to_email: data.email,
-      to_phone: data.phone,
-      to_name: data.firstname,
-      message: data.message,
-      reply_to: data.email,
-      service: data.service,
-      budget: data.budget,
-    };
+    if (phoneValue && !isValidPhoneNumber(phoneValue)) {
+      console.warn("[Contact] Invalid phone number:", phoneValue);
+    }
 
-    emailjs
-      .send(SERVICE, TEMPLATE, { ...templateParams })
-      .then(
-        // emailjs.send("service_1ufc0ju", "template_vk47fc7", templateParams).then(
-        function (response) {
-          setIsSentEmail({
-            sentEmail: true,
-            isFailure: false,
-            title: "Gracias 🎉",
-            text: "Nos pondremos en contacto lo antes posible.",
-            response: response || "",
-          });
-        },
-        function (error) {
-          setIsSentEmail({
-            sentEmail: true,
-            isFailure: true,
-            title: "Página no encontrada 😭",
-            text: "Parece que no podemos encontrar la página que estás buscando",
-            response: response || "",
-          });
-          console.log("FAILED...", error);
-        }
-      )
-      .catch((err) =>
+    try {
+      const res = await fetch("/api/cotizacion", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          nombre:   data.firstname,
+          email:    data.email,
+          telefono: phoneValue || data.phone || "",
+          producto: data.service || "No especificado",
+          mensaje:  data.message || "",
+          origen:   "WEB-FORM",
+        }),
+      });
+
+      const result = await res.json();
+      console.log("[Contact] API response:", result);
+
+      if (res.ok && result.ok) {
+        setIsSentEmail({
+          sentEmail: true,
+          isFailure: false,
+          title: "Gracias 🎉",
+          text: "Nos pondremos en contacto lo antes posible.",
+        });
+        setPhoneValue("");
+      } else {
         setIsSentEmail({
           sentEmail: true,
           isFailure: true,
-          title: "Página no encontrada 😭",
-          text: "Parece que no podemos encontrar la página que estás buscando",
-          response: response || "",
-        })
-      );
+          title: "Error al enviar 😭",
+          text: result.message || "No pudimos enviar su solicitud. Intente de nuevo.",
+        });
+        console.error("[Contact] API error:", result.message);
+      }
+    } catch (err) {
+      console.error("[Contact] Network error:", err.message);
+      setIsSentEmail({
+        sentEmail: true,
+        isFailure: true,
+        title: "Error de conexión 😭",
+        text: "No pudimos conectarnos. Por favor intente más tarde.",
+      });
+    }
   };
 
   const emailValidation = (e, errors) => {
@@ -168,20 +169,36 @@ const Base = (slice) => {
             </span>
 
             {/* --------  PHONE --------- */}
-            <label htmlFor="phone">{name[0].text || "Teléfono"}</label>
-            <input
-              {...register("phone", {
-                required: true,
-                minLength: 12,
-              })}
-              type="text"
-              name="phone"
-              id="phone"
-              className={errors.phone && "error"}
-            />
-            <span className="error">
-              {errors.phone && "Por favor ingrese su teléfono"}
-            </span>
+            <div>
+              <label htmlFor="cotizacion-contact-phone">
+                {name[0].text || "Teléfono"}
+              </label>
+              <PhoneInput
+                id="cotizacion-contact-phone"
+                defaultCountry="CL"
+                value={phoneValue}
+                onChange={(value) => {
+                  setPhoneValue(value || "");
+                  setValue("phone", value || "");
+                }}
+                placeholder="+56 9 1234 5678"
+                international
+                countryCallingCodeEditable={false}
+                style={{
+                  display: "flex",
+                  alignItems: "center",
+                  gap: "8px",
+                  width: "100%",
+                  height: "48px",
+                  border: "1.5px solid #e2e8f0",
+                  borderRadius: "8px",
+                  padding: "0 14px",
+                  background: "#ffffff",
+                  boxSizing: "border-box",
+                }}
+              />
+              {errors.phone && <span className="error-msg">Por favor ingrese su teléfono válido</span>}
+            </div>
 
             {/* --------  SERVICE --------- */}
             <label htmlFor="service">

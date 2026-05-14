@@ -157,3 +157,23 @@ See `Documentation/create-custom-type.md` for Prismic custom type guidance.
 | Slice keys in `slices/index.js` | snake_case | `hero`, `landing_banner` |
 | Component files | PascalCase.js | `Layout.js`, `Header.js` |
 | Theme keys | camelCase | `theme.colors.bgColorPrimary` |
+
+
+
+### AWS Configuration (Amplify Gen 2)
+Amplify is configured in `src/main.tsx` using `amplify_outputs.json` (at the project root):
+```ts
+import outputs from '../amplify_outputs.json';
+Amplify.configure(outputs);
+```
+- Backend: `melevadores-sdk-backend-v2` (Amplify Gen 2, separate repo)
+- CloudFormation stack: `amplify-backoffice-manu-sandbox-0b1ca78abf`
+- AppSync endpoint: `https://xograe6thrd75kdnsq2ggl7flq.appsync-api.us-east-2.amazonaws.com/graphql` — auth mode: `AMAZON_COGNITO_USER_POOLS` (default) + `API_KEY` (public payment flow)
+- All GraphQL models use the `v2` prefix (e.g., `v2Users`, `v2Managers`)
+- `amplify_outputs.json` is **not a secret** and should be committed
+- To regenerate after backend changes, run `npm run generate:config` (requires Node 20)
+
+The only `.env` variable is `VITE_GOOGLE_MAPS_API_KEY` in `.env.local`.
+
+### AWS CLI Profile
+**ALWAYS use `--profile melevadores-prod`** for all AWS CLI and Amplify commands in this project. Never use `miniswimmer` or any other profile.

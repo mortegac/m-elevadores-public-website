@@ -2,7 +2,6 @@ import { useRouter } from "next/router";
 import { useEffect, useState } from "react";
 import { PrismicRichText } from "@prismicio/react";
 import { useForm } from "react-hook-form";
-import emailjs, { init } from "emailjs-com";
 import {
   Section,
   Title,
@@ -21,11 +20,12 @@ import { asText } from "@prismicio/helpers";
  * @param {LandingBannerProps} props
  */
 
-// EmailJS configuration
-const SERVICE_ID = "service_q11ht56";
-const TEMPLATE_ID = "template_wn0oacf";
-const PUBLIC_KEY = "qn8t4Q--1S8ntkmL4";
-init(PUBLIC_KEY);
+const getLandingOrigen = (path) => {
+  if (path.includes("accesibilidad-residencial")) return "Accesibilidad";
+  if (path.includes("mantencion-reparacion"))     return "Instalación";
+  if (path.includes("instalacion-ascensores"))    return "instalacion-ascensores-montacargas";
+  return "WEB-FORM";
+};
 
 const LandingBanner = ({ slice }) => {
   const { title, subtitle, formtitle, formsubtitle, bgimage, ctatext } =
@@ -53,50 +53,37 @@ const LandingBanner = ({ slice }) => {
     message: "",
   });
 
-  const onSubmit = (data) => {
+  const onSubmit = async (data) => {
     setStatus({ sent: true, success: null, message: "Enviando..." });
-
     const { name, phone, email, message } = data;
 
-    const templateParams = {
-      from_name: name,
-      to_phone: phone,
-      to_email: email,
-      message: `
-        Nuevo contacto desde el formulario de landing.
-
-        📍 Página: ${currentLandingPage}
-
-        🧑 Nombre: ${name}
-        📧 Email: ${email}
-        📱 Teléfono: ${phone}
-        ${message ? `✉️ Mensaje: ${message}` : ""}
-      `,
-      service: "",
-      budget: "",
-      reply_to: email,
-      to_name: name,
-    };
-
-    emailjs
-      .send(SERVICE_ID, TEMPLATE_ID, templateParams)
-      .then(() => {
-        setStatus({
-          sent: true,
-          success: true,
-          message: "¡Gracias! Te contactaremos pronto.",
-        });
-        reset();
-      })
-      .catch((error) => {
-        console.error("EmailJS Error:", error);
-        setStatus({
-          sent: true,
-          success: false,
-          message:
-            "Ocurrió un error al enviar el formulario. Intenta nuevamente.",
-        });
+    try {
+      const res = await fetch("/api/cotizacion", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          nombre:   name,
+          email:    email,
+          telefono: phone,
+          producto: currentLandingPage || "Landing page",
+          mensaje:  message || "",
+          origen:   getLandingOrigen(router.asPath),
+        }),
       });
+      const result = await res.json();
+      console.log("[LandingBanner] API response:", result);
+
+      if (res.ok && result.ok) {
+        setStatus({ sent: true, success: true, message: "¡Gracias! Te contactaremos pronto." });
+        reset();
+      } else {
+        setStatus({ sent: true, success: false, message: result.message || "Ocurrió un error. Intenta nuevamente." });
+        console.error("[LandingBanner] API error:", result.message);
+      }
+    } catch (err) {
+      console.error("[LandingBanner] Network error:", err.message);
+      setStatus({ sent: true, success: false, message: "Ocurrió un error al enviar el formulario. Intenta nuevamente." });
+    }
   };
 
   return (

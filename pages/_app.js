@@ -1,3 +1,4 @@
+import "react-phone-number-input/style.css";
 import { useEffect } from "react";
 import { useRouter } from "next/router";
 import Script from "next/script";
@@ -5,10 +6,15 @@ import Link from "next/link";
 import { PrismicProvider } from "@prismicio/react";
 import { PrismicPreview } from "@prismicio/next";
 import { ThemeProvider } from "styled-components";
+import { Amplify } from "aws-amplify";
 
 import { repositoryName, linkResolver } from "../prismicio";
 import { GlobalStyle, Theme } from "../components/styles";
 import * as gtag from "../utils/gtag";
+import outputs from "../amplify_outputs.json";
+
+// Configure Amplify once at app startup (same pattern as melevadores-sdk-frontend-v2)
+Amplify.configure(outputs, { ssr: true });
 
 const GA_ID = "G-VJZB8M2VYD";
 

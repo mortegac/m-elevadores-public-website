@@ -4,7 +4,7 @@ import Link from "next/link";
 import styled, { keyframes } from "styled-components";
 import { createClient } from "../../prismicio";
 import { Layout } from "../../components/common/Layout";
-import { getProductsByCategory } from "../../lib/products";
+import { PRODUCTS, getProductsByCategory } from "../../lib/products";
 import CotizacionBanner from "../../components/common/CotizacionBanner";
 
 const SITE = process.env.NEXT_PUBLIC_SITENAME || "https://www.melevadores.cl";
@@ -622,16 +622,12 @@ const FAQS = [
     a: "Para instalaciones en viviendas unifamiliares generalmente no se requiere permiso. Para departamentos o edificios, es conveniente informar al comité de administración. Nosotros te asesoramos en todo el proceso.",
   },
   {
-    q: "¿Qué diferencia hay entre el modelo Recto y el Curvo?",
-    a: "El Recto SOLO es para escaleras completamente rectas y se instala en 1 día. El Curvo FLEX está fabricado a medida para escaleras con curvas, rellanos, formas en L o U. El riel del FLEX se fabrica según los planos exactos de tu escalera, lo que toma 3-4 semanas adicionales.",
-  },
-  {
     q: "¿Qué pasa si hay un corte de luz?",
     a: "Todos nuestros modelos incluyen batería de emergencia. En caso de corte de luz, el sistema puede completar el recorrido actual y posicionar la silla en un lugar seguro, garantizando que nadie quede atrapado a mitad de la escalera.",
   },
   {
     q: "¿Cuánto vale un salvaescaleras en Chile?",
-    a: "El Salvaescaleras Recto SOLO parte desde $2.800.000 CLP con instalación incluida. El Curvo FLEX parte desde $4.500.000 CLP según la complejidad de la escalera. Realizamos visita técnica gratuita y entregamos cotización exacta sin compromiso.",
+    a: "El Salvaescaleras parte desde $9.900.000 CLP más IVA instalado. Realizamos visita técnica gratuita y entregamos cotización exacta sin compromiso.",
   },
 ];
 
@@ -792,7 +788,6 @@ const SalvaescalerasPage = ({ menu, footer, salvaescalerasProducts }) => {
               </HeroSubtitle>
 
               <StatChips>
-                <StatChip>Desde $2.800.000 CLP</StatChip>
                 <StatChip>Instalación en 1-2 días</StatChip>
                 <StatChip>Certificado MINVU</StatChip>
               </StatChips>
@@ -904,37 +899,6 @@ const SalvaescalerasPage = ({ menu, footer, salvaescalerasProducts }) => {
                   </ProductCard>
                 </div>
 
-                {/* FLEX */}
-                <div>
-                  <CompareHint highlighted>
-                    ¿Tiene curvas o rellanos? → Modelo FLEX
-                  </CompareHint>
-                  <ProductCard highlighted>
-                    <div>
-                      <ProductName>{flexProduct?.name}</ProductName>
-                      <ProductTagline>{flexProduct?.tagline}</ProductTagline>
-                    </div>
-
-                    <SpecList>
-                      {KEY_SPECS_FLEX.map((key) => (
-                        <SpecItem key={key}>
-                          <SpecKey>{key}</SpecKey>
-                          <SpecVal>{flexProduct?.specs[key]}</SpecVal>
-                        </SpecItem>
-                      ))}
-                    </SpecList>
-
-                    <BtnPrimary
-                      href={`${WA_BASE}${encodeURIComponent(
-                        "Hola, me interesa cotizar el Salvaescaleras Curvo FLEX para una escalera con curvas. ¿Pueden ayudarme?"
-                      )}`}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                    >
-                      Cotizar Curvo FLEX
-                    </BtnPrimary>
-                  </ProductCard>
-                </div>
               </CompareGrid>
             </Container>
           </Section>
@@ -1005,7 +969,7 @@ const SalvaescalerasPage = ({ menu, footer, salvaescalerasProducts }) => {
           {/* ---------------------------------------------------------------- */}
           {/* COTIZACIÓN EXPRÉS                                               */}
           {/* ---------------------------------------------------------------- */}
-          <CotizacionBanner products={salvaescalerasProducts} />
+          <CotizacionBanner products={PRODUCTS} />
 
           {/* ---------------------------------------------------------------- */}
           {/* CTA                                                              */}
