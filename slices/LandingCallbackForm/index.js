@@ -53,41 +53,20 @@ const LandingCallbackForm = ({ slice }) => {
     setStatus({ sent: true, success: null, message: "Enviando..." });
     const { name, phone, email } = data;
 
-    const templateParams = {
-      from_name: name,
-      to_name: name,
-      to_phone: phone,
-      to_email: email,
-      reply_to: email,
-      service: "",
-      budget: "",
-      message: `Nuevo contacto desde el formulario "Nosotros te contactamos" en landing.
-
-      📍 Página: ${currentLandingPage}
-      🧑 Nombre: ${name}
-      📧 Email: ${email}
-      📱 Teléfono: ${phone}`,
-    };
-
-    emailjs
-      .send(SERVICE_ID, TEMPLATE_ID, templateParams)
-      .then(() => {
-        setStatus({
-          sent: true,
-          success: true,
-          message: "¡Gracias! Te contactaremos pronto.",
-        });
-        reset();
-      })
-      .catch((error) => {
-        console.error("EmailJS Error:", error);
-        setStatus({
-          sent: true,
-          success: false,
-          message:
-            "Ocurrió un error al enviar el formulario. Intenta nuevamente.",
-        });
+    try {
+      const res = await fetch("/api/cotizacion", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          nombre:   name,
+          email:    email,
+          telefono: phone,
+          producto: currentLandingPage || "Solicitud de llamada",
+          mensaje:  `Solicitud de contacto desde: ${currentLandingPage}`,
+          origen:   getLandingOrigen(router.asPath),
+        }),
       });
+
       const result = await res.json();
       console.log("[LandingCallback] API response:", result);
 
@@ -130,19 +109,6 @@ const LandingCallbackForm = ({ slice }) => {
           <span className={`error-message ${errors.name ? "visible" : ""}`}>
             {errors.name?.message || "\u00A0"}
           </span>
-        </InputWrapper>
-
-        {/* ── EMAIL ── */}
-        <InputWrapper>
-          <input
-            {...register("email", {
-              required: true,
-              pattern: /^[^\s@]+@[^\s@]+\.[^\s@]+$/,
-            })}
-            type="email"
-            placeholder="tu@email.com"
-          />
-          {errors.email && <span>Por favor ingresa tu email</span>}
         </InputWrapper>
 
         <InputWrapper>
