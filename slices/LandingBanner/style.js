@@ -101,6 +101,11 @@ export const Form = styled.form`
 export const InputWrapper = styled.div`
   display: flex;
   flex-direction: column;
+  width: 75%;
+
+  @media (max-width: ${({ theme }) => theme.breakpoints.md}) {
+    width: 100%;
+  }
 
   label {
     margin-bottom: 0.5rem;
@@ -149,8 +154,12 @@ export const TextArea = styled.textarea`
 export const ButtonWrapper = styled.div`
   button {
     ${tapTarget}
-    width: 100%;
+    width: 75%;
     padding: 14px 24px;
+
+    @media (max-width: ${({ theme }) => theme.breakpoints.md}) {
+      width: 100%;
+    }
     background-color: #0070f3;
     color: white;
     border: none;
