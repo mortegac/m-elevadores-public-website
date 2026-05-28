@@ -101,6 +101,11 @@ export const Form = styled.form`
 export const InputWrapper = styled.div`
   display: flex;
   flex-direction: column;
+  width: 75%;
+
+  @media (max-width: ${({ theme }) => theme.breakpoints.md}) {
+    width: 100%;
+  }
 
   label {
     margin-bottom: 0.5rem;
@@ -108,6 +113,15 @@ export const InputWrapper = styled.div`
 
   input {
     ${touchInput}
+    font-family: ${({ theme }) => theme.typography.fontFamily || "Quicksand, sans-serif"};
+    font-weight: 400;
+    line-height: 1.5;
+    color: #333;
+    
+    &::placeholder {
+      color: #999;
+      font-weight: 400;
+    }
   }
 
   .error-message {
@@ -126,13 +140,26 @@ export const TextArea = styled.textarea`
   resize: vertical;
   max-height: 150px;
   min-height: 96px;
+  font-family: ${({ theme }) => theme.typography.fontFamily || "Quicksand, sans-serif"};
+  font-weight: 400;
+  line-height: 1.5;
+  color: #333;
+  
+  &::placeholder {
+    color: #999;
+    font-weight: 400;
+  }
 `;
 
 export const ButtonWrapper = styled.div`
   button {
     ${tapTarget}
-    width: 100%;
+    width: 75%;
     padding: 14px 24px;
+
+    @media (max-width: ${({ theme }) => theme.breakpoints.md}) {
+      width: 100%;
+    }
     background-color: #0070f3;
     color: white;
     border: none;

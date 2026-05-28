@@ -50,11 +50,14 @@ export const Form = styled.form`
   flex-wrap: wrap;
   gap: 0.5rem;
   align-items: flex-end;
+  max-width: 800px;
+  width: 100%;
+  margin: 0 auto;
 
   @media (max-width: 768px) {
     flex-direction: column;
     align-items: stretch;
-    gap: 0.25rem;
+    gap: 0.875rem;
   }
 `;
 
@@ -92,13 +95,13 @@ export const InputWrapper = styled.div`
     width: 100%;
 
     label {
-      font-size: 0.85rem;
-      margin-bottom: 2px;
+      font-size: 0.875rem;
+      margin-bottom: 6px;
     }
 
     input {
-      padding: 10px 12px;
-      min-height: 40px;
+      padding: 12px 14px;
+      min-height: 44px;
     }
 
     .error-message {
@@ -131,7 +134,7 @@ export const ButtonWrapper = styled.div`
   @media (max-width: 768px) {
     flex: 0 0 auto;
     width: 100%;
-    margin-top: 0.5rem;
+    margin-top: 0.25rem;
 
     .error-message {
       display: none;

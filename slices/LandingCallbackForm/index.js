@@ -66,6 +66,7 @@ const LandingCallbackForm = ({ slice }) => {
           origen:   getLandingOrigen(router.asPath),
         }),
       });
+
       const result = await res.json();
       console.log("[LandingCallback] API response:", result);
 
@@ -110,17 +111,24 @@ const LandingCallbackForm = ({ slice }) => {
           </span>
         </InputWrapper>
 
-        {/* ── EMAIL ── */}
         <InputWrapper>
+          <label>Email</label>
           <input
-            {...register("email", {
-              required: true,
-              pattern: /^[^\s@]+@[^\s@]+\.[^\s@]+$/,
-            })}
             type="email"
-            placeholder="tu@email.com"
+            placeholder="Ej. juan@email.com"
+            {...register("email", {
+              required: "Por favor ingresa tu email",
+              pattern: {
+                value: /^[^\s@]+@[^\s@]+\.[^\s@]+$/,
+                message: "Por favor ingresa un email válido",
+              },
+            })}
           />
-          {errors.email && <span>Por favor ingresa tu email</span>}
+          <span
+            className={`error-message ${errors.email ? "visible" : "hidden"}`}
+          >
+            {errors.email?.message || " "}
+          </span>
         </InputWrapper>
 
         <InputWrapper>
