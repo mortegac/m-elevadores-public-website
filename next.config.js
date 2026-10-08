@@ -32,7 +32,7 @@ const SECURITY_HEADERS = [
     key: 'Content-Security-Policy',
     value: [
       "default-src 'self'",
-      "script-src 'self' 'unsafe-inline' 'unsafe-eval' https://www.googletagmanager.com https://www.google-analytics.com https://connect.facebook.net https://ssl.google-analytics.com https://static.cdn.prismic.io https://maps.googleapis.com",
+      "script-src 'self' 'unsafe-inline' 'unsafe-eval' https://www.googletagmanager.com https://www.google-analytics.com https://connect.facebook.net https://ssl.google-analytics.com https://static.cdn.prismic.io https://maps.googleapis.com https://*.clarity.ms",
       "style-src 'self' 'unsafe-inline' https://fonts.googleapis.com",
       "font-src 'self' https://fonts.gstatic.com",
       "img-src 'self' data: blob: https://images.prismic.io https://m-elevadores.cdn.prismic.io https://images.unsplash.com https://www.google-analytics.com https://www.googletagmanager.com https://www.google.com https://purecatamphetamine.github.io https://ssl.google-analytics.com https://googleads.g.doubleclick.net https://stats.g.doubleclick.net https://td.doubleclick.net https://www.google.cl https://lh3.googleusercontent.com",
